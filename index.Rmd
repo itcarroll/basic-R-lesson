@@ -2,10 +2,9 @@
 title: "Introduction to R"
 author: "Kelly Hondula"
 output:
-  md_document:
+  html_document:
     toc: true
     toc_depth: 1
-    variant: markdown_github
 ---
   
 R is a programming language that we will use in the *interactive development environment* called RStudio. For this lesson, we are using RStudio server in a browser window in order to connect with other services at SESYNC like file storage and the cluster, but most of what we will cover also applies to the RStudio program that runs as a standalone program on your computer. 
