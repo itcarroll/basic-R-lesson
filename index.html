@@ -165,9 +165,9 @@ $(document).ready(function () {
 <div id="vectors" class="section level2">
 <h2>Vectors</h2>
 <p>Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function <code>c()</code>. Use the operator <code>:</code> for a sequence of numbers (forwards or backwards), otherwise separate elements with commas.</p>
-<p>All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type.</p>
 <pre class="r"><code>c(1:10, 4:-4)</code></pre>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10  4  3  2  1  0 -1 -2 -3 -4</code></pre>
+<p>All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type.</p>
 <pre class="r"><code>c(1, 2, &quot;three&quot;, 4)</code></pre>
 <pre><code>## [1] &quot;1&quot;     &quot;2&quot;     &quot;three&quot; &quot;4&quot;</code></pre>
 <p>Assign a value to an object with the assignment operator using the syntax <code>objectName &lt;- value</code>. Object names in R cannot start with a number or underscore.</p>
@@ -175,17 +175,49 @@ $(document).ready(function () {
 x</code></pre>
 <pre><code>## [1]  3  4  5  6  7  8  9 10</code></pre>
 <p>Operations in R are “vectorized” meaning that functions can be performed on all elements of a vector simultaneously.</p>
-<p>Naming items in a vector</p>
+<p>Each item in a vector can be given the attribute of a names. The names can be given when you are creating a vector or afterwards using the <code>names()</code> function.</p>
+<pre class="r"><code>x &lt;- c(dogs = 4, cats = 5, fish = 2)
+x</code></pre>
+<pre><code>## dogs cats fish 
+##    4    5    2</code></pre>
+<pre class="r"><code>names(x) &lt;- c(&quot;plants&quot;, &quot;animals&quot;, &quot;rocks&quot;)
+x</code></pre>
+<pre><code>##  plants animals   rocks 
+##       4       5       2</code></pre>
 </div>
 <div id="subsetting" class="section level2">
 <h2>Subsetting</h2>
 <p>R’s subsetting capabilities can be accessed very concisely using square brackets <code>[ ]</code>. Identify elements of a vector using their numeric index or names inside of square brackets. Note that in R the first element of a vector has an index of 1.</p>
-<ol style="list-style-type: decimal">
-<li><strong>positive integers</strong>: return elements at the specified positions</li>
-<li><strong>Negative integers</strong>: omit elements at the specified positions</li>
-<li><strong>Logical vectors</strong>: select elements where the corresponding logical value is TRUE</li>
-<li><strong>Nothing</strong>: returns the original vector (more useful for dataframes)</li>
-</ol>
+<table style="width:14%;">
+<colgroup>
+<col width="6%"></col>
+<col width="6%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Use in brackets</th>
+<th align="left">Subset instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">positive integers</td>
+<td align="left">elements at the specified positions</td>
+</tr>
+<tr class="even">
+<td align="left">negative integers</td>
+<td align="left">omit elements at the specified positions</td>
+</tr>
+<tr class="odd">
+<td align="left">logical vectors</td>
+<td align="left">select elements where the corresponding value is TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">nothing</td>
+<td align="left">return the original vector (all)</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code>mynumbers &lt;- c(1:10) # store vector with assignment operator
 mynumbers</code></pre>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
@@ -194,7 +226,7 @@ mynumbers</code></pre>
 </div>
 <div id="lists" class="section level2">
 <h2>Lists</h2>
-<p>Lists like vectors but their elements can be of any type, including another list! You construct lists by using <code>list()</code> instead of <code>c()</code>.</p>
+<p>Lists like vectors but their elements can be of any data type or structure, including another list! You construct lists by using <code>list()</code> instead of <code>c()</code>.</p>
 <p><code>c()</code> will combine several lists into one. If given a combination of atomic vectors and lists, <code>c()</code> will coerce the vectors to lists before combining them.</p>
 <blockquote>
 <p>Compare the results of <code>list()</code> and <code>c()</code></p>
@@ -214,18 +246,34 @@ str(x)</code></pre>
 ##  $ : num 3
 ##  $ : num 4</code></pre>
 <p>Subset lists using double brackets <code>[[ ]]</code> and either the name or index of an element of a list.</p>
+<p>With lists, you can use subsetting + assignment + <code>NULL</code> to remove components from a list. To add a literal <code>NULL</code> to a list, use <code>[</code> and <code>list(NULL)</code>. Notice the difference in the structure of <code>x</code> and <code>y</code>:</p>
+<pre class="r"><code>x &lt;- list(a = 1, b = 2)
+x[[&quot;b&quot;]] &lt;- NULL
+str(x)</code></pre>
+<pre><code>## List of 1
+##  $ a: num 1</code></pre>
+<pre class="r"><code>y &lt;- list(a = 1)
+y[&quot;b&quot;] &lt;- list(NULL)
+str(y)</code></pre>
+<pre><code>## List of 2
+##  $ a: num 1
+##  $ b: NULL</code></pre>
+<p>Note that <code>NULL</code> removes items whereas <code>NA</code> is used to represent a missing value. A <code>NULL</code> item does not exist whereas an <code>NA</code> exists but does not have a value.</p>
 </div>
 <div id="factors" class="section level2">
 <h2>Factors</h2>
 <p>A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are built on top of integer vectors using two attributes: the class(), “factor”, which makes them behave differently from regular integer vectors, and the levels(), which defines the set of allowed values.</p>
-<p>We can make a column a factor with the as.factor() function. Use <code>as.factor()</code> to change the month column to a factor and see how the result of the summary function changes</p>
-<pre class="r"><code>surveys$month &lt;- as.factor(surveys$month)
-summary(surveys)</code></pre>
+<p>Use <code>factor()</code> to create a vector with factors, or <code>as.factor()</code> to convert an existing vector to factors.</p>
+<pre class="r"><code>education &lt;- factor(x = c(&quot;middle&quot;, &quot;highschool&quot;, &quot;college&quot;), ordered = TRUE)
+education</code></pre>
+<pre><code>## [1] middle     highschool college   
+## Levels: college &lt; highschool &lt; middle</code></pre>
+<p>Note that by default, character data is read in as factors when you load data into R. Later, we will use the argument <code>stringsAsfactors = FALSE</code> to suppress this behavior because it can cause confusion.</p>
 </div>
 </div>
 <div id="data-structures" class="section level1">
 <h1>Data structures</h1>
-<p>Data can be stored in several types of data structures depending on its complexity</p>
+<p>Data can be stored in several types of data structures depending on its complexity.</p>
 <table>
 <thead>
 <tr class="header">
@@ -254,18 +302,15 @@ summary(surveys)</code></pre>
 <p>*Note that vectors in R are not mathematical vectors and therefore there is no difference between row and column orientation.</p>
 <div id="data-frames" class="section level2">
 <h2>Data frames</h2>
-<p>Data frames are 2-dimensional and can contain heterogenous data like numbers in one column and categories in another.</p>
-<p>Data frames are spreadsheet-like data strcutures in R. Each column of a data frame is a vector. A data.frame is one of the most commonly used objects in R. Just think of a data.frame like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the data.frame in R is that it can handle multiple types of data - that is, each column can have a different type.</p>
-<blockquote>
-<p>Make a vector using <code>c()</code> but now put each item in the list in quotes. This means it will be interpreted as a <strong>string</strong> or word, instead of a number.</p>
-</blockquote>
-<pre class="r"><code>animals &lt;- c(&quot;pig&quot;, &quot;dog&quot;, &quot;cat&quot;, &quot;bunny&quot;) </code></pre>
+<p>Data frames are 2-dimensional and can contain heterogenous data like numbers in one column and categories in another. It is the data structure most similar to a spreadsheet in Excel.</p>
+<p>Data frames are a collection of equal-length vectors. This means that each column can contain a different type of data. Each row of a data frame should represent an observation.</p>
+<p>Read more about well-structured (“tidy”) data frames <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">here</a>.</p>
 <blockquote>
 <p>Combine <code>x</code> and <code>animals</code> into a <strong>data frame</strong> with the aptly named function <code>data.frame()</code>. Note the period between the words. Store your data frame as an object called <code>my_df</code>.</p>
 </blockquote>
 <pre class="r"><code>my_df &lt;- data.frame(animals, x)
 my_df</code></pre>
-<p>Getting to know your data frame</p>
+<p>Some functions to get to know your data frame are:</p>
 <table>
 <thead>
 <tr class="header">
@@ -307,24 +352,7 @@ my_df</code></pre>
 </div>
 <div id="subsetting-for-data-frames" class="section level2">
 <h2>Subsetting for data frames</h2>
-<p>Just like vectors, data frames can be subset and manipulated with square brackets The square brackets work as follows: anything before the comma refers to the rows that will be selected, anything after the comma refers to the number of columns that should be returned.</p>
-<ul>
-<li>There are two other subsetting operators: <code>[[</code> and <code>$</code>. <code>[[</code> is similar to <code>[</code>, except it can only return a single value and it allows you to pull pieces out of a list. <code>$</code> is a useful shorthand for <code>[[</code> combined with character subsetting.</li>
-</ul>
-<p>All subsetting operators can be combined with assignment to modify selected values of the input vector.</p>
-<p>With lists, you can use subsetting + assignment + <code>NULL</code> to remove components from a list. To add a literal <code>NULL</code> to a list, use <code>[</code> and <code>list(NULL)</code>. Notice the difference in the structure of <code>x</code> and <code>y</code>:</p>
-<pre class="r"><code>x &lt;- list(a = 1, b = 2)
-x[[&quot;b&quot;]] &lt;- NULL
-str(x)</code></pre>
-<pre><code>## List of 1
-##  $ a: num 1</code></pre>
-<pre class="r"><code>y &lt;- list(a = 1)
-y[&quot;b&quot;] &lt;- list(NULL)
-str(y)</code></pre>
-<pre><code>## List of 2
-##  $ a: num 1
-##  $ b: NULL</code></pre>
-<p>Note that <code>NULL</code> removes items whereas <code>NA</code> is used to represent a missing value. A <code>NULL</code> item does not exist whereas an <code>NA</code> exists but does not have a value.</p>
+<p>Just like vectors, data frames can be subset and manipulated with square brackets. The square brackets work as follows: anything before the comma refers to the rows that will be selected, anything after the comma refers to the number of columns that should be returned.</p>
 </div>
 <div id="review-important-symbols" class="section level2">
 <h2>Review: Important symbols</h2>
@@ -366,13 +394,14 @@ str(y)</code></pre>
 </div>
 <div id="load-data-into-r" class="section level1">
 <h1>Load data into R</h1>
-<p>We will use the function <code>read.csv()</code> that reads in a file by passing it the location of the file. The general syntax for the functions to read in data are to give the path to the file name, and then supply optinal additional arguments as necessary like specifying the type of data in each column. Type a comma after <code>read.csv(</code> and then press <strong>tab</strong> to see what arguments that this function takes. Hovering over each item in the list will show a description of that argument from the help documentation about that function. Specify the values to use for an argument using the syntax <code>name = value</code>.</p>
-<pre class="r"><code>read.csv(file=&quot;/nfs/public-data/ci-spring2016/Data/plots.csv&quot;)</code></pre>
+<p>We will use the function <code>read.table()</code> that reads in a file by passing it the location of the file. The general syntax for the functions to read in data are to give the path to the file name, and then supply optinal additional arguments as necessary like specifying the type of data in each column. Specific file types can be read in using functions like <code>read.csv()</code> which are wrappers for the <code>read.table()</code> function that have different default settings.</p>
+<p>Type a comma after <code>read.table(</code> and then press <strong>tab</strong> to see what arguments that this function takes. Hovering over each item in the list will show a description of that argument from the help documentation about that function. Specify the values to use for an argument using the syntax <code>name = value</code>.</p>
+<pre class="r"><code>read.table(file=&quot;%sandbox%/data/plots.csv&quot;, header = TRUE, sep = &quot;,&quot;)</code></pre>
 <blockquote>
 <p>Use the assignment operator “&lt;-” to store that data in memory and work with it</p>
 </blockquote>
-<pre class="r"><code>plots &lt;- read.csv(file=&quot;/nfs/public-data/ci-spring2016/Data/plots.csv&quot;)
-surveys &lt;- read.csv(file=&quot;/nfs/public-data/ci-spring2016/Data/surveys.csv&quot;)</code></pre>
+<pre class="r"><code>plots &lt;- read.table(file=&quot;&quot;%sandbox%/data/plots.csv&quot;, sep = &quot;,&quot;, header = TRUE)
+surveys &lt;- read.csv(file=&quot;&quot;%sandbox%/data/surveys.csv&quot;, sep = &quot;,&quot;, header = TRUE)</code></pre>
 <p>You can specify what indicates missing data in the read.csv function using either <code>na.strings = &quot;NA&quot;</code> or <code>na = &quot;NA&quot;</code>. You can also specify multiple things to be interpreted as missing values, such as <code>na.strings = c(&quot;missing&quot;, &quot;no data&quot;, &quot;&lt; 0.05 mg/L&quot;, &quot;XX&quot;)</code>.</p>
 <p>After reading in the Surveys and Plots csv files, let’s explore what types of data are in each column and what kind of structure your data has.</p>
 <pre class="r"><code>str(plots)
