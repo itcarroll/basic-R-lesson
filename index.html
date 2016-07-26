@@ -188,10 +188,10 @@ x</code></pre>
 <div id="subsetting" class="section level2">
 <h2>Subsetting</h2>
 <p>R’s subsetting capabilities can be accessed very concisely using square brackets <code>[ ]</code>. Identify elements of a vector using their numeric index or names inside of square brackets. Note that in R the first element of a vector has an index of 1.</p>
-<table style="width:14%;">
+<table style="width:58%;">
 <colgroup>
-<col width="6%"></col>
-<col width="6%"></col>
+<col width="29%"></col>
+<col width="29%"></col>
 </colgroup>
 <thead>
 <tr class="header">
@@ -495,13 +495,148 @@ hist(log(surveys1996$weight))</code></pre>
 </div>
 <div id="distributions-and-statistics" class="section level1">
 <h1>Distributions and Statistics</h1>
-<p>rnorm, pnorm, qnorm, dnorm</p>
-<p>table of distributions and functions</p>
-<p>Perform a basic test t.test()</p>
-<p>Save the results of a test to a model</p>
-<p>lm()</p>
-<p>View summary details about the model glm()</p>
-<p>Plot linear regression line on a plot title plot includes p value</p>
+<p>Since it is designed for statistics, R can easily draw random numbers from statistical distributions and calculate distribution values.</p>
+<p>To generate random numbers from a normal distribution, use the function <code>rnorm()</code></p>
+<pre class="r"><code>ten_random_values &lt;- rnorm(n = 10)</code></pre>
+<table style="width:46%;">
+<colgroup>
+<col width="15%"></col>
+<col width="13%"></col>
+<col width="16%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Returns</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">rnorm</td>
+<td align="left">Draw random numbers from normal distribution</td>
+<td align="left">Specify <code>n</code>, <code>mean</code>, <code>sd</code></td>
+</tr>
+<tr class="even">
+<td align="left">pnorm</td>
+<td align="left">Estimate probability of a specific number occuring</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">qnorm</td>
+<td align="left">Cumulative probability that a given number or smaller occurs</td>
+<td align="left">left-tailed by default</td>
+</tr>
+<tr class="even">
+<td align="left">dnorm</td>
+<td align="left">Returns quantile given a cumulative probability</td>
+<td align="left">opposite of pnorm</td>
+</tr>
+</tbody>
+</table>
+<p>Statistical distributions and their functions See <em>Table 14.1</em> in <strong>R for Everyone</strong> by Jared Lander for a full table</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Distribution</th>
+<th align="left">Random Number</th>
+<th align="left">Density</th>
+<th align="left">Distribution</th>
+<th align="left">Quantile</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Normal</td>
+<td align="left">rnorm</td>
+<td align="left">dnorm</td>
+<td align="left">pnorm</td>
+<td align="left">qnorm</td>
+</tr>
+<tr class="even">
+<td align="left">Binomial</td>
+<td align="left">rbinom</td>
+<td align="left">dbinom</td>
+<td align="left">pbinom</td>
+<td align="left">qbinom</td>
+</tr>
+<tr class="odd">
+<td align="left">Poisson</td>
+<td align="left">rpois</td>
+<td align="left">dpois</td>
+<td align="left">ppois</td>
+<td align="left">qpois</td>
+</tr>
+<tr class="even">
+<td align="left">Gamma</td>
+<td align="left">rgamma</td>
+<td align="left">dgamma</td>
+<td align="left">pgamma</td>
+<td align="left">qgamma</td>
+</tr>
+<tr class="odd">
+<td align="left">Exponential</td>
+<td align="left">rexp</td>
+<td align="left">dexp</td>
+<td align="left">pexp</td>
+<td align="left">qexp</td>
+</tr>
+<tr class="even">
+<td align="left">Uniform</td>
+<td align="left">runif</td>
+<td align="left">dunif</td>
+<td align="left">punif</td>
+<td align="left">qunif</td>
+</tr>
+<tr class="odd">
+<td align="left">Logistic</td>
+<td align="left">rlogis</td>
+<td align="left">dlogis</td>
+<td align="left">plogis</td>
+<td align="left">qlogis</td>
+</tr>
+</tbody>
+</table>
+<p>R has built in functions for handling many statistical tests.</p>
+<pre class="r"><code>x &lt;- rnorm(n = 100, mean = 25, sd = 7)
+y &lt;- rbinom(n = 100, size = 50, prob = .85)
+
+t.test(x, y)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  x and y
+## t = -22.917, df = 120.38, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -19.41015 -16.32301
+## sample estimates:
+## mean of x mean of y 
+##  24.68342  42.55000</code></pre>
+<p>Perform a linear regression using the <code>lm()</code> function and the formula notation <code>y ~ x</code>. Save the results of the model to view more details than the default output of the model.</p>
+<pre class="r"><code>my_model &lt;- lm(y ~ x)
+summary(my_model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -7.5742 -1.5853  0.4241  1.4677  4.4781 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 42.414193   0.860001  49.319   &lt;2e-16 ***
+## x            0.005502   0.033387   0.165    0.869    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 2.459 on 98 degrees of freedom
+## Multiple R-squared:  0.000277,   Adjusted R-squared:  -0.009924 
+## F-statistic: 0.02716 on 1 and 98 DF,  p-value: 0.8694</code></pre>
+<blockquote>
+<p>Challenge: Plot a linear regression line over a scatterplot and include the p-value of the regression in the plot’s title. Hint: View the structure of the model output to determine how to access the p-value.</p>
+</blockquote>
 </div>
 <div id="additional-resources-and-references" class="section level1">
 <h1>Additional resources and references</h1>

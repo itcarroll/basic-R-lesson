@@ -69,7 +69,7 @@ x
 R's subsetting capabilities can be accessed very concisely using square brackets `[ ]`. Identify elements of a vector using their numeric index or names inside of square brackets. Note that in R the first element of a vector has an index of 1. 
 
 | Use in brackets    | Subset instructions| 
-|----|----|
+|--------------------|--------------------|
 | positive integers | elements at the specified positions |
 | negative integers | omit elements at the specified positions |
 | logical vectors | select elements where the corresponding value is TRUE |
@@ -343,22 +343,51 @@ say_hello <- function(name){
 
 # Distributions and Statistics
 
-rnorm, pnorm, qnorm, dnorm
+Since it is designed for statistics, R can easily draw random numbers from statistical distributions and calculate distribution values. 
 
-table of distributions and functions
+To generate random numbers from a normal distribution, use the function `rnorm()`
 
-Perform a basic test
-t.test()
+```{r}
+ten_random_values <- rnorm(n = 10)
+```
 
-Save the results of a test to a model
+| Function | Returns | Notes |
+|----------|---------|-----------|
+| rnorm | Draw random numbers from normal distribution | Specify `n`, `mean`, `sd` |
+| pnorm | Estimate probability of a specific number occuring | |
+| qnorm | Cumulative probability that a given number or smaller occurs | left-tailed by default |
+| dnorm | Returns quantile given a cumulative probability | opposite of pnorm |
 
-lm()
+Statistical distributions and their functions
+See *Table 14.1* in **R for Everyone** by Jared Lander for a full table
 
-View summary details about the model
-glm()
+| Distribution | Random Number | Density | Distribution | Quantile |
+|--------------| --------------|---------|--------------|----------|
+| Normal | rnorm | dnorm | pnorm | qnorm |
+| Binomial | rbinom | dbinom | pbinom | qbinom |
+| Poisson | rpois | dpois | ppois | qpois |
+| Gamma | rgamma | dgamma | pgamma | qgamma |
+| Exponential | rexp | dexp | pexp | qexp |
+| Uniform | runif | dunif | punif | qunif |
+| Logistic | rlogis | dlogis | plogis | qlogis |
 
-Plot linear regression line on a plot
-title plot includes p value
+R has built in functions for handling many statistical tests. 
+
+```{r}
+x <- rnorm(n = 100, mean = 25, sd = 7)
+y <- rbinom(n = 100, size = 50, prob = .85)
+
+t.test(x, y)
+```
+
+Perform a linear regression using the `lm()` function and the formula notation `y ~ x`. Save the results of the model to view more details than the default output of the model. 
+
+```{r}
+my_model <- lm(y ~ x)
+summary(my_model)
+```
+
+> Challenge: Plot a linear regression line over a scatterplot and include the p-value of the regression in the plot's title. Hint: View the structure of the model output to determine how to access the p-value. 
 
 # Additional resources and references
 
