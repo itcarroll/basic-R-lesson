@@ -1,5 +1,5 @@
 ---
-title: "Quickstart to R"
+title: "Bas(e)ic R"
 author: "Kelly Hondula"
 output:
   html_document:
@@ -7,52 +7,85 @@ output:
     toc_depth: 1
 ---
 
-# What is R?
+# Why learn R?
 
-* R is a programming language for statistical computing and graphics
+* High-level programming language designed for interactive statistical analysis and graphics
 * Easy to handle multiple types of data in the same object (data frames) including missing values
-* Easy to use in RStudio IDE
 * Large user community especially within ecology
 
-# Types of objects
+# Basic math 
 
-Objects in R can be described according to these categories:
+R had a lot of built-in mathematical functionality. Use common operators such as `+`,`-`,`*`,`/`,`( )`,`^` and names like `pi`,`max`,`range`,`sin`,`log` and `sqrt` to use R for calculations.
 
-| Dimensions    | Homogeneous |  Heterogeneous |
-|----|----|---|
-| 1d |  Vector |	List|
-| 2d |	Matrix |	Data frame |
-| nd |	Array |
+```{r}
+1 + 2
+5/3
+16/(sqrt(4))
+```
 
-## Vectors 
+# Data types and variables
 
-Vectors are the basic data structure in R. They contain a list of things in order and all of the same type of element, such as numbers. Create a vector by combining elements together using the function `c()`. Use the operator `:` for a sequence of numbers otherwise separate them with commas. 
+Some of the common types of data R can handle are:
 
-The four common types of vectors are: 
-
-* logical
+* logical (true/false, 1 or 0)
 * integer
 * numeric
 * character 
+* dates
 
-All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. Types from least to most flexible are: logical, integer, double, and character. 
+## Vectors
 
-Character data in base R are read in as a factor by default, ie. stored as integers. Data that are strictly positive whole numbers are stored as integers. 
+Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function `c()`. Use the operator `:` for a sequence of numbers (forwards or backwards), otherwise separate elements with commas. 
 
-> Use `c()` and `:` to create some vectors
+All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. 
 
 ```{r}
-c(3,4,5,6,7)
-c(3:7)
+c(1:10, 4:-4)
+c(1, 2, "three", 4)
 ```
 
-Store vectors in memory by using the **assignment operator** `<-`. Then you can refer to the items in that vecotr by using its name. Use bracket notation to refer to a selected item or selection of items in that list. 
+Assign a value to an object with the assignment operator using the syntax `objectName <- value`. Object names in R cannot start with a number or underscore.
+
+```{r}
+x <- c(1+2,4:10)
+x
+```
+
+Operations in R are "vectorized" meaning that functions can be performed on all elements of a vector simultaneously. 
+
+Naming items in a vector
+
+## Subsetting
+
+R's subsetting capabilities can be accessed very concisely using square brackets `[ ]`. Identify elements of a vector using their numeric index or names inside of square brackets. Note that in R the first element of a vector has an index of 1. 
+
+1. __positive integers__: return elements at the specified positions
+2. __Negative integers__: omit elements at the specified positions
+3. __Logical vectors__: select elements where the corresponding logical value is TRUE
+4. __Nothing__: returns the original vector (more useful for dataframes)
 
 ```{r}
 mynumbers <- c(1:10) # store vector with assignment operator
 mynumbers
 mynumbers[3]
 ```
+
+## Lists
+
+Lists like vectors but their elements can be of any type, including another list! You construct lists by using `list()` instead of `c()`. 
+
+`c()` will combine several lists into one. If given a combination of atomic vectors and lists, `c()` will coerce the vectors to lists before combining them. 
+
+> Compare the results of `list()` and `c()`
+
+```{r}
+x <- list(list(1, 2), c(3, 4))
+y <- c(list(1, 2), c(3, 4))
+str(x)
+str(y)
+```
+
+Subset lists using double brackets `[[ ]]` and either the name or index of an element of a list. 
 
 ## Factors
 
@@ -65,10 +98,21 @@ surveys$month <- as.factor(surveys$month)
 summary(surveys)
 ```
 
+# Data structures
+
+Data can be stored in several types of data structures depending on its complexity
+
+| Dimensions    | Homogeneous |  Heterogeneous |
+|----|----|---|
+| 1d* |  Vector |	List|
+| 2d |	Matrix |	Data frame |
+| nd |	Array |
+
+*Note that vectors in R are not mathematical vectors and therefore there is no difference between row and column orientation.
 
 ## Data frames
 
-Data frames are 2-dimensional and can contain heterogenous data like numbers in one column and categories in another. Othe
+Data frames are 2-dimensional and can contain heterogenous data like numbers in one column and categories in another.
 
 Data frames are spreadsheet-like data strcutures in R. Each column of a data frame is a vector. 
 A data.frame is one of the most commonly used objects in R. Just think of a data.frame like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the data.frame in R is that it can handle multiple types of data - that is, each column can have a different type. 
@@ -99,69 +143,13 @@ Getting to know your data frame
 | `head()` | shows beginning rows |
 
 
-## Lists
-
-Lists like vectors but their elements can be of any type, including another list! You construct lists by using `list()` instead of `c()`. 
-
-`c()` will combine several lists into one. If given a combination of atomic vectors and lists, `c()` will coerce the vectors to lists before combining them. 
-
-> Compare the results of `list()` and `c()`
-
-```{r}
-x <- list(list(1, 2), c(3, 4))
-y <- c(list(1, 2), c(3, 4))
-str(x)
-str(y)
-```
+## Subsetting for data frames
 
 
-# Subsetting
+Just like vectors, data frames can be subset and manipulated with square brackets The square brackets work as follows: anything before the comma refers to the rows that will be selected, anything after the comma refers to the number of columns that should be returned.
 
-R has powerful subsetting capabilities that can be accessed very concisely using square brackets. Just like vectors, data frames can be subset and manipulated with square brackets The square brackets work as follows: anything before the comma refers to the rows that will be selected, anything after the comma refers to the number of columns that should be returned.
-
-Note that in R the first element of a vector has an index of 1. 
-
-Some ways to subset vectors with bracket notation `[]`. 
-
-1. __positive integers__: return elements at the specified positions
-2. __Negative integers__: omit elements at the specified positions
-3. __Logical vectors__: select elements where the corresponding logical value is TRUE
-4. __Nothing__: returns the original vector (more useful for dataframes)
-
-# Review: Important symbols
-
-Assign a value to an object with the assignment operator using the syntax `objectName <- value`. Object names in R cannot start with a number.
-
-```{r}
-x <- 1+2
-x
-```
-
-
-| Symbol | Meaning |
-| -------|---------|
-| `?` | get help |
-| `c()` | combine |
-| `#` | comment | 
-| `:` | sequence |
-| `<-` | assignment |
-| `[ ]` | selection |
-
-> Exercise: Fix each of the following common data frame subsetting errors:
-
-```{r, eval = FALSE}
-plots[plots$plot_id = 4, ]
-plots[-1:4, ]
-plots[plots$plot_id <= 5]
-plots[plots$plot_id == 4 | 6, ]
-```
-
-## Subsetting with $ and double brackets
 
 * There are two other subsetting operators: `[[` and `$`. `[[` is similar to `[`, except it can only return a single value and it allows you to pull pieces out of a list. `$` is a useful shorthand for `[[` combined with character subsetting. 
-
-
-## Subsetting and assignment
 
 All subsetting operators can be combined with assignment to modify selected values of the input vector.
 
@@ -180,17 +168,22 @@ y["b"] <- list(NULL)
 str(y)
 ```
 
-## Selecting rows based on a condition
+Note that `NULL` removes items whereas `NA` is used to represent a missing value. A `NULL` item does not exist whereas an `NA` exists but does not have a value. 
 
-Because it allows you to easily combine conditions from multiple columns, logical subsetting is probably the most commonly used technique for extracting rows out of a data frame. 
-
-`subset()` is a specialised shorthand function for subsetting data frames, and saves some typing because you don’t need to repeat the name of the data frame. 
   
+## Review: Important symbols
 
+| Symbol | Meaning |
+| -------|---------|
+| `?` | get help |
+| `c()` | combine |
+| `#` | comment | 
+| `:` | sequence |
+| `<-` | assignment |
+| `[ ]` | selection |
 
 
 # Load data into R
-
 
 We will use the function `read.csv()` that reads in a file by passing it the location of the file. The general syntax for the functions to read in data are to give the path to the file name, and then supply optinal additional arguments as necessary like specifying the type of data in each column. Type a comma after `read.csv(` and then press **tab** to see what arguments that this function takes. Hovering over each item in the list will show a description of that argument from the help documentation about that function. Specify the values to use for an argument using the syntax `name = value`. 
 
@@ -220,65 +213,25 @@ summary(surveys)
 
 Each column in a data frame can be referred to using the `$` operator and the data frame name and the column name. `surveys$record_id` refers to the record_id column in the surveys data frame.
 
-# Write a custom function
+> Exercise: Fix each of the following common data frame subsetting errors:
 
-lots of basic math functions can be performed using operators and names like `max` `range` `sin` `log` and `sqrt`
-
-# Statistics
-
-
-# Writing your own functions
-
-Functions enable easy reuse within a project, helping you not to repeat yourself. If you see blocks of similar lines of code through your project, those are usually candidates for being moved into functions.
-
-If your calculations are performed through a series of functions, then the project becomes more modular and easier to change. This is especially the case for which a particular input always gives a particular output.
-
-Three components of functions
-
-* **name**: descriptive name that does not start with a number
-* __body__: the code inside the function
-* __arguments__: control how you can call the function
-
-
-A function needs to have a name, probably at least one argument (although it doesn’t have to), and a body of code that does something. At the end it usually should (although doesn’t have to) return an object out of the function. The important idea behind functions is that objects that are created within the function are local to the environment of the function – they don’t exist outside of the function. But you can “return” the value of the object from the function, meaning pass the value of it into the global environment.
-
-```{r}
-myfunction <- function(x) {
-  # do something to x here
-  # return a value of interest
-}
+```{r, eval = FALSE}
+plots[plots$plot_id = 4, ]
+plots[-1:4, ]
+plots[plots$plot_id <= 5]
+plots[plots$plot_id == 4 | 6, ]
 ```
-
-The base R language does not have a function to calculate the standard error of the mean. Since this is a common statistical value of interest, let's write a function to calculate the standard error. Recall that the standard error is calculated as the square root of the variance over the sample size. 
-
-The 3 functions needed for the standard error calculation are `sqrt` for square root, `var` for variance, and `length` for sample size. Calculate the standard error of the `wgt` column using these three functions. 
-
-```{r}
-sqrt(var(surveys$weight)/length(surveys$weight))
-```
-
-We can generalize the calculation that we made by storing it as a **function** called stderr. The calculation that we made above goes into the **body** of the function. 
-
-```{r}
-stderr <- function(x){
-  # this function returns the standard error of the mean
-  sqrt(var(x)/length(x))
-  }
-```
-
-> Exercise: Calculate the standard error of the mean for the subset of surveys done in 1990. Calculate the standard error of the mean for all surveys done in the month of June
 
 # Base plotting
 
-plotting and graphical parameters
+R has excellent plotting capabilities for many types of graphics. The `plot()` function is the most basic plotting function. It is polymorphic, ie. it uses the information you give it to determine what kind of plot to make. 
 
-# Base plotting
-
-The `plot()` function is the most basic plotting function. It is polymorphic, ie. it uses the information you give it to determine what kind of plot to make. 
+For more advanced plotting such as multi-faceted plots, the libraries lattice and ggplot2 are excellent options. 
 
 ## Scatterplots
 
-basic syntax is `plot(x, y)` or `plot(y ~ x)`
+basic syntax is `plot(x, y)` or uses the formula notation `plot(y ~ x)`
+
 
 ``` {r}
 plot(surveys$month, surveys$weight)
@@ -324,7 +277,82 @@ hist(log(surveys1996$weight))
 
 ``` 
 
+# Writing your own functions
 
+Functions enable easy reuse within a project, helping you not to repeat yourself. If you see blocks of similar lines of code through your project, those are usually candidates for being moved into functions.
+
+If your calculations are performed through a series of functions, then the project becomes more modular and easier to change. This is especially the case for which a particular input always gives a particular output.
+
+Three components of functions
+
+* **name**: descriptive name that does not start with a number
+* __body__: the code inside the function
+* __arguments__: control how you can call the function
+
+
+A function needs to have a name, probably at least one argument (although it doesn’t have to), and a body of code that does something. At the end it usually should (although doesn’t have to) return an object out of the function. The important idea behind functions is that objects that are created within the function are local to the environment of the function – they don’t exist outside of the function. But you can “return” the value of the object from the function, meaning pass the value of it into the global environment.
+
+```{r}
+myfunction <- function(x) {
+  # do something to x here
+  # return a value of interest
+}
+```
+
+The base R language does not have a function to calculate the standard error of the mean. Since this is a common statistical value of interest, let's write a function to calculate the standard error. Recall that the standard error is calculated as the square root of the variance over the sample size. 
+
+The 3 functions needed for the standard error calculation are `sqrt` for square root, `var` for variance, and `length` for sample size. Calculate the standard error of the `wgt` column using these three functions. 
+
+```{r}
+sqrt(var(surveys$weight)/length(surveys$weight))
+```
+
+We can generalize the calculation that we made by storing it as a **function** called stderr. The calculation that we made above goes into the **body** of the function. 
+
+```{r}
+stderr <- function(x){
+  # this function returns the standard error of the mean
+  sqrt(var(x)/length(x))
+  }
+```
+
+```{r}
+say_hello <- function(){
+	print("Hello, world!")
+}
+```
+
+Run the function using the name of the function followed by an opening and closing parenthesis `()`.
+
+Modify the function to take an argument.
+
+Aside about the `sprintf()` function
+
+```{r}
+say_hello <- function(name){
+	print(sprintf("Hello, %s!", name))
+}
+```
+
+
+# Distributions and Statistics
+
+rnorm, pnorm, qnorm, dnorm
+
+table of distributions and functions
+
+Perform a basic test
+t.test()
+
+Save the results of a test to a model
+
+lm()
+
+View summary details about the model
+glm()
+
+Plot linear regression line on a plot
+title plot includes p value
 
 # Additional resources and references
 
