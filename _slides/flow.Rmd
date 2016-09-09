@@ -7,6 +7,8 @@ As a general purpose programming language, you can write R scripts to take care 
 
 "Flow control" is the generic term for letting variables whose value is determined at run time to dictate how the code evaluates. It's things like "for loops" and "if/else" statements.
 
+<!--split-->
+
 ## Install missing packages
 
 The last thing we'll do before taking a break, is let R check for any packages you'll need today that aren't installed. But we'll learn how to use flow control along the way.

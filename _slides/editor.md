@@ -86,7 +86,6 @@ Going the other direction, a shorthand form of the `seq()` function is:
 1:100
 ~~~
 {:.input}
-
 ~~~
   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
@@ -114,4 +113,3 @@ But I mean *really* save your work, by commiting it to your project and syncing 
 1. Commit!
 1. Push!
 
-<!--split-->

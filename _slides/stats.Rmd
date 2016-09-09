@@ -11,6 +11,8 @@ To generate random numbers from a normal distribution, use the function `rnorm()
 ten_random_values <- rnorm(n = 10)
 ```
 
+<!--split-->
+
 | Function | Returns                                                      | Notes                     |
 |----------+--------------------------------------------------------------+---------------------------|
 | rnorm    | Draw random numbers from normal distribution                 | Specify `n`, `mean`, `sd` |
@@ -18,8 +20,10 @@ ten_random_values <- rnorm(n = 10)
 | qnorm    | Cumulative probability that a given number or smaller occurs | left-tailed by default    |
 | dnorm    | Returns quantile given a cumulative probability              | opposite of pnorm         |
 
-Statistical distributions and their functions
-See *Table 14.1* in **R for Everyone** by Jared Lander for a full table
+<!--split-->
+
+Statistical distributions and their functions.
+See *Table 14.1* in **R for Everyone** by Jared Lander for a full table.
 
 | Distribution | Random Number |
 |--------------+---------------|
@@ -31,6 +35,8 @@ See *Table 14.1* in **R for Everyone** by Jared Lander for a full table
 | Uniform      | runif         |
 | Logistic     | rlogis        |
 
+<!--split-->
+
 R has built in functions for handling many statistical tests. 
 
 ```{r title="lesson-2.R"}
@@ -41,6 +47,8 @@ y <- rbinom(n = 100, size = 50, prob = .85)
 ```{r}
 t.test(x, y)
 ```
+
+<!--split-->
 
 Linear regression with the `lm()` function uses a formula notation to specify relationships between variables (e.g. `y ~ x`).
 
@@ -54,7 +62,6 @@ summary(fit)
 
 <!--split-->
 
-## Exercise
-{:.ex}
+## Exercise 4
 
 Create a data frame from scratch that has three columns and 5 rows. In column "size" place a sequence from 1 to 5. For column "year", create a factor with three levels representing the past three years. In column `prop`, place 5 random samples from a uniform distribution. Show the summary of a linear model following the formula "prop ~ size + year".

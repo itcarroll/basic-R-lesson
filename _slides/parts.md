@@ -12,7 +12,6 @@ Parts of objects are always accessible, either by their name or by their positio
 counts[1]
 ~~~
 {:.input}
-
 ~~~
 [1] 4
 ~~~
@@ -23,11 +22,12 @@ counts[1]
 counts[3]
 ~~~
 {:.input}
-
 ~~~
 [1] 7
 ~~~
 {:.output}
+
+<!--split-->
 
 ## Names
 
@@ -38,7 +38,6 @@ Parts of an object can usually also have a name. The names can be given when you
 df['education']
 ~~~
 {:.input}
-
 ~~~
    education
 1    college
@@ -61,7 +60,6 @@ names(df) <- c("ed", "ct")
 df['ed']
 ~~~
 {:.input}
-
 ~~~
           ed
 1    college
@@ -75,7 +73,7 @@ Question
 : This use of `<-` with `names(x)` on the left is a little odd. What’s going on?
 
 Answer
-: We are overwriting an existing varialbe, one that is accessed through the output of the function on the left.
+: {:.fragment} We are overwriting an existing varialbe, one that is accessed through the output of the function on the left.
 
 <!--split-->
 
@@ -86,7 +84,6 @@ In a multi-dimensional array, you separate the dimension along which a part is r
 df[3, "ed"]
 ~~~
 {:.input}
-
 ~~~
 [1] college
 Levels: middle < highschool < college
@@ -94,6 +91,8 @@ Levels: middle < highschool < college
 {:.output}
 
 It's fine to mix names and indices when selecting parts of an object.
+
+<!--split-->
 
 ## Subsetting ranges
 
@@ -116,7 +115,28 @@ weekend <- days[c(1, 7)]
 ~~~
 {:.text-document title="lesson-2.R"}
 
-## Exercise
-{:.ex}
+
+~~~r
+weekdays
+~~~
+{:.input}
+~~~
+[1] "Sunday"    "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
+~~~
+{:.output}
+
+
+~~~r
+weekend
+~~~
+{:.input}
+~~~
+[1] "Sunday"   "Saturday"
+~~~
+{:.output}
+
+<!--split-->
+
+## Exercise 2
 
 Get weekdays using negative integers. Get M-W-F using a call to `seq()` to specify the position (don't forget to `?seq`).

@@ -5,6 +5,8 @@
 
 Writing functions to use multiple times within a project can prevent you from duplicating code. If you see blocks of similar lines of code through your project, those are usually candidates for being moved into functions.
 
+<!--split-->
+
 ## Anatomy of a function
 
 Writing functions is also a great way to understand the terminology and workings of R. Like all programming languages, R has keywords that are reserved for import activities, like creating functions. Keywords are usually very intuitive, the one we need is `function`.
@@ -58,10 +60,9 @@ Question
 Answer
 : {:.fragment} The function caused an error, which prompted the interpreter to print a helpful error message. Never ignore an error message.
 
-<!--slide-->
+<!--split-->
 
-## Exercise
-{:.ex}
+## Exercise 3
 
 Subset the data frame by column name and row position to obtain the following output.
 

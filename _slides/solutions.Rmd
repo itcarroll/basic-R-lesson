@@ -3,6 +3,8 @@
 
 ## Exercise solutions
 
+<!--split-->
+
 ### Solution 1
 
 ```{r title="lesson-2.R"}
@@ -12,8 +14,14 @@ data <- data.frame(species, count)
 ```
 
 ```{r}
-data
+str(data)
 ```
+
+<aside class="notes" markdown="block">
+
+[Return](#exercise-1)
+
+</aside>
 
 <!--split-->
 
@@ -32,6 +40,12 @@ sol2a
 sol2b
 ```
 
+<aside class="notes" markdown="block">
+
+[Return](#exercise-2)
+
+</aside>
+
 <!--split-->
 
 ### Solution 3
@@ -43,6 +57,12 @@ sol3 <- df[2:3, 'ed']
 ```{r}
 sol3
 ```
+
+<aside class="notes" markdown="block">
+
+[Return](#exercise-3)
+
+</aside>
 
 <!--split-->
 
@@ -56,8 +76,16 @@ df <- data.frame(
 	levels = c(2013, 2014, 2015),
 	ordered = TRUE),
     prop = runif(n = 5))
+fit <- lm(prop ~ size + year, data = df)
 ```
 
 ```{r}
-str(df)
+summary(fit)
 ```
+
+<aside class="notes" markdown="block">
+
+[Return](#exercise-4)
+
+</aside>
+

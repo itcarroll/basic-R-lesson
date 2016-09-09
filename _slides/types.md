@@ -32,7 +32,6 @@ All elements of an vector must be the same type, so when you attempt to combine 
 c(1, 2, "c")
 ~~~
 {:.input}
-
 ~~~
 [1] "1" "2" "c"
 ~~~
@@ -81,7 +80,6 @@ education <- factor(
 str(education)
 ~~~
 {:.input}
-
 ~~~
  Ord.factor w/ 3 levels "middle"<"highschool"<..: 3 2 3 1
 ~~~

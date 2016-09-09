@@ -10,7 +10,6 @@ The interpreter accepts R commands interactively through the console. Basic math
 1 + 2
 ~~~
 {:.input}
-
 ~~~
 [1] 3
 ~~~
@@ -21,7 +20,6 @@ The interpreter accepts R commands interactively through the console. Basic math
 5/3
 ~~~
 {:.input}
-
 ~~~
 [1] 1.666667
 ~~~
@@ -32,7 +30,6 @@ The interpreter accepts R commands interactively through the console. Basic math
 4^2
 ~~~
 {:.input}
-
 ~~~
 [1] 16
 ~~~
@@ -55,7 +52,6 @@ A command giving a vector of results shows this clearly:
 seq(1, 100)
 ~~~
 {:.input}
-
 ~~~
   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
@@ -88,7 +84,6 @@ We can print `x` by evaluating it by itself.
 x
 ~~~
 {:.input}
-
 ~~~
   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
@@ -108,6 +103,8 @@ When you start a R session, there are many things already known, including
 - any string of characters
 - functions in `base R`
 
+<!--split-->
+
 To reference a number or function you just type it in as above, but to referece a string of alpha-numeric characters you must surround them in quotation marks.
 
 
@@ -115,7 +112,6 @@ To reference a number or function you just type it in as above, but to referece 
 'ab#45'
 ~~~
 {:.input}
-
 ~~~
 [1] "ab#45"
 ~~~
@@ -136,7 +132,6 @@ Without quotes, the interpreter checks for things named `abc45.q` and doesn't fi
 ab#45
 ~~~
 {:.input}
-
 ~~~
 Error in eval(expr, envir, enclos): object 'ab' not found
 ~~~
@@ -152,7 +147,6 @@ y <- 'ab#45'
 typeof(y)
 ~~~
 {:.input}
-
 ~~~
 [1] "character"
 ~~~

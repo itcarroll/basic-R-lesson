@@ -39,7 +39,6 @@ df <- data.frame(education, counts)
 df
 ~~~
 {:.input}
-
 ~~~
    education counts
 1    college      4
@@ -68,7 +67,6 @@ Some functions to get to know your data frame are:
 names(df)
 ~~~
 {:.input}
-
 ~~~
 [1] "education" "counts"   
 ~~~
@@ -76,7 +74,6 @@ names(df)
 
 <!--split-->
 
-## Exercise
-{:.ex}
+## Exercise 1
 
 Create a data frame with two columns, one called "species" and another called "count" into a data frame. Store your data frame as a variable called `data`. You can do this with or without populating the data frame with values.

@@ -19,8 +19,8 @@ chunk = function(x, options) {
                   x)
         return(x)
     }
-    x <- gsub("~~~\n\n",
-              paste0("~~~\n", options$block_ial[1], "\n\n"),
+    x <- gsub("~~~\n(\n+~~~)",
+              paste0("~~~\n", options$block_ial[1], "\\1"),
               x)
     if (str_count(x, "~~~") > 2) {
         idx <- 2

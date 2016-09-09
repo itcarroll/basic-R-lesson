@@ -61,6 +61,8 @@ When you start a R session, there are many things already known, including
 - any string of characters
 - functions in `base R`
 
+<!--split-->
+
 To reference a number or function you just type it in as above, but to referece a string of alpha-numeric characters you must surround them in quotation marks.
 
 ```{r}
