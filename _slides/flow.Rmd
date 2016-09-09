@@ -13,7 +13,7 @@ The last thing we'll do before taking a break, is let R check for any packages y
 
 First, aquire the list of any missing packages.
 
-```{r title="lesson-1.R"}
+```{r title="lesson-2.R"}
 requirements <- c('tidyr',
 		  'dplyr',
 		  'RSQLite',
@@ -43,7 +43,7 @@ Your result will be `TRUE` or `FALSE`, depending on whether you installed all th
 
 The keyword `if` is part of the R language's syntax for flow control. The statement in the body (between `{` and `}`) only evaluates if the argument (between `(` and `)`) evaluates to TRUE.
 
-```{r title="lesson-1.R", eval=FALSE}
+```{r title="lesson-2.R", eval=FALSE}
 if (length(missing) != 0) {
   install.packages(missing)
 }

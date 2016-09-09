@@ -19,14 +19,14 @@ Data structures, or more generally "objects", are built from one or more of thes
 
 Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function `c()`. Use the operator `:` for a sequence of numbers (forwards or backwards), otherwise separate elements with commas. 
 
-```{r}
-counts <- c(4, 3, 7)
+```{r title="lesson-2.R"}
+counts <- c(4, 3, 7, 5)
 ```
 
 All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. 
 
 ```{r}
-c(1, 2, "c", 4)
+c(1, 2, "c")
 ```
 
 <!--split-->
@@ -37,7 +37,7 @@ Lists are like vectors but their elements can be of any data type or structure, 
 
 Compare the results of `list()` and `c()`
 
-```{r title="lesson-1.R"}
+```{r title="lesson-2.R"}
 x <- list(list(1, 2), c(3, 4))
 y <- c(list(1, 2), c(3, 4))
 ```
@@ -56,8 +56,11 @@ A factor is a vector that can contain only predefined values, and is used to sto
 
 Use `factor()` to create a vector with factors, or `as.factor()` to convert an existing vector to factors.  
 
-```{r title="lesson-1.R"}
-education <- factor(x = c("middle", "highschool", "college"), ordered = TRUE)
+```{r title="lesson-2.R"}
+education <- factor(
+    c("college", "highschool", "college", "middle"),
+    levels = c("middle", "highschool", "college"),
+    ordered = TRUE)
 ```
 
 ```{r}

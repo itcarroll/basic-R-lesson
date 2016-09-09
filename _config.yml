@@ -28,7 +28,8 @@ slide_sorter:
   - stats
   - flow
   - conclude
-
+  - solutions
+  
 # Jekyll
 
 markdown: kramdown

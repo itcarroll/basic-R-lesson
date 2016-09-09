@@ -38,6 +38,7 @@ Note that by default, character data is read in as factors when you load data in
 <!--split-->
 
 ## Exercise
+{:.ex}
 
 Fix each of the following common data frame subsetting errors:
 

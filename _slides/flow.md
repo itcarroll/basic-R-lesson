@@ -29,7 +29,7 @@ requirements <- c('tidyr',
 missing <- setdiff(requirements,
 	           rownames(installed.packages()))
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 <!--split-->
 
@@ -42,7 +42,7 @@ length(missing) == 0
 {:.input}
 
 ~~~
-[1] FALSE
+[1] TRUE
 ~~~
 {:.output}
 
@@ -58,4 +58,4 @@ if (length(missing) != 0) {
   install.packages(missing)
 }
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}

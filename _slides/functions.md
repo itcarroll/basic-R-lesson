@@ -13,10 +13,10 @@ Writing functions is also a great way to understand the terminology and workings
 ~~~r
 function(...) {
     ...
-	return(...)
+    return(...)
 }
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 Three components:
 
@@ -35,14 +35,7 @@ function(data) {
     return(result)
 }
 ~~~
-
-~~~
-function(data) {
-    result <- data[1, 1]
-    return(result)
-}
-~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 Note that `x` doesn't exist until we call the function, which gives the recipe for how `df` will be handled.
 
@@ -57,7 +50,7 @@ first <- function(data) {
     return(result)
 }
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 
 ~~~r
@@ -66,8 +59,8 @@ first(df)
 {:.input}
 
 ~~~
-[1] middle
-Levels: college < highschool < middle
+[1] college
+Levels: middle < highschool < college
 ~~~
 {:.output}
 
@@ -78,3 +71,16 @@ Question
 
 Answer
 : {:.fragment} The function caused an error, which prompted the interpreter to print a helpful error message. Never ignore an error message.
+
+<!--slide-->
+
+## Exercise
+{:.ex}
+
+Subset the data frame by column name and row position to obtain the following output.
+
+~~~
+[1] highschool college
+Levels: middle < highschool < college
+~~~
+{:.output}

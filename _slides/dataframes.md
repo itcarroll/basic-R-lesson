@@ -15,7 +15,7 @@ Of these, the data frame is far and away the most used.
 
 <!--split-->
 
-## Data frame
+## Data frames
 
 Data frames are 2-dimensional and can contain heterogenous data like numbers in one column and a factor in another.
 
@@ -32,7 +32,7 @@ Creating a data frame from scratch can be done by combining vectors with the `da
 ~~~r
 df <- data.frame(education, counts)
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 
 ~~~r
@@ -42,9 +42,10 @@ df
 
 ~~~
    education counts
-1     middle      4
+1    college      4
 2 highschool      3
 3    college      7
+4     middle      5
 ~~~
 {:.output}
 
@@ -76,5 +77,6 @@ names(df)
 <!--split-->
 
 ## Exercise
+{:.ex}
 
-Create a data frame with two columns, one called "species" and another called "count" into a data frame. Store your data frame as a variable called `data`.
+Create a data frame with two columns, one called "species" and another called "count" into a data frame. Store your data frame as a variable called `data`. You can do this with or without populating the data frame with values.

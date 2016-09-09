@@ -25,7 +25,7 @@ df['education']
 
 <!--split-->
 
-```{r title="lesson-1.R"}
+```{r title="lesson-2.R"}
 names(df) <- c("ed", "ct")
 ```
 
@@ -62,12 +62,13 @@ There are multiple ways to simultaneously extract multiple parts of an object.
 
 <!--split-->
 
-```{r title="lesson-1.R"}
+```{r title="lesson-2.R"}
 days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
 weekdays <- days[1:6]
 weekend <- days[c(1, 7)]
 ```
 
 ## Exercise
+{:.ex}
 
 Get weekdays using negative integers. Get M-W-F using a call to `seq()` to specify the position (don't forget to `?seq`).

@@ -21,20 +21,20 @@ Vectors are the basic data structure in R. They are a collection of data that ar
 
 
 ~~~r
-counts <- c(4, 3, 7)
+counts <- c(4, 3, 7, 5)
 ~~~
-{:.input}
+{:.text-document title="lesson-2.R"}
 
 All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. 
 
 
 ~~~r
-c(1, 2, "c", 4)
+c(1, 2, "c")
 ~~~
 {:.input}
 
 ~~~
-[1] "1" "2" "c" "4"
+[1] "1" "2" "c"
 ~~~
 {:.output}
 
@@ -51,7 +51,7 @@ Compare the results of `list()` and `c()`
 x <- list(list(1, 2), c(3, 4))
 y <- c(list(1, 2), c(3, 4))
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 Question
 : What's different about the structure of the variables `x` and `y`? Use the function `str()` to investigate.
@@ -69,9 +69,12 @@ Use `factor()` to create a vector with factors, or `as.factor()` to convert an e
 
 
 ~~~r
-education <- factor(x = c("middle", "highschool", "college"), ordered = TRUE)
+education <- factor(
+    c("college", "highschool", "college", "middle"),
+    levels = c("middle", "highschool", "college"),
+    ordered = TRUE)
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 
 ~~~r
@@ -80,6 +83,6 @@ str(education)
 {:.input}
 
 ~~~
- Ord.factor w/ 3 levels "college"<"highschool"<..: 3 2 1
+ Ord.factor w/ 3 levels "middle"<"highschool"<..: 3 2 3 1
 ~~~
 {:.output}

@@ -41,9 +41,10 @@ df['education']
 
 ~~~
    education
-1     middle
+1    college
 2 highschool
 3    college
+4     middle
 ~~~
 {:.output}
 
@@ -53,7 +54,7 @@ df['education']
 ~~~r
 names(df) <- c("ed", "ct")
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 
 ~~~r
@@ -63,9 +64,10 @@ df['ed']
 
 ~~~
           ed
-1     middle
+1    college
 2 highschool
 3    college
+4     middle
 ~~~
 {:.output}
 
@@ -87,7 +89,7 @@ df[3, "ed"]
 
 ~~~
 [1] college
-Levels: college < highschool < middle
+Levels: middle < highschool < college
 ~~~
 {:.output}
 
@@ -112,8 +114,9 @@ days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sat
 weekdays <- days[1:6]
 weekend <- days[c(1, 7)]
 ~~~
-{:.text-document title="lesson-1.R"}
+{:.text-document title="lesson-2.R"}
 
 ## Exercise
+{:.ex}
 
 Get weekdays using negative integers. Get M-W-F using a call to `seq()` to specify the position (don't forget to `?seq`).
