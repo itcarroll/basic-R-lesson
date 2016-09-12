@@ -54,6 +54,8 @@ Answer
 
 A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are built on top of integer vectors using two attributes: the class(), “factor”, which makes them behave differently from regular integer vectors, and the levels(), which defines the set of allowed values. 
 
+<!--split-->
+
 Use `factor()` to create a vector with factors, or `as.factor()` to convert an existing vector to factors.  
 
 ```{r title="lesson-2.R"}
