@@ -58,13 +58,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -24.326, df = 129.18, p-value < 2.2e-16
+t = -28.398, df = 138.41, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -18.34865 -15.58846
+ -19.27995 -16.76990
 sample estimates:
 mean of x mean of y 
- 25.32144  42.29000 
+ 24.36507  42.39000 
 ~~~
 {:.output}
 
@@ -90,18 +90,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--6.3387 -1.3942 -0.1693  1.7945  5.8091 
+-7.3765 -1.3853 -0.1142  1.7388  5.3625 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 42.74845    1.04198  41.026   <2e-16 ***
-x           -0.01811    0.03988  -0.454    0.651    
+(Intercept) 43.10663    1.14990   37.49   <2e-16 ***
+x           -0.02941    0.04593   -0.64    0.523    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.574 on 98 degrees of freedom
-Multiple R-squared:  0.002099,	Adjusted R-squared:  -0.008083 
-F-statistic: 0.2062 on 1 and 98 DF,  p-value: 0.6508
+Residual standard error: 2.64 on 98 degrees of freedom
+Multiple R-squared:  0.004166,	Adjusted R-squared:  -0.005995 
+F-statistic:  0.41 on 1 and 98 DF,  p-value: 0.5235
 ~~~
 {:.output}
 
@@ -109,4 +109,4 @@ F-statistic: 0.2062 on 1 and 98 DF,  p-value: 0.6508
 
 ## Exercise 4
 
-Create a data frame from scratch that has three columns and 5 rows. In column "size" place a sequence from 1 to 5. For column "year", create a factor with three levels representing the past three years. In column `prop`, place 5 random samples from a uniform distribution. Show the summary of a linear model following the formula "prop ~ size + year".
+Create a data frame from scratch that has three columns and 5 rows. In column "size" place a sequence from 1 to 5. For column "year", create a factor with three levels representing the past three years. In column "prop", place 5 random samples from a uniform distribution. Show the summary of a linear model following the formula "prop ~ size + year".

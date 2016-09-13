@@ -42,8 +42,8 @@ Note that `x` doesn't exist until we call the function, which gives the recipe f
 Finally, we need to give the function a name so we can use it like we used `c()` and `seq()` above.
 
 ```{r title="lesson-2.R"}
-first <- function(data) {
-    result <- data[1, 1]
+first <- function(x) {
+    result <- x[1, 1]
     return(result)
 }
 ```

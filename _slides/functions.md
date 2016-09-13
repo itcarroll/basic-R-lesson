@@ -47,8 +47,8 @@ Finally, we need to give the function a name so we can use it like we used `c()`
 
 
 ~~~r
-first <- function(data) {
-    result <- data[1, 1]
+first <- function(x) {
+    result <- x[1, 1]
     return(result)
 }
 ~~~
