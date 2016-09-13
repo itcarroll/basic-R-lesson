@@ -2,5 +2,6 @@
 ---
 
 # {{ site.title }}
+{:style="text-transform: none;"}
 
-Instructor: Kate Weiss
+Lesson {{ site.lesson }} with Kate Weiss
