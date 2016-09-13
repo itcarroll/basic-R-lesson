@@ -68,7 +68,7 @@ There are multiple ways to simultaneously extract multiple parts of an object.
 
 ```{r title="lesson-2.R"}
 days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
-weekdays <- days[1:6]
+weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ```
 
