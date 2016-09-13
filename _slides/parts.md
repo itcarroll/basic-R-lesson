@@ -110,7 +110,7 @@ There are multiple ways to simultaneously extract multiple parts of an object.
 
 ~~~r
 days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
-weekdays <- days[1:6]
+weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ~~~
 {:.text-document title="lesson-2.R"}
@@ -121,7 +121,7 @@ weekdays
 ~~~
 {:.input}
 ~~~
-[1] "Sunday"    "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
+[1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
 ~~~
 {:.output}
 

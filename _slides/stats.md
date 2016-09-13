@@ -58,13 +58,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -23.841, df = 126.64, p-value < 2.2e-16
+t = -24.326, df = 129.18, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -17.55898 -14.86744
+ -18.34865 -15.58846
 sample estimates:
 mean of x mean of y 
- 26.25679  42.47000 
+ 25.32144  42.29000 
 ~~~
 {:.output}
 
@@ -90,18 +90,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--6.5071 -1.4756 -0.3875  1.4990  6.5319 
+-6.3387 -1.3942 -0.1693  1.7945  5.8091 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 42.17321    1.02929  40.973   <2e-16 ***
-x            0.01130    0.03811   0.297    0.767    
+(Intercept) 42.74845    1.04198  41.026   <2e-16 ***
+x           -0.01811    0.03988  -0.454    0.651    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.413 on 98 degrees of freedom
-Multiple R-squared:  0.0008969,	Adjusted R-squared:  -0.009298 
-F-statistic: 0.08798 on 1 and 98 DF,  p-value: 0.7674
+Residual standard error: 2.574 on 98 degrees of freedom
+Multiple R-squared:  0.002099,	Adjusted R-squared:  -0.008083 
+F-statistic: 0.2062 on 1 and 98 DF,  p-value: 0.6508
 ~~~
 {:.output}
 

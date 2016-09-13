@@ -124,18 +124,18 @@ lm(formula = prop ~ size + year, data = df)
 
 Residuals:
       1       2       3       4       5 
- 0.2188 -0.2188  0.0000 -0.2188  0.2188 
+-0.2155  0.2155  0.0000  0.2155 -0.2155 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)
-(Intercept)  0.04614    1.32918   0.035    0.978
-size         0.12653    0.43769   0.289    0.821
-year.L       0.16246    0.59933   0.271    0.831
-year.Q      -0.25601    0.87081  -0.294    0.818
+(Intercept) -0.09401    1.30902  -0.072    0.954
+size         0.23435    0.43105   0.544    0.683
+year.L      -0.21120    0.59024  -0.358    0.781
+year.Q      -0.15753    0.85760  -0.184    0.884
 
-Residual standard error: 0.4377 on 1 degrees of freedom
-Multiple R-squared:  0.4141,	Adjusted R-squared:  -1.344 
-F-statistic: 0.2356 on 3 and 1 DF,  p-value: 0.8685
+Residual standard error: 0.4311 on 1 degrees of freedom
+Multiple R-squared:  0.516,	Adjusted R-squared:  -0.936 
+F-statistic: 0.3554 on 3 and 1 DF,  p-value: 0.808
 ~~~
 {:.output}
 

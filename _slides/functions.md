@@ -32,14 +32,14 @@ We'll make a function to extract the first row and column of its argument, for w
 
 
 ~~~r
-function(data) {
-    result <- data[1, 1]
+function(x) {
+    result <- x[1, 1]
     return(result)
 }
 ~~~
 {:.text-document title="lesson-2.R"}
 
-Note that `x` doesn't exist until we call the function, which gives the recipe for how `df` will be handled.
+Note that `x` doesn't exist until we call the function, which gives the recipe for how `x` will be handled.
 
 <!--split-->
 
