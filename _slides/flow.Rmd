@@ -47,6 +47,6 @@ The keyword `if` is part of the R language's syntax for flow control. The statem
 
 ```{r title="lesson-2.R", eval=FALSE}
 if (length(missing) != 0) {
-  install.packages(missing)
+  install.packages(missing, dep=TRUE)
 }
 ```
