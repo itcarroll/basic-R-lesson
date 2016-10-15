@@ -73,7 +73,7 @@ Question
 : This use of `<-` with `names(x)` on the left is a little odd. What’s going on?
 
 Answer
-: {:.fragment} We are overwriting an existing varialbe, one that is accessed through the output of the function on the left.
+: {:.fragment} We are overwriting an existing variable, but one that is accessed through the output of the function on the left rather than the global environment.
 
 <!--split-->
 

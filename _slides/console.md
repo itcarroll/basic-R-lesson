@@ -121,7 +121,7 @@ Question
 : Is it better to use `'` or `"`?
 
 Answer
-: There is no answer. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
+: {:.fragment} There is no answer! You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
 
 <!--split-->
 
