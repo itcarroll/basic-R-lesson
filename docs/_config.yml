@@ -1,0 +1,30 @@
+# Lesson
+
+title: "Bas(e)ic R"
+description:
+authors:
+ - Kelly Hondula
+ - Ian Carroll
+
+# Slides
+
+slide_sorter:
+  - title
+  - intro
+  - console
+#  - math
+  - editor
+  - types
+  - dataframes
+#  - load
+#  - plot
+  - parts
+  - functions
+  - stats
+  - flow
+  - conclude
+  - solutions
+
+# Style
+
+# Jekyll

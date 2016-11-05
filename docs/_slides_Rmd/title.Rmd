@@ -1,6 +1,3 @@
----
----
-
 # {{ site.title }}
 {:style="text-transform: none;"}
 

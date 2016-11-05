@@ -1,6 +1,3 @@
----
----
-
 ## Why R?
 
 * High-level programming language good for interactive statistical analysis.
