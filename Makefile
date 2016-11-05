@@ -1,3 +1,22 @@
+
+## What the *-lesson makefiles need to accomplish
+
+1. git fetch upstream  # upstream is github.com/sesync-ci/lesson-style
+1. git merge --no-edit upstream/master - abort if merge conflict
+1. knit or pweave into docs/_slides # do i need to jekyll ignore _slides_Rmd?
+1. git push  # origin is github.com/sesync-ci/*-lesson
+
+## What the lesson-style makefile needs to accomplish
+
+1. run all the *-lesson makefiles?
+  1. clone/pull them all into a build/ area (so content must be from remote, not local)
+  1. then run their makefiles (maybe with optional push for testing)
+1. somehow handle the work of assiging numbers to lessons?
+  1. not to mention, getting the lesson handout and data together into handouts repo with subtree merge
+  1. so maybe this is the job of the handouts repo makefile?
+
+## Below is the build.R script that needs to be modified to take docs/_slides_Rmd into docs/_slides
+
 require(knitr)
 require(yaml)
 require(stringr)
