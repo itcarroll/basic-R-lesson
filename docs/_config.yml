@@ -26,10 +26,11 @@ slide_sorter:
   - conclude
   - solutions
 
-######################################
-# Modifying content below will cause #
-# merge conflicts with upstream.     #
-######################################
+#####################################
+# Only modify content above or risk #
+# a merge conflict with upstream.   #
+#####################################
+
 
 # Style
 
