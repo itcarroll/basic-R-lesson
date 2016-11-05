@@ -1,7 +1,7 @@
 # Lesson
 
-title: "Bas(e)ic R"
-description:
+title: Bas(e)ic R
+description: Get started with R in RStudio.
 authors:
  - Kelly Hondula
  - Ian Carroll
@@ -24,6 +24,11 @@ slide_sorter:
   - flow
   - conclude
   - solutions
+
+######################################
+# Modifying content below will cause #
+# merge conflicts with upstream.     #
+######################################
 
 # Style
 
