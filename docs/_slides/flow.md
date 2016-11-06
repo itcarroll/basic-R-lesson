@@ -15,7 +15,8 @@ The last thing we'll do before taking a break, is let R check for any packages y
 
 First, aquire the list of any missing packages.
 
-```{r title="lesson-2.R"}
+
+~~~r
 requirements <- c('tidyr',
 		  'dplyr',
 		  'RSQLite',
@@ -29,15 +30,22 @@ requirements <- c('tidyr',
 		  
 missing <- setdiff(requirements,
 	           rownames(installed.packages()))
-```
+~~~
+{:.text-document title="lesson-2.R"}
 
 ===
 
 Check, from the console, your number of missing packages:
 
-```{r}
+
+~~~r
 length(missing) == 0
-```
+~~~
+{:.input}
+~~~
+[1] TRUE
+~~~
+{:.output}
 
 Your result will be `TRUE` or `FALSE`, depending on whether you installed all the packages already. We can let the script decide what to do with this information.
 
@@ -45,8 +53,10 @@ Your result will be `TRUE` or `FALSE`, depending on whether you installed all th
 
 The keyword `if` is part of the R language's syntax for flow control. The statement in the body (between `{` and `}`) only evaluates if the argument (between `(` and `)`) evaluates to TRUE.
 
-```{r title="lesson-2.R", eval=FALSE}
+
+~~~r
 if (length(missing) != 0) {
   install.packages(missing, dep=TRUE)
 }
-```
+~~~
+{:.text-document title="lesson-2.R"}

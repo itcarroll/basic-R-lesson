@@ -14,20 +14,41 @@ For more advanced plotting such as multi-faceted plots, the libraries lattice an
 basic syntax is `plot(x, y)` or uses the formula notation `plot(y ~ x)`
 
 
-```{r basic}
+
+~~~r
 plot(surveys$month, surveys$weight)
+~~~
+
+![plot of chunk basic]({{ site.github.baseurl }}/docs/images/basic-1.png)
+
+~~~r
 plot(surveys$year, surveys$weight)
+~~~
+
+![plot of chunk basic]({{ site.github.baseurl }}/docs/images/basic-2.png)
+
+~~~r
 plot(surveys$year, log(surveys$weight))
-``` 
+~~~
+
+![plot of chunk basic]({{ site.github.baseurl }}/docs/images/basic-3.png)
 
 ===
 
 ## Histograms
 
-```{r hist}
+
+~~~r
 hist(surveys$weight)
+~~~
+
+![plot of chunk hist]({{ site.github.baseurl }}/docs/images/hist-1.png)
+
+~~~r
 hist(log(surveys$weight))
-``` 
+~~~
+
+![plot of chunk hist]({{ site.github.baseurl }}/docs/images/hist-2.png)
 
 ===
 
@@ -35,12 +56,25 @@ hist(log(surveys$weight))
 
 > Use a boxplot to compare the number of species seen each year. 
 
-```{r box}
+
+~~~r
 par(mfrow=c(1,1))
 boxplot(surveys$weight ~ surveys$year)
+~~~
+
+![plot of chunk box]({{ site.github.baseurl }}/docs/images/box-1.png)
+
+~~~r
 boxplot(surveys$weight ~ surveys$month)
+~~~
+
+![plot of chunk box]({{ site.github.baseurl }}/docs/images/box-2.png)
+
+~~~r
 boxplot(log(surveys$weight) ~ surveys$year)
-``` 
+~~~
+
+![plot of chunk box]({{ site.github.baseurl }}/docs/images/box-3.png)
 
 ===
 
@@ -53,11 +87,14 @@ par()
 
 Multi-panel plots can be made by changing the graphical parameters with the `par()` function. 
 
-```{r par}
+
+~~~r
 surveys1990 <- subset(surveys, year == 1990)
 surveys1996 <- subset(surveys, year == 1996)
 
 par(mfrow=c(1,2))
 hist(log(surveys1990$weight))
 hist(log(surveys1996$weight))
-``` 
+~~~
+
+![plot of chunk par]({{ site.github.baseurl }}/docs/images/par-1.png)

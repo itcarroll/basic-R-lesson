@@ -11,12 +11,14 @@ Writing functions to use multiple times within a project can prevent you from du
 
 Writing functions is also a great way to understand the terminology and workings of R. Like all programming languages, R has keywords that are reserved for import activities, like creating functions. Keywords are usually very intuitive, the one we need is `function`.
 
-```{r title="lesson-2.R", eval=FALSE}
+
+~~~r
 function(...) {
     ...
     return(...)
 }
-```
+~~~
+{:.text-document title="lesson-2.R"}
 
 Three components:
 
@@ -28,12 +30,14 @@ Three components:
 
 We'll make a function to extract the first row and column of its argument, for which we can choose an arbitrary name:
 
-```{r title="lesson-2.R", eval=FALSE}
+
+~~~r
 function(x) {
     result <- x[1, 1]
     return(result)
 }
-```
+~~~
+{:.text-document title="lesson-2.R"}
 
 Note that `x` doesn't exist until we call the function, which gives the recipe for how `x` will be handled.
 
@@ -41,16 +45,25 @@ Note that `x` doesn't exist until we call the function, which gives the recipe f
 
 Finally, we need to give the function a name so we can use it like we used `c()` and `seq()` above.
 
-```{r title="lesson-2.R"}
+
+~~~r
 first <- function(x) {
     result <- x[1, 1]
     return(result)
 }
-```
+~~~
+{:.text-document title="lesson-2.R"}
 
-```{r}
+
+~~~r
 first(df)
-```
+~~~
+{:.input}
+~~~
+[1] college
+Levels: middle < highschool < college
+~~~
+{:.output}
 
 ===
 

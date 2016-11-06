@@ -7,13 +7,25 @@ Parts of objects are always accessible, either by their name or by their positio
 
 ## Position
 
-```{r}
-counts[1]
-```
 
-```{r}
+~~~r
+counts[1]
+~~~
+{:.input}
+~~~
+[1] 4
+~~~
+{:.output}
+
+
+~~~r
 counts[3]
-```
+~~~
+{:.input}
+~~~
+[1] 7
+~~~
+{:.output}
 
 ===
 
@@ -21,19 +33,41 @@ counts[3]
 
 Parts of an object can usually also have a name. The names can be given when you are creating a vector or afterwards using the `names()` function. 
 
-```{r}
+
+~~~r
 df['education']
-```
+~~~
+{:.input}
+~~~
+   education
+1    college
+2 highschool
+3    college
+4     middle
+~~~
+{:.output}
 
 ===
 
-```{r title="lesson-2.R"}
-names(df) <- c("ed", "ct")
-```
 
-```{r}
+~~~r
+names(df) <- c("ed", "ct")
+~~~
+{:.text-document title="lesson-2.R"}
+
+
+~~~r
 df['ed']
-```
+~~~
+{:.input}
+~~~
+          ed
+1    college
+2 highschool
+3    college
+4     middle
+~~~
+{:.output}
 
 Question
 : This use of `<-` with `names(x)` on the left is a little odd. What’s going on?
@@ -45,9 +79,16 @@ Answer
 
 In a multi-dimensional array, you separate the dimension along which a part is requested with a comma.
 
-```{r}
+
+~~~r
 df[3, "ed"]
-```
+~~~
+{:.input}
+~~~
+[1] college
+Levels: middle < highschool < college
+~~~
+{:.output}
 
 It's fine to mix names and indices when selecting parts of an object.
 
@@ -66,19 +107,33 @@ There are multiple ways to simultaneously extract multiple parts of an object.
 
 ===
 
-```{r title="lesson-2.R"}
+
+~~~r
 days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
-```
+~~~
+{:.text-document title="lesson-2.R"}
 
-```{r}
+
+~~~r
 weekdays
-```
+~~~
+{:.input}
+~~~
+[1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
+~~~
+{:.output}
 
-```{r}
+
+~~~r
 weekend
-```
+~~~
+{:.input}
+~~~
+[1] "Sunday"   "Saturday"
+~~~
+{:.output}
 
 ===
 

@@ -28,13 +28,25 @@ It is the data structure most similar to a spreadsheet, with two key differences
 
 Creating a data frame from scratch can be done by combining vectors with the `data.frame()` function.
 
-```{r title="lesson-2.R"}
-df <- data.frame(education, counts)
-```
 
-```{r}
+~~~r
+df <- data.frame(education, counts)
+~~~
+{:.text-document title="lesson-2.R"}
+
+
+~~~r
 df
-```
+~~~
+{:.input}
+~~~
+   education counts
+1    college      4
+2 highschool      3
+3    college      7
+4     middle      5
+~~~
+{:.output}
 
 ===
 
@@ -50,9 +62,15 @@ Some functions to get to know your data frame are:
 | `summary()` | summary info         |
 | `head()`    | shows beginning rows |
 
-```{r}
+
+~~~r
 names(df)
-```
+~~~
+{:.input}
+~~~
+[1] "education" "counts"   
+~~~
+{:.output}
 
 ===
 

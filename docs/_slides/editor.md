@@ -13,9 +13,11 @@ These work together in RStudio, which has multiple ways to send parts of the scr
 
 Open up "lesson-2.R" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl R on Windows, ⌘ R on Mac OS).
 
-```{r title="lesson-2.R"}
+
+~~~r
 vals <- seq(1, 100)
-```
+~~~
+{:.text-document title="lesson-2.R"}
 
 ===
 
@@ -40,10 +42,12 @@ Answer
 
 Our call to the function `seq` could have been much more explicit. We could give the arguments by the names that `seq` is expecting.
 
-```{r title="lesson-2.R"}
+
+~~~r
 vals <- seq(from = 1,
             to = 100)
-```
+~~~
+{:.text-document title="lesson-2.R"}
 
 Run this code either line-by-line, or highlight the section to run (optionally with keyboard shortcut Ctrl-Return or ⌘ Return).
 
@@ -59,23 +63,38 @@ Answer
 
 How would you get to know the names of a function's arguments?
 
-```{r eval=FALSE}
+
+~~~r
 ?seq
-```
+~~~
+{:.input}
 
 How would you even know what function to call?
 
-```{r eval=FALSE}
+
+~~~r
 ??sequence
-```
+~~~
+{:.input}
 
 ===
 
 Going the other direction, a shorthand form of the `seq()` function is:
 
-```{r}
+
+~~~r
 1:100
-```
+~~~
+{:.input}
+~~~
+  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+ [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
+ [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
+ [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
+ [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
+ [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+~~~
+{:.output}
 
 This shorthand is most commonly used while accessing parts of objects, as we'll see below.
 

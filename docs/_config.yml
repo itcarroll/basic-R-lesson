@@ -3,6 +3,7 @@
 title: Bas(e)ic R
 description: Get started with R in RStudio.
 lesson: 1
+instructor: Kate Weiss
 authors:
  - Kelly Hondula
  - Ian Carroll
@@ -10,15 +11,14 @@ authors:
 # Slides
 
 slide_sorter:
-  - title
   - intro
   - console
 #  - math
   - editor
   - types
   - dataframes
-#  - load
-#  - plot
+  - load  # not checked, restored for testing
+  - plot  # not checked, restored for testing
   - parts
   - functions
   - stats
