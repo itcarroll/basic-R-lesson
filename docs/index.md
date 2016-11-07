@@ -6,6 +6,8 @@ style: /css/lesson.css
 # {{ site.title }}
 {:style="text-transform: none;"}
 
+**{{ site.github.project_tagline }}**
+
 {% for sorted in site.slide_sorter %}{% capture id %}/slides/{{ sorted }}{% endcapture %}{% assign hslide = site.slides | where: "id", id | first %}
 - [{{ hslide.id }}](#{{ id }}){% endfor %}
 
