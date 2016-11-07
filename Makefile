@@ -6,16 +6,17 @@
 1. knit or pweave into docs/_slides # do i need to jekyll ignore _slides_Rmd?
 1. git push  # origin is github.com/sesync-ci/*-lesson
 
-## What the lesson-style makefile needs to accomplish
+## What the handouts makefile needs to accomplish
 
 1. run all the *-lesson makefiles?
   1. clone/pull them all into a build/ area (so content must be from remote, not local)
-  1. then run their makefiles (maybe with optional push for testing)
-1. somehow handle the work of assiging numbers to lessons?
-  1. not to mention, getting the lesson handout and data together into handouts repo with subtree merge
-  1. so maybe this is the job of the handouts repo makefile?
+  1. gitignore the build area
+  1. then run their makefiles (maybe with push optional push while testing)
+1. copy *-lesson/data into handouts/data
+1. copy *-lesson/handout-x into handouts as lesson-#-x
+1. keep this Makefile in a 'build' branch?
 
-## Below is the build.R script that needs to be modified to take docs/_slides_Rmd into docs/_slides
+## Below is the build.R script before I began to modify it (build-temp.R) to take docs/_slides_Rmd into docs/_slides
 
 require(knitr)
 require(yaml)
