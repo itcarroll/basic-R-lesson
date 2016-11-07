@@ -9,7 +9,7 @@ style: /css/lesson.css
 **{{ site.github.project_tagline }}**
 
 {% for sorted in site.slide_sorter %}{% capture id %}/slides/{{ sorted }}{% endcapture %}{% assign hslide = site.slides | where: "id", id | first %}
-- [{{ hslide.id }}](#{{ id }}){% endfor %}
+- [{{ hslide.excerpt | strip_html | strip }}](#{{ id }}){% endfor %}
 
 ---
 
