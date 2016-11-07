@@ -19,19 +19,19 @@ basic syntax is `plot(x, y)` or uses the formula notation `plot(y ~ x)`
 plot(surveys$month, surveys$weight)
 ~~~
 
-![plot of chunk basic](/images/basic-1.png)
+![plot of chunk basic]({{ site.baseurl }}/images/basic-1.png)
 
 ~~~r
 plot(surveys$year, surveys$weight)
 ~~~
 
-![plot of chunk basic](/images/basic-2.png)
+![plot of chunk basic]({{ site.baseurl }}/images/basic-2.png)
 
 ~~~r
 plot(surveys$year, log(surveys$weight))
 ~~~
 
-![plot of chunk basic](/images/basic-3.png)
+![plot of chunk basic]({{ site.baseurl }}/images/basic-3.png)
 
 ===
 
@@ -42,13 +42,13 @@ plot(surveys$year, log(surveys$weight))
 hist(surveys$weight)
 ~~~
 
-![plot of chunk hist](/images/hist-1.png)
+![plot of chunk hist]({{ site.baseurl }}/images/hist-1.png)
 
 ~~~r
 hist(log(surveys$weight))
 ~~~
 
-![plot of chunk hist](/images/hist-2.png)
+![plot of chunk hist]({{ site.baseurl }}/images/hist-2.png)
 
 ===
 
@@ -62,19 +62,19 @@ par(mfrow=c(1,1))
 boxplot(surveys$weight ~ surveys$year)
 ~~~
 
-![plot of chunk box](/images/box-1.png)
+![plot of chunk box]({{ site.baseurl }}/images/box-1.png)
 
 ~~~r
 boxplot(surveys$weight ~ surveys$month)
 ~~~
 
-![plot of chunk box](/images/box-2.png)
+![plot of chunk box]({{ site.baseurl }}/images/box-2.png)
 
 ~~~r
 boxplot(log(surveys$weight) ~ surveys$year)
 ~~~
 
-![plot of chunk box](/images/box-3.png)
+![plot of chunk box]({{ site.baseurl }}/images/box-3.png)
 
 ===
 
@@ -97,4 +97,4 @@ hist(log(surveys1990$weight))
 hist(log(surveys1996$weight))
 ~~~
 
-![plot of chunk par](/images/par-1.png)
+![plot of chunk par]({{ site.baseurl }}/images/par-1.png)
