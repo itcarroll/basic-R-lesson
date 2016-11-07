@@ -2,7 +2,6 @@
 
 title: Bas(e)ic R
 description: Get started with R in RStudio.
-baseurl: ""
 lesson: 1
 instructor: Kate Weiss
 authors:
@@ -18,8 +17,8 @@ slide_sorter:
   - editor
   - types
   - dataframes
-  - load  # not checked, restored for testing
-  - plot  # not checked, restored for testing
+#  - load
+#  - plot
   - parts
   - functions
   - stats
