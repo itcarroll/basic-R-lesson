@@ -1,0 +1,44 @@
+# Lesson
+
+title: Bas(e)ic R
+worksheet: worksheet.R
+tag: v0.0
+lesson: 1
+instructor: Kate Weiss
+authors:
+ - Kelly Hondula
+ - Ian Carroll
+
+# Slides
+
+slide_sorter:
+  - intro
+  - console
+#  - math
+  - editor
+  - types
+  - dataframes
+#  - load
+#  - plot
+  - parts
+  - functions
+  - stats
+  - flow
+  - conclude
+  - solutions
+
+#####################################
+# Only modify content above or risk #
+# merge conflicts with upstream.    #
+#####################################
+
+# Style
+
+styleurl: https://cdn.rawgit.com/sesync-ci/lesson-stylesheets/1.0.1
+reveal: https://cdn.rawgit.com/hakimel/reveal.js/3.3.0
+
+# Jekyll
+
+markdown: kramdown
+collections:
+  - slides
