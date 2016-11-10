@@ -13,8 +13,8 @@
   1. gitignore the build area
   1. then run their makefiles (maybe with push optional push while testing)
 1. copy *-lesson/data into handouts/data
-1. copy *-lesson/handout-x into handouts as lesson-#-x
-1. keep this Makefile in a 'build' branch?
+1. copy *-lesson/worksheet[-x].* into handouts as lesson-#-x.*
+
 
 ## Below is the build.R script before I began to modify it (build-temp.R) to take docs/_slides_Rmd into docs/_slides
 
