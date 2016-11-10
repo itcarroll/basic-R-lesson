@@ -6,6 +6,8 @@ style: /css/lesson.css
 # {{ site.title }}
 {:style="text-transform: none;"}
 
+Handouts for this lesson need to be saved on your computer. <a href="{{ site.github.releases_url }}/download/v0.0/handouts.zip">Download</a> and unzip the material into any working directory.
+
 **{{ site.github.project_tagline }}**
 
 {% for sorted in site.slide_sorter %}{% capture id %}/slides/{{ sorted }}{% endcapture %}{% assign hslide = site.slides | where: "id", id | first %}
