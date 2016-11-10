@@ -18,7 +18,7 @@ function(...) {
     return(...)
 }
 ~~~
-{:.text-document title="lesson-2.R"}
+{:.text-document title="{{ site.worksheet }}"}
 
 Three components:
 
@@ -37,7 +37,7 @@ function(x) {
     return(result)
 }
 ~~~
-{:.text-document title="lesson-2.R"}
+{:.text-document title="{{ site.worksheet }}"}
 
 Note that `x` doesn't exist until we call the function, which gives the recipe for how `x` will be handled.
 
@@ -52,7 +52,7 @@ first <- function(x) {
     return(result)
 }
 ~~~
-{:.text-document title="lesson-2.R"}
+{:.text-document title="{{ site.worksheet }}"}
 
 
 ~~~r
