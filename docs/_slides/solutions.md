@@ -13,7 +13,7 @@ species <- c()
 count <- c()
 data <- data.frame(species, count)
 ~~~
-{:.text-document title="lesson-2.R"}
+{:.text-document title="{{ site.worksheet }}"}
 
 
 ~~~r
@@ -40,7 +40,7 @@ str(data)
 sol2a <- days[c(-1, -7)]
 sol2b <- days[seq(2, 7, 2)]
 ~~~
-{:.text-document title="lesson-2.R"}
+{:.text-document title="{{ site.worksheet }}"}
 
 
 ~~~r
@@ -76,7 +76,7 @@ sol2b
 ~~~r
 sol3 <- df[2:3, 'ed']
 ~~~
-{:.text-document title="lesson-2.R"}
+{:.text-document title="{{ site.worksheet }}"}
 
 
 ~~~r
@@ -110,7 +110,7 @@ df <- data.frame(
     prop = runif(n = 5))
 fit <- lm(prop ~ size + year, data = df)
 ~~~
-{:.text-document title="lesson-2.R"}
+{:.text-document title="{{ site.worksheet }}"}
 
 
 ~~~r
@@ -124,20 +124,18 @@ lm(formula = prop ~ size + year, data = df)
 
 Residuals:
          1          2          3          4          5 
- 1.478e-02 -1.478e-02 -2.602e-18 -1.478e-02  1.478e-02 
+ 2.974e-01 -2.974e-01  1.388e-17 -2.974e-01  2.974e-01 
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)  
-(Intercept)  2.35280    0.08979   26.20   0.0243 *
-size        -0.59858    0.02957  -20.25   0.0314 *
-year.L       0.91825    0.04049   22.68   0.0280 *
-year.Q       0.96269    0.05882   16.37   0.0389 *
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)   0.4453     1.8066   0.246    0.846
+size          0.0542     0.5949   0.091    0.942
+year.L       -0.3979     0.8146  -0.488    0.711
+year.Q       -0.1592     1.1836  -0.135    0.915
 
-Residual standard error: 0.02957 on 1 degrees of freedom
-Multiple R-squared:  0.9982,	Adjusted R-squared:  0.9927 
-F-statistic: 182.1 on 3 and 1 DF,  p-value: 0.05441
+Residual standard error: 0.5949 on 1 degrees of freedom
+Multiple R-squared:  0.3441,	Adjusted R-squared:  -1.624 
+F-statistic: 0.1748 on 3 and 1 DF,  p-value: 0.9034
 ~~~
 {:.output}
 
