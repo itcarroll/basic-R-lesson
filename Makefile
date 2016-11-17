@@ -1,4 +1,3 @@
-
 ## What the *-lesson makefiles need to accomplish
 
 1. git fetch upstream  # upstream is github.com/sesync-ci/lesson-style
@@ -15,16 +14,18 @@
 1. copy *-lesson/data into handouts/data
 1. copy *-lesson/worksheet[-x].* into handouts as lesson-#-x.*
 
-
-## Below is the build.R script before I began to modify it (build-temp.R) to take docs/_slides_Rmd into docs/_slides
+## Here is a working script to build Rmd
 
 require(knitr)
 require(yaml)
 require(stringr)
 
-config = yaml.load_file("_config.yml")
+config = yaml.load_file("docs/_config.yml")
 render_markdown(fence_char = "~")
-opts_knit$set(base.url = paste0(config$baseurl, "/"))
+opts_knit$set(
+    root.dir = '.',
+    base.dir = 'docs/',
+    base.url = '{{ site.baseurl }}/')
 opts_chunk$set(
     comment = NA,
     fig.path = "images/",
@@ -34,7 +35,7 @@ current_chunk = knit_hooks$get("chunk")
 chunk = function(x, options) {
     x <- current_chunk(x, options)
     if (!is.null(options$title)) {
-        x <- gsub("~~~(\n*$)",
+        x <- gsub("~~~(\n*(!\\[.+)?$)",
                   paste0("~~~\n{:.text-document title=\"", options$title, "\"}\\1"),
                   x)
         return(x)
@@ -54,8 +55,9 @@ chunk = function(x, options) {
 }
 knit_hooks$set(chunk = chunk)
 
-setwd("_slides")
-
 for (f in config$slide_sorter) {
-    knit(paste0(f, ".Rmd"))
+    knit(input=paste0("docs/_slides_Rmd/", f, ".Rmd"),
+         output=paste0("docs/_slides/", f, ".md"))
 }
+
+## See basic-Python-lesson for dealing with pmd files
