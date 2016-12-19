@@ -11,13 +11,13 @@ These work together in RStudio, which has multiple ways to send parts of the scr
 
 ===
 
-Open up "{{ site.worksheet }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl R on Windows, ⌘ R on Mac OS).
+Open up "{{ site.handouts }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl R on Windows, ⌘ R on Mac OS).
 
 
 ~~~r
 vals <- seq(1, 100)
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 ===
 
@@ -47,7 +47,7 @@ Our call to the function `seq` could have been much more explicit. We could give
 vals <- seq(from = 1,
             to = 100)
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 Run this code either line-by-line, or highlight the section to run (optionally with keyboard shortcut Ctrl-Return or ⌘ Return).
 
@@ -102,7 +102,7 @@ This shorthand is most commonly used while accessing parts of objects, as we'll 
 
 ## Save your work
 
-Do save the "{{ site.worksheet }}" file.
+Do save the "{{ site.handouts }}" file.
 
 But I mean *really* save your work, by commiting it to your project and syncing up to a GitHub repository.
 

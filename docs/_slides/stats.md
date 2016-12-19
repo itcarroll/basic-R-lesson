@@ -46,7 +46,7 @@ R has built in functions for handling many statistical tests.
 x <- rnorm(n = 100, mean = 25, sd = 7)
 y <- rbinom(n = 100, size = 50, prob = .85)
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r
@@ -58,13 +58,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -23.604, df = 120.96, p-value < 2.2e-16
+t = -22.801, df = 129.74, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -19.73472 -16.68047
+ -18.68183 -15.69868
 sample estimates:
 mean of x mean of y 
-  24.6424   42.8500 
+ 25.15975  42.35000 
 ~~~
 {:.output}
 
@@ -76,7 +76,7 @@ Linear regression with the `lm()` function uses a formula notation to specify re
 ~~~r
 fit <- lm(y ~ x)
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r
@@ -90,18 +90,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--5.8421 -1.8274  0.1537  1.1848  5.1599 
+-7.9594 -1.4611  0.3558  1.7682  5.4546 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 42.738822   0.869741  49.140   <2e-16 ***
-x            0.004512   0.033849   0.133    0.894    
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 41.12203    1.04427   39.38   <2e-16 ***
+x            0.04881    0.04000    1.22    0.225    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.463 on 98 degrees of freedom
-Multiple R-squared:  0.0001812,	Adjusted R-squared:  -0.01002 
-F-statistic: 0.01777 on 1 and 98 DF,  p-value: 0.8942
+Residual standard error: 2.787 on 98 degrees of freedom
+Multiple R-squared:  0.01496,	Adjusted R-squared:  0.004913 
+F-statistic: 1.489 on 1 and 98 DF,  p-value: 0.2253
 ~~~
 {:.output}
 

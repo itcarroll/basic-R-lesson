@@ -23,7 +23,7 @@ Vectors are the basic data structure in R. They are a collection of data that ar
 ~~~r
 counts <- c(4, 3, 7, 5)
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. 
 
@@ -50,7 +50,7 @@ Compare the results of `list()` and `c()`
 x <- list(list(1, 2), c(3, 4))
 y <- c(list(1, 2), c(3, 4))
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 Question
 : What's different about the structure of the variables `x` and `y`? Use the function `str()` to investigate.
@@ -75,7 +75,7 @@ education <- factor(
     levels = c("middle", "highschool", "college"),
     ordered = TRUE)
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r

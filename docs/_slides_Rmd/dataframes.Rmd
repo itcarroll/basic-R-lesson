@@ -28,7 +28,7 @@ It is the data structure most similar to a spreadsheet, with two key differences
 
 Creating a data frame from scratch can be done by combining vectors with the `data.frame()` function.
 
-```{r title="{{ site.worksheet }}"}
+```{r title="{{ site.handouts }}"}
 df <- data.frame(education, counts)
 ```
 

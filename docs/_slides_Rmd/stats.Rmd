@@ -39,7 +39,7 @@ See *Table 14.1* in **R for Everyone** by Jared Lander for a full table.
 
 R has built in functions for handling many statistical tests. 
 
-```{r title="{{ site.worksheet }}"}
+```{r title="{{ site.handouts }}"}
 x <- rnorm(n = 100, mean = 25, sd = 7)
 y <- rbinom(n = 100, size = 50, prob = .85)
 ```
@@ -52,7 +52,7 @@ t.test(x, y)
 
 Linear regression with the `lm()` function uses a formula notation to specify relationships between variables (e.g. `y ~ x`).
 
-```{r title="{{ site.worksheet }}"}
+```{r title="{{ site.handouts }}"}
 fit <- lm(y ~ x)
 ```
 

@@ -53,7 +53,7 @@ df['education']
 ~~~r
 names(df) <- c("ed", "ct")
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r
@@ -113,7 +113,7 @@ days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sat
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r

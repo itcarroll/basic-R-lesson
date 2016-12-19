@@ -32,7 +32,7 @@ Creating a data frame from scratch can be done by combining vectors with the `da
 ~~~r
 df <- data.frame(education, counts)
 ~~~
-{:.text-document title="{{ site.worksheet }}"}
+{:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r

@@ -27,7 +27,7 @@ df['education']
 
 ===
 
-```{r title="{{ site.worksheet }}"}
+```{r title="{{ site.handouts }}"}
 names(df) <- c("ed", "ct")
 ```
 
@@ -66,7 +66,7 @@ There are multiple ways to simultaneously extract multiple parts of an object.
 
 ===
 
-```{r title="{{ site.worksheet }}"}
+```{r title="{{ site.handouts }}"}
 days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
