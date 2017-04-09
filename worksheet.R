@@ -17,7 +17,10 @@ counts ...
 ## Factors
 
 education <- ...(c("college", "highschool", "college", "middle"),
-                 ... = c("middle", "highschool", ...),
+                 ... = c("middle", "highschool", ...))
+
+education <- ...(c("college", "highschool", "college", "middle"),
+                 levels = c("middle", "highschool", "college"),
                  ...)
 
 ## Data Frames
@@ -27,6 +30,22 @@ education <- ...(c("college", "highschool", "college", "middle"),
 ## Exercise 1
 
 ...
+
+## Read CSV
+
+surveys <- ...(...)
+
+## Plots
+
+plot(..., ...)
+
+## Histograms
+
+...(surveys$...)
+
+## Boxplots
+
+boxplot(...)
 
 ## Names
 
@@ -66,17 +85,7 @@ fit <- ...
 
 ## Install missing packages
 
-requirements <- c('dplyr',
-                  'ggplot2',
-                  'leaflet',
-                  'RSQLite',
-                  'rgdal',
-                  'rgeos',
-                  'raster',
-                  'shiny',
-                  'sp',
-                  'tidyr',
-                  'tmap')
+requirements <- c(...)
 missing <- setdiff(...,
                    rownames(installed.packages()))
 

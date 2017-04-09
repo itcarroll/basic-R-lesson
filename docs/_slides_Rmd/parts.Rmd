@@ -84,4 +84,14 @@ weekend
 
 ## Exercise 2
 
-Get weekdays using negative integers. Get M-W-F using a call to `seq()` to specify the position (don't forget to `?seq`).
+- Get weekdays using negative integers.
+- Get M-W-F using a call to `seq()` to specify the positions (don't forget to `?seq`).
+
+===
+
+The `$` sign is an operator that makes for quick access to a single, named part of an object.
+It's most useful when used interactively with "tab completion" on the columns of a data frame.
+
+```{r}
+df$ed
+```

@@ -7,7 +7,7 @@ Data can be stored in several types of data structures depending on its complexi
 
 | Dimensions | Homogeneous | Heterogeneous |
 |------------+-------------+---------------|
-| 1d*        | c()         | list()        |
+| 1d         | c()         | list()        |
 | 2d         | matrix()    | data.frame()  |
 | nd         | array()     |               |
 
@@ -21,7 +21,7 @@ Data frames are 2-dimensional and can contain heterogenous data like numbers in 
 
 It is the data structure most similar to a spreadsheet, with two key differences:
 
-- Data frames are collections of *equal-length* vectors.
+- Data frames columns are *equal-length* vectors.
 - As vectors, the columns are homogeneous and cannot hold values of the *wrong* type.
 
 ===
@@ -76,4 +76,30 @@ names(df)
 
 ## Exercise 1
 
-Create a data frame with two columns, one called "species" and another called "count" into a data frame. Store your data frame as a variable called `data`. You can do this with or without populating the data frame with values.
+Create a data frame with two columns, one called "species" and another called "count". Store your data frame as a variable called `data`. You can do this with or without populating the data frame with values.
+
+===
+
+Read a CSV file into a data frame using the `read.csv()` function.
+
+
+~~~r
+surveys <- read.csv('data/surveys.csv')
+~~~
+{:.text-document title="{{ site.handouts }}"}
+
+
+~~~r
+head(surveys)
+~~~
+{:.input}
+~~~
+  record_id month day year plot_id species_id sex hindfoot_length weight
+1         1     7  16 1977       2         NL   M              32     NA
+2         2     7  16 1977       3         NL   M              33     NA
+3         3     7  16 1977       2         DM   F              37     NA
+4         4     7  16 1977       7         DM   M              36     NA
+5         5     7  16 1977       3         DM   M              35     NA
+6         6     7  16 1977       1         PF   M              14     NA
+~~~
+{:.output}

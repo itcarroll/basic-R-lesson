@@ -15,12 +15,12 @@ ten_random_values <- rnorm(n = 10)
 
 ===
 
-| Function | Returns                                                      | Notes                     |
-|----------+--------------------------------------------------------------+---------------------------|
-| rnorm    | Draw random numbers from normal distribution                 | Specify `n`, `mean`, `sd` |
-| pnorm    | Estimate probability of a specific number occuring           |                           |
-| qnorm    | Cumulative probability that a given number or smaller occurs | left-tailed by default    |
-| dnorm    | Returns quantile given a cumulative probability              | opposite of pnorm         |
+| Function  | Returns                                      | Notes                     |
+|-----------+----------------------------------------------+---------------------------|
+| `rnorm()` | Draw random numbers from normal distribution | Specify `n`, `mean`, `sd` |
+| `dnorm()` | Probability density at a given number        |                           |
+| `pnorm()` | Cumulative probability up to a given number  | left-tailed by default    |
+| `qnorm()` | The quantile given a cumulative probability  | opposite of pnorm         |
 
 ===
 
@@ -58,13 +58,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -22.801, df = 129.74, p-value < 2.2e-16
+t = -23.846, df = 119.14, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -18.68183 -15.69868
+ -20.53934 -17.38980
 sample estimates:
 mean of x mean of y 
- 25.15975  42.35000 
+ 23.71543  42.68000 
 ~~~
 {:.output}
 
@@ -90,18 +90,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--7.9594 -1.4611  0.3558  1.7682  5.4546 
+-7.0387 -1.5413  0.1133  1.4147  5.2160 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 41.12203    1.04427   39.38   <2e-16 ***
-x            0.04881    0.04000    1.22    0.225    
+(Intercept) 43.19793    0.80410  53.722   <2e-16 ***
+x           -0.02184    0.03231  -0.676    0.501    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.787 on 98 degrees of freedom
-Multiple R-squared:  0.01496,	Adjusted R-squared:  0.004913 
-F-statistic: 1.489 on 1 and 98 DF,  p-value: 0.2253
+Residual standard error: 2.435 on 98 degrees of freedom
+Multiple R-squared:  0.004639,	Adjusted R-squared:  -0.005517 
+F-statistic: 0.4568 on 1 and 98 DF,  p-value: 0.5007
 ~~~
 {:.output}
 

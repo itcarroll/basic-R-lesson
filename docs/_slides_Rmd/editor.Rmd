@@ -16,9 +16,6 @@ Open up "{{ site.handouts }}" in the editor, and follow along by replacing the `
 ```{r title="{{ site.handouts }}"}
 vals <- seq(1, 100)
 ```
-
-===
-
 The elements of this statement, from right to left are:
 
 - `)` is the closing paren of a function call
@@ -71,26 +68,11 @@ How would you even know what function to call?
 
 ===
 
-Going the other direction, a shorthand form of the `seq()` function is:
+The `<-` symbol used above is an operator, a shorthand for calling a function without placing arguments within parentheses.
+The `seq()` function also has an operator form when only the `from` and `to` arguments are used.
 
 ```{r}
 1:100
 ```
 
-This shorthand is most commonly used while accessing parts of objects, as we'll see below.
-
-===
-
-## Save your work
-
-Do save the "{{ site.handouts }}" file.
-
-But I mean *really* save your work, by commiting it to your project and syncing up to a GitHub repository.
-
-1. Go to the `git` tab in RStudio
-1. Select `commit` to open the "Review Changes" window
-1. Select the file(s) you want to commit.
-1. Enter a descriptive message about the commit.
-1. Commit!
-1. Push!
-
+The `:` operator is most commonly used while accessing parts of other objects, as we'll see below.

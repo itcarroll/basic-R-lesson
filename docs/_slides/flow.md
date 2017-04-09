@@ -17,16 +17,14 @@ First, aquire the list of any missing packages.
 
 
 ~~~r
-requirements <- c('tidyr',
-		  'dplyr',
-		  'RSQLite',
-		  'sp',
-		  'rgdal',
-		  'rgeos',
-		  'raster',
-		  'shiny',
-		  'leaflet',
-		  'ggplot2')
+requirements <- c(
+    'sp',
+    'rgdal',
+    'rgeos',
+    'raster',
+    'shiny',
+    'leaflet',
+    'tm')
 		  
 missing <- setdiff(requirements,
 	           rownames(installed.packages()))

@@ -109,11 +109,11 @@ To reference a number or function you just type it in as above, but to referece 
 
 
 ~~~r
-'ab#45'
+'ab.cd'
 ~~~
 {:.input}
 ~~~
-[1] "ab#45"
+[1] "ab.cd"
 ~~~
 {:.output}
 
@@ -121,19 +121,19 @@ Question
 : Is it better to use `'` or `"`?
 
 Answer
-: {:.fragment} There is no answer! You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
+: {:.fragment} Neither is better. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
 
 ===
 
-Without quotes, the interpreter checks for things named `abc45.q` and doesn't find anything:
+Without quotes, the interpreter checks for things named `ab.cd` and doesn't find anything:
 
 
 ~~~r
-ab#45
+ab.cd
 ~~~
 {:.input}
 ~~~
-Error in eval(expr, envir, enclos): object 'ab' not found
+Error in eval(expr, envir, enclos): object 'ab.cd' not found
 ~~~
 {:.output}
 
@@ -143,7 +143,7 @@ Anything you assign to a variable becomes known to R, so you can reference it in
 
 
 ~~~r
-y <- 'ab#45'
+y <- 'ab.cd'
 typeof(y)
 ~~~
 {:.input}

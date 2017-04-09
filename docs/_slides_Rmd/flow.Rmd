@@ -16,16 +16,14 @@ The last thing we'll do before taking a break, is let R check for any packages y
 First, aquire the list of any missing packages.
 
 ```{r title="{{ site.handouts }}"}
-requirements <- c('tidyr',
-		  'dplyr',
-		  'RSQLite',
-		  'sp',
-		  'rgdal',
-		  'rgeos',
-		  'raster',
-		  'shiny',
-		  'leaflet',
-		  'ggplot2')
+requirements <- c(
+    'sp',
+    'rgdal',
+    'rgeos',
+    'raster',
+    'shiny',
+    'leaflet',
+    'tm')
 		  
 missing <- setdiff(requirements,
 	           rownames(installed.packages()))

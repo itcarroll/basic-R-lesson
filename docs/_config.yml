@@ -2,9 +2,9 @@
 
 title: Bas(e)ic R
 handouts: worksheet.R
-tag: v0.0
+tag: v0.1
 lesson: 1
-instructor: Kate Weiss
+instructor: Ian Carroll
 authors:
  - Kelly Hondula
  - Ian Carroll
@@ -16,15 +16,17 @@ slide_sorter:
   - console
 #  - math
   - editor
+#  - push
   - types
   - dataframes
 #  - load
-#  - plot
+  - plot
   - parts
   - functions
-  - stats
+#  - stats
   - flow
   - conclude
+#  - push
   - solutions
 
 #####################################

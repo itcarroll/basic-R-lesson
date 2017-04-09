@@ -62,11 +62,33 @@ Answer
 
 ## Factors
 
-A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are built on top of integer vectors using two attributes: the class(), “factor”, which makes them behave differently from regular integer vectors, and the levels(), which defines the set of allowed values. 
+A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are built on top of integer vectors using two attributes: the `class()`, “factor”, which makes them behave differently from regular integer vectors, and their `levels()`, or the set of allowed values. 
 
 ===
 
-Use `factor()` to create a vector with factors, or `as.factor()` to convert an existing vector to factors.  
+Use `factor()` to create a vector with predefined values, which are often characters or "strings".
+
+
+~~~r
+education <- factor(
+    c("college", "highschool", "college", "middle"),
+    levels = c("middle", "highschool", "college"))
+~~~
+{:.text-document title="{{ site.handouts }}"}
+
+
+~~~r
+str(education)
+~~~
+{:.input}
+~~~
+ Factor w/ 3 levels "middle","highschool",..: 3 2 3 1
+~~~
+{:.output}
+
+===
+
+A factor can be unorderd, as above, or ordered with each level somehow "less than" the next.
 
 
 ~~~r

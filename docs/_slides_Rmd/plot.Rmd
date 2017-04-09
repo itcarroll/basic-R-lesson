@@ -11,21 +11,17 @@ For more advanced plotting such as multi-faceted plots, the libraries lattice an
 
 ## Scatterplots
 
-basic syntax is `plot(x, y)` or uses the formula notation `plot(y ~ x)`
+The basic syntax is `plot(x, y)` or use the formula notation `plot(y ~ x)`
 
-
-```{r basic}
+```{r title="{{ site.handouts }}"}
 plot(surveys$month, surveys$weight)
-plot(surveys$year, surveys$weight)
-plot(surveys$year, log(surveys$weight))
 ``` 
 
 ===
 
 ## Histograms
 
-```{r hist}
-hist(surveys$weight)
+```{r title="{{ site.handouts }}"}
 hist(log(surveys$weight))
 ``` 
 
@@ -33,31 +29,8 @@ hist(log(surveys$weight))
 
 ## Boxplots
 
-> Use a boxplot to compare the number of species seen each year. 
+Use a boxplot to compare the number of species seen each year.
 
-```{r box}
-par(mfrow=c(1,1))
-boxplot(surveys$weight ~ surveys$year)
-boxplot(surveys$weight ~ surveys$month)
+```{r title="{{ site.handouts }}"}
 boxplot(log(surveys$weight) ~ surveys$year)
-``` 
-
-===
-
-## Graphical parameters
-
-par()
-
-* adjust line types, plotting characters, cex, x and y labels
-* plot different factors/types in different colors
-
-Multi-panel plots can be made by changing the graphical parameters with the `par()` function. 
-
-```{r par}
-surveys1990 <- subset(surveys, year == 1990)
-surveys1996 <- subset(surveys, year == 1996)
-
-par(mfrow=c(1,2))
-hist(log(surveys1990$weight))
-hist(log(surveys1996$weight))
-``` 
+```

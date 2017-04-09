@@ -66,21 +66,21 @@ When you start a R session, there are many things already known, including
 To reference a number or function you just type it in as above, but to referece a string of alpha-numeric characters you must surround them in quotation marks.
 
 ```{r}
-'ab#45'
+'ab.cd'
 ```
 
 Question
 : Is it better to use `'` or `"`?
 
 Answer
-: {:.fragment} There is no answer! You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
+: {:.fragment} Neither is better. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
 
 ===
 
-Without quotes, the interpreter checks for things named `abc45.q` and doesn't find anything:
+Without quotes, the interpreter checks for things named `ab.cd` and doesn't find anything:
 
 ```{r}
-ab#45
+ab.cd
 ```
 
 ===
@@ -88,6 +88,6 @@ ab#45
 Anything you assign to a variable becomes known to R, so you can reference it in any command.
 
 ```{r}
-y <- 'ab#45'
+y <- 'ab.cd'
 typeof(y)
 ```

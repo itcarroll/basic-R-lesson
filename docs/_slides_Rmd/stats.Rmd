@@ -13,12 +13,12 @@ ten_random_values <- rnorm(n = 10)
 
 ===
 
-| Function | Returns                                                      | Notes                     |
-|----------+--------------------------------------------------------------+---------------------------|
-| rnorm    | Draw random numbers from normal distribution                 | Specify `n`, `mean`, `sd` |
-| pnorm    | Estimate probability of a specific number occuring           |                           |
-| qnorm    | Cumulative probability that a given number or smaller occurs | left-tailed by default    |
-| dnorm    | Returns quantile given a cumulative probability              | opposite of pnorm         |
+| Function  | Returns                                      | Notes                     |
+|-----------+----------------------------------------------+---------------------------|
+| `rnorm()` | Draw random numbers from normal distribution | Specify `n`, `mean`, `sd` |
+| `dnorm()` | Probability density at a given number        |                           |
+| `pnorm()` | Cumulative probability up to a given number  | left-tailed by default    |
+| `qnorm()` | The quantile given a cumulative probability  | opposite of pnorm         |
 
 ===
 
