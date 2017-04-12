@@ -16,7 +16,7 @@ The last thing we'll do before taking a break, is let R check for any packages y
 First, aquire the list of any missing packages.
 
 ```{r title="{{ site.handouts }}"}
-requirements <- c(
+required <- c(
     'sp',
     'rgdal',
     'rgeos',
@@ -24,9 +24,8 @@ requirements <- c(
     'shiny',
     'leaflet',
     'tm')
-		  
-missing <- setdiff(requirements,
-	           rownames(installed.packages()))
+installed <- rownames(installed.packages())		  
+missing <- setdiff(required, installed)
 ```
 
 ===

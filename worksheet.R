@@ -86,9 +86,9 @@ fit <- ...
 ## Install missing packages
 
 requirements <- c(...)
-missing <- setdiff(...,
-                   rownames(installed.packages()))
-
+installed <- rownames(installed.packages())
+missing <- setdiff(..., ...)
+                   
 if (...) {
   install.packages(missing)
 }
