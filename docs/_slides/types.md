@@ -1,7 +1,7 @@
 ---
 ---
 
-## Data types and structures
+## Data types
 
 | Type      | Example           |
 |-----------+-------------------|
@@ -11,7 +11,17 @@
 | logical   | TRUE, FALSE       |
 | missing   | NA                |
 
-Data structures, or more generally "objects", are built from one or more of these data types and other objects.
+===
+
+## Data structures
+
+Compound objects, built from one or more of these data types, or even other objects.
+
+Common one-dimensional, array data structures:
+
+- Vectors
+- Lists
+- Factors
 
 ===
 

@@ -14,19 +14,18 @@ authors:
 slide_sorter:
   - intro
   - console
-  - math
   - editor
-  - push
+#  - push
   - types
   - dataframes
   - load
-  - plot
   - parts
+  - plot
   - functions
   - stats
   - flow
   - conclude
-  - push
+#  - push
   - solutions
 
 #####################################
