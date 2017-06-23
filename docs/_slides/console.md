@@ -103,8 +103,13 @@ logb(2, 2)
 
 ## Exercise 1
 
-The quadratic formula for the two values of $x$ that satisfy the equation $a x^2 + b x + c = 0$ is $\frac{-b \pm \sqrt(b^2 - 4 a c)}{2 a}$.
-Use the quadratic formula to calculate both values of $x$ that solve $1.5 x^2 + 0.3 x - 2.9 = 0$.
+The quadratic formula for the two values of $$x$$ that satisfy the equation $$a x^2 + b x + c = 0$$ is
+
+$$
+\frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}.
+$$
+
+Use the quadratic formula to calculate both values of $$x$$ that solve $$1.5 x^2 + 0.3 x - 2.9 = 0$$.
 
 ===
 
@@ -194,4 +199,3 @@ typeof(y)
 [1] "character"
 ~~~
 {:.output}
-
