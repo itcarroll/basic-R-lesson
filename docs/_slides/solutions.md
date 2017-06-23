@@ -9,6 +9,34 @@
 
 ## Solution 1
 
+The first solution:
+
+
+~~~r
+(-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+~~~
+
+~~~
+[1] 1.294035
+~~~
+{:.text-document title="{{ site.handouts }}"}
+
+The second solution:
+
+
+~~~r
+(-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+~~~
+
+~~~
+[1] -1.494035
+~~~
+{:.text-document title="{{ site.handouts }}"}
+
+===
+
+## Solution 2
+
 
 ~~~r
 species <- c()
@@ -35,7 +63,7 @@ str(data)
 
 ===
 
-## Solution 2
+## Solution 3
 
 
 ~~~r
@@ -72,7 +100,7 @@ sol2b
 
 ===
 
-## Solution 3
+## Solution 4
 
 
 ~~~r
@@ -99,7 +127,7 @@ Levels: middle < highschool < college
 
 ===
 
-## Solution 4
+## Solution 5
 
 
 ~~~r
@@ -125,21 +153,19 @@ Call:
 lm(formula = prop ~ size + year, data = df)
 
 Residuals:
-       1        2        3        4        5 
--0.02184  0.02184  0.00000  0.02184 -0.02184 
+         1          2          3          4          5 
+ 1.555e-01 -1.555e-01 -6.939e-18 -1.555e-01  1.555e-01 
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)  
-(Intercept) -0.08759    0.13266  -0.660   0.6285  
-size         0.17991    0.04368   4.119   0.1516  
-year.L      -0.73225    0.05982 -12.242   0.0519 .
-year.Q      -0.03270    0.08691  -0.376   0.7709  
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  -0.6202     0.9442  -0.657    0.630
+size          0.3895     0.3109   1.253    0.429
+year.L       -0.7258     0.4257  -1.705    0.338
+year.Q       -0.1614     0.6186  -0.261    0.838
 
-Residual standard error: 0.04368 on 1 degrees of freedom
-Multiple R-squared:  0.9961,	Adjusted R-squared:  0.9845 
-F-statistic: 85.72 on 3 and 1 DF,  p-value: 0.07919
+Residual standard error: 0.3109 on 1 degrees of freedom
+Multiple R-squared:  0.8818,	Adjusted R-squared:  0.5274 
+F-statistic: 2.488 on 3 and 1 DF,  p-value: 0.4289
 ~~~
 {:.output}
 
@@ -148,4 +174,3 @@ F-statistic: 85.72 on 3 and 1 DF,  p-value: 0.07919
 [Return](#exercise-4)
 
 </aside>
-

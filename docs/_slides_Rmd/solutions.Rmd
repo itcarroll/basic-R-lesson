@@ -9,6 +9,22 @@
 
 ## Solution 1
 
+The first solution:
+
+```{r title="{{ site.handouts }}"}
+(-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+```
+
+The second solution:
+
+```{r title="{{ site.handouts }}"}
+(-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+```
+
+===
+
+## Solution 2
+
 ```{r title="{{ site.handouts }}"}
 species <- c()
 count <- c()
@@ -27,7 +43,7 @@ str(data)
 
 ===
 
-## Solution 2
+## Solution 3
 
 ```{r title="{{ site.handouts }}"}
 sol2a <- days[c(-1, -7)]
@@ -50,7 +66,7 @@ sol2b
 
 ===
 
-## Solution 3
+## Solution 4
 
 ```{r title="{{ site.handouts }}"}
 sol3 <- df[2:3, 'ed']
@@ -68,7 +84,7 @@ sol3
 
 ===
 
-## Solution 4
+## Solution 5
 
 ```{r title="{{ site.handouts }}"}
 df <- data.frame(
@@ -90,4 +106,3 @@ summary(fit)
 [Return](#exercise-4)
 
 </aside>
-

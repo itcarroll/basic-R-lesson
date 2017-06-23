@@ -49,11 +49,13 @@ A command giving a vector of results shows this clearly:
 
 
 ~~~r
-seq(1, 20)
+seq(1, 50)
 ~~~
 {:.input}
 ~~~
- [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+[24] 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+[47] 47 48 49 50
 ~~~
 {:.output}
 
@@ -63,12 +65,57 @@ Most of "learning R" involves getting to know a whole lot of functions, the effe
 
 ===
 
+## Basic math 
+
+A good place to begin learning R functions is with its built-in mathematical functionality:
+
+- binary operators `+`, `-`, `*`, `/`, and `^` (for raising to a power)
+- "smooth" functions like `sin`, `log`, and `sqrt`
+- additional functions like `max`, `range`, and `mean`
+
+===
+
+Use binary operators by inserting them between two numbers, grouped by parentheses when necessary.
+
+
+~~~r
+(1 + 2) / 3
+~~~
+{:.input}
+~~~
+[1] 1
+~~~
+{:.output}
+
+Use functions by calling them with comma-separated arguments between parentheses.
+
+
+~~~r
+logb(2, 2)
+~~~
+{:.input}
+~~~
+[1] 1
+~~~
+{:.output}
+
+===
+
+## Exercise 1
+
+The quadratic formula for the two values of $x$ that satisfy the equation $a x^2 + b x + c = 0$ is $\frac{-b \pm \sqrt(b^2 - 4 a c)}{2 a}$.
+Use the quadratic formula to calculate both values of $x$ that solve $1.5 x^2 + 0.3 x - 2.9 = 0$.
+
+===
+
+## Assignment
+
 We can expand the vocabulary known to the R interpreter by creating a **variable**.
 Using the symbol `<-` is referred to as assignment: we assign the output of any command to the right of `<-` to any **variable** written to its left.
 
 
 ~~~r
-x <- seq(1, 20)
+x <- seq(1, 50)
 ~~~
 {:.input}
 
@@ -81,13 +128,15 @@ x
 ~~~
 {:.input}
 ~~~
- [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+[24] 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+[47] 47 48 49 50
 ~~~
 {:.output}
 
 ===
 
-Assigning values to new variables is the only time you can reference something previously unknown to the interpreter--and only to the left of `<-`!
+Assigning values to new variables (to the left of a `<-`) is the only time you can reference something previously unknown to the interpreter.
 All other commands must reference things already in the interpreter's vocabulary.
 
 When you start a new session, the R interpreter already knows many things, including
@@ -146,16 +195,3 @@ typeof(y)
 ~~~
 {:.output}
 
-## Basic math 
-
-The R language includes a lot of built-in mathematical functionality:
-
-- binary operators `+`, `-`, `*`, `/`, and `^` (for raising to a power)
-- "smooth" functions like `sin`, `log` and `sqrt`
-- additional functions like `max`, `range` and
-
-===
-
-## Exercise 1
-
-add an exercise
