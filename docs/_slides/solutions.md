@@ -1,11 +1,13 @@
 ---
+# Use the liquid {% comment %} and {% endcomment %} tags for solutions
+# to un-used exercises
 ---
 
 ## Exercise solutions
 
 ===
 
-### Solution 1
+## Solution 1
 
 
 ~~~r
@@ -33,7 +35,7 @@ str(data)
 
 ===
 
-### Solution 2
+## Solution 2
 
 
 ~~~r
@@ -70,7 +72,7 @@ sol2b
 
 ===
 
-### Solution 3
+## Solution 3
 
 
 ~~~r
@@ -97,7 +99,7 @@ Levels: middle < highschool < college
 
 ===
 
-### Solution 4
+## Solution 4
 
 
 ~~~r
@@ -124,20 +126,18 @@ lm(formula = prop ~ size + year, data = df)
 
 Residuals:
          1          2          3          4          5 
- 6.578e-03 -6.578e-03  4.337e-19 -6.578e-03  6.578e-03 
+ 5.775e-02 -5.775e-02  3.469e-18 -5.775e-02  5.775e-02 
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)  
-(Intercept)  1.30603    0.03995   32.69   0.0195 *
-size        -0.18442    0.01316  -14.02   0.0453 *
-year.L       0.31977    0.01801   17.75   0.0358 *
-year.Q       0.23529    0.02617    8.99   0.0705 .
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)   1.6664     0.3508   4.751    0.132
+size         -0.3850     0.1155  -3.334    0.186
+year.L        0.5831     0.1582   3.687    0.169
+year.Q        0.9516     0.2298   4.141    0.151
 
-Residual standard error: 0.01316 on 1 degrees of freedom
-Multiple R-squared:  0.9974,	Adjusted R-squared:  0.9895 
-F-statistic: 127.1 on 3 and 1 DF,  p-value: 0.0651
+Residual standard error: 0.1155 on 1 degrees of freedom
+Multiple R-squared:  0.9609,	Adjusted R-squared:  0.8437 
+F-statistic: 8.195 on 3 and 1 DF,  p-value: 0.2501
 ~~~
 {:.output}
 

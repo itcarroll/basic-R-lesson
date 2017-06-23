@@ -82,7 +82,7 @@ weekend
 
 ===
 
-## Exercise 2
+## Exercise 4
 
 - Get weekdays using negative integers.
 - Get M-W-F using a call to `seq()` to specify the positions (don't forget to `?seq`).

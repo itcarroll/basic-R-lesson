@@ -74,7 +74,7 @@ names(df)
 
 ===
 
-## Exercise 1
+## Exercise 2
 
 Create a data frame with two columns, one called "species" and another called "count". Store your data frame as a variable called `data`. You can do this with or without populating the data frame with values.
 

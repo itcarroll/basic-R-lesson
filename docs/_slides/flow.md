@@ -17,7 +17,7 @@ First, aquire the list of any missing packages.
 
 
 ~~~r
-requirements <- c(
+required <- c(
     'sp',
     'rgdal',
     'rgeos',
@@ -25,9 +25,8 @@ requirements <- c(
     'shiny',
     'leaflet',
     'tm')
-		  
-missing <- setdiff(requirements,
-	           rownames(installed.packages()))
+installed <- rownames(installed.packages())		  
+missing <- setdiff(required, installed)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
@@ -41,7 +40,7 @@ length(missing) == 0
 ~~~
 {:.input}
 ~~~
-[1] TRUE
+[1] FALSE
 ~~~
 {:.output}
 

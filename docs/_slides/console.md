@@ -49,35 +49,31 @@ A command giving a vector of results shows this clearly:
 
 
 ~~~r
-seq(1, 100)
+seq(1, 20)
 ~~~
 {:.input}
 ~~~
-  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
- [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
- [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
- [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
- [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
- [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
 ~~~
 {:.output}
 
-Rather than basic math, we used a **function** called `seq()` in this command.
-Most of "learning R" involves getting to know a whole lot of functions, what are their arguments (a.k.a. inputs) and what do they return (a.k.a. output).
+The interpreter understands more than arithmatic operations!
+The last command was to use (or "call") the **function** `seq()`.
+Most of "learning R" involves getting to know a whole lot of functions, the effect of each function's  arguments (e.g. the input values 1 and 10), and what each function returns (e.g. the output vector).
 
 ===
 
-One thing you'll regularly want to do is store output of a function to a variable.
-Using the symbol `<-` is referred to as assignment: we assign to a **variable** on the left of the `<-` symbol the output of what is on its right.
+We can expand the vocabulary known to the R interpreter by creating a **variable**.
+Using the symbol `<-` is referred to as assignment: we assign the output of any command to the right of `<-` to any **variable** written to its left.
 
 
 ~~~r
-x <- seq(1, 100)
+x <- seq(1, 20)
 ~~~
 {:.input}
 
 You'll notice that nothing prints to the console, because we assigned the output to a variable.
-We can print `x` by evaluating it by itself.
+We can print the value of `x` by evaluating it without assignment.
 
 
 ~~~r
@@ -85,27 +81,25 @@ x
 ~~~
 {:.input}
 ~~~
-  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
- [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
- [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
- [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
- [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
- [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
 ~~~
 {:.output}
 
 ===
 
-Commands must always reference things known to the interpreter.
-When you start a R session, there are many things already known, including
+Assigning values to new variables is the only time you can reference something previously unknown to the interpreter--and only to the left of `<-`!
+All other commands must reference things already in the interpreter's vocabulary.
+
+When you start a new session, the R interpreter already knows many things, including
 
 - any number
 - any string of characters
+- operators that are universal (e.g. `+` or `/`) and specific to R (e.g. `$` or `%*%`)
 - functions in `base R`
 
 ===
 
-To reference a number or function you just type it in as above, but to referece a string of alpha-numeric characters you must surround them in quotation marks.
+To reference a number or function you just type it in as above, but to referece a string of characters you must surround them in quotation marks.
 
 
 ~~~r
@@ -121,11 +115,11 @@ Question
 : Is it better to use `'` or `"`?
 
 Answer
-: {:.fragment} Neither is better. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
+: {:.fragment} Neither one is better. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
 
 ===
 
-Without quotes, the interpreter checks for things named `ab.cd` and doesn't find anything:
+Without quotation marks, the interpreter checks for things named `ab.cd` and doesn't find anything:
 
 
 ~~~r
@@ -139,7 +133,7 @@ Error in eval(expr, envir, enclos): object 'ab.cd' not found
 
 ===
 
-Anything you assign to a variable becomes known to R, so you can reference it in any command.
+Anything you assign to a variable becomes known to R, so you can refer to it later.
 
 
 ~~~r

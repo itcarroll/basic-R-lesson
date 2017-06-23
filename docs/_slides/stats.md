@@ -58,13 +58,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -23.846, df = 119.14, p-value < 2.2e-16
+t = -23.283, df = 119.48, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -20.53934 -17.38980
+ -19.88984 -16.77209
 sample estimates:
 mean of x mean of y 
- 23.71543  42.68000 
+ 24.36904  42.70000 
 ~~~
 {:.output}
 
@@ -89,24 +89,24 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--7.0387 -1.5413  0.1133  1.4147  5.2160 
+   Min     1Q Median     3Q    Max 
+-8.462 -1.704  0.106  1.689  5.828 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 43.19793    0.80410  53.722   <2e-16 ***
-x           -0.02184    0.03231  -0.676    0.501    
+(Intercept) 41.56043    0.82373  50.454   <2e-16 ***
+x            0.04676    0.03232   1.447    0.151    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.435 on 98 degrees of freedom
-Multiple R-squared:  0.004639,	Adjusted R-squared:  -0.005517 
-F-statistic: 0.4568 on 1 and 98 DF,  p-value: 0.5007
+Residual standard error: 2.409 on 98 degrees of freedom
+Multiple R-squared:  0.02091,	Adjusted R-squared:  0.01092 
+F-statistic: 2.093 on 1 and 98 DF,  p-value: 0.1512
 ~~~
 {:.output}
 
 ===
 
-## Exercise 4
+## Exercise 6
 
 Create a data frame from scratch that has three columns and 5 rows. In column "size" place a sequence from 1 to 5. For column "year", create a factor with three levels representing the past three years. In column "prop", place 5 random samples from a uniform distribution. Show the summary of a linear model following the formula "prop ~ size + year".

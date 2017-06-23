@@ -127,8 +127,7 @@ Note that by default, character data is read in as factors when you load data in
 
 ===
 
-## Exercise
-{:.ex}
+## Exercise 3
 
 Fix each of the following common data frame subsetting errors:
 

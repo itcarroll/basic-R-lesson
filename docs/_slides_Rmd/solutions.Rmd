@@ -1,11 +1,13 @@
 ---
+# Use the liquid {% comment %} and {% endcomment %} tags for solutions
+# to un-used exercises
 ---
 
 ## Exercise solutions
 
 ===
 
-### Solution 1
+## Solution 1
 
 ```{r title="{{ site.handouts }}"}
 species <- c()
@@ -25,7 +27,7 @@ str(data)
 
 ===
 
-### Solution 2
+## Solution 2
 
 ```{r title="{{ site.handouts }}"}
 sol2a <- days[c(-1, -7)]
@@ -48,7 +50,7 @@ sol2b
 
 ===
 
-### Solution 3
+## Solution 3
 
 ```{r title="{{ site.handouts }}"}
 sol3 <- df[2:3, 'ed']
@@ -66,7 +68,7 @@ sol3
 
 ===
 
-### Solution 4
+## Solution 4
 
 ```{r title="{{ site.handouts }}"}
 df <- data.frame(

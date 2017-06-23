@@ -7,7 +7,7 @@
 |-----------+-------------------|
 | integer   | -4, 0, 999        |
 | double    | 3.1, -4, Inf, NaN |
-| character | "a", "4", "👏"     |
+| character | 'a', "4", "👏"     |
 | logical   | TRUE, FALSE       |
 | missing   | NA                |
 

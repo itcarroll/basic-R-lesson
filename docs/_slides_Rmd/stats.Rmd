@@ -62,6 +62,6 @@ summary(fit)
 
 ===
 
-## Exercise 4
+## Exercise 6
 
 Create a data frame from scratch that has three columns and 5 rows. In column "size" place a sequence from 1 to 5. For column "year", create a factor with three levels representing the past three years. In column "prop", place 5 random samples from a uniform distribution. Show the summary of a linear model following the formula "prop ~ size + year".

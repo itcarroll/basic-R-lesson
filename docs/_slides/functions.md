@@ -75,7 +75,7 @@ Answer
 
 ===
 
-## Exercise 3
+## Exercise 5
 
 Subset the data frame by column name and row position to obtain the following output.
 
