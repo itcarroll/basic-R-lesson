@@ -1,6 +1,4 @@
 ---
-# Use the liquid {% comment %} and {% endcomment %} tags for solutions
-# to un-used exercises
 ---
 
 ## Exercise solutions
@@ -9,36 +7,50 @@
 
 ## Solution 1
 
-The first solution:
+First solution:
 
 ```{r title="{{ site.handouts }}"}
-(-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+x <- (-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ```
 
-The second solution:
+```{r}
+1.5 * x^2 + 0.3 * x - 2.9
+```
+
+Second solution:
 
 ```{r title="{{ site.handouts }}"}
-(-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+x <- (-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ```
+
+```{r}
+1.5 * x^2 + 0.3 * x - 2.9
+```
+
+<aside class="notes" markdown="block">
+[Return](#exercise-1)
+</aside>
 
 ===
 
 ## Solution 2
 
 ```{r title="{{ site.handouts }}"}
-species <- c()
-count <- c()
-data <- data.frame(species, count)
+x <- list(1, list(2, 3))
+y <- c(1, list(2, 3))
 ```
 
 ```{r}
-str(data)
+str(x)
+```
+```{r}
+str(y)
 ```
 
+The variable `x` contains two elements, a number and a list. The variable `y` has concatenation of the two arguments, coerced to the more flexible of the two (a list is more flexible than a number). Both `x` and `y` are lists.
+
 <aside class="notes" markdown="block">
-
-[Return](#exercise-1)
-
+[Return](#exercise-2)
 </aside>
 
 ===
@@ -46,22 +58,17 @@ str(data)
 ## Solution 3
 
 ```{r title="{{ site.handouts }}"}
-sol2a <- days[c(-1, -7)]
-sol2b <- days[seq(2, 7, 2)]
+species <- c()
+abund <- c()
+data <- data.frame(species, abund)
 ```
 
 ```{r}
-sol2a
-```
-
-```{r}
-sol2b
+str(data)
 ```
 
 <aside class="notes" markdown="block">
-
-[Return](#exercise-2)
-
+[Return](#exercise-3)
 </aside>
 
 ===
@@ -69,17 +76,16 @@ sol2b
 ## Solution 4
 
 ```{r title="{{ site.handouts }}"}
-sol3 <- df[2:3, 'ed']
+surveys <- read.csv('data/surveys.csv', stringsAsFactors = FALSE, na.strings = '')
+surveys$sex <- factor(surveys$sex)
 ```
 
 ```{r}
-sol3
+str(surveys)
 ```
 
 <aside class="notes" markdown="block">
-
-[Return](#exercise-3)
-
+[Return](#exercise-4)
 </aside>
 
 ===
@@ -87,22 +93,76 @@ sol3
 ## Solution 5
 
 ```{r title="{{ site.handouts }}"}
-df <- data.frame(
-    size = 1:5,
-    year = factor(
-        c(2014, 2014, 2013, 2015, 2015),
-	levels = c(2013, 2014, 2015),
-	ordered = TRUE),
-    prop = runif(n = 5))
-fit <- lm(prop ~ size + year, data = df)
+sol5a <- days[c(-1, -7)]
+sol5b <- days[seq(2, 7, 2)]
 ```
 
 ```{r}
-summary(fit)
+sol5a
+```
+
+```{r}
+sol5b
 ```
 
 <aside class="notes" markdown="block">
+[Return](#exercise-5)
+</aside>
 
-[Return](#exercise-4)
+===
 
+## Solution 6
+
+```{r title="{{ site.handouts }}"}
+sol6 <- df[2:3, 'ed']
+```
+
+```{r}
+sol6
+```
+
+<aside class="notes" markdown="block">
+[Return](#exercise-6))
+</aside>
+
+===
+
+## Solution 7
+
+```{r title="{{ site.handouts }}"}
+first <- function(dat) {
+    if (is.vector(dat)) {
+        result <- dat[1]
+    } else if (is.matrix(dat)) {
+        result <- dat[1, 1]
+    } else {
+        result <- dat[1, ]
+    }
+    return(result)
+}
+```
+
+```{r}
+m <- matrix(1:9, nrow = 3, ncol = 3)
+first(m)
+```
+
+<aside class="notes" markdown="block">
+[Return](#exercise-7)
+</aside>
+
+===
+
+## Solution 8
+
+```{r title="{{ site.handouts }}"}
+surveys.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = surveys)
+```
+
+```{r}
+coef(surveys.hl_model)[2]
+```
+
+<aside class="notes" markdown="block">
+[Return](#exercise-8)
 </aside>

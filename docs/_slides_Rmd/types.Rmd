@@ -43,20 +43,25 @@ c(1, 2, "c")
 
 ## Lists
 
-Lists are like vectors but their elements can be of any data type or structure, including another list! You construct lists by using `list()` instead of `c()`. 
+Lists are like vectors but their elements can be of any data type or structure. You construct lists by using `list()` instead of `c()`. 
 
-Compare the results of `list()` and `c()`
-
-```{r title="{{ site.handouts }}"}
-x <- list(list(1, 2), c(3, 4))
-y <- c(list(1, 2), c(3, 4))
+```{r}
+list(1, 2, "c")
 ```
 
-Question
-: What's different about the structure of the variables `x` and `y`? Use the function `str()` to investigate.
+===
 
-Answer
-: {:.fragment} The list contains two elements, a list and a vector. The vector `y` flattened the elements to a single element of the most flexible data type.
+Lists can even include another list! 
+
+```{r}
+list(1, list(2, 3))
+```
+
+===
+
+## Exercise 2
+
+Look at the outputs of `list(1, list(2, 3))` and `c(1, list(1, 2))`. Store the output of each command as new variables, and then examine each variable's structure with the `str()` function. What's different about the structure of the two variables? Are both lists?
 
 ===
 

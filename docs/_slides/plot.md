@@ -3,27 +3,32 @@
 
 ## Base plotting
 
-R has excellent plotting capabilities for many types of graphics. The `plot()` function is the most basic plotting function. It is polymorphic, ie. it uses the information you give it to determine what kind of plot to make. 
+R has excellent plotting capabilities for many types of graphics.
+The `plot()` function is the most basic plotting function, and uses the data provided to determine what kind of plot to make. 
 
-For more advanced plotting such as multi-faceted plots, the libraries lattice and ggplot2 are excellent options. 
+For more advanced plotting such as multi-faceted plots, the libraries [lattice](https://cran.r-project.org/package=lattice) and [ggplot2](https://cran.r-project.org/package=ggplot2) are excellent options. 
 
 ===
 
 ## Scatterplots
 
-The basic syntax is `plot(x, y)` or use the formula notation `plot(y ~ x)`
+Providing plots with separate "x" and "y" coordinates produces a scatterplot.
 
 
 ~~~r
-plot(surveys$month, surveys$weight)
+plot(surveys$hindfoot_length, surveys$weight)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
 ![plot of chunk unnamed-chunk-1]({{ site.baseurl }}/images/unnamed-chunk-1-1.png)
 
+Using R's formula notation, as in `plot(weight ~ hindfoot_length, data = surveys)`, is a more readable syntax for some.
+
 ===
 
 ## Histograms
+
+To plot binned counts of a single variable, use the `hist` function.
 
 
 ~~~r
@@ -37,11 +42,11 @@ hist(log(surveys$weight))
 
 ## Boxplots
 
-Use a boxplot to compare the number of species seen each year.
+Use `boxplot` to compare the number of species seen each year.
 
 
 ~~~r
-boxplot(log(surveys$weight) ~ surveys$year)
+boxplot(log(weight) ~ year, data = surveys)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 

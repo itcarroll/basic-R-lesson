@@ -5,10 +5,16 @@
 
 Since it is designed for statistics, R can easily draw random numbers from statistical distributions and calculate distribution values. 
 
+===
+
 To generate random numbers from a normal distribution, use the function `rnorm()`
 
+```{r title="{{ site.handouts }}"}
+samp <- rnorm(n = 10)
+```
+
 ```{r}
-ten_random_values <- rnorm(n = 10)
+samp
 ```
 
 ===
@@ -25,15 +31,15 @@ ten_random_values <- rnorm(n = 10)
 Statistical distributions and their functions.
 See *Table 14.1* in **R for Everyone** by Jared Lander for a full table.
 
-| Distribution | Random Number |
+| Distribution | Functions     |
 |--------------+---------------|
-| Normal       | rnorm         |
-| Binomial     | rbinom        |
-| Poisson      | rpois         |
-| Gamma        | rgamma        |
-| Exponential  | rexp          |
-| Uniform      | runif         |
-| Logistic     | rlogis        |
+| Normal       | *norm         |
+| Binomial     | *binom        |
+| Poisson      | *pois         |
+| Gamma        | *gamma        |
+| Exponential  | *exp          |
+| Uniform      | *unif         |
+| Logistic     | *logis        |
 
 ===
 
@@ -62,6 +68,6 @@ summary(fit)
 
 ===
 
-## Exercise 6
+## Exercise 8
 
-Create a data frame from scratch that has three columns and 5 rows. In column "size" place a sequence from 1 to 5. For column "year", create a factor with three levels representing the past three years. In column "prop", place 5 random samples from a uniform distribution. Show the summary of a linear model following the formula "prop ~ size + year".
+Recall the formula notation used to plot hindfoot_length against weight for the observations in the `surveys` data frame: `plot(hindfoot_length ~ weight, data = surveys)`. Instead of the `plot` function, use the `lm` function to estimate the coefficient of `log(weight)` as a predictor of `log(hindfoot_length)`.

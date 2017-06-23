@@ -3,57 +3,85 @@
 
 ## Flow control
 
-As a general purpose programming language, you can write R scripts to take care of non-computational tasks.
-
-"Flow control" is the generic term for letting variables whose value is determined at run time to dictate how the code evaluates. It's things like "for loops" and "if/else" statements.
-
-===
-
-## Install missing packages
-
-The last thing we'll do before taking a break, is let R check for any packages you'll need today that aren't installed. But we'll learn how to use flow control along the way.
-
-First, aquire the list of any missing packages.
-
-
-~~~r
-required <- c(
-    'sp',
-    'rgdal',
-    'rgeos',
-    'raster',
-    'shiny',
-    'leaflet',
-    'tm')
-installed <- rownames(installed.packages())		  
-missing <- setdiff(required, installed)
-~~~
-{:.text-document title="{{ site.handouts }}"}
+The R interpreter's "focus" flows through a script (or any section of code you run) line by line.
+Without additional instruction, every line is processed from the top to bottom.
+"Flow control" is the generic term for causing the interpreter to repeat or skip certain lines, using concepts like "for loops" and "if/else conditionals".
 
 ===
 
-Check, from the console, your number of missing packages:
+Flow control happens within blocks of code isolated between curly braces `{` and `}`, known as "statements".
 
 
 ~~~r
-length(missing) == 0
-~~~
-{:.input}
-~~~
-[1] FALSE
-~~~
-{:.output}
-
-Your result will be `TRUE` or `FALSE`, depending on whether you installed all the packages already. We can let the script decide what to do with this information.
-
-===
-
-The keyword `if` is part of the R language's syntax for flow control. The statement in the body (between `{` and `}`) only evaluates if the argument (between `(` and `)`) evaluates to TRUE.
-
-
-~~~r
-if (length(missing) != 0) {
-  install.packages(missing, dep=TRUE)
+if (...) {
+    ...
+} else {
+    ...
 }
 ~~~
 {:.text-document title="{{ site.handouts }}"}
+
+The keyword `if` must be followed by a logical test which determines, at runtime, what to do next.
+The R interpreter goes to the first statement if the logical value is `TRUE` and to the second statement if it's `FALSE`.
+
+===
+
+An if/else conditional would allow the `first` function to avoid the error thrown by calling `first(counts)`.
+
+
+~~~r
+first <- function(dat) {
+    if (is.vector(dat)) {
+        result <- dat[1]
+    } else {
+        result <- dat[1, ]
+    }
+    return(result)
+}
+~~~
+{:.text-document title="{{ site.handouts }}"}
+
+===
+
+
+~~~r
+first(df)
+~~~
+{:.input}
+~~~
+       ed ct
+1 college  4
+~~~
+{:.output}
+
+
+~~~r
+first(counts)
+~~~
+{:.input}
+~~~
+[1] 4
+~~~
+{:.output}
+
+===
+
+## Exercise 7
+
+The keywords `else` and `if` can be combined to allow flow control among more than two statements.
+
+
+~~~r
+if (...) {
+    ...
+} else if {
+    ...
+} else if {
+   ...
+} else {
+   ...
+}
+~~~
+{:.text-document title="{{ site.handouts }}"}
+
+Expand the `first` function once again to differentiate between `dat` provided as a `matrix` and as a `data.frame`. It's up to you what the "first" element of a matrix should be!

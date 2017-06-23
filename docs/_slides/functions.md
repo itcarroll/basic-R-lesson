@@ -1,15 +1,28 @@
 ---
 ---
 
-## Creating functions
+## Functions
 
-Writing functions to use multiple times within a project can prevent you from duplicating code. If you see blocks of similar lines of code through your project, those are usually candidates for being moved into functions.
+The purpose of R functions is to package up a batch of commands.
+There are several reasons to develop functions
+
+- reuse
+- readability
+- modularity
+- consistency
+
+Writing functions to use multiple times within a project prevents you from duplicating code, a real time-saver when you want to update what the function does.
+If you see blocks of similar lines of code through your project, those are usually candidates for being moved into functions.
 
 ===
 
 ## Anatomy of a function
 
-Writing functions is also a great way to understand the terminology and workings of R. Like all programming languages, R has keywords that are reserved for import activities, like creating functions. Keywords are usually very intuitive, the one we need is `function`.
+Writing functions is also a great way to understand the terminology and workings of R.
+Like all programming languages, R has keywords that are reserved for import activities, like creating functions.
+Keywords are usually very intuitive, the one we need is `function`.
+
+===
 
 
 ~~~r
@@ -22,24 +35,24 @@ function(...) {
 
 Three components:
 
-* __arguments__: control how you can call the function
-* __body__: the code inside the function
-* __return value__: controls what output the function gives
+- __arguments__: control how you can call the function
+- __body__: the code inside the function
+- __return value__: controls what output the function gives
 
 ===
 
-We'll make a function to extract the first row and column of its argument, for which we can choose an arbitrary name:
+We'll make a function to extract the first row of its argument, which we give a name to use inside the function:
 
 
 ~~~r
-function(x) {
-    result <- x[1, 1]
+function(dat) {
+    result <- dat[1, ]
     return(result)
 }
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
-Note that `x` doesn't exist until we call the function, which gives the recipe for how `x` will be handled.
+Note that `dat` doesn't exist until we call the function, which merely contains the instructions for how any `dat` will be handled.
 
 ===
 
@@ -47,8 +60,8 @@ Finally, we need to give the function a name so we can use it like we used `c()`
 
 
 ~~~r
-first <- function(x) {
-    result <- x[1, 1]
+first <- function(dat) {
+    result <- dat[1, ]
     return(result)
 }
 ~~~
@@ -60,8 +73,8 @@ first(df)
 ~~~
 {:.input}
 ~~~
-[1] college
-Levels: middle < highschool < college
+       ed ct
+1 college  4
 ~~~
 {:.output}
 
@@ -71,16 +84,4 @@ Question
 : Can you explain the result of entering `first(counts)` into the console?
 
 Answer
-: {:.fragment} The function caused an error, which prompted the interpreter to print a helpful error message. Never ignore an error message.
-
-===
-
-## Exercise 5
-
-Subset the data frame by column name and row position to obtain the following output.
-
-~~~
-[1] highschool college
-Levels: middle < highschool < college
-~~~
-{:.output}
+: {:.fragment} The function caused an error, which prompted the interpreter to print a helpful error message. Never ignore an error message. (It's okay to ignore a "warning".)

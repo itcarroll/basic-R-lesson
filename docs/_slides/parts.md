@@ -5,6 +5,8 @@
 
 Parts of objects are always accessible, either by their name or by their position, using square brackets: `[` and `]`.
 
+===
+
 ## Position
 
 
@@ -51,7 +53,7 @@ df['education']
 
 
 ~~~r
-names(df) <- c("ed", "ct")
+names(df) <- c('ed', 'ct')
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
@@ -69,6 +71,8 @@ df['ed']
 ~~~
 {:.output}
 
+===
+
 Question
 : This use of `<-` with `names(x)` on the left is a little odd. What’s going on?
 
@@ -81,7 +85,7 @@ In a multi-dimensional array, you separate the dimension along which a part is r
 
 
 ~~~r
-df[3, "ed"]
+df[3, 'ed']
 ~~~
 {:.input}
 ~~~
@@ -137,12 +141,14 @@ weekend
 
 ===
 
-## Exercise 4
+## Exercise 5
 
 - Get weekdays using negative integers.
 - Get M-W-F using a call to `seq()` to specify the positions (don't forget to `?seq`).
 
 ===
+
+## Subsetting data frames
 
 The `$` sign is an operator that makes for quick access to a single, named part of an object.
 It's most useful when used interactively with "tab completion" on the columns of a data frame.
@@ -157,3 +163,32 @@ df$ed
 Levels: middle < highschool < college
 ~~~
 {:.output}
+
+===
+
+A logical test applied to a single column produces a vector of `TRUE` and `FALSE` values that's the right length for subsetting the data.
+
+
+~~~r
+df[df$ed == 'college', ]
+~~~
+{:.input}
+~~~
+       ed ct
+1 college  4
+3 college  7
+~~~
+{:.output}
+
+===
+
+## Exercise 6
+
+Subset the data frame `df` by row position and column name such that you obtain the following output.
+
+~~~
+[1] highschool college
+Levels: middle < highschool < college
+~~~
+{:.output}
+

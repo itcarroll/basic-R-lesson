@@ -70,6 +70,7 @@ Most of "learning R" involves getting to know a whole lot of functions, the effe
 A good place to begin learning R functions is with its built-in mathematical functionality:
 
 - binary operators `+`, `-`, `*`, `/`, and `^` (for raising to a power)
+- tests of equality ("==") and inequality ("<" and ">")
 - "smooth" functions like `sin`, `log`, and `sqrt`
 - additional functions like `max`, `range`, and `mean`
 
@@ -115,7 +116,53 @@ Use the quadratic formula to calculate both values of $$x$$ that solve $$1.5 x^2
 
 ## Assignment
 
-We can expand the vocabulary known to the R interpreter by creating a **variable**.
+When you start a new session, the R interpreter already knows many things, including
+
+- any number
+- any string of characters
+- operators that are universal (e.g. `+` or `/`) and specific to R (e.g. `$` or `%*%`)
+- functions in `base R`
+
+===
+
+To reference a number or function you just type it in as above.
+To referece a string of characters you must surround them in quotation marks.
+
+
+~~~r
+'ab.cd'
+~~~
+{:.input}
+~~~
+[1] "ab.cd"
+~~~
+{:.output}
+
+===
+
+Without quotation marks, the interpreter checks for things named `ab.cd` and doesn't find anything:
+
+
+~~~r
+ab.cd
+~~~
+{:.input}
+~~~
+Error in eval(expr, envir, enclos): object 'ab.cd' not found
+~~~
+{:.output}
+
+===
+
+Question
+: Is it better to use `'` or `"`?
+
+Answer
+: {:.fragment} Neither one is better. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
+
+===
+
+We can expand the vocabulary known to the R interpreter by creating a new **variable**.
 Using the symbol `<-` is referred to as assignment: we assign the output of any command to the right of `<-` to any **variable** written to its left.
 
 
@@ -144,50 +191,9 @@ x
 Assigning values to new variables (to the left of a `<-`) is the only time you can reference something previously unknown to the interpreter.
 All other commands must reference things already in the interpreter's vocabulary.
 
-When you start a new session, the R interpreter already knows many things, including
-
-- any number
-- any string of characters
-- operators that are universal (e.g. `+` or `/`) and specific to R (e.g. `$` or `%*%`)
-- functions in `base R`
-
 ===
 
-To reference a number or function you just type it in as above, but to referece a string of characters you must surround them in quotation marks.
-
-
-~~~r
-'ab.cd'
-~~~
-{:.input}
-~~~
-[1] "ab.cd"
-~~~
-{:.output}
-
-Question
-: Is it better to use `'` or `"`?
-
-Answer
-: {:.fragment} Neither one is better. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
-
-===
-
-Without quotation marks, the interpreter checks for things named `ab.cd` and doesn't find anything:
-
-
-~~~r
-ab.cd
-~~~
-{:.input}
-~~~
-Error in eval(expr, envir, enclos): object 'ab.cd' not found
-~~~
-{:.output}
-
-===
-
-Anything you assign to a variable becomes known to R, so you can refer to it later.
+Once assigned to a variable, a value becomes known to R and you can refer to it in other commands.
 
 
 ~~~r

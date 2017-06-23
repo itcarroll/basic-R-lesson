@@ -4,10 +4,10 @@
 ## The Editor
 
 The **console** is for evaluating commands you don't intend to keep or reuse. It's useful for testing commands and poking around.
-
 The **editor** is where you compose scripts that will process data, perform analyses, code up visualizations, and even write reports.
 
-These work together in RStudio, which has multiple ways to send parts of the script you are editing to the console for immediate evaluation. Alternatively you can "source" the entire script.
+These work together in RStudio, which has multiple ways to send parts of the script you are editing to the console for immediate evaluation.
+Alternatively you can "source" the entire script.
 
 ===
 
@@ -18,14 +18,17 @@ Open up "{{ site.handouts }}" in the editor, and follow along by replacing the `
 vals <- seq(1, 100)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
-The elements of this statement, from right to left are:
 
-- `)` is the closing paren of a function call
-- `1` and `100` are both arguments, or parameters, to the function
-- `(` is the opening paren of the function call
-- `seq` is the name of the function
+===
+
+Let's review the elements of this statement, from left to right:
+
+- `vals` is the name of a (new) variable
 - ` <- ` is an operator that assigns what's named on the left to equal the result of the expression on the right
-- `vals` is the name of a variable
+- `seq` is the name of the function
+- `(` is the opening paren of the function call
+- `1` and `100` are both arguments, or parameters, to the function
+- `)` is the closing paren of a function call
 
 ===
 
@@ -54,30 +57,14 @@ Question
 : What's an advantage of naming arguments?
 
 Answer
-: {:.fragment} One advantage is that you can put them in any order. A related advantage is that you can then skip some arguments, which is fine to do if each skipped argument has a default value.
+: {:.fragment} One advantage is that you can put them in any order. A related advantage is that you can then skip some arguments, which is fine to do if each skipped argument has a default value. A third advantage is code readability, which you should always be concious of while writing in the editor.
 
 ===
 
-How would you get to know the names of a function's arguments?
+## Readability
 
-
-~~~r
-?seq
-~~~
-{:.input}
-
-How would you even know what function to call?
-
-
-~~~r
-??sequence
-~~~
-{:.input}
-
-===
-
-The `<-` symbol used above is an operator, a shorthand for calling a function without placing arguments within parentheses.
-The `seq()` function also has an operator form when only the `from` and `to` arguments are used.
+Code readability in the editor cuts both ways: sometimes verbosity is useful, sometimes it is cumbersome.
+The `seq()` function has an operator form available when only the `from` and `to` arguments are needed.
 
 
 ~~~r
@@ -94,4 +81,25 @@ The `seq()` function also has an operator form when only the `from` and `to` arg
 ~~~
 {:.output}
 
-The `:` operator is most commonly used while accessing parts of other objects, as we'll see below.
+The `:` operator should be used whenever possible because it replaces a common, cumbersome function call with an brief, intuitive syntax.
+Likewise, the `assign` function duplicates the functionallity of the `<-` symbol, but is never used when the simpler operator will suffice.
+
+===
+
+## Function documentation
+
+How would you get to know these properties and the names of a function's arguments?
+
+
+~~~r
+?seq
+~~~
+{:.input}
+
+How would you even know what function to call?
+
+
+~~~r
+??sequence
+~~~
+{:.input}
