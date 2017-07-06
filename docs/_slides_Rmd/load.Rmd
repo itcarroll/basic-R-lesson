@@ -56,3 +56,6 @@ summary(plots)
 By default, all character data is read in to a data.frame as factors.
 Use the `read.csv()` argument `stringsAsFactors` to suppress this behavior, then subsequently modify the `sex` column in `surveys` to make it a factor.
 Columns of a `data.frame` are identified to the R interpreter with the `$` operator, e.g. `surveys$sex`. We'll see more on this below.
+
+[View solution](#solution-4)
+{:.notes}
