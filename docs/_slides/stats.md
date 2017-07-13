@@ -21,8 +21,8 @@ samp
 ~~~
 {:.input}
 ~~~
- [1]  0.7518293  1.0138131  0.6280393  0.7012288  0.9630408 -1.3947871
- [7] -0.4183569  2.2975311 -1.3028468 -0.0160964
+ [1]  0.8363729 -0.3765354  0.1219806  0.3843239 -2.0472276  0.1509189
+ [7] -0.3434567  0.4794906  1.4788799 -0.4282980
 ~~~
 {:.output}
 
@@ -71,13 +71,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -21.645, df = 117.93, p-value < 2.2e-16
+t = -23.848, df = 119.14, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -18.46999 -15.37371
+ -19.77695 -16.74465
 sample estimates:
 mean of x mean of y 
- 25.65815  42.58000 
+  24.3792   42.6400 
 ~~~
 {:.output}
 
@@ -103,18 +103,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--6.5829 -1.5782  0.4191  1.4225  5.4203 
+-6.5678 -1.5387  0.1796  1.4087  4.5568 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 4.257e+01  8.381e-01  50.797   <2e-16 ***
-x           2.944e-04  3.138e-02   0.009    0.993    
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 42.14813    0.82216  51.265   <2e-16 ***
+x            0.02018    0.03232   0.624    0.534    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.331 on 98 degrees of freedom
-Multiple R-squared:  8.985e-07,	Adjusted R-squared:  -0.0102 
-F-statistic: 8.805e-05 on 1 and 98 DF,  p-value: 0.9925
+Residual standard error: 2.345 on 98 degrees of freedom
+Multiple R-squared:  0.00396,	Adjusted R-squared:  -0.006204 
+F-statistic: 0.3896 on 1 and 98 DF,  p-value: 0.5339
 ~~~
 {:.output}
 
@@ -123,3 +123,6 @@ F-statistic: 8.805e-05 on 1 and 98 DF,  p-value: 0.9925
 ## Exercise 8
 
 Recall the formula notation used to plot hindfoot_length against weight for the observations in the `surveys` data frame: `plot(hindfoot_length ~ weight, data = surveys)`. Instead of the `plot` function, use the `lm` function to estimate the coefficient of `log(weight)` as a predictor of `log(hindfoot_length)`.
+
+[View solution](#solution-8)
+{:.notes}

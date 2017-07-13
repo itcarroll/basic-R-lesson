@@ -146,6 +146,9 @@ weekend
 - Get weekdays using negative integers.
 - Get M-W-F using a call to `seq()` to specify the positions (don't forget to `?seq`).
 
+[View solution](#solution-5)
+{:.notes}
+
 ===
 
 ## Subsetting data frames
@@ -192,3 +195,5 @@ Levels: middle < highschool < college
 ~~~
 {:.output}
 
+[View solution](#solution-6)
+{:.notes}

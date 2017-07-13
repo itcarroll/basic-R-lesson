@@ -123,7 +123,23 @@ str(data)
 
 ~~~r
 surveys <- read.csv('data/surveys.csv', stringsAsFactors = FALSE, na.strings = '')
+~~~
+
+~~~
+Warning in file(file, "rt"): cannot open file 'data/surveys.csv': No such
+file or directory
+~~~
+
+~~~
+Error in file(file, "rt"): cannot open the connection
+~~~
+
+~~~r
 surveys$sex <- factor(surveys$sex)
+~~~
+
+~~~
+Error in factor(surveys$sex): object 'surveys' not found
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
@@ -133,16 +149,7 @@ str(surveys)
 ~~~
 {:.input}
 ~~~
-'data.frame':	35549 obs. of  9 variables:
- $ record_id      : int  1 2 3 4 5 6 7 8 9 10 ...
- $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
- $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
- $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
- $ plot_id        : int  2 3 2 7 3 1 2 1 1 6 ...
- $ species_id     : chr  "NL" "NL" "DM" "DM" ...
- $ sex            : Factor w/ 2 levels "F","M": 2 2 1 2 2 2 1 2 1 1 ...
- $ hindfoot_length: int  32 33 37 36 35 14 NA 37 34 20 ...
- $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
+Error in str(surveys): object 'surveys' not found
 ~~~
 {:.output}
 
@@ -252,6 +259,10 @@ first(m)
 ~~~r
 surveys.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = surveys)
 ~~~
+
+~~~
+Error in is.data.frame(data): object 'surveys' not found
+~~~
 {:.text-document title="{{ site.handouts }}"}
 
 
@@ -260,8 +271,7 @@ coef(surveys.hl_model)[2]
 ~~~
 {:.input}
 ~~~
-log(weight) 
-  0.3961338 
+Error in coef(surveys.hl_model): object 'surveys.hl_model' not found
 ~~~
 {:.output}
 

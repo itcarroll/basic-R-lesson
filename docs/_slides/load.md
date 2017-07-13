@@ -19,31 +19,31 @@ read.csv(file = "data/plots.csv", header = TRUE)
 ~~~
 {:.input}
 ~~~
-   plot_id                 plot_type
-1        1         Spectab exclosure
-2        2                   Control
-3        3  Long-term Krat Exclosure
-4        4                   Control
-5        5          Rodent Exclosure
-6        6 Short-term Krat Exclosure
-7        7          Rodent Exclosure
-8        8                   Control
-9        9         Spectab exclosure
-10      10          Rodent Exclosure
-11      11                   Control
-12      12                   Control
-13      13 Short-term Krat Exclosure
-14      14                   Control
-15      15  Long-term Krat Exclosure
-16      16          Rodent Exclosure
-17      17                   Control
-18      18 Short-term Krat Exclosure
-19      19  Long-term Krat Exclosure
-20      20 Short-term Krat Exclosure
-21      21  Long-term Krat Exclosure
-22      22                   Control
-23      23          Rodent Exclosure
-24      24          Rodent Exclosure
+   id                 treatment
+1   1         Spectab exclosure
+2   2                   Control
+3   3  Long-term Krat Exclosure
+4   4                   Control
+5   5          Rodent Exclosure
+6   6 Short-term Krat Exclosure
+7   7          Rodent Exclosure
+8   8                   Control
+9   9         Spectab exclosure
+10 10          Rodent Exclosure
+11 11                   Control
+12 12                   Control
+13 13 Short-term Krat Exclosure
+14 14                   Control
+15 15  Long-term Krat Exclosure
+16 16          Rodent Exclosure
+17 17                   Control
+18 18 Short-term Krat Exclosure
+19 19  Long-term Krat Exclosure
+20 20 Short-term Krat Exclosure
+21 21  Long-term Krat Exclosure
+22 22                   Control
+23 23          Rodent Exclosure
+24 24          Rodent Exclosure
 ~~~
 {:.output}
 
@@ -64,6 +64,15 @@ Use the assignment operator "<-" to store that data in memory and work with it
 plots <- read.csv(file = "data/plots.csv")
 surveys <- read.csv(file = "data/surveys.csv")
 ~~~
+
+~~~
+Warning in file(file, "rt"): cannot open file 'data/surveys.csv': No such
+file or directory
+~~~
+
+~~~
+Error in file(file, "rt"): cannot open the connection
+~~~
 {:.text-document title="{{ site.handouts }}"}
 
 You can specify what indicates missing data in the read.csv function using either `na.strings = "NA"` or `na = "NA"`.
@@ -80,8 +89,8 @@ str(plots)
 {:.input}
 ~~~
 'data.frame':	24 obs. of  2 variables:
- $ plot_id  : int  1 2 3 4 5 6 7 8 9 10 ...
- $ plot_type: Factor w/ 5 levels "Control","Long-term Krat Exclosure",..: 5 1 2 1 3 4 3 1 5 3 ...
+ $ id       : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ treatment: Factor w/ 5 levels "Control","Long-term Krat Exclosure",..: 5 1 2 1 3 4 3 1 5 3 ...
 ~~~
 {:.output}
 
@@ -91,7 +100,7 @@ summary(plots)
 ~~~
 {:.input}
 ~~~
-    plot_id                          plot_type
+       id                            treatment
  Min.   : 1.00   Control                  :8  
  1st Qu.: 6.75   Long-term Krat Exclosure :4  
  Median :12.50   Rodent Exclosure         :6  
@@ -108,3 +117,6 @@ summary(plots)
 By default, all character data is read in to a data.frame as factors.
 Use the `read.csv()` argument `stringsAsFactors` to suppress this behavior, then subsequently modify the `sex` column in `surveys` to make it a factor.
 Columns of a `data.frame` are identified to the R interpreter with the `$` operator, e.g. `surveys$sex`. We'll see more on this below.
+
+[View solution](#solution-4)
+{:.notes}

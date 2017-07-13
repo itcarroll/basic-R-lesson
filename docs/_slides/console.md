@@ -112,6 +112,9 @@ $$
 
 Use the quadratic formula to calculate both values of $$x$$ that solve $$1.5 x^2 + 0.3 x - 2.9 = 0$$.
 
+[View solution](#solution-1)
+{:.notes}
+
 ===
 
 ## Assignment

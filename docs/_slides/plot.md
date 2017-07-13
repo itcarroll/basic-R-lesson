@@ -18,9 +18,11 @@ Providing plots with separate "x" and "y" coordinates produces a scatterplot.
 ~~~r
 plot(surveys$hindfoot_length, surveys$weight)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
 
-![plot of chunk unnamed-chunk-1]({{ site.baseurl }}/images/unnamed-chunk-1-1.png)
+~~~
+Error in plot(surveys$hindfoot_length, surveys$weight): object 'surveys' not found
+~~~
+{:.text-document title="{{ site.handouts }}"}
 
 Using R's formula notation, as in `plot(weight ~ hindfoot_length, data = surveys)`, is a more readable syntax for some.
 
@@ -34,9 +36,11 @@ To plot binned counts of a single variable, use the `hist` function.
 ~~~r
 hist(log(surveys$weight))
 ~~~
-{:.text-document title="{{ site.handouts }}"}
 
-![plot of chunk unnamed-chunk-2]({{ site.baseurl }}/images/unnamed-chunk-2-1.png)
+~~~
+Error in hist(log(surveys$weight)): object 'surveys' not found
+~~~
+{:.text-document title="{{ site.handouts }}"}
 
 ===
 
@@ -48,6 +52,8 @@ Use `boxplot` to compare the number of species seen each year.
 ~~~r
 boxplot(log(weight) ~ year, data = surveys)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
 
-![plot of chunk unnamed-chunk-3]({{ site.baseurl }}/images/unnamed-chunk-3-1.png)
+~~~
+Error in eval(m$data, parent.frame()): object 'surveys' not found
+~~~
+{:.text-document title="{{ site.handouts }}"}
