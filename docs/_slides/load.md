@@ -62,16 +62,7 @@ Use the assignment operator "<-" to store that data in memory and work with it
 
 ~~~r
 plots <- read.csv(file = "data/plots.csv")
-surveys <- read.csv(file = "data/surveys.csv")
-~~~
-
-~~~
-Warning in file(file, "rt"): cannot open file 'data/surveys.csv': No such
-file or directory
-~~~
-
-~~~
-Error in file(file, "rt"): cannot open the connection
+animals <- read.csv(file = "data/animals.csv")
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
@@ -80,7 +71,7 @@ You can also specify multiple things to be interpreted as missing values, such a
 
 ===
 
-After reading in the "surveys.csv" and "plots.csv" files, let's explore what types of data are in each column and what kind of structure your data has. 
+After reading in the "animals.csv" and "plots.csv" files, let's explore what types of data are in each column and what kind of structure your data has. 
 
 
 ~~~r
@@ -115,8 +106,8 @@ summary(plots)
 ## Exercise 4
 
 By default, all character data is read in to a data.frame as factors.
-Use the `read.csv()` argument `stringsAsFactors` to suppress this behavior, then subsequently modify the `sex` column in `surveys` to make it a factor.
-Columns of a `data.frame` are identified to the R interpreter with the `$` operator, e.g. `surveys$sex`. We'll see more on this below.
+Use the `read.csv()` argument `stringsAsFactors` to suppress this behavior, then subsequently modify the `sex` column in `animals` to make it a factor.
+Columns of a `data.frame` are identified to the R interpreter with the `$` operator, e.g. `animals$sex`. We'll see more on this below.
 
 [View solution](#solution-4)
 {:.notes}
