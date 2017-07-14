@@ -122,26 +122,26 @@ str(data)
 
 
 ~~~r
-surveys <- read.csv('data/surveys.csv', stringsAsFactors = FALSE, na.strings = '')
-surveys$sex <- factor(surveys$sex)
+animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
+animals$sex <- factor(animals$sex)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r
-str(surveys)
+str(animals)
 ~~~
 {:.input}
 ~~~
 'data.frame':	35549 obs. of  9 variables:
- $ record_id      : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ id             : int  2 3 4 5 6 7 8 9 10 11 ...
  $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
  $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
  $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
- $ plot_id        : int  2 3 2 7 3 1 2 1 1 6 ...
- $ species_id     : chr  "NL" "NL" "DM" "DM" ...
- $ sex            : Factor w/ 2 levels "F","M": 2 2 1 2 2 2 1 2 1 1 ...
- $ hindfoot_length: int  32 33 37 36 35 14 NA 37 34 20 ...
+ $ plot_id        : int  3 2 7 3 1 2 1 1 6 5 ...
+ $ species_id     : chr  "NL" "DM" "DM" "DM" ...
+ $ sex            : Factor w/ 2 levels "F","M": 2 1 2 2 2 1 2 1 1 1 ...
+ $ hindfoot_length: int  33 37 36 35 14 NA 37 34 20 53 ...
  $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
 ~~~
 {:.output}
@@ -250,13 +250,13 @@ first(m)
 
 
 ~~~r
-surveys.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = surveys)
+animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r
-coef(surveys.hl_model)[2]
+coef(animals.hl_model)[2]
 ~~~
 {:.input}
 ~~~

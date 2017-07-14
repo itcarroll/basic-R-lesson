@@ -70,7 +70,7 @@ summary(fit)
 
 ## Exercise 8
 
-Recall the formula notation used to plot hindfoot_length against weight for the observations in the `surveys` data frame: `plot(hindfoot_length ~ weight, data = surveys)`. Instead of the `plot` function, use the `lm` function to estimate the coefficient of `log(weight)` as a predictor of `log(hindfoot_length)`.
+Recall the formula notation used to plot hindfoot_length against weight for the observations in the `animals` data frame: `plot(hindfoot_length ~ weight, data = animals)`. Instead of the `plot` function, use the `lm` function to estimate the coefficient of `log(weight)` as a predictor of `log(hindfoot_length)`.
 
 [View solution](#solution-8)
 {:.notes}

@@ -21,8 +21,8 @@ samp
 ~~~
 {:.input}
 ~~~
- [1]  0.7518293  1.0138131  0.6280393  0.7012288  0.9630408 -1.3947871
- [7] -0.4183569  2.2975311 -1.3028468 -0.0160964
+ [1] -1.3112491  0.6181920  0.3567972 -0.6602221  1.6803084 -1.2819797
+ [7] -0.1405303  0.1952731 -0.3485270  0.9041232
 ~~~
 {:.output}
 
@@ -71,13 +71,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -21.645, df = 117.93, p-value < 2.2e-16
+t = -22.833, df = 123.23, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -18.46999 -15.37371
+ -18.85954 -15.85057
 sample estimates:
 mean of x mean of y 
- 25.65815  42.58000 
+ 25.23494  42.59000 
 ~~~
 {:.output}
 
@@ -103,18 +103,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--6.5829 -1.5782  0.4191  1.4225  5.4203 
+-6.3983 -1.6511 -0.4279  1.5188  6.3128 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 4.257e+01  8.381e-01  50.797   <2e-16 ***
-x           2.944e-04  3.138e-02   0.009    0.993    
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 43.29875    0.93086  46.515   <2e-16 ***
+x           -0.02809    0.03550  -0.791    0.431    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.331 on 98 degrees of freedom
-Multiple R-squared:  8.985e-07,	Adjusted R-squared:  -0.0102 
-F-statistic: 8.805e-05 on 1 and 98 DF,  p-value: 0.9925
+Residual standard error: 2.532 on 98 degrees of freedom
+Multiple R-squared:  0.006347,	Adjusted R-squared:  -0.003792 
+F-statistic: 0.626 on 1 and 98 DF,  p-value: 0.4307
 ~~~
 {:.output}
 
@@ -122,4 +122,7 @@ F-statistic: 8.805e-05 on 1 and 98 DF,  p-value: 0.9925
 
 ## Exercise 8
 
-Recall the formula notation used to plot hindfoot_length against weight for the observations in the `surveys` data frame: `plot(hindfoot_length ~ weight, data = surveys)`. Instead of the `plot` function, use the `lm` function to estimate the coefficient of `log(weight)` as a predictor of `log(hindfoot_length)`.
+Recall the formula notation used to plot hindfoot_length against weight for the observations in the `animals` data frame: `plot(hindfoot_length ~ weight, data = animals)`. Instead of the `plot` function, use the `lm` function to estimate the coefficient of `log(weight)` as a predictor of `log(hindfoot_length)`.
+
+[View solution](#solution-8)
+{:.notes}

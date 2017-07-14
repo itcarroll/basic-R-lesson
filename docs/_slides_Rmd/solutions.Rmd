@@ -76,12 +76,12 @@ str(data)
 ## Solution 4
 
 ```{r title="{{ site.handouts }}"}
-surveys <- read.csv('data/surveys.csv', stringsAsFactors = FALSE, na.strings = '')
-surveys$sex <- factor(surveys$sex)
+animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
+animals$sex <- factor(animals$sex)
 ```
 
 ```{r}
-str(surveys)
+str(animals)
 ```
 
 <aside class="notes" markdown="block">
@@ -156,11 +156,11 @@ first(m)
 ## Solution 8
 
 ```{r title="{{ site.handouts }}"}
-surveys.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = surveys)
+animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
 ```
 
 ```{r}
-coef(surveys.hl_model)[2]
+coef(animals.hl_model)[2]
 ```
 
 <aside class="notes" markdown="block">

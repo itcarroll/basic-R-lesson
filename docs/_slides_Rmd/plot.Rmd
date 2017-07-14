@@ -15,10 +15,10 @@ For more advanced plotting such as multi-faceted plots, the libraries [lattice](
 Providing plots with separate "x" and "y" coordinates produces a scatterplot.
 
 ```{r title="{{ site.handouts }}"}
-plot(surveys$hindfoot_length, surveys$weight)
+plot(animals$hindfoot_length, animals$weight)
 ```
 
-Using R's formula notation, as in `plot(weight ~ hindfoot_length, data = surveys)`, is a more readable syntax for some.
+Using R's formula notation, as in `plot(weight ~ hindfoot_length, data = animals)`, is a more readable syntax for some.
 
 ===
 
@@ -27,7 +27,7 @@ Using R's formula notation, as in `plot(weight ~ hindfoot_length, data = surveys
 To plot binned counts of a single variable, use the `hist` function.
 
 ```{r title="{{ site.handouts }}"}
-hist(log(surveys$weight))
+hist(log(animals$weight))
 ``` 
 
 ===
@@ -37,5 +37,5 @@ hist(log(surveys$weight))
 Use `boxplot` to compare the number of species seen each year.
 
 ```{r title="{{ site.handouts }}"}
-boxplot(log(weight) ~ year, data = surveys)
+boxplot(log(weight) ~ year, data = animals)
 ```

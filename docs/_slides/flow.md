@@ -85,3 +85,6 @@ if (...) {
 {:.text-document title="{{ site.handouts }}"}
 
 Expand the `first` function once again to differentiate between `dat` provided as a `matrix` and as a `data.frame`. It's up to you what the "first" element of a matrix should be!
+
+[View solution](#solution-7)
+{:.notes}
