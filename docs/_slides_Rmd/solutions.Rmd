@@ -10,21 +10,13 @@
 First solution:
 
 ```{r title="{{ site.handouts }}"}
-x <- (-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
-```
-
-```{r}
-1.5 * x^2 + 0.3 * x - 2.9
+(-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ```
 
 Second solution:
 
 ```{r title="{{ site.handouts }}"}
-x <- (-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
-```
-
-```{r}
-1.5 * x^2 + 0.3 * x - 2.9
+(-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ```
 
 <aside class="notes" markdown="block">

@@ -11,37 +11,25 @@ First solution:
 
 
 ~~~r
-x <- (-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+(-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+~~~
+
+~~~
+[1] 1.294035
 ~~~
 {:.text-document title="{{ site.handouts }}"}
-
-
-~~~r
-1.5 * x^2 + 0.3 * x - 2.9
-~~~
-{:.input}
-~~~
-[1] -8.881784e-16
-~~~
-{:.output}
 
 Second solution:
 
 
 ~~~r
-x <- (-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+(-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
+~~~
+
+~~~
+[1] -1.494035
 ~~~
 {:.text-document title="{{ site.handouts }}"}
-
-
-~~~r
-1.5 * x^2 + 0.3 * x - 2.9
-~~~
-{:.input}
-~~~
-[1] -4.440892e-16
-~~~
-{:.output}
 
 <aside class="notes" markdown="block">
 [Return](#exercise-1)

@@ -11,7 +11,7 @@ Alternatively you can "source" the entire script.
 
 ===
 
-Open up "{{ site.handouts }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl R on Windows, ⌘ R on Mac OS).
+Open up "{{ site.handouts }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
 
 
 ~~~r

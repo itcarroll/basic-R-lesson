@@ -21,8 +21,8 @@ samp
 ~~~
 {:.input}
 ~~~
- [1] -1.3112491  0.6181920  0.3567972 -0.6602221  1.6803084 -1.2819797
- [7] -0.1405303  0.1952731 -0.3485270  0.9041232
+ [1] -0.78113282 -0.06103047 -1.15900799  0.26156262  0.46521782
+ [6] -0.15671861  0.68824774 -1.26014231  1.05630340  2.86988207
 ~~~
 {:.output}
 
@@ -71,13 +71,13 @@ t.test(x, y)
 	Welch Two Sample t-test
 
 data:  x and y
-t = -22.833, df = 123.23, p-value < 2.2e-16
+t = -22.664, df = 117.39, p-value < 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -18.85954 -15.85057
+ -19.54175 -16.40111
 sample estimates:
 mean of x mean of y 
- 25.23494  42.59000 
+ 24.39857  42.37000 
 ~~~
 {:.output}
 
@@ -103,18 +103,18 @@ lm(formula = y ~ x)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--6.3983 -1.6511 -0.4279  1.5188  6.3128 
+-5.3884 -1.3721 -0.3561  1.6289  5.6395 
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 43.29875    0.93086  46.515   <2e-16 ***
-x           -0.02809    0.03550  -0.791    0.431    
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 42.418347   0.789681  53.716   <2e-16 ***
+x           -0.001982   0.030921  -0.064    0.949    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 2.532 on 98 degrees of freedom
-Multiple R-squared:  0.006347,	Adjusted R-squared:  -0.003792 
-F-statistic: 0.626 on 1 and 98 DF,  p-value: 0.4307
+Residual standard error: 2.333 on 98 degrees of freedom
+Multiple R-squared:  4.19e-05,	Adjusted R-squared:  -0.01016 
+F-statistic: 0.004107 on 1 and 98 DF,  p-value: 0.949
 ~~~
 {:.output}
 
