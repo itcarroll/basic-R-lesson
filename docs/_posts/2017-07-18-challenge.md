@@ -1,4 +1,6 @@
 ---
+layout: archive
+style: /css/static.css
 ---
 
 ## Scripting Exercises
@@ -40,6 +42,7 @@ for (i in 3:12) {
   fib[i] <- fib[i - 1] + fib[i - 2]
 }
 ```
+{:.input}
 
 #### Solution 2
 
@@ -58,6 +61,7 @@ df <- data.frame(
 df.lm <- lm(prop ~ size + year, data = df)
 summary(df.lm)
 ```
+{:.input}
 
 #### Solution 4
 
@@ -68,6 +72,7 @@ df$year <- factor(df$year)
 df.lm <- lm(weight ~ year, data = df)
 summary(df.lm)
 ```
+{:.input}
 
 #### Solution 5
 
@@ -82,5 +87,6 @@ fibn <- function(n) {
 }
 fibn(12)
 ```
+{:.input}
 
 Note that this recursive solution is very inefficient, but could be greatly improved with [memoization](https://en.wikipedia.org/wiki/Memoization).
