@@ -64,6 +64,7 @@ first(counts)
 ~~~
 {:.output}
 
+<!--
 ===
 
 ## Exercise 7
@@ -88,3 +89,4 @@ Expand the `first` function once again to differentiate between `dat` provided a
 
 [View solution](#solution-7)
 {:.notes}
+-->

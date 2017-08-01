@@ -94,7 +94,7 @@ list(1, list(2, 3))
 
 ===
 
-## Exercise 2
+## Exercise 1
 
 Look at the outputs of `list(1, list(2, 3))` and `c(1, list(1, 2))`. Store the output of each command as new variables, and then examine each variable's structure with the `str()` function. What's different about the structure of the two variables? Are both lists?
 

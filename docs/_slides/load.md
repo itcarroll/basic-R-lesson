@@ -103,7 +103,7 @@ summary(plots)
 
 ===
 
-## Exercise 4
+## Exercise 3
 
 By default, all character data is read in to a data.frame as factors.
 Use the `read.csv()` argument `stringsAsFactors` to suppress this behavior, then subsequently modify the `sex` column in `animals` to make it a factor.

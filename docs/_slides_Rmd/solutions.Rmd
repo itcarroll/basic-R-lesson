@@ -3,6 +3,7 @@
 
 ## Exercise solutions
 
+<!--
 ===
 
 ## Solution 1
@@ -19,13 +20,13 @@ Second solution:
 (-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ```
 
-<aside class="notes" markdown="block">
 [Return](#exercise-1)
-</aside>
+{:.notes}
+-->
 
 ===
 
-## Solution 2
+## Solution 1
 
 ```{r title="{{ site.handouts }}"}
 x <- list(1, list(2, 3))
@@ -41,13 +42,12 @@ str(y)
 
 The variable `x` contains two elements, a number and a list. The variable `y` has concatenation of the two arguments, coerced to the more flexible of the two (a list is more flexible than a number). Both `x` and `y` are lists.
 
-<aside class="notes" markdown="block">
 [Return](#exercise-2)
-</aside>
+{:.notes}
 
 ===
 
-## Solution 3
+## Solution 2
 
 ```{r title="{{ site.handouts }}"}
 species <- c()
@@ -59,13 +59,12 @@ data <- data.frame(species, abund)
 str(data)
 ```
 
-<aside class="notes" markdown="block">
 [Return](#exercise-3)
-</aside>
+{:.notes}
 
 ===
 
-## Solution 4
+## Solution 3
 
 ```{r title="{{ site.handouts }}"}
 animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
@@ -76,13 +75,12 @@ animals$sex <- factor(animals$sex)
 str(animals)
 ```
 
-<aside class="notes" markdown="block">
 [Return](#exercise-4)
-</aside>
+{:.notes}
 
 ===
 
-## Solution 5
+## Solution 4
 
 ```{r title="{{ site.handouts }}"}
 sol5a <- days[c(-1, -7)]
@@ -97,9 +95,8 @@ sol5a
 sol5b
 ```
 
-<aside class="notes" markdown="block">
 [Return](#exercise-5)
-</aside>
+{:.notes}
 
 ===
 
@@ -113,10 +110,10 @@ sol6 <- df[2:3, 'ed']
 sol6
 ```
 
-<aside class="notes" markdown="block">
 [Return](#exercise-6))
-</aside>
+{:.notes}
 
+<!--
 ===
 
 ## Solution 7
@@ -139,9 +136,8 @@ m <- matrix(1:9, nrow = 3, ncol = 3)
 first(m)
 ```
 
-<aside class="notes" markdown="block">
 [Return](#exercise-7)
-</aside>
+{:.notes}
 
 ===
 
@@ -158,3 +154,17 @@ coef(animals.hl_model)[2]
 <aside class="notes" markdown="block">
 [Return](#exercise-8)
 </aside>
+-->
+
+## Solution 6
+
+```{r title="{{ site.handouts }}"}
+hl_model <- lm(hindfoot_length ~ log(weight) * species_id, data = animals)
+```
+
+```{r}
+summary(hl_model)
+```
+
+[Return](#exercise-8)
+{:.notes}

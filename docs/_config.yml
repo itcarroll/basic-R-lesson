@@ -4,7 +4,7 @@ title: Bas(e|ic) R
 handouts: worksheet.R
 tag: v0.2
 lesson: 2
-instructor: Ian Carroll and Mary Shelly
+instructor: Ian Carroll
 authors:
  - Kelly Hondula
  - Ian Carroll
@@ -13,18 +13,19 @@ authors:
 
 slide_sorter:
   - intro
-  - console
-  - environment
+#  - console
+#  - environment
   - editor
 #  - push
   - types
   - dataframes
   - load
   - parts
-  - plot
+#  - plot
   - functions
   - flow
-  - stats
+#  - stats
+  - lm
   - conclude
 #  - push
   - solutions
