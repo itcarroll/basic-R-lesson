@@ -141,6 +141,8 @@ coef(animals.hl_model)[2]
 </aside>
 -->
 
+===
+
 ## Solution 5
 
 ```{r title="{{ site.handouts }}"}
