@@ -58,7 +58,7 @@ F-statistic: 7.607e+04 on 1 and 30736 DF,  p-value: < 2.2e-16
 
 ===
 
-## Exercise 6
+## Exercise 5
 
 Regress hindfoot_length against weight and species_id. Does it appear that the Chihuahuan Desert's common kangaroo rat (DM) have *inordinately* large feet for their weight?
 

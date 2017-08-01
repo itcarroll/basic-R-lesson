@@ -112,18 +112,3 @@ A logical test applied to a single column produces a vector of `TRUE` and `FALSE
 ```{r}
 df[df$ed == 'college', ]
 ```
-
-===
-
-## Exercise 5
-
-Subset the data frame `df` by row position and column name such that you obtain the following output.
-
-~~~
-[1] highschool college
-Levels: middle < highschool < college
-~~~
-{:.output}
-
-[View solution](#solution-6)
-{:.notes}

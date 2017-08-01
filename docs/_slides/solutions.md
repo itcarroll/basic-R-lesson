@@ -170,30 +170,6 @@ sol5b
 [Return](#exercise-5)
 {:.notes}
 
-===
-
-## Solution 6
-
-
-~~~r
-sol6 <- df[2:3, 'ed']
-~~~
-{:.text-document title="{{ site.handouts }}"}
-
-
-~~~r
-sol6
-~~~
-{:.input}
-~~~
-[1] highschool college   
-Levels: middle < highschool < college
-~~~
-{:.output}
-
-[Return](#exercise-6))
-{:.notes}
-
 <!--
 ===
 
@@ -254,7 +230,7 @@ log(weight)
 </aside>
 -->
 
-## Solution 6
+## Solution 5
 
 
 ~~~r

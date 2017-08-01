@@ -98,21 +98,6 @@ sol5b
 [Return](#exercise-5)
 {:.notes}
 
-===
-
-## Solution 6
-
-```{r title="{{ site.handouts }}"}
-sol6 <- df[2:3, 'ed']
-```
-
-```{r}
-sol6
-```
-
-[Return](#exercise-6))
-{:.notes}
-
 <!--
 ===
 
@@ -156,7 +141,7 @@ coef(animals.hl_model)[2]
 </aside>
 -->
 
-## Solution 6
+## Solution 5
 
 ```{r title="{{ site.handouts }}"}
 hl_model <- lm(hindfoot_length ~ log(weight) * species_id, data = animals)

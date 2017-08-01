@@ -182,18 +182,3 @@ df[df$ed == 'college', ]
 3 college  7
 ~~~
 {:.output}
-
-===
-
-## Exercise 5
-
-Subset the data frame `df` by row position and column name such that you obtain the following output.
-
-~~~
-[1] highschool college
-Levels: middle < highschool < college
-~~~
-{:.output}
-
-[View solution](#solution-6)
-{:.notes}
