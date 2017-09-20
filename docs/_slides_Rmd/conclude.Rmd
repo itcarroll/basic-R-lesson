@@ -3,18 +3,18 @@
 
 ## Review
 
-In this introduction to R, we briefly touched on several key principle of scientific programming.
+In this introduction to R, we touched on several key parts of scripting for data analysis.
 
-- Data types
-- Assignment
-- Reading data
+- RStudio panes
+- Variable assignment
+- Data structures
 - Subsetting data
-- Functions (keyword `function`)
-- Statistics
+- Linear models
 
 <!--
  - Flow control (keywords `if` and `else`)
  - Plots
+ - Functions
 -->
 
 ===

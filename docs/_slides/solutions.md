@@ -3,79 +3,21 @@
 
 ## Exercise solutions
 
-<!--
 ===
 
 ## Solution 1
-
-First solution:
 
 
 ~~~r
 (-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ~~~
-
+{:.input}
 ~~~
 [1] 1.294035
 ~~~
-{:.text-document title="{{ site.handouts }}"}
-
-Second solution:
-
-
-~~~r
-(-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
-~~~
-
-~~~
-[1] -1.494035
-~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.output}
 
 [Return](#exercise-1)
-{:.notes}
--->
-
-===
-
-## Solution 1
-
-
-~~~r
-x <- list(1, list(2, 3))
-y <- c(1, list(2, 3))
-~~~
-{:.text-document title="{{ site.handouts }}"}
-
-
-~~~r
-str(x)
-~~~
-{:.input}
-~~~
-List of 2
- $ : num 1
- $ :List of 2
-  ..$ : num 2
-  ..$ : num 3
-~~~
-{:.output}
-
-~~~r
-str(y)
-~~~
-{:.input}
-~~~
-List of 3
- $ : num 1
- $ : num 2
- $ : num 3
-~~~
-{:.output}
-
-The variable `x` contains two elements, a number and a list. The variable `y` has concatenation of the two arguments, coerced to the more flexible of the two (a list is more flexible than a number). Both `x` and `y` are lists.
-
-[Return](#exercise-2)
 {:.notes}
 
 ===
@@ -84,8 +26,51 @@ The variable `x` contains two elements, a number and a list. The variable `y` ha
 
 
 ~~~r
-species <- c()
-abund <- c()
+x <- list(3, 4, 5, 7)
+~~~
+{:.text-document title="{{ site.handouts }}"}
+
+
+~~~r
+typeof(counts)
+~~~
+{:.input}
+~~~
+[1] "double"
+~~~
+{:.output}
+
+~~~r
+typeof(x)
+~~~
+{:.input}
+~~~
+[1] "list"
+~~~
+{:.output}
+
+~~~r
+typeof(c(counts, x))
+~~~
+{:.input}
+~~~
+[1] "list"
+~~~
+{:.output}
+
+The variable `x` has a data type of `list`, so R does not restrict its elements to a particular type as it does for vectors. The result of combining a list and vector is a list, because the list is the more flexible data structure.
+
+[Return](#exercise-2)
+{:.notes}
+
+===
+
+## Solution 3
+
+
+~~~r
+species <- c('ape', 'bat', 'cat', 'dog')
+abund <- 1:4
 data <- data.frame(species, abund)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
@@ -96,16 +81,19 @@ str(data)
 ~~~
 {:.input}
 ~~~
-'data.frame':	0 obs. of  0 variables
+'data.frame':	4 obs. of  2 variables:
+ $ species: Factor w/ 4 levels "ape","bat","cat",..: 1 2 3 4
+ $ abund  : int  1 2 3 4
 ~~~
 {:.output}
 
 [Return](#exercise-3)
 {:.notes}
 
+<!--
 ===
 
-## Solution 3
+## Solution 4
 
 
 ~~~r
@@ -135,6 +123,7 @@ str(animals)
 
 [Return](#exercise-4)
 {:.notes}
+-->
 
 ===
 
@@ -142,14 +131,14 @@ str(animals)
 
 
 ~~~r
-sol5a <- days[c(-1, -7)]
-sol5b <- days[seq(2, 7, 2)]
+sol1 <- days[c(-1, -7)]
+sol2 <- days[seq(2, 7, 2)]
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r
-sol5a
+sol1
 ~~~
 {:.input}
 ~~~
@@ -159,7 +148,7 @@ sol5a
 
 
 ~~~r
-sol5b
+sol2
 ~~~
 {:.input}
 ~~~
@@ -167,13 +156,13 @@ sol5b
 ~~~
 {:.output}
 
-[Return](#exercise-5)
+[Return](#exercise-4)
 {:.notes}
 
 <!--
 ===
 
-## Solution 7
+## Solution 6
 
 
 ~~~r
@@ -201,12 +190,12 @@ first(m)
 ~~~
 {:.output}
 
-[Return](#exercise-7)
+[Return](#exercise-6)
 {:.notes}
 
 ===
 
-## Solution 8
+## Solution 7
 
 
 ~~~r
@@ -225,9 +214,9 @@ log(weight)
 ~~~
 {:.output}
 
-<aside class="notes" markdown="block">
+
 [Return](#exercise-8)
-</aside>
+{:.notes}
 -->
 
 ===
@@ -236,83 +225,83 @@ log(weight)
 
 
 ~~~r
-hl_model <- lm(hindfoot_length ~ log(weight) * species_id, data = animals)
+fit <- lm(hindfoot_length ~ weight * species_id, animals)
 ~~~
 {:.text-document title="{{ site.handouts }}"}
 
 
 ~~~r
-summary(hl_model)
+summary(fit)
 ~~~
 {:.input}
 ~~~
 
 Call:
-lm(formula = hindfoot_length ~ log(weight) * species_id, data = animals)
+lm(formula = hindfoot_length ~ weight * species_id, data = animals)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--24.0566  -0.6536   0.0456   0.7234  29.7702 
+-24.0134  -0.6449   0.0519   0.7144  29.7848 
 
 Coefficients:
-                         Estimate Std. Error t value Pr(>|t|)    
-(Intercept)               12.7858     2.1240   6.020 1.77e-09 ***
-log(weight)                0.1006     0.9932   0.101 0.919307    
-species_idDM              11.9327     2.1438   5.566 2.63e-08 ***
-species_idDO              14.3676     2.1935   6.550 5.84e-11 ***
-species_idDS              17.7785     2.2183   8.015 1.14e-15 ***
-species_idNL               7.8180     2.2269   3.511 0.000448 ***
-species_idOL               3.8329     2.2205   1.726 0.084326 .  
-species_idOT               3.9959     2.1768   1.836 0.066421 .  
-species_idOX               2.8502    19.2255   0.148 0.882145    
-species_idPB               7.7369     2.1607   3.581 0.000343 ***
-species_idPE               2.7944     2.2052   1.267 0.205104    
-species_idPF               0.1775     2.1608   0.082 0.934532    
-species_idPH               0.3679     4.6568   0.079 0.937035    
-species_idPI               6.7215    19.7938   0.340 0.734180    
-species_idPL               5.5096     3.3721   1.634 0.102294    
-species_idPM               3.3929     2.1991   1.543 0.122874    
-species_idPP               4.3321     2.1504   2.015 0.043963 *  
-species_idPX              34.6473    54.3637   0.637 0.523918    
-species_idRF               2.7435     3.4223   0.802 0.422754    
-species_idRM               1.5570     2.1465   0.725 0.468236    
-species_idRO              11.3148     6.9792   1.621 0.104982    
-species_idRX              -7.8187     9.0769  -0.861 0.389032    
-species_idSF               3.0692     3.2602   0.941 0.346492    
-species_idSH               0.8047     2.5495   0.316 0.752296    
-species_idSO               6.0981     2.9040   2.100 0.035746 *  
-log(weight):species_idDM   2.9055     0.9962   2.917 0.003541 ** 
-log(weight):species_idDO   2.0768     1.0032   2.070 0.038436 *  
-log(weight):species_idDS   3.9753     1.0022   3.967 7.31e-05 ***
-log(weight):species_idNL   2.2186     1.0020   2.214 0.026832 *  
-log(weight):species_idOL   1.0443     1.0110   1.033 0.301634    
-log(weight):species_idOT   0.9991     1.0045   0.995 0.319923    
-log(weight):species_idOX   1.4617     6.3414   0.231 0.817702    
-log(weight):species_idPB   1.5264     0.9998   1.527 0.126857    
-log(weight):species_idPE   1.4128     1.0119   1.396 0.162681    
-log(weight):species_idPF   1.1727     1.0116   1.159 0.246392    
-log(weight):species_idPH   3.5936     1.5661   2.295 0.021763 *  
-log(weight):species_idPI   0.7853     6.7317   0.117 0.907135    
-log(weight):species_idPL   0.4921     1.3354   0.368 0.712515    
-log(weight):species_idPM   1.3015     1.0107   1.288 0.197849    
-log(weight):species_idPP   1.5413     1.0003   1.541 0.123355    
-log(weight):species_idPX  -9.5918    18.4815  -0.519 0.603767    
-log(weight):species_idRF   0.6685     1.4342   0.466 0.641130    
-log(weight):species_idRM   0.7976     1.0019   0.796 0.426004    
-log(weight):species_idRO  -3.8730     3.0337  -1.277 0.201735    
-log(weight):species_idRX   4.9175     3.4007   1.446 0.148179    
-log(weight):species_idSF   2.6055     1.1681   2.231 0.025712 *  
-log(weight):species_idSH   3.4480     1.0472   3.292 0.000994 ***
-log(weight):species_idSO   1.6095     1.1125   1.447 0.147980    
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         12.819706   0.881185  14.548  < 2e-16 ***
+weight               0.020964   0.099647   0.210  0.83337    
+species_idDM        19.878067   0.885692  22.444  < 2e-16 ***
+species_idDO        20.320892   0.896080  22.678  < 2e-16 ***
+species_idDS        32.082231   0.895996  35.806  < 2e-16 ***
+species_idNL        16.814112   0.895635  18.773  < 2e-16 ***
+species_idOL         6.469932   0.906738   7.135 9.86e-13 ***
+species_idOT         6.436566   0.896637   7.179 7.20e-13 ***
+species_idOX         5.949524   6.487854   0.917  0.35914    
+species_idPB        11.555911   0.889542  12.991  < 2e-16 ***
+species_idPE         5.930293   0.905705   6.548 5.93e-11 ***
+species_idPF         1.476920   0.899021   1.643  0.10043    
+species_idPH         9.421561   1.575405   5.980 2.25e-09 ***
+species_idPI         8.373842   6.804910   1.231  0.21850    
+species_idPL         6.383570   1.408950   4.531 5.90e-06 ***
+species_idPM         5.937775   0.907084   6.546 6.00e-11 ***
+species_idPP         7.368245   0.889413   8.284  < 2e-16 ***
+species_idPX        16.180294  18.538880   0.873  0.38279    
+species_idRF         4.028077   1.351396   2.981  0.00288 ** 
+species_idRM         2.828061   0.891669   3.172  0.00152 ** 
+species_idRO         6.371783   3.079506   2.069  0.03855 *  
+species_idRX         0.513627   3.600336   0.143  0.88656    
+species_idSF        12.199667   1.019254  11.969  < 2e-16 ***
+species_idSH        12.083991   0.963573  12.541  < 2e-16 ***
+species_idSO        10.806853   1.060554  10.190  < 2e-16 ***
+weight:species_idDM  0.055372   0.099668   0.556  0.57852    
+weight:species_idDO  0.029121   0.099701   0.292  0.77022    
+weight:species_idDS  0.021381   0.099656   0.215  0.83012    
+weight:species_idNL -0.004479   0.099652  -0.045  0.96415    
+weight:species_idOL  0.018680   0.099870   0.187  0.85163    
+weight:species_idOT  0.020726   0.099874   0.208  0.83560    
+weight:species_idOX  0.055959   0.317826   0.176  0.86024    
+weight:species_idPB  0.033628   0.099717   0.337  0.73594    
+weight:species_idPE  0.046181   0.100101   0.461  0.64455    
+weight:species_idPF  0.140474   0.102035   1.377  0.16861    
+weight:species_idPH  0.092764   0.107858   0.860  0.38976    
+weight:species_idPI  0.027423   0.363536   0.075  0.93987    
+weight:species_idPL  0.022116   0.114392   0.193  0.84670    
+weight:species_idPM  0.057366   0.100132   0.573  0.56671    
+weight:species_idPP  0.070007   0.099883   0.701  0.48338    
+weight:species_idPX -0.520964   0.978368  -0.532  0.59440    
+weight:species_idRF  0.028946   0.124757   0.232  0.81653    
+weight:species_idRM  0.054117   0.100441   0.539  0.59003    
+weight:species_idRO -0.393305   0.300913  -1.307  0.19121    
+weight:species_idRX  0.312369   0.238136   1.312  0.18962    
+weight:species_idSF  0.007461   0.099955   0.075  0.94050    
+weight:species_idSH  0.029670   0.099776   0.297  0.76619    
+weight:species_idSO  0.014673   0.100138   0.147  0.88350    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1.375 on 30690 degrees of freedom
+Residual standard error: 1.376 on 30690 degrees of freedom
   (4811 observations deleted due to missingness)
-Multiple R-squared:  0.9793,	Adjusted R-squared:  0.9792 
-F-statistic: 3.085e+04 on 47 and 30690 DF,  p-value: < 2.2e-16
+Multiple R-squared:  0.9792,	Adjusted R-squared:  0.9792 
+F-statistic: 3.078e+04 on 47 and 30690 DF,  p-value: < 2.2e-16
 ~~~
 {:.output}
 
-[Return](#exercise-8)
+[Return](#exercise-5)
 {:.notes}

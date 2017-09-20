@@ -3,7 +3,9 @@
 
 ## Multi-dimensional data structures
 
-Data can be stored in several types of data structures depending on its complexity. 
+Data can be stored in several additional data structures depending on its complexity.
+
+===
 
 | Dimensions | Homogeneous | Heterogeneous |
 |------------+-------------+---------------|
@@ -12,6 +14,7 @@ Data can be stored in several types of data structures depending on its complexi
 | nd         | array()     |               |
 
 Of these, the data frame is far and away the most used.
+{:.notes}
 
 ===
 
@@ -19,10 +22,12 @@ Of these, the data frame is far and away the most used.
 
 Data frames are 2-dimensional and can contain heterogenous data like numbers in one column and a factor in another.
 
+===
+
 It is the data structure most similar to a spreadsheet, with two key differences:
 
-- Data frames columns are *equal-length* vectors.
-- As vectors, the columns are homogeneous and cannot hold values of the *wrong* type.
+- The columns are **equal-length** vectors.
+- As vectors, the columns are homogeneous and cannot hold values of the "wrong" type.
 
 ===
 
@@ -32,23 +37,18 @@ Creating a data frame from scratch can be done by combining vectors with the `da
 df <- data.frame(education, counts)
 ```
 
-```{r}
-df
-```
-
 ===
 
-Some functions to get to know your data frame are:
+There are several functions to get to know a data frame:
 
-| Function    | Output               |
-|-------------+----------------------|
-| `dim()`     | dimensions           |
-| `nrow()`    | number of rows       |
-| `ncol()`    | number of columns    |
-| `names()`   | (column) names       |
-| `str()`     | structure            |
-| `summary()` | summary info         |
-| `head()`    | shows beginning rows |
+| `dim()`            | dimensions              |
+| `nrow()`, `ncol()` | number of rows, columns |
+| `names()`          | (column) names          |
+| `str()`            | structure               |
+| `summary()`        | summary info            |
+| `head()`           | shows beginning rows    |
+
+===
 
 ```{r}
 names(df)
@@ -56,9 +56,9 @@ names(df)
 
 ===
 
-## Exercise 2
+## Exercise 3
 
-Create a data frame with two columns, one called "species" and another called "abund". Store your data frame as a variable called `data`. You can do this with or without populating the data frame with values.
+Create a data frame with two columns, one called "species" with four strings and another called "abund" with four numbers. Store your data frame as a variable called `data`.
 
 [View solution](#solution-3)
 {:.notes}

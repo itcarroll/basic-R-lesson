@@ -6,6 +6,8 @@
 The **console** is for evaluating commands you don't intend to keep or reuse. It's useful for testing commands and poking around.
 The **editor** is where you compose scripts that will process data, perform analyses, code up visualizations, and even write reports.
 
+===
+
 These work together in RStudio, which has multiple ways to send parts of the script you are editing to the console for immediate evaluation.
 Alternatively you can "source" the entire script.
 
@@ -22,11 +24,11 @@ vals <- seq(1, 100)
 Let's review the elements of this statement, from left to right:
 
 - `vals` is the name of a (new) variable
-- ` <- ` is an operator that assigns what's named on the left to equal the result of the expression on the right
-- `seq` is the name of the function
+- ` <- ` assigns to `vals` the result of what comes after
+- `seq` is the name of a function
 - `(` is the opening paren of the function call
-- `1` and `100` are both arguments, or parameters, to the function
-- `)` is the closing paren of a function call
+- `1` and `100` are separate arguments to the function
+- `)` is the closing paren of the function call
 
 ===
 
@@ -34,7 +36,7 @@ Question
 : Why call `vals` a "variable" and `seq` a "function"?
 
 Answer
-: {:.fragment} It is true they are both names of objects known to R, and could be called variables. But `seq` has the important distinguishing feature of being **callable**, which is indicated in documentation by writing the function name with empty parens, as in `seq()`.
+: {:.fragment} It is true they are both names of things known to R, and could be called variables. But `seq` has the distinguishing property of being **callable** (i.e. we can use "(" and ")" to provide arguments), which makes it a variable that behaves something like a mathematical function by taking input and returning output.
 
 ===
 
@@ -45,7 +47,9 @@ vals <- seq(from = 1,
             to = 100)
 ```
 
-Run this code either line-by-line, or highlight the section to run (optionally with keyboard shortcut Ctrl-Return or ⌘ Return).
+===
+
+Run that code by moving your cursor anywhere within those two lines and clicking "Run", or by using the keyboard shortcut Ctrl-Return or ⌘ Return.
 
 ===
 
@@ -60,7 +64,10 @@ Answer
 ## Readability
 
 Code readability in the editor cuts both ways: sometimes verbosity is useful, sometimes it is cumbersome.
-The `seq()` function has an operator form available when only the `from` and `to` arguments are needed.
+
+===
+
+The `seq()` function has an alternative form available when only the `from` and `to` arguments are needed.
 
 ```{r}
 1:100
@@ -68,6 +75,7 @@ The `seq()` function has an operator form available when only the `from` and `to
 
 The `:` operator should be used whenever possible because it replaces a common, cumbersome function call with an brief, intuitive syntax.
 Likewise, the `assign` function duplicates the functionallity of the `<-` symbol, but is never used when the simpler operator will suffice.
+{:.notes}
 
 ===
 
@@ -78,6 +86,8 @@ How would you get to know these properties and the names of a function's argumen
 ```{r eval=FALSE}
 ?seq
 ```
+
+===
 
 How would you even know what function to call?
 

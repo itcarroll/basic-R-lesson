@@ -5,9 +5,9 @@
 
 | Type      | Example           |
 |-----------+-------------------|
-| integer   | -4, 0, 999        |
 | double    | 3.1, -4, Inf, NaN |
-| character | 'a', "4", "👏"     |
+| integer   | -4L, 0L, 999L     |
+| character | 'a', '4', '👏'     |
 | logical   | TRUE, FALSE       |
 | missing   | NA                |
 
@@ -16,6 +16,8 @@
 ## Data structures
 
 Compound objects, built from one or more of these data types, or even other objects.
+
+===
 
 Common one-dimensional, array data structures:
 
@@ -27,11 +29,13 @@ Common one-dimensional, array data structures:
 
 ## Vectors
 
-Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function `c()`. Use the operator `:` for a sequence of numbers (forwards or backwards), otherwise separate elements with commas. 
+Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function `c()`.
 
 ```{r title="{{ site.handouts }}"}
-counts <- c(4, 3, 7, 5)
+counts <- c(4, 3, 7, 5, 2)
 ```
+
+===
 
 All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. 
 
@@ -43,7 +47,11 @@ c(1, 2, "c")
 
 ## Lists
 
-Lists are like vectors but their elements can be of any data type or structure. You construct lists by using `list()` instead of `c()`. 
+Lists are like vectors but their elements can be of any data type or structure.
+
+===
+
+Construct lists with `list()` instead of `c()`:
 
 ```{r}
 list(1, 2, "c")
@@ -59,9 +67,9 @@ list(1, list(2, 3))
 
 ===
 
-## Exercise 1
+## Exercise 2
 
-Look at the outputs of `list(1, list(2, 3))` and `c(1, list(1, 2))`. Store the output of each command as new variables, and then examine each variable's structure with the `str()` function. What's different about the structure of the two variables? Are both lists?
+Use the `typeof` function to inspect the data type of `counts`, and do the same for another variable to which you assign a list of numbers. Why are they different? What is the data type the results when you use `c` to combine `counts` with the new variable you just created, in terms of the underlying data type? Does `c` always create vectors?
 
 [View solution](#solution-2)
 {:.notes}
@@ -70,7 +78,7 @@ Look at the outputs of `list(1, list(2, 3))` and `c(1, list(1, 2))`. Store the o
 
 ## Factors
 
-A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are built on top of integer vectors using two attributes: the `class()`, “factor”, which makes them behave differently from regular integer vectors, and their `levels()`, or the set of allowed values. 
+A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are like integer vectors, but posess a `levels` attribute that assigns names to however many discrete categories are specified.
 
 ===
 
@@ -78,24 +86,13 @@ Use `factor()` to create a vector with predefined values, which are often charac
 
 ```{r title="{{ site.handouts }}"}
 education <- factor(
-    c("college", "highschool", "college", "middle"),
+    c("college", "highschool", "college", "middle", "middle"),
     levels = c("middle", "highschool", "college"))
-```
-
-```{r}
-str(education)
 ```
 
 ===
 
-A factor can be unorderd, as above, or ordered with each level somehow "less than" the next.
-
-```{r title="{{ site.handouts }}"}
-education <- factor(
-    c("college", "highschool", "college", "middle"),
-    levels = c("middle", "highschool", "college"),
-    ordered = TRUE)
-```
+The `str` function notes the labels, but printsthe integers assigned in their stead.
 
 ```{r}
 str(education)

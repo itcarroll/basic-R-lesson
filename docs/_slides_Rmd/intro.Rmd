@@ -5,6 +5,6 @@
 
 - Original design for interactive statistical analysis
 - General purpose scripting for your whole pipelines
-- Bleeding-edge packages expand the functions in "base R"
+- Bleeding-edge packages expand on "base R"
 - Vast community within statistics and ecology
 - Open source

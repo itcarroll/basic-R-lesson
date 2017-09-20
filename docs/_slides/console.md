@@ -3,7 +3,11 @@
 
 ## The Console
 
-The interpreter accepts R commands interactively through the console. Basic math, as you would type it on a calculator, is usually a valid command in the R language:
+The interpreter accepts R commands interactively through the console.
+
+===
+
+Basic math, as you would type it on a calculator, is usually a valid command in the R language:
 
 
 ~~~r
@@ -12,16 +16,6 @@ The interpreter accepts R commands interactively through the console. Basic math
 {:.input}
 ~~~
 [1] 3
-~~~
-{:.output}
-
-
-~~~r
-5/3
-~~~
-{:.input}
-~~~
-[1] 1.666667
 ~~~
 {:.output}
 
@@ -59,9 +53,13 @@ seq(1, 50)
 ~~~
 {:.output}
 
+===
+
 The interpreter understands more than arithmatic operations!
-The last command was to use (or "call") the **function** `seq()`.
+That last command told it to use (or "call") the **function** `seq()`.
+
 Most of "learning R" involves getting to know a whole lot of functions, the effect of each function's  arguments (e.g. the input values 1 and 10), and what each function returns (e.g. the output vector).
+{:.notes}
 
 ===
 
@@ -69,14 +67,79 @@ Most of "learning R" involves getting to know a whole lot of functions, the effe
 
 A good place to begin learning R functions is with its built-in mathematical functionality:
 
-- binary operators `+`, `-`, `*`, `/`, and `^` (for raising to a power)
-- tests of equality ("==") and inequality ("<" and ">")
-- "smooth" functions like `sin`, `log`, and `sqrt`
-- additional functions like `max`, `range`, and `mean`
+===
+
+## Arithmatic operators
+
+Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
+
+
+~~~r
+5/3
+~~~
+{:.input}
+~~~
+[1] 1.666667
+~~~
+{:.output}
 
 ===
 
-Use binary operators by inserting them between two numbers, grouped by parentheses when necessary.
+## Logical tests
+
+Test equality with "==" and inequality with "=<", "<", "!=", ">", or "=>".
+
+
+~~~r
+1/2 == 0.5
+~~~
+{:.input}
+~~~
+[1] TRUE
+~~~
+{:.output}
+
+===
+
+## More Maths
+
+Common mathematical functions like `sin`, `log`, and `sqrt`, and constants.
+
+
+~~~r
+sin(2 * pi)
+~~~
+{:.input}
+~~~
+[1] -2.449294e-16
+~~~
+{:.output}
+
+===
+
+## Programming idoms
+
+Common computer programming functions like 'rep', 'sort', and 'range'
+
+
+~~~r
+rep(2, 5)
+~~~
+{:.input}
+~~~
+[1] 2 2 2 2 2
+~~~
+{:.output}
+
+===
+
+## Parentheses
+
+Sandwiching something with "(" and ")" has two possible meanings.
+
+===
+
+Group sub-expressions by parentheses on an as-needed basis.
 
 
 ~~~r
@@ -88,7 +151,9 @@ Use binary operators by inserting them between two numbers, grouped by parenthes
 ~~~
 {:.output}
 
-Use functions by calling them with comma-separated arguments between parentheses.
+===
+
+Call functions by typing their name and comma-separated arguments between parentheses.
 
 
 ~~~r
@@ -104,13 +169,13 @@ logb(2, 2)
 
 ## Exercise 1
 
-The quadratic formula for the two values of $$x$$ that satisfy the equation $$a x^2 + b x + c = 0$$ is
+The quadratic formula for a value of $$x$$ that satisfies the equation $a x^2 + b x + c = 0$ is
 
 $$
-\frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}.
+\frac{-b + \sqrt{b^2 - 4 a c}}{2 a}
 $$
 
-Use the quadratic formula to calculate both values of $$x$$ that solve $$1.5 x^2 + 0.3 x - 2.9 = 0$$.
+Use this formula to write an expression that computes $x$ when $a$ is 1.5, $b$ is 0.3, and $c$ is -2.9.
 
 [View solution](#solution-1)
 {:.notes}
@@ -119,12 +184,13 @@ Use the quadratic formula to calculate both values of $$x$$ that solve $$1.5 x^2
 
 ## Assignment
 
-When you start a new session, the R interpreter already knows many things, including
+When you start a new session, the R interpreter already recognizes many things, including
 
 - any number
 - any string of characters
-- operators that are universal (e.g. `+` or `/`) and specific to R (e.g. `$` or `%*%`)
-- functions in `base R`
+- nearly universal operators (e.g. `+` and `/`)
+- operators specific to R (e.g. `$` and `%*%`)
+- functions in `base` R
 
 ===
 
@@ -173,6 +239,8 @@ Using the symbol `<-` is referred to as assignment: we assign the output of any 
 x <- seq(1, 50)
 ~~~
 {:.input}
+
+===
 
 You'll notice that nothing prints to the console, because we assigned the output to a variable.
 We can print the value of `x` by evaluating it without assignment.

@@ -3,46 +3,15 @@
 
 ## Exercise solutions
 
-<!--
 ===
 
 ## Solution 1
 
-First solution:
-
-```{r title="{{ site.handouts }}"}
+```{r}
 (-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ```
 
-Second solution:
-
-```{r title="{{ site.handouts }}"}
-(-0.3 - sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
-```
-
 [Return](#exercise-1)
-{:.notes}
--->
-
-===
-
-## Solution 1
-
-```{r title="{{ site.handouts }}"}
-x <- list(1, list(2, 3))
-y <- c(1, list(2, 3))
-```
-
-```{r}
-str(x)
-```
-```{r}
-str(y)
-```
-
-The variable `x` contains two elements, a number and a list. The variable `y` has concatenation of the two arguments, coerced to the more flexible of the two (a list is more flexible than a number). Both `x` and `y` are lists.
-
-[Return](#exercise-2)
 {:.notes}
 
 ===
@@ -50,8 +19,31 @@ The variable `x` contains two elements, a number and a list. The variable `y` ha
 ## Solution 2
 
 ```{r title="{{ site.handouts }}"}
-species <- c()
-abund <- c()
+x <- list(3, 4, 5, 7)
+```
+
+```{r}
+typeof(counts)
+```
+```{r}
+typeof(x)
+```
+```{r}
+typeof(c(counts, x))
+```
+
+The variable `x` has a data type of `list`, so R does not restrict its elements to a particular type as it does for vectors. The result of combining a list and vector is a list, because the list is the more flexible data structure.
+
+[Return](#exercise-2)
+{:.notes}
+
+===
+
+## Solution 3
+
+```{r title="{{ site.handouts }}"}
+species <- c('ape', 'bat', 'cat', 'dog')
+abund <- 1:4
 data <- data.frame(species, abund)
 ```
 
@@ -62,9 +54,10 @@ str(data)
 [Return](#exercise-3)
 {:.notes}
 
+<!--
 ===
 
-## Solution 3
+## Solution 4
 
 ```{r title="{{ site.handouts }}"}
 animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
@@ -77,31 +70,32 @@ str(animals)
 
 [Return](#exercise-4)
 {:.notes}
+-->
 
 ===
 
 ## Solution 4
 
 ```{r title="{{ site.handouts }}"}
-sol5a <- days[c(-1, -7)]
-sol5b <- days[seq(2, 7, 2)]
+sol1 <- days[c(-1, -7)]
+sol2 <- days[seq(2, 7, 2)]
 ```
 
 ```{r}
-sol5a
+sol1
 ```
 
 ```{r}
-sol5b
+sol2
 ```
 
-[Return](#exercise-5)
+[Return](#exercise-4)
 {:.notes}
 
 <!--
 ===
 
-## Solution 7
+## Solution 6
 
 ```{r title="{{ site.handouts }}"}
 first <- function(dat) {
@@ -121,12 +115,12 @@ m <- matrix(1:9, nrow = 3, ncol = 3)
 first(m)
 ```
 
-[Return](#exercise-7)
+[Return](#exercise-6)
 {:.notes}
 
 ===
 
-## Solution 8
+## Solution 7
 
 ```{r title="{{ site.handouts }}"}
 animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
@@ -136,9 +130,9 @@ animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
 coef(animals.hl_model)[2]
 ```
 
-<aside class="notes" markdown="block">
+
 [Return](#exercise-8)
-</aside>
+{:.notes}
 -->
 
 ===
@@ -146,12 +140,12 @@ coef(animals.hl_model)[2]
 ## Solution 5
 
 ```{r title="{{ site.handouts }}"}
-hl_model <- lm(hindfoot_length ~ log(weight) * species_id, data = animals)
+fit <- lm(hindfoot_length ~ weight * species_id, animals)
 ```
 
 ```{r}
-summary(hl_model)
+summary(fit)
 ```
 
-[Return](#exercise-8)
+[Return](#exercise-5)
 {:.notes}

@@ -3,8 +3,8 @@
 
 ## Why learn R?
 
-- High-level programming language good for interactive statistical analysis
-- General purpose programming language for scripting entire data-processing pipelines
-- Large selection of add-on packages that extend the capabilities of "base R"
-- Large user community especially within statistics and ecology
+- Original design for interactive statistical analysis
+- General purpose scripting for your whole pipelines
+- Bleeding-edge packages expand on "base R"
+- Vast community within statistics and ecology
 - Open source
