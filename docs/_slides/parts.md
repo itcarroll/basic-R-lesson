@@ -116,7 +116,9 @@ There are multiple ways to access several parts of an object together.
 
 
 ~~~r
-days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+days <- c(
+  "Sunday", "Monday", "Tuesday", "Wednesday",
+  "Thursday", "Friday", "Saturday")
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ~~~

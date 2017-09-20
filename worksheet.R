@@ -9,31 +9,18 @@ vals <- seq(...,
 
 counts ...
 
-## Exercise 1
+## Exercise 2
 
 ...
 
 ## Factors
 
-education <- ...(c("college", "highschool", "college", "middle"),
+education <- ...(c("college", "highschool", "college", "middle", "middle"),
                  ... = c("middle", "highschool", ...))
-
-education <- ...(c("college", "highschool", "college", "middle"),
-                 levels = c("middle", "highschool", "college"),
-                 ...)
 
 ## Data Frames
 
 ... data.frame(...)
-
-## Exercise 2
-
-...
-
-## Load data into R
-
-plots <- ...(...)
-animals <- ...(...)
 
 ## Exercise 3
 
@@ -45,7 +32,9 @@ animals <- ...(...)
 
 ## Subsetting ranges
 
-days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+days <- c(
+  "Sunday", "Monday", "Tuesday", "Wednesday",
+  "Thursday", "Friday", "Saturday")
 weekdays <- ...
 ...
 
@@ -53,43 +42,13 @@ weekdays <- ...
 
 ...
 
-## Anatomy of a function
-
-function(...) {
-  ...
-  return(...)
-}
-
-## Flow control
-
-if (...) {
-    ...
-} else {
-    ...
-}
-
-firts <- function(...) {
-    if (...) {
-        ...
-    } else {
-        ...
-    }
-}
-
 ## Linear models
 
-animals <- read.csv(..., stringsAsFactors = FALSE, na.strings = '')
-fit <- lm(
-  ...,
-  data = ...)
+animals <- read.csv(...)
+fit <- lm(..., ...)
 
-## Exercise 6
+fit <- lm(..., animals)
+
+## Exercise 5
 
 ...
-
-## Pay attention to factors
-
-animals$species_id <- ...
-fit <- lm(
-  log(weight) ~ ...,
-  data = animals)
