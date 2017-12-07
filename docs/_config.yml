@@ -1,7 +1,11 @@
 # Site
 
 title: "Basic R"
-handouts: worksheet.R
+handouts:
+ - worksheet.R
+ - species.csv
+ - plots.csv
+ - animals.csv
 tag: v0.2
 lesson: 1
 instructor: Kelly Hondula
