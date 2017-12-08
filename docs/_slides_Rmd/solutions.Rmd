@@ -18,7 +18,7 @@
 
 ## Solution 2
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 x <- list(3, 4, 5, 7)
 ```
 
@@ -41,7 +41,7 @@ The variable `x` has a data type of `list`, so R does not restrict its elements 
 
 ## Solution 3
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 species <- c('ape', 'bat', 'cat', 'dog')
 abund <- 1:4
 data <- data.frame(species, abund)
@@ -59,7 +59,7 @@ str(data)
 
 ## Solution 4
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
 animals$sex <- factor(animals$sex)
 ```
@@ -76,7 +76,7 @@ str(animals)
 
 ## Solution 4
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 sol1 <- days[c(-1, -7)]
 sol2 <- days[seq(2, 7, 2)]
 ```
@@ -97,7 +97,7 @@ sol2
 
 ## Solution 6
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 first <- function(dat) {
     if (is.vector(dat)) {
         result <- dat[1]
@@ -122,7 +122,7 @@ first(m)
 
 ## Solution 7
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
 ```
 
@@ -139,7 +139,7 @@ coef(animals.hl_model)[2]
 
 ## Solution 5
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 fit <- lm(hindfoot_length ~ weight * species_id, animals)
 ```
 

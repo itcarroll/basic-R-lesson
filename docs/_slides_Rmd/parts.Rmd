@@ -31,7 +31,7 @@ df['education']
 
 ===
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 names(df) <- c('ed', 'ct')
 ```
 
@@ -71,7 +71,7 @@ There are multiple ways to access several parts of an object together.
 
 ===
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 days <- c(
   "Sunday", "Monday", "Tuesday", "Wednesday",
   "Thursday", "Friday", "Saturday")

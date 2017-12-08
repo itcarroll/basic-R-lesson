@@ -11,7 +11,7 @@ Without additional instruction, every line is processed from the top to bottom.
 
 Flow control happens within blocks of code isolated between curly braces `{` and `}`, known as "statements".
 
-```{r eval=FALSE, title="{{ site.handouts }}"}
+```{r eval=FALSE, title="{{ site.handouts[0] }}"}
 if (...) {
     ...
 } else {
@@ -26,7 +26,7 @@ The R interpreter goes to the first statement if the logical value is `TRUE` and
 
 An if/else conditional would allow the `first` function to avoid the error thrown by calling `first(counts)`.
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 first <- function(dat) {
     if (is.vector(dat)) {
         result <- dat[1]
@@ -54,7 +54,7 @@ first(counts)
 
 The keywords `else` and `if` can be combined to allow flow control among more than two statements.
 
-```{r eval=FALSE, title="{{ site.handouts }}"}
+```{r eval=FALSE, title="{{ site.handouts[0] }}"}
 if (...) {
     ...
 } else if {

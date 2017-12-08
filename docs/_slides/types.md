@@ -35,7 +35,7 @@ Vectors are the basic data structure in R. They are a collection of data that ar
 ~~~r
 counts <- c(4, 3, 7, 5, 2)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 ===
 
@@ -125,7 +125,7 @@ education <- factor(
     c("college", "highschool", "college", "middle", "middle"),
     levels = c("middle", "highschool", "college"))
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 ===
 

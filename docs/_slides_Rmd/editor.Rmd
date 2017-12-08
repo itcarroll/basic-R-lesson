@@ -13,9 +13,9 @@ Alternatively you can "source" the entire script.
 
 ===
 
-Open up "{{ site.handouts }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
+Open up "{{ site.handouts[0] }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 vals <- seq(1, 100)
 ```
 
@@ -42,7 +42,7 @@ Answer
 
 Our call to the function `seq` could have been much more explicit. We could give the arguments by the names that `seq` is expecting.
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 vals <- seq(from = 1,
             to = 100)
 ```

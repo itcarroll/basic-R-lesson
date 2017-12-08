@@ -13,13 +13,13 @@ Alternatively you can "source" the entire script.
 
 ===
 
-Open up "{{ site.handouts }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
+Open up "{{ site.handouts[0] }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
 
 
 ~~~r
 vals <- seq(1, 100)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 ===
 
@@ -49,7 +49,7 @@ Our call to the function `seq` could have been much more explicit. We could give
 vals <- seq(from = 1,
             to = 100)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 ===
 

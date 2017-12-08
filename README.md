@@ -10,4 +10,4 @@
 -------------------------------------->
 
 [lesson]: https://sesync-ci.github.io/basic-R-lesson
-[slideshow]: https://sesync-ci.github.io/basic-R-lesson/instructor
+[slideshow]: https://sesync-ci.github.io/basic-R-lesson/slides

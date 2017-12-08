@@ -31,7 +31,7 @@ Common one-dimensional, array data structures:
 
 Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function `c()`.
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 counts <- c(4, 3, 7, 5, 2)
 ```
 
@@ -84,7 +84,7 @@ A factor is a vector that can contain only predefined values, and is used to sto
 
 Use `factor()` to create a vector with predefined values, which are often characters or "strings".
 
-```{r title="{{ site.handouts }}"}
+```{r title="{{ site.handouts[0] }}"}
 education <- factor(
     c("college", "highschool", "college", "middle", "middle"),
     levels = c("middle", "highschool", "college"))

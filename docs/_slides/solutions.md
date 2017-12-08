@@ -28,7 +28,7 @@
 ~~~r
 x <- list(3, 4, 5, 7)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 
 ~~~r
@@ -73,7 +73,7 @@ species <- c('ape', 'bat', 'cat', 'dog')
 abund <- 1:4
 data <- data.frame(species, abund)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 
 ~~~r
@@ -100,7 +100,7 @@ str(data)
 animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
 animals$sex <- factor(animals$sex)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 
 ~~~r
@@ -134,7 +134,7 @@ str(animals)
 sol1 <- days[c(-1, -7)]
 sol2 <- days[seq(2, 7, 2)]
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 
 ~~~r
@@ -177,7 +177,7 @@ first <- function(dat) {
     return(result)
 }
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 
 ~~~r
@@ -201,7 +201,7 @@ first(m)
 ~~~r
 animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 
 ~~~r
@@ -227,7 +227,7 @@ log(weight)
 ~~~r
 fit <- lm(hindfoot_length ~ weight * species_id, animals)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 
 ~~~r

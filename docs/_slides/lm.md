@@ -88,7 +88,7 @@ Match your formula variables to the column names of a data frame, and pass the `
 animals <- read.csv('data/animals.csv')
 fit <- lm(weight ~ hindfoot_length, animals)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 ~~~r
 summary(fit)
@@ -107,7 +107,7 @@ Data structures matter in statistical modelling. For the predictors in a linear 
 ~~~r
 fit <- lm(weight ~ species_id, animals)
 ~~~
-{:.text-document title="{{ site.handouts }}"}
+{:.text-document title="{{ site.handouts[0] }}"}
 
 ~~~r
 summary(fit)
