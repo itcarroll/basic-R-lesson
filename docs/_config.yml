@@ -6,6 +6,7 @@ handouts:
  - data/species.csv
  - data/plots.csv
  - data/animals.csv
+ - data/README.md
 tag: v0.3
 lesson: 1
 instructor: Kelly Hondula
