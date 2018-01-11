@@ -1,7 +1,1130 @@
+<!DOCTYPE html>
 <html>
-<head><title>301 Moved Permanently</title></head>
-<body bgcolor="white">
-<center><h1>301 Moved Permanently</h1></center>
-<hr><center>nginx</center>
-</body>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic R</title>
+<meta name="description" content="Get started with R in RStudio">
+<link rel="canonical" href="http://cyberhelp.sesync.org/basic-R-lesson/course/archive.html">
+<link rel="stylesheet" href="https://cdn.rawgit.com/sesync-ci/lesson-style/v1.3/docs/css/default.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/sesync-ci/lesson-style/v1.3/docs/css/static.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        
+        
+<h1 style="text-transform: none;" id="basic-r">Basic R</h1>
+
+<p>Lesson 1 with <em>Kelly Hondula</em></p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#/slides/intro">Why learn R?</a></li>
+  <li><a href="#/slides/console">The Console</a></li>
+  <li><a href="#/slides/environment">The Environment</a></li>
+  <li><a href="#/slides/editor">The Editor</a></li>
+  <li><a href="#/slides/types">Data types</a></li>
+  <li><a href="#/slides/dataframes">Multi-dimensional data structures</a></li>
+  <li><a href="#/slides/parts">Parts of an Object</a></li>
+  <li><a href="#/slides/lm">Linear models</a></li>
+  <li><a href="#/slides/conclude">Review</a></li>
+  <li><a href="#/slides/solutions">Exercise solutions</a></li>
+</ul>
+
+<hr />
+
+<p><a name="/slides/intro"></a></p>
+
+<h2 id="why-learn-r">Why learn R?</h2>
+
+<ul>
+  <li>Original design for interactive statistical analysis</li>
+  <li>General purpose scripting for your whole pipelines</li>
+  <li>Bleeding-edge packages expand on “base R”</li>
+  <li>Vast community within statistics and ecology</li>
+  <li>Open source</li>
+</ul>
+
+<p class="ToS"><a href="#/slides/intro">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/console"></a></p>
+
+<h2 id="the-console">The Console</h2>
+
+<p>The interpreter accepts R commands interactively through the console.</p>
+
+<p>Basic math, as you would type it on a calculator, is usually a valid command in the R language:</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
+</code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">4</span><span class="o">^</span><span class="m">2</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 16
+</code></pre></div></div>
+
+<dl>
+  <dt>Question</dt>
+  <dd>Why is the output prefixed by <code class="highlighter-rouge">[1]</code>?</dd>
+  <dt>Answer</dt>
+  <dd class="fragment">That’s the index, or position in a vector, of the first result.</dd>
+</dl>
+
+<p>A command giving a vector of results shows this clearly:</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+[24] 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+[47] 47 48 49 50
+</code></pre></div></div>
+
+<p>The interpreter understands more than arithmatic operations!
+That last command told it to use (or “call”) the <strong>function</strong> <code class="highlighter-rouge">seq()</code>.</p>
+
+<p class="notes">Most of “learning R” involves getting to know a whole lot of functions, the effect of each function’s  arguments (e.g. the input values 1 and 10), and what each function returns (e.g. the output vector).</p>
+
+<h2 id="basic-math">Basic math</h2>
+
+<p>A good place to begin learning R functions is with its built-in mathematical functionality:</p>
+
+<h2 id="arithmatic-operators">Arithmatic operators</h2>
+
+<p>Try <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">*</code>, <code class="highlighter-rouge">/</code>, and <code class="highlighter-rouge">^</code> (for raising to a power).</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">5</span><span class="o">/</span><span class="m">3</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.666667
+</code></pre></div></div>
+
+<h2 id="logical-tests">Logical tests</h2>
+
+<p>Test equality with “==” and inequality with “=&lt;”, “&lt;”, “!=”, “&gt;”, or “=&gt;”.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0.5</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+</code></pre></div></div>
+
+<h2 id="more-maths">More Maths</h2>
+
+<p>Common mathematical functions like <code class="highlighter-rouge">sin</code>, <code class="highlighter-rouge">log</code>, and <code class="highlighter-rouge">sqrt</code>, and constants.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">sin</span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] -2.449294e-16
+</code></pre></div></div>
+
+<h2 id="programming-idoms">Programming idoms</h2>
+
+<p>Common computer programming functions like ‘rep’, ‘sort’, and ‘range’</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2 2 2 2 2
+</code></pre></div></div>
+
+<h2 id="parentheses">Parentheses</h2>
+
+<p>Sandwiching something with “(“ and “)” has two possible meanings.</p>
+
+<p>Group sub-expressions by parentheses on an as-needed basis.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+</code></pre></div></div>
+
+<p>Call functions by typing their name and comma-separated arguments between parentheses.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logb</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+</code></pre></div></div>
+
+<h2 id="exercise-1">Exercise 1</h2>
+
+<p>The quadratic formula for a value of <script type="math/tex">x</script> that satisfies the equation $a x^2 + b x + c = 0$ is</p>
+
+<script type="math/tex; mode=display">\frac{-b + \sqrt{b^2 - 4 a c}}{2 a}</script>
+
+<p>Use this formula to write an expression that computes $x$ when $a$ is 1.5, $b$ is 0.3, and $c$ is -2.9.</p>
+
+<p class="notes"><a href="#solution-1">View solution</a></p>
+
+<h2 id="assignment">Assignment</h2>
+
+<p>When you start a new session, the R interpreter already recognizes many things, including</p>
+
+<ul>
+  <li>any number</li>
+  <li>any string of characters</li>
+  <li>nearly universal operators (e.g. <code class="highlighter-rouge">+</code> and <code class="highlighter-rouge">/</code>)</li>
+  <li>operators specific to R (e.g. <code class="highlighter-rouge">$</code> and <code class="highlighter-rouge">%*%</code>)</li>
+  <li>functions in <code class="highlighter-rouge">base</code> R</li>
+</ul>
+
+<p>To reference a number or function you just type it in as above.
+To referece a string of characters you must surround them in quotation marks.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'ab.cd'</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "ab.cd"
+</code></pre></div></div>
+
+<p>Without quotation marks, the interpreter checks for things named <code class="highlighter-rouge">ab.cd</code> and doesn’t find anything:</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ab.cd</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in eval(expr, envir, enclos): object 'ab.cd' not found
+</code></pre></div></div>
+
+<dl>
+  <dt>Question</dt>
+  <dd>Is it better to use <code class="highlighter-rouge">'</code> or <code class="highlighter-rouge">"</code>?</dd>
+  <dt>Answer</dt>
+  <dd class="fragment">Neither one is better. You will often encounter stylistic choices like this, so if you don’t have a personal preference try to mimic existing styles.</dd>
+</dl>
+
+<p>We can expand the vocabulary known to the R interpreter by creating a new <strong>variable</strong>.
+Using the symbol <code class="highlighter-rouge">&lt;-</code> is referred to as assignment: we assign the output of any command to the right of <code class="highlighter-rouge">&lt;-</code> to any <strong>variable</strong> written to its left.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You’ll notice that nothing prints to the console, because we assigned the output to a variable.
+We can print the value of <code class="highlighter-rouge">x</code> by evaluating it without assignment.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+[24] 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+[47] 47 48 49 50
+</code></pre></div></div>
+
+<p>Assigning values to new variables (to the left of a <code class="highlighter-rouge">&lt;-</code>) is the only time you can reference something previously unknown to the interpreter.
+All other commands must reference things already in the interpreter’s vocabulary.</p>
+
+<p>Once assigned to a variable, a value becomes known to R and you can refer to it in other commands.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'ab.cd'</span><span class="w">
+</span><span class="n">typeof</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
+</code></pre></div></div>
+
+<p class="ToS"><a href="#/slides/console">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/environment"></a></p>
+
+<h2 id="the-environment">The Environment</h2>
+
+<p>In the RStudio IDE, the environment tab displays the variables added to R’s vocabulary in the current session.</p>
+
+<ul>
+  <li>Variables do not persist between sessions (although RStudio defaults to automatic saving and loading of variables from a .RData file).</li>
+  <li>Variables only change their value on re-assignment.</li>
+</ul>
+
+<p class="ToS"><a href="#/slides/environment">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/editor"></a></p>
+
+<h2 id="the-editor">The Editor</h2>
+
+<p>The <strong>console</strong> is for evaluating commands you don’t intend to keep or reuse. It’s useful for testing commands and poking around.
+The <strong>editor</strong> is where you compose scripts that will process data, perform analyses, code up visualizations, and even write reports.</p>
+
+<p>These work together in RStudio, which has multiple ways to send parts of the script you are editing to the console for immediate evaluation.
+Alternatively you can “source” the entire script.</p>
+
+<p>Open up “worksheet-1.R” in the editor, and follow along by replacing the <code class="highlighter-rouge">...</code> placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).</p>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">vals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Let’s review the elements of this statement, from left to right:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">vals</code> is the name of a (new) variable</li>
+  <li><code class="highlighter-rouge"> &lt;- </code> assigns to <code class="highlighter-rouge">vals</code> the result of what comes after</li>
+  <li><code class="highlighter-rouge">seq</code> is the name of a function</li>
+  <li><code class="highlighter-rouge">(</code> is the opening paren of the function call</li>
+  <li><code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">100</code> are separate arguments to the function</li>
+  <li><code class="highlighter-rouge">)</code> is the closing paren of the function call</li>
+</ul>
+
+<dl>
+  <dt>Question</dt>
+  <dd>Why call <code class="highlighter-rouge">vals</code> a “variable” and <code class="highlighter-rouge">seq</code> a “function”?</dd>
+  <dt>Answer</dt>
+  <dd class="fragment">It is true they are both names of things known to R, and could be called variables. But <code class="highlighter-rouge">seq</code> has the distinguishing property of being <strong>callable</strong> (i.e. we can use “(“ and “)” to provide arguments), which makes it a variable that behaves something like a mathematical function by taking input and returning output.</dd>
+</dl>
+
+<p>Our call to the function <code class="highlighter-rouge">seq</code> could have been much more explicit. We could give the arguments by the names that <code class="highlighter-rouge">seq</code> is expecting.</p>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">vals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w">
+            </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Run that code by moving your cursor anywhere within those two lines and clicking “Run”, or by using the keyboard shortcut Ctrl-Return or ⌘ Return.</p>
+
+<dl>
+  <dt>Question</dt>
+  <dd>What’s an advantage of naming arguments?</dd>
+  <dt>Answer</dt>
+  <dd class="fragment">One advantage is that you can put them in any order. A related advantage is that you can then skip some arguments, which is fine to do if each skipped argument has a default value. A third advantage is code readability, which you should always be concious of while writing in the editor.</dd>
+</dl>
+
+<h2 id="readability">Readability</h2>
+
+<p>Code readability in the editor cuts both ways: sometimes verbosity is useful, sometimes it is cumbersome.</p>
+
+<p>The <code class="highlighter-rouge">seq()</code> function has an alternative form available when only the <code class="highlighter-rouge">from</code> and <code class="highlighter-rouge">to</code> arguments are needed.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+ [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
+ [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
+ [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
+ [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
+ [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+</code></pre></div></div>
+
+<p class="notes">The <code class="highlighter-rouge">:</code> operator should be used whenever possible because it replaces a common, cumbersome function call with an brief, intuitive syntax.
+Likewise, the <code class="highlighter-rouge">assign</code> function duplicates the functionallity of the <code class="highlighter-rouge">&lt;-</code> symbol, but is never used when the simpler operator will suffice.</p>
+
+<h2 id="function-documentation">Function documentation</h2>
+
+<p>How would you get to know these properties and the names of a function’s arguments?</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">?</span><span class="n">seq</span><span class="w">
+</span></code></pre></div></div>
+
+<p>How would you even know what function to call?</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">??</span><span class="n">sequence</span><span class="w">
+</span></code></pre></div></div>
+
+<p class="ToS"><a href="#/slides/editor">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/types"></a></p>
+
+<h2 id="data-types">Data types</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>double</td>
+      <td>3.1, -4, Inf, NaN</td>
+    </tr>
+    <tr>
+      <td>integer</td>
+      <td>-4L, 0L, 999L</td>
+    </tr>
+    <tr>
+      <td>character</td>
+      <td>‘a’, ‘4’, ‘👏’</td>
+    </tr>
+    <tr>
+      <td>logical</td>
+      <td>TRUE, FALSE</td>
+    </tr>
+    <tr>
+      <td>missing</td>
+      <td>NA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-structures">Data structures</h2>
+
+<p>Compound objects, built from one or more of these data types, or even other objects.</p>
+
+<p>Common one-dimensional, array data structures:</p>
+
+<ul>
+  <li>Vectors</li>
+  <li>Lists</li>
+  <li>Factors</li>
+</ul>
+
+<h2 id="vectors">Vectors</h2>
+
+<p>Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function <code class="highlighter-rouge">c()</code>.</p>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">counts</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "1" "2" "c"
+</code></pre></div></div>
+
+<h2 id="lists">Lists</h2>
+
+<p>Lists are like vectors but their elements can be of any data type or structure.</p>
+
+<p>Construct lists with <code class="highlighter-rouge">list()</code> instead of <code class="highlighter-rouge">c()</code>:</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1]]
+[1] 1
+
+[[2]]
+[1] 2
+
+[[3]]
+[1] "c"
+</code></pre></div></div>
+
+<p>Lists can even include another list!</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1]]
+[1] 1
+
+[[2]]
+[[2]][[1]]
+[1] 2
+
+[[2]][[2]]
+[1] 3
+</code></pre></div></div>
+
+<h2 id="exercise-2">Exercise 2</h2>
+
+<p>Use the <code class="highlighter-rouge">typeof</code> function to inspect the data type of <code class="highlighter-rouge">counts</code>, and do the same for another variable to which you assign a list of numbers. Why are they different? What is the data type the results when you use <code class="highlighter-rouge">c</code> to combine <code class="highlighter-rouge">counts</code> with the new variable you just created, in terms of the underlying data type? Does <code class="highlighter-rouge">c</code> always create vectors?</p>
+
+<p class="notes"><a href="#solution-2">View solution</a></p>
+
+<h2 id="factors">Factors</h2>
+
+<p>A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are like integer vectors, but posess a <code class="highlighter-rouge">levels</code> attribute that assigns names to however many discrete categories are specified.</p>
+
+<p>Use <code class="highlighter-rouge">factor()</code> to create a vector with predefined values, which are often characters or “strings”.</p>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">education</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="w">
+    </span><span class="nf">c</span><span class="p">(</span><span class="s2">"college"</span><span class="p">,</span><span class="w"> </span><span class="s2">"highschool"</span><span class="p">,</span><span class="w"> </span><span class="s2">"college"</span><span class="p">,</span><span class="w"> </span><span class="s2">"middle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"middle"</span><span class="p">),</span><span class="w">
+    </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"middle"</span><span class="p">,</span><span class="w"> </span><span class="s2">"highschool"</span><span class="p">,</span><span class="w"> </span><span class="s2">"college"</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">str</code> function notes the labels, but printsthe integers assigned in their stead.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">education</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 3 levels "middle","highschool",..: 3 2 3 1 1
+</code></pre></div></div>
+
+<p class="ToS"><a href="#/slides/types">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/dataframes"></a></p>
+
+<h2 id="multi-dimensional-data-structures">Multi-dimensional data structures</h2>
+
+<p>Data can be stored in several additional data structures depending on its complexity.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimensions</th>
+      <th>Homogeneous</th>
+      <th>Heterogeneous</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1d</td>
+      <td>c()</td>
+      <td>list()</td>
+    </tr>
+    <tr>
+      <td>2d</td>
+      <td>matrix()</td>
+      <td>data.frame()</td>
+    </tr>
+    <tr>
+      <td>nd</td>
+      <td>array()</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notes">Of these, the data frame is far and away the most used.</p>
+
+<h2 id="data-frames">Data frames</h2>
+
+<p>Data frames are 2-dimensional and can contain heterogenous data like numbers in one column and a factor in another.</p>
+
+<p>It is the data structure most similar to a spreadsheet, with two key differences:</p>
+
+<ul>
+  <li>The columns are <strong>equal-length</strong> vectors.</li>
+  <li>As vectors, the columns are homogeneous and cannot hold values of the “wrong” type.</li>
+</ul>
+
+<p>Creating a data frame from scratch can be done by combining vectors with the <code class="highlighter-rouge">data.frame()</code> function.</p>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">education</span><span class="p">,</span><span class="w"> </span><span class="n">counts</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>There are several functions to get to know a data frame:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">dim()</code></td>
+      <td>dimensions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">nrow()</code>, <code class="highlighter-rouge">ncol()</code></td>
+      <td>number of rows, columns</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">names()</code></td>
+      <td>(column) names</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">str()</code></td>
+      <td>structure</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">summary()</code></td>
+      <td>summary info</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">head()</code></td>
+      <td>shows beginning rows</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">names</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "education" "counts"   
+</code></pre></div></div>
+
+<h2 id="exercise-3">Exercise 3</h2>
+
+<p>Create a data frame with two columns, one called “species” with four strings and another called “abund” with four numbers. Store your data frame as a variable called <code class="highlighter-rouge">data</code>.</p>
+
+<p class="notes"><a href="#solution-3">View solution</a></p>
+
+<p class="ToS"><a href="#/slides/dataframes">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/parts"></a></p>
+
+<h2 id="parts-of-an-object">Parts of an Object</h2>
+
+<p>Parts of a data structure are always accessible, either by their name or by their position, using square brackets: <code class="highlighter-rouge">[</code> and <code class="highlighter-rouge">]</code>.</p>
+
+<h2 id="position">Position</h2>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">counts</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 4
+</code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">counts</span><span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 7
+</code></pre></div></div>
+
+<h2 id="names">Names</h2>
+
+<p>Parts of an object may also have a name. The names can be given when you are creating a vector or afterwards using the <code class="highlighter-rouge">names()</code> function.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s1">'education'</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   education
+1    college
+2 highschool
+3    college
+4     middle
+5     middle
+</code></pre></div></div>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="nf">names</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'ed'</span><span class="p">,</span><span class="w"> </span><span class="s1">'ct'</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s1">'ed'</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          ed
+1    college
+2 highschool
+3    college
+4     middle
+5     middle
+</code></pre></div></div>
+
+<dl>
+  <dt>Question</dt>
+  <dd>This use of <code class="highlighter-rouge">&lt;-</code> with <code class="highlighter-rouge">names(x)</code> on the left is a little odd. What’s going on?</dd>
+  <dt>Answer</dt>
+  <dd class="fragment">We are overwriting an existing variable, but one that is accessed through the output of the function on the left rather than the global environment.</dd>
+</dl>
+
+<p>For a multi-dimensional array, separate the dimension along which a part is requested with a comma.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s1">'ed'</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] college
+Levels: middle highschool college
+</code></pre></div></div>
+
+<p class="notes">It’s fine to mix names and indices when selecting parts of an object.</p>
+
+<p>There are multiple ways to access several parts of an object together.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Part</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>positives</td>
+      <td>elements at given positions</td>
+    </tr>
+    <tr>
+      <td>negatives</td>
+      <td>given positions omitted</td>
+    </tr>
+    <tr>
+      <td>logicals</td>
+      <td>elements where the corresponding position is TRUE</td>
+    </tr>
+    <tr>
+      <td>nothing</td>
+      <td>all the elements</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">days</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="w">
+  </span><span class="s2">"Sunday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Monday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Tuesday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Wednesday"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Thursday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Friday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Saturday"</span><span class="p">)</span><span class="w">
+</span><span class="n">weekdays</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">days</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">6</span><span class="p">]</span><span class="w">
+</span><span class="n">weekend</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">days</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weekdays</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
+</code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weekend</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Sunday"   "Saturday"
+</code></pre></div></div>
+
+<h2 id="exercise-4">Exercise 4</h2>
+
+<ol>
+  <li>Get weekdays using negative integers.</li>
+  <li>Get M-W-F using a vector of postitions generated by <code class="highlighter-rouge">seq()</code> that uses the <code class="highlighter-rouge">by</code> argument (don’t forget to <code class="highlighter-rouge">?seq</code> for help).</li>
+</ol>
+
+<p class="notes"><a href="#solution-5">View solution</a></p>
+
+<h2 id="subsetting-data-frames">Subsetting data frames</h2>
+
+<p>The <code class="highlighter-rouge">$</code> sign is an operator that makes for quick access to a single, named part of an object.
+It’s most useful when used interactively with “tab completion” on the columns of a data frame.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">$</span><span class="n">ed</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] college    highschool college    middle     middle    
+Levels: middle highschool college
+</code></pre></div></div>
+
+<p>A logical test applied to a single column produces a vector of <code class="highlighter-rouge">TRUE</code> and <code class="highlighter-rouge">FALSE</code> values that’s the right length for subsetting the data.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">ed</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'college'</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       ed ct
+1 college  4
+3 college  7
+</code></pre></div></div>
+
+<p class="ToS"><a href="#/slides/parts">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/lm"></a></p>
+
+<h2 id="linear-models">Linear models</h2>
+
+<p>Regression of a “response” variable against discrete and continuous “predictors” is fundamental to statistical data analysis. The <code class="highlighter-rouge">lm</code> function, which is an abbreviation for “linear model”, provides the simplest kind of regression in R.</p>
+
+<p>Fitting a regression requires two inputs:</p>
+
+<dl>
+  <dt>data</dt>
+  <dd class="fragment">a <code class="highlighter-rouge">data.frame</code> with independent observations</dd>
+  <dt>model</dt>
+  <dd class="fragment">a type of R expression called a <code class="highlighter-rouge">formula</code></dd>
+</dl>
+
+<p>Specify a formula by naming a response variable left of a “~” and any number of predictors to its right.</p>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">a</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>y ~ a
+</code></pre></div></div>
+
+<h2 id="formula-mini-language">Formula mini-language</h2>
+
+<p>Writing formulas requires understanding a very simple syntax for including predictors and specifying which ones interact.</p>
+
+<p>Constant and one predictor:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">y ~ a</code></li>
+  <li><code class="highlighter-rouge">y ~ 1 + a</code></li>
+</ul>
+
+<p>No constant with one predictor:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">y ~ -1 + a</code></li>
+  <li><code class="highlighter-rouge">y ~ 0 + a</code></li>
+</ul>
+
+<p>Constant and two predictors:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">y ~ a + b</code></li>
+  <li><code class="highlighter-rouge">y ~ 1 + a + b</code></li>
+</ul>
+
+<p>Constant and one predictor as the “interaction” of two variables:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">y ~ a:b</code></li>
+</ul>
+
+<p>Constant and the full complement of two variables with their interaction:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">y ~ a*b</code></li>
+  <li><code class="highlighter-rouge">y ~ 1 + a + b + a:b</code></li>
+</ul>
+
+<p>Constant and the full complement of <code class="highlighter-rouge">k</code> variables with up to $n^{th}$ order interactions:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">y ~ (a_1 + a_2 + ... + a_k)^n</code></li>
+</ul>
+
+<h2 id="fitting-models">Fitting models</h2>
+
+<p>Match your formula variables to the column names of a data frame, and pass the <code class="highlighter-rouge">formula</code> and <code class="highlighter-rouge">data.frame</code> as the first two arguments to <code class="highlighter-rouge">lm</code>.</p>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">animals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s1">'data/animals.csv'</span><span class="p">)</span><span class="w">
+</span><span class="n">fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lm</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">hindfoot_length</span><span class="p">,</span><span class="w"> </span><span class="n">animals</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="factors-in-linear-models">Factors in linear models</h2>
+
+<p>Data structures matter in statistical modelling. For the predictors in a linear model, the most important distinction is whether a variable is a factor.</p>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lm</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">animals</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The difference between 1 and 24 degrees of freedom in the last two models—with one predictor each—is due to <code class="highlighter-rouge">species_id</code> being a factor.</p>
+
+<h2 id="exercise-5">Exercise 5</h2>
+
+<p>Regress hindfoot_length against weight and species_id. Does it appear that the Chihuahuan Desert’s common kangaroo rats (DM) have <em>inordinately</em> large feet for their weight?</p>
+
+<p class="ToS"><a href="#/slides/lm">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/conclude"></a></p>
+
+<h2 id="review">Review</h2>
+
+<p>In this introduction to R, we touched on several key parts of scripting for data analysis.</p>
+
+<ul>
+  <li>RStudio panes</li>
+  <li>Variable assignment</li>
+  <li>Data structures</li>
+  <li>Subsetting data</li>
+  <li>Linear models</li>
+</ul>
+
+<!--
+ - Flow control (keywords `if` and `else`)
+ - Plots
+ - Functions
+-->
+
+<h2 id="special-characters-in-r">Special characters in R</h2>
+
+<p>Perhaps more than most languages, an R script can appear like a jumble of archaic symbols.
+Here is a little table of characters to recognize as having special meaning</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">?</code></td>
+      <td>get help</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">#</code></td>
+      <td>comment</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">:</code></td>
+      <td>sequence</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">::</code>, <code class="highlighter-rouge">:::</code></td>
+      <td>access namespaces (advanced)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;-</code></td>
+      <td>assignment</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$</code>, <code class="highlighter-rouge">[ ]</code>, <code class="highlighter-rouge">[[ ]]</code></td>
+      <td>subsetting</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">% %</code></td>
+      <td>infix operators, e.g. <code class="highlighter-rouge">%*%</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">{ }</code></td>
+      <td>statements</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">@</code></td>
+      <td>slot (advanced)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Yes, the <code class="highlighter-rouge">.</code> in R has no fixed meaning and is often used as <code class="highlighter-rouge">_</code> might be used to separate words in a variable name.</p>
+
+<p class="ToS"><a href="#/slides/conclude">Top of Section</a></p>
+
+<hr />
+
+<p><a name="/slides/solutions"></a></p>
+
+<h2 id="exercise-solutions">Exercise solutions</h2>
+
+<h2 id="solution-1">Solution 1</h2>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="m">-0.3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="m">0.3</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">-2.9</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.5</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.294035
+</code></pre></div></div>
+
+<p class="notes"><a href="#exercise-1">Return</a></p>
+
+<h2 id="solution-2">Solution 2</h2>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "double"
+</code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
+</code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
+</code></pre></div></div>
+
+<p>The variable <code class="highlighter-rouge">x</code> has a data type of <code class="highlighter-rouge">list</code>, so R does not restrict its elements to a particular type as it does for vectors. The result of combining a list and vector is a list, because the list is the more flexible data structure.</p>
+
+<p class="notes"><a href="#exercise-2">Return</a></p>
+
+<h2 id="solution-3">Solution 3</h2>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">species</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'ape'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bat'</span><span class="p">,</span><span class="w"> </span><span class="s1">'cat'</span><span class="p">,</span><span class="w"> </span><span class="s1">'dog'</span><span class="p">)</span><span class="w">
+</span><span class="n">abund</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">abund</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	4 obs. of  2 variables:
+ $ species: Factor w/ 4 levels "ape","bat","cat",..: 1 2 3 4
+ $ abund  : int  1 2 3 4
+</code></pre></div></div>
+
+<p class="notes"><a href="#exercise-3">Return</a></p>
+
+<!--
+===
+
+## Solution 4
+
+
+~~~r
+animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
+animals$sex <- factor(animals$sex)
+~~~
+{:.text-document title="worksheet-1.R"}
+
+
+~~~r
+str(animals)
+~~~
+{:.input}
+~~~
+'data.frame':	35549 obs. of  9 variables:
+ $ id             : int  2 3 4 5 6 7 8 9 10 11 ...
+ $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
+ $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
+ $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
+ $ plot_id        : int  3 2 7 3 1 2 1 1 6 5 ...
+ $ species_id     : chr  "NL" "DM" "DM" "DM" ...
+ $ sex            : Factor w/ 2 levels "F","M": 2 1 2 2 2 1 2 1 1 1 ...
+ $ hindfoot_length: int  33 37 36 35 14 NA 37 34 20 53 ...
+ $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
+~~~
+{:.output}
+
+[Return](#exercise-4)
+{:.notes}
+-->
+
+<h2 id="solution-4">Solution 4</h2>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">sol1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">days</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="m">-7</span><span class="p">)]</span><span class="w">
+</span><span class="n">sol2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">days</span><span class="p">[</span><span class="n">seq</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sol1</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
+</code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sol2</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Monday"    "Wednesday" "Friday"   
+</code></pre></div></div>
+
+<p class="notes"><a href="#exercise-4">Return</a></p>
+
+<!--
+===
+
+## Solution 6
+
+
+~~~r
+first <- function(dat) {
+    if (is.vector(dat)) {
+        result <- dat[1]
+    } else if (is.matrix(dat)) {
+        result <- dat[1, 1]
+    } else {
+        result <- dat[1, ]
+    }
+    return(result)
+}
+~~~
+{:.text-document title="worksheet-1.R"}
+
+
+~~~r
+m <- matrix(1:9, nrow = 3, ncol = 3)
+first(m)
+~~~
+{:.input}
+~~~
+[1] 1
+~~~
+{:.output}
+
+[Return](#exercise-6)
+{:.notes}
+
+===
+
+## Solution 7
+
+
+~~~r
+animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
+~~~
+{:.text-document title="worksheet-1.R"}
+
+
+~~~r
+coef(animals.hl_model)[2]
+~~~
+{:.input}
+~~~
+log(weight) 
+  0.3961338 
+~~~
+{:.output}
+
+
+[Return](#exercise-8)
+{:.notes}
+-->
+
+<h2 id="solution-5">Solution 5</h2>
+
+<div class="language-r text-document highlighter-rouge" title="worksheet-1.R"><div class="highlight"><pre class="highlight"><code><span class="n">fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lm</span><span class="p">(</span><span class="n">hindfoot_length</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">species_id</span><span class="p">,</span><span class="w"> </span><span class="n">animals</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r input highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Call:
+lm(formula = hindfoot_length ~ weight * species_id, data = animals)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-24.0134  -0.6449   0.0519   0.7144  29.7848 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)         12.819706   0.881185  14.548  &lt; 2e-16 ***
+weight               0.020964   0.099647   0.210  0.83337    
+species_idDM        19.878067   0.885692  22.444  &lt; 2e-16 ***
+species_idDO        20.320892   0.896080  22.678  &lt; 2e-16 ***
+species_idDS        32.082231   0.895996  35.806  &lt; 2e-16 ***
+species_idNL        16.814112   0.895635  18.773  &lt; 2e-16 ***
+species_idOL         6.469932   0.906738   7.135 9.86e-13 ***
+species_idOT         6.436566   0.896637   7.179 7.20e-13 ***
+species_idOX         5.949524   6.487854   0.917  0.35914    
+species_idPB        11.555911   0.889542  12.991  &lt; 2e-16 ***
+species_idPE         5.930293   0.905705   6.548 5.93e-11 ***
+species_idPF         1.476920   0.899021   1.643  0.10043    
+species_idPH         9.421561   1.575405   5.980 2.25e-09 ***
+species_idPI         8.373842   6.804910   1.231  0.21850    
+species_idPL         6.383570   1.408950   4.531 5.90e-06 ***
+species_idPM         5.937775   0.907084   6.546 6.00e-11 ***
+species_idPP         7.368245   0.889413   8.284  &lt; 2e-16 ***
+species_idPX        16.180294  18.538880   0.873  0.38279    
+species_idRF         4.028077   1.351396   2.981  0.00288 ** 
+species_idRM         2.828061   0.891669   3.172  0.00152 ** 
+species_idRO         6.371783   3.079506   2.069  0.03855 *  
+species_idRX         0.513627   3.600336   0.143  0.88656    
+species_idSF        12.199667   1.019254  11.969  &lt; 2e-16 ***
+species_idSH        12.083991   0.963573  12.541  &lt; 2e-16 ***
+species_idSO        10.806853   1.060554  10.190  &lt; 2e-16 ***
+weight:species_idDM  0.055372   0.099668   0.556  0.57852    
+weight:species_idDO  0.029121   0.099701   0.292  0.77022    
+weight:species_idDS  0.021381   0.099656   0.215  0.83012    
+weight:species_idNL -0.004479   0.099652  -0.045  0.96415    
+weight:species_idOL  0.018680   0.099870   0.187  0.85163    
+weight:species_idOT  0.020726   0.099874   0.208  0.83560    
+weight:species_idOX  0.055959   0.317826   0.176  0.86024    
+weight:species_idPB  0.033628   0.099717   0.337  0.73594    
+weight:species_idPE  0.046181   0.100101   0.461  0.64455    
+weight:species_idPF  0.140474   0.102035   1.377  0.16861    
+weight:species_idPH  0.092764   0.107858   0.860  0.38976    
+weight:species_idPI  0.027423   0.363536   0.075  0.93987    
+weight:species_idPL  0.022116   0.114392   0.193  0.84670    
+weight:species_idPM  0.057366   0.100132   0.573  0.56671    
+weight:species_idPP  0.070007   0.099883   0.701  0.48338    
+weight:species_idPX -0.520964   0.978368  -0.532  0.59440    
+weight:species_idRF  0.028946   0.124757   0.232  0.81653    
+weight:species_idRM  0.054117   0.100441   0.539  0.59003    
+weight:species_idRO -0.393305   0.300913  -1.307  0.19121    
+weight:species_idRX  0.312369   0.238136   1.312  0.18962    
+weight:species_idSF  0.007461   0.099955   0.075  0.94050    
+weight:species_idSH  0.029670   0.099776   0.297  0.76619    
+weight:species_idSO  0.014673   0.100138   0.147  0.88350    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.376 on 30690 degrees of freedom
+  (4811 observations deleted due to missingness)
+Multiple R-squared:  0.9792,	Adjusted R-squared:  0.9792 
+F-statistic: 3.078e+04 on 47 and 30690 DF,  p-value: &lt; 2.2e-16
+</code></pre></div></div>
+
+<p class="notes"><a href="#exercise-5">Return</a></p>
+
+<p class="ToS"><a href="#/slides/solutions">Top of Section</a></p>
+
+<hr />
+
+
+
+      </div>
+    </div>
+  <script>
+ var collection = document.getElementsByClassName('rlib');
+ for (var i = 0; i < collection.length; i++) {
+     var a = collection[i];
+     a.href = 'https://cran.r-project.org/package=' + a.innerText;
+ };
+ var collection = document.getElementsByClassName('pylib');
+ for (var i = 0; i < collection.length; i++) {
+     var a = collection[i];
+     a.href = 'https://pypi.python.org/pypi/' + a.innerText;
+ };
+</script>
+
+  </body>
 </html>
