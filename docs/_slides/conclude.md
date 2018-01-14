@@ -9,7 +9,7 @@ In this introduction to R, we touched on several key parts of scripting for data
 - Variable assignment
 - Data structures
 - Subsetting data
-- Linear models
+- Functions
 
 <!--
  - Flow control (keywords `if` and `else`)
@@ -21,8 +21,11 @@ In this introduction to R, we touched on several key parts of scripting for data
 
 ## Special characters in R
 
-Perhaps more than most languages, an R script can appear like a jumble of archaic symbols.
-Here is a little table of characters to recognize as having special meaning
+Perhaps more than most languages, an R script can appear like a jumble of
+archaic symbols. Here is a little table of characters to recognize as having
+special meaning.
+
+===
 
 | Symbol              | Meaning                      |
 | -------             | ---------                    |
@@ -37,4 +40,6 @@ Here is a little table of characters to recognize as having special meaning
 | `.`                 |                              |
 | `@`                 | slot (advanced)              |
 
-Yes, the `.` in R has no fixed meaning and is often used as `_` might be used to separate words in a variable name.
+The `.` in R has no fixed meaning and is often used as `_` might be used to
+separate words in a variable name.
+{:.notes}

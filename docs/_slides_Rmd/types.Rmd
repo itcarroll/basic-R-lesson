@@ -69,7 +69,10 @@ list(1, list(2, 3))
 
 ## Exercise 2
 
-Use the `typeof` function to inspect the data type of `counts`, and do the same for another variable to which you assign a list of numbers. Why are they different? What is the data type the results when you use `c` to combine `counts` with the new variable you just created, in terms of the underlying data type? Does `c` always create vectors?
+Use the `typeof` function to inspect the data type of `counts`, and do the same
+for another variable to which you assign a list of numbers. Why are they
+different? Use `c` to combine `counts` with the new variable you just created
+and inspect the result with `typeof`. Does `c` always create vectors?
 
 [View solution](#solution-2)
 {:.notes}
@@ -78,11 +81,14 @@ Use the `typeof` function to inspect the data type of `counts`, and do the same 
 
 ## Factors
 
-A factor is a vector that can contain only predefined values, and is used to store categorical data. Factors are like integer vectors, but posess a `levels` attribute that assigns names to however many discrete categories are specified.
+A factor is a vector that can contain only predefined values, and is used to
+store categorical data. Factors are like integer vectors, but posess a `levels`
+attribute that assigns names to however many discrete categories are specified.
 
 ===
 
-Use `factor()` to create a vector with predefined values, which are often characters or "strings".
+Use `factor()` to create a vector with predefined values, which are often
+characters or "strings".
 
 ```{r title="{{ site.handouts[0] }}"}
 education <- factor(
@@ -92,7 +98,8 @@ education <- factor(
 
 ===
 
-The `str` function notes the labels, but printsthe integers assigned in their stead.
+The `str` function notes the labels, but prints the integers assigned in their
+stead.
 
 ```{r}
 str(education)

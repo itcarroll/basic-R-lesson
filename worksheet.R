@@ -15,8 +15,9 @@ counts ...
 
 ## Factors
 
-education <- ...(c("college", "highschool", "college", "middle", "middle"),
-                 ... = c("middle", "highschool", ...))
+education <- ...(
+  c("college", "highschool", "college", "middle", "middle"),
+  ... = c("middle", "highschool", ...))
 
 ## Data Frames
 
@@ -42,13 +43,9 @@ weekdays <- ...
 
 ...
 
-## Linear models
+## Functions
 
-animals <- read.csv(...)
-fit <- lm(..., ...)
-
-fit <- lm(..., animals)
-
-## Exercise 5
-
-...
+function(...) {
+  ...
+  return(...)
+}

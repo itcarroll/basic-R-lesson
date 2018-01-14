@@ -9,7 +9,7 @@ handouts:
  - data/README.md
 tag: v0.3
 lesson: 1
-instructor: Kelly Hondula
+instructor: Mary Shelley
 authors:
  - Kelly Hondula
  - Ian Carroll
@@ -27,10 +27,10 @@ slide_sorter:
 #  - load
   - parts
 #  - plot
-#  - functions
+  - functions
 #  - flow
 #  - stats
-  - lm
+#  - lm
   - conclude
 #  - push
   - solutions

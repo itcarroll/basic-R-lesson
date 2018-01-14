@@ -3,7 +3,7 @@
 
 ## The Console
 
-The interpreter accepts R commands interactively through the console.
+The interpreter accepts commands interactively through the console.
 
 ===
 
@@ -55,8 +55,8 @@ seq(1, 50)
 
 ===
 
-The interpreter understands more than arithmatic operations!
-That last command told it to use (or "call") the **function** `seq()`.
+The interpreter understands more than arithmatic operations.
+That last command told it to use (or "call") the function `seq()`.
 
 Most of "learning R" involves getting to know a whole lot of functions, the effect of each function's  arguments (e.g. the input values 1 and 10), and what each function returns (e.g. the output vector).
 {:.notes}
@@ -65,7 +65,7 @@ Most of "learning R" involves getting to know a whole lot of functions, the effe
 
 ## Basic math 
 
-A good place to begin learning R functions is with its built-in mathematical functionality:
+A good place to begin learning R functions is with its built-in mathematical functionality.
 
 ===
 
@@ -87,7 +87,7 @@ Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 
 ## Logical tests
 
-Test equality with "==" and inequality with "=<", "<", "!=", ">", or "=>".
+Test equality with `==` and inequality with `=<`, `<`, `!=`, `>`, or `=>`.
 
 
 ~~~r
@@ -101,7 +101,7 @@ Test equality with "==" and inequality with "=<", "<", "!=", ">", or "=>".
 
 ===
 
-## More Maths
+## More Math
 
 Common mathematical functions like `sin`, `log`, and `sqrt`, and constants.
 
@@ -135,7 +135,7 @@ rep(2, 5)
 
 ## Parentheses
 
-Sandwiching something with "(" and ")" has two possible meanings.
+Sandwiching something with `(` and `)` has two possible meanings.
 
 ===
 
@@ -169,13 +169,13 @@ logb(2, 2)
 
 ## Exercise 1
 
-The quadratic formula for a value of $$x$$ that satisfies the equation $a x^2 + b x + c = 0$ is
+Use the quadratic formula to find $$x$$ that satisfies the
+equation $1.5 x^2 + 0.3 x - 2.0 = 0$.
 
 $$
-\frac{-b + \sqrt{b^2 - 4 a c}}{2 a}
+\frac{-0.3 \pm \sqrt{0.3^2 - 4 \times 1.5 \times {-2.9}}}{2 \times 1.5}
 $$
 
-Use this formula to write an expression that computes $x$ when $a$ is 1.5, $b$ is 0.3, and $c$ is -2.9.
 
 [View solution](#solution-1)
 {:.notes}
@@ -190,12 +190,12 @@ When you start a new session, the R interpreter already recognizes many things, 
 - any string of characters
 - nearly universal operators (e.g. `+` and `/`)
 - operators specific to R (e.g. `$` and `%*%`)
-- functions in `base` R
+- functions in "base R"
 
 ===
 
-To reference a number or function you just type it in as above.
-To referece a string of characters you must surround them in quotation marks.
+To reference a number or function just type it in as above.
+To referece a string of characters, surround them in quotation marks.
 
 
 ~~~r
@@ -209,7 +209,8 @@ To referece a string of characters you must surround them in quotation marks.
 
 ===
 
-Without quotation marks, the interpreter checks for things named `ab.cd` and doesn't find anything:
+Without quotation marks, the interpreter checks for things named `ab.cd` and
+doesn't find anything:
 
 
 ~~~r
@@ -227,12 +228,15 @@ Question
 : Is it better to use `'` or `"`?
 
 Answer
-: {:.fragment} Neither one is better. You will often encounter stylistic choices like this, so if you don't have a personal preference try to mimic existing styles.
+: {:.fragment} Neither one is better. You will often encounter stylistic choices
+like this, so if you don't have a personal preference try to mimic existing
+styles.
 
 ===
 
-We can expand the vocabulary known to the R interpreter by creating a new **variable**.
-Using the symbol `<-` is referred to as assignment: we assign the output of any command to the right of `<-` to any **variable** written to its left.
+You can expand the vocabulary known to the R interpreter by creating a new
+**variable**. Using the symbol `<-` is referred to as assignment: the output of
+any command to the right of `<-` gets the name given on its left.
 
 
 ~~~r
@@ -257,10 +261,10 @@ x
 ~~~
 {:.output}
 
-===
-
-Assigning values to new variables (to the left of a `<-`) is the only time you can reference something previously unknown to the interpreter.
-All other commands must reference things already in the interpreter's vocabulary.
+Assigning values to new variables (to the left of a `<-`) is the only time you
+can reference something previously unknown to the interpreter. All other
+commands must reference things already in the interpreter's vocabulary.
+{:.notes}
 
 ===
 

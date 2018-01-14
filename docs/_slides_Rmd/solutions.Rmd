@@ -133,7 +133,6 @@ coef(animals.hl_model)[2]
 
 [Return](#exercise-8)
 {:.notes}
--->
 
 ===
 
@@ -149,3 +148,5 @@ summary(fit)
 
 [Return](#exercise-5)
 {:.notes}
+
+-->

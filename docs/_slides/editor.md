@@ -3,13 +3,15 @@
 
 ## The Editor
 
-The **console** is for evaluating commands you don't intend to keep or reuse. It's useful for testing commands and poking around.
-The **editor** is where you compose scripts that will process data, perform analyses, code up visualizations, and even write reports.
+The **console** is for evaluating commands you don't intend to keep or reuse.
+It's useful for testing commands and poking around. The **editor** is where you
+compose scripts that will process data, perform analyses, code up
+visualizations, and even write reports.
 
-===
-
-These work together in RStudio, which has multiple ways to send parts of the script you are editing to the console for immediate evaluation.
-Alternatively you can "source" the entire script.
+These work together in RStudio, which has multiple ways to send parts of the
+script you are editing to the console for immediate evaluation. Alternatively
+you can "source" the entire script.
+{:.notes}
 
 ===
 
@@ -23,26 +25,8 @@ vals <- seq(1, 100)
 
 ===
 
-Let's review the elements of this statement, from left to right:
-
-- `vals` is the name of a (new) variable
-- ` <- ` assigns to `vals` the result of what comes after
-- `seq` is the name of a function
-- `(` is the opening paren of the function call
-- `1` and `100` are separate arguments to the function
-- `)` is the closing paren of the function call
-
-===
-
-Question
-: Why call `vals` a "variable" and `seq` a "function"?
-
-Answer
-: {:.fragment} It is true they are both names of things known to R, and could be called variables. But `seq` has the distinguishing property of being **callable** (i.e. we can use "(" and ")" to provide arguments), which makes it a variable that behaves something like a mathematical function by taking input and returning output.
-
-===
-
-Our call to the function `seq` could have been much more explicit. We could give the arguments by the names that `seq` is expecting.
+Our call to the function `seq` could have been much more explicit. We could give
+the arguments by the names that `seq` is expecting.
 
 
 ~~~r
@@ -53,7 +37,8 @@ vals <- seq(from = 1,
 
 ===
 
-Run that code by moving your cursor anywhere within those two lines and clicking "Run", or by using the keyboard shortcut Ctrl-Return or ⌘ Return.
+Run that code by moving your cursor anywhere within those two lines and clicking
+"Run", or by using the keyboard shortcut Ctrl-Return or ⌘ Return.
 
 ===
 
@@ -61,17 +46,22 @@ Question
 : What's an advantage of naming arguments?
 
 Answer
-: {:.fragment} One advantage is that you can put them in any order. A related advantage is that you can then skip some arguments, which is fine to do if each skipped argument has a default value. A third advantage is code readability, which you should always be concious of while writing in the editor.
+: {:.fragment} One advantage is that you can put them in any order. A related
+advantage is that you can then skip some arguments, which is fine to do if each
+skipped argument has a default value. A third advantage is code readability,
+which you should always be concious of while writing in the editor.
 
 ===
 
 ## Readability
 
-Code readability in the editor cuts both ways: sometimes verbosity is useful, sometimes it is cumbersome.
+Code readability in the editor cuts both ways: sometimes verbosity is useful,
+sometimes it is cumbersome.
 
 ===
 
-The `seq()` function has an alternative form available when only the `from` and `to` arguments are needed.
+The `seq()` function has an alternative form available when only the `from` and
+`to` arguments are needed.
 
 
 ~~~r
@@ -88,15 +78,18 @@ The `seq()` function has an alternative form available when only the `from` and 
 ~~~
 {:.output}
 
-The `:` operator should be used whenever possible because it replaces a common, cumbersome function call with an brief, intuitive syntax.
-Likewise, the `assign` function duplicates the functionallity of the `<-` symbol, but is never used when the simpler operator will suffice.
+The `:` operator should be used whenever possible because it replaces a common,
+cumbersome function call with an brief, intuitive syntax. Likewise, the `assign`
+function duplicates the functionallity of the `<-` symbol, but is never used
+when the simpler operator will suffice.
 {:.notes}
 
 ===
 
 ## Function documentation
 
-How would you get to know these properties and the names of a function's arguments?
+How would you get to know these properties and the names of a function's
+arguments?
 
 
 ~~~r

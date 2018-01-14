@@ -217,7 +217,6 @@ log(weight)
 
 [Return](#exercise-8)
 {:.notes}
--->
 
 ===
 
@@ -305,3 +304,5 @@ F-statistic: 3.078e+04 on 47 and 30690 DF,  p-value: < 2.2e-16
 
 [Return](#exercise-5)
 {:.notes}
+
+-->
