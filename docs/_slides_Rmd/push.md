@@ -3,7 +3,7 @@
 
 ## Save your work
 
-Save the "{{ site.handouts }}" file.
+Save the "{{ site.handouts[0] }}" file.
 
 Commit modified files you want to share.
 
