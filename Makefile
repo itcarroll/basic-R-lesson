@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 # look up slides and lesson number in Jekyll _config.yml
 SLIDES := $(shell ruby -e "require 'yaml';puts YAML.load_file('docs/_config.yml')['slide_sorter']")
 LESSON := $(shell ruby -e "require 'yaml';puts YAML.load_file('docs/_config.yml')['lesson']")
@@ -56,6 +58,7 @@ export GEM_HOME=$(HOME)/.gem
 SITE = $(shell find ./docs/ ! -name _site)
 docs/_site: $(SITE) | docs/Gemfile.lock
 	pushd docs && bundle exec jekyll build --baseurl=/p/4000 && popd
+	touch docs/_site
 docs/Gemfile.lock:
 	pushd docs && bundle install && popd
 
