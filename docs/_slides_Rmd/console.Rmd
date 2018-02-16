@@ -114,7 +114,7 @@ logb(2, 2)
 ## Exercise 1
 
 Use the quadratic formula to find $$x$$ that satisfies the
-equation $$1.5 x^2 + 0.3 x - 2.0 = 0$$.
+equation $$1.5 x^2 + 0.3 x - 2.9 = 0$$.
 
 $$
 \frac{-0.3 \pm \sqrt{0.3^2 - 4 \times 1.5 \times {-2.9}}}{2 \times 1.5}
