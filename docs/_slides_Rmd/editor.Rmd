@@ -45,7 +45,7 @@ Answer
 : {:.fragment} One advantage is that you can put them in any order. A related
 advantage is that you can then skip some arguments, which is fine to do if each
 skipped argument has a default value. A third advantage is code readability,
-which you should always be concious of while writing in the editor.
+which you should always be conscious of while writing in the editor.
 
 ===
 
