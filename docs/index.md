@@ -3,6 +3,8 @@ layout: default
 style: /css/static.css
 ---
 
+[Report Bug]({{ site.github.repository_url }}/issues){:id="bug-report" target="_blank"}
+
 # {{ site.title }}
 {:style="text-transform: none;"}
 
