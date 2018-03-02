@@ -3,7 +3,7 @@ layout: default
 style: /css/static.css
 ---
 
-[Report Bug]({{ site.github.repository_url }}/issues){:id="bug-report" target="_blank"}
+<button name="btn-bug" onclick="{{ site.github.repository_url }}/issues">Report Bug</button>
 
 # {{ site.title }}
 {:style="text-transform: none;"}
