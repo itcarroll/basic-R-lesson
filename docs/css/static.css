@@ -191,18 +191,6 @@ hr {
   margin:0 0 20px;
 }
 
-.btn {
-  border: 0.5px solid;
-  border-color: gray;
-  border-radius: 2px;
-  box-shadow: 0 0 1px 0 black;
-  padding: 5px 6px;
-  display: inline-block;
-  left: 10px;
-  top: -10px;
-  text-align: center;
-}
-
 footer {
   width:270px;
   float:left;

@@ -3,7 +3,7 @@ layout: default
 style: /css/static.css
 ---
 
-# {{ site.title }} [Report Bug]({{ site.github.repository_url }}/issues){:.btn target="_blank"}
+# {{ site.title }}
 {:style="text-transform: none;"}
 
 {% if site.handouts %}
