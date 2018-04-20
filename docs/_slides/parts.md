@@ -14,20 +14,24 @@ Parts of a data structure are always accessible, either by their name or by thei
 counts[1]
 ~~~
 {:.input}
+
 ~~~
 [1] 4
 ~~~
 {:.output}
 
 
+
 ~~~r
 counts[3]
 ~~~
 {:.input}
+
 ~~~
 [1] 7
 ~~~
 {:.output}
+
 
 ===
 
@@ -42,6 +46,7 @@ Parts of an object may also have a name. The names can be given when you are cre
 df['education']
 ~~~
 {:.input}
+
 ~~~
    education
 1    college
@@ -52,6 +57,7 @@ df['education']
 ~~~
 {:.output}
 
+
 ===
 
 
@@ -61,10 +67,12 @@ names(df) <- c('ed', 'ct')
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 df['ed']
 ~~~
 {:.input}
+
 ~~~
           ed
 1    college
@@ -74,6 +82,7 @@ df['ed']
 5     middle
 ~~~
 {:.output}
+
 
 ===
 
@@ -92,11 +101,13 @@ For a multi-dimensional array, separate the dimension along which a part is requ
 df[3, 'ed']
 ~~~
 {:.input}
+
 ~~~
 [1] college
 Levels: middle highschool college
 ~~~
 {:.output}
+
 
 It's fine to mix names and indices when selecting parts of an object.
 {:.notes}
@@ -125,24 +136,29 @@ weekend <- days[c(1, 7)]
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 weekdays
 ~~~
 {:.input}
+
 ~~~
 [1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
 ~~~
 {:.output}
 
 
+
 ~~~r
 weekend
 ~~~
 {:.input}
+
 ~~~
 [1] "Sunday"   "Saturday"
 ~~~
 {:.output}
+
 
 ===
 
@@ -166,11 +182,13 @@ It's most useful when used interactively with "tab completion" on the columns of
 df$ed
 ~~~
 {:.input}
+
 ~~~
 [1] college    highschool college    middle     middle    
 Levels: middle highschool college
 ~~~
 {:.output}
+
 
 ===
 
@@ -181,9 +199,11 @@ A logical test applied to a single column produces a vector of `TRUE` and `FALSE
 df[df$ed == 'college', ]
 ~~~
 {:.input}
+
 ~~~
        ed ct
 1 college  4
 3 college  7
 ~~~
 {:.output}
+

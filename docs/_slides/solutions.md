@@ -12,10 +12,12 @@
 (-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ~~~
 {:.input}
+
 ~~~
 [1] 1.294035
 ~~~
 {:.output}
+
 
 [Return](#exercise-1)
 {:.notes}
@@ -31,32 +33,39 @@ x <- list(3, 4, 5, 7)
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 typeof(counts)
 ~~~
 {:.input}
+
 ~~~
 [1] "double"
 ~~~
 {:.output}
 
+
 ~~~r
 typeof(x)
 ~~~
 {:.input}
+
 ~~~
 [1] "list"
 ~~~
 {:.output}
 
+
 ~~~r
 typeof(c(counts, x))
 ~~~
 {:.input}
+
 ~~~
 [1] "list"
 ~~~
 {:.output}
+
 
 The variable `x` has a data type of `list`, so R does not restrict its elements to a particular type as it does for vectors. The result of combining a list and vector is a list, because the list is the more flexible data structure.
 
@@ -76,16 +85,19 @@ data <- data.frame(species, abund)
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 str(data)
 ~~~
 {:.input}
+
 ~~~
 'data.frame':	4 obs. of  2 variables:
  $ species: Factor w/ 4 levels "ape","bat","cat",..: 1 2 3 4
  $ abund  : int  1 2 3 4
 ~~~
 {:.output}
+
 
 [Return](#exercise-3)
 {:.notes}
@@ -103,10 +115,12 @@ animals$sex <- factor(animals$sex)
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 str(animals)
 ~~~
 {:.input}
+
 ~~~
 'data.frame':	35549 obs. of  9 variables:
  $ id             : int  2 3 4 5 6 7 8 9 10 11 ...
@@ -120,6 +134,7 @@ str(animals)
  $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
 ~~~
 {:.output}
+
 
 [Return](#exercise-4)
 {:.notes}
@@ -137,24 +152,29 @@ sol2 <- days[seq(2, 7, 2)]
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 sol1
 ~~~
 {:.input}
+
 ~~~
 [1] "Monday"    "Tuesday"   "Wednesday" "Thursday"  "Friday"   
 ~~~
 {:.output}
 
 
+
 ~~~r
 sol2
 ~~~
 {:.input}
+
 ~~~
 [1] "Monday"    "Wednesday" "Friday"   
 ~~~
 {:.output}
+
 
 [Return](#exercise-4)
 {:.notes}
@@ -180,15 +200,18 @@ first <- function(dat) {
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 m <- matrix(1:9, nrow = 3, ncol = 3)
 first(m)
 ~~~
 {:.input}
+
 ~~~
 [1] 1
 ~~~
 {:.output}
+
 
 [Return](#exercise-6)
 {:.notes}
@@ -204,15 +227,18 @@ animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 coef(animals.hl_model)[2]
 ~~~
 {:.input}
+
 ~~~
 log(weight) 
   0.3961338 
 ~~~
 {:.output}
+
 
 
 [Return](#exercise-8)
@@ -229,10 +255,12 @@ fit <- lm(hindfoot_length ~ weight * species_id, animals)
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 summary(fit)
 ~~~
 {:.input}
+
 ~~~
 
 Call:
@@ -301,6 +329,7 @@ Multiple R-squared:  0.9792,	Adjusted R-squared:  0.9792
 F-statistic: 3.078e+04 on 47 and 30690 DF,  p-value: < 2.2e-16
 ~~~
 {:.output}
+
 
 [Return](#exercise-5)
 {:.notes}

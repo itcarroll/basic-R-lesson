@@ -37,6 +37,7 @@ counts <- c(4, 3, 7, 5, 2)
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
+
 ===
 
 All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. 
@@ -46,10 +47,12 @@ All elements of an vector must be the same type, so when you attempt to combine 
 c(1, 2, "c")
 ~~~
 {:.input}
+
 ~~~
 [1] "1" "2" "c"
 ~~~
 {:.output}
+
 
 ===
 
@@ -66,6 +69,7 @@ Construct lists with `list()` instead of `c()`:
 list(1, 2, "c")
 ~~~
 {:.input}
+
 ~~~
 [[1]]
 [1] 1
@@ -78,6 +82,7 @@ list(1, 2, "c")
 ~~~
 {:.output}
 
+
 ===
 
 Lists can even include another list! 
@@ -87,6 +92,7 @@ Lists can even include another list!
 list(1, list(2, 3))
 ~~~
 {:.input}
+
 ~~~
 [[1]]
 [1] 1
@@ -99,6 +105,7 @@ list(1, list(2, 3))
 [1] 3
 ~~~
 {:.output}
+
 
 ===
 
@@ -133,6 +140,7 @@ education <- factor(
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
+
 ===
 
 The `str` function notes the labels, but prints the integers assigned in their
@@ -143,7 +151,9 @@ stead.
 str(education)
 ~~~
 {:.input}
+
 ~~~
  Factor w/ 3 levels "middle","highschool",..: 3 2 3 1 1
 ~~~
 {:.output}
+

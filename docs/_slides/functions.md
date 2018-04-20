@@ -36,6 +36,7 @@ function(...) {
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
+
 Three components:
 
 - __arguments__: control how you can call the function
@@ -56,6 +57,7 @@ function(z) {
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
+
 Note that `z` doesn't exist until we call the function, which merely contains
 the instructions for how any `z` will be handled.
 
@@ -74,15 +76,18 @@ first <- function(z) {
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
+
 ~~~r
 first(df)
 ~~~
 {:.input}
+
 ~~~
        ed ct
 1 college  4
 ~~~
 {:.output}
+
 
 ===
 

@@ -39,6 +39,7 @@ df <- data.frame(education, counts)
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
+
 ===
 
 There are several functions to get to know a data frame:
@@ -57,10 +58,12 @@ There are several functions to get to know a data frame:
 names(df)
 ~~~
 {:.input}
+
 ~~~
 [1] "education" "counts"   
 ~~~
 {:.output}
+
 
 ===
 

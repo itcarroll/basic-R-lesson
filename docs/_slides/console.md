@@ -14,20 +14,24 @@ Basic math, as you would type it on a calculator, is usually a valid command in 
 1 + 2
 ~~~
 {:.input}
+
 ~~~
 [1] 3
 ~~~
 {:.output}
 
 
+
 ~~~r
 4^2
 ~~~
 {:.input}
+
 ~~~
 [1] 16
 ~~~
 {:.output}
+
 
 ===
 
@@ -43,15 +47,20 @@ A command giving a vector of results shows this clearly:
 
 
 ~~~r
-seq(1, 50)
+seq(1, 100)
 ~~~
 {:.input}
+
 ~~~
- [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-[24] 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
-[47] 47 48 49 50
+  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+ [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
+ [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
+ [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
+ [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
+ [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
 ~~~
 {:.output}
+
 
 ===
 
@@ -78,10 +87,12 @@ Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 5/3
 ~~~
 {:.input}
+
 ~~~
 [1] 1.666667
 ~~~
 {:.output}
+
 
 ===
 
@@ -94,10 +105,12 @@ Test equality with `==` and inequality with `=<`, `<`, `!=`, `>`, or `=>`.
 1/2 == 0.5
 ~~~
 {:.input}
+
 ~~~
 [1] TRUE
 ~~~
 {:.output}
+
 
 ===
 
@@ -110,10 +123,12 @@ Common mathematical functions like `sin`, `log`, and `sqrt`, and constants.
 sin(2 * pi)
 ~~~
 {:.input}
+
 ~~~
 [1] -2.449294e-16
 ~~~
 {:.output}
+
 
 ===
 
@@ -126,10 +141,12 @@ Common computer programming functions like 'rep', 'sort', and 'range'
 rep(2, 5)
 ~~~
 {:.input}
+
 ~~~
 [1] 2 2 2 2 2
 ~~~
 {:.output}
+
 
 ===
 
@@ -146,10 +163,12 @@ Group sub-expressions by parentheses on an as-needed basis.
 (1 + 2) / 3
 ~~~
 {:.input}
+
 ~~~
 [1] 1
 ~~~
 {:.output}
+
 
 ===
 
@@ -160,10 +179,12 @@ Call functions by typing their name and comma-separated arguments between parent
 logb(2, 2)
 ~~~
 {:.input}
+
 ~~~
 [1] 1
 ~~~
 {:.output}
+
 
 ===
 
@@ -202,10 +223,12 @@ To referece a string of characters, surround them in quotation marks.
 'ab.cd'
 ~~~
 {:.input}
+
 ~~~
 [1] "ab.cd"
 ~~~
 {:.output}
+
 
 ===
 
@@ -217,10 +240,12 @@ doesn't find anything:
 ab.cd
 ~~~
 {:.input}
+
 ~~~
 Error in eval(expr, envir, enclos): object 'ab.cd' not found
 ~~~
 {:.output}
+
 
 ===
 
@@ -240,9 +265,10 @@ any command to the right of `<-` gets the name given on its left.
 
 
 ~~~r
-x <- seq(1, 50)
+x <- seq(0, 100)
 ~~~
 {:.input}
+
 
 ===
 
@@ -254,12 +280,17 @@ We can print the value of `x` by evaluating it without assignment.
 x
 ~~~
 {:.input}
+
 ~~~
- [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-[24] 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
-[47] 47 48 49 50
+  [1]   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16
+ [18]  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33
+ [35]  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50
+ [52]  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67
+ [69]  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84
+ [86]  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
 ~~~
 {:.output}
+
 
 Assigning values to new variables (to the left of a `<-`) is the only time you
 can reference something previously unknown to the interpreter. All other
@@ -272,11 +303,10 @@ Once assigned to a variable, a value becomes known to R and you can refer to it 
 
 
 ~~~r
-y <- 'ab.cd'
-typeof(y)
+plot(x, sin(x * 2 * pi / 100))
 ~~~
 {:.input}
-~~~
-[1] "character"
-~~~
-{:.output}
+
+![]({{ site.baseurl }}/images/console/unnamed-chunk-14-1.png)
+{:.captioned}
+

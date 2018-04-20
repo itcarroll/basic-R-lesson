@@ -23,6 +23,7 @@ vals <- seq(1, 100)
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
+
 ===
 
 Our call to the function `seq` could have been much more explicit. We could give
@@ -34,6 +35,7 @@ vals <- seq(from = 1,
             to = 100)
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
+
 
 ===
 
@@ -49,7 +51,7 @@ Answer
 : {:.fragment} One advantage is that you can put them in any order. A related
 advantage is that you can then skip some arguments, which is fine to do if each
 skipped argument has a default value. A third advantage is code readability,
-which you should always be concious of while writing in the editor.
+which you should always be conscious of while writing in the editor.
 
 ===
 
@@ -68,6 +70,7 @@ The `seq()` function has an alternative form available when only the `from` and
 1:100
 ~~~
 {:.input}
+
 ~~~
   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
@@ -77,6 +80,7 @@ The `seq()` function has an alternative form available when only the `from` and
  [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
 ~~~
 {:.output}
+
 
 The `:` operator should be used whenever possible because it replaces a common,
 cumbersome function call with an brief, intuitive syntax. Likewise, the `assign`
@@ -97,6 +101,7 @@ arguments?
 ~~~
 {:.input}
 
+
 ===
 
 How would you even know what function to call?
@@ -106,3 +111,4 @@ How would you even know what function to call?
 ??sequence
 ~~~
 {:.input}
+
