@@ -10,10 +10,12 @@ The interpreter accepts commands interactively through the console.
 Basic math, as you would type it on a calculator, is usually a valid command in the R language:
 
 
+
 ~~~r
-1 + 2
+> 1 + 2
 ~~~
 {:.input}
+
 
 ~~~
 [1] 3
@@ -22,10 +24,12 @@ Basic math, as you would type it on a calculator, is usually a valid command in 
 
 
 
+
 ~~~r
-4^2
+> 4^2
 ~~~
 {:.input}
+
 
 ~~~
 [1] 16
@@ -46,10 +50,12 @@ Answer
 A command giving a vector of results shows this clearly:
 
 
+
 ~~~r
-seq(1, 100)
+> seq(1, 100)
 ~~~
 {:.input}
+
 
 ~~~
   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
@@ -72,9 +78,9 @@ Most of "learning R" involves getting to know a whole lot of functions, the effe
 
 ===
 
-## Basic math 
+## R as Calculator
 
-A good place to begin learning R functions is with its built-in mathematical functionality.
+A good place to begin learning R is with its built-in mathematical functionality.
 
 ===
 
@@ -83,10 +89,12 @@ A good place to begin learning R functions is with its built-in mathematical fun
 Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 
 
+
 ~~~r
-5/3
+> 5/3
 ~~~
 {:.input}
+
 
 ~~~
 [1] 1.666667
@@ -101,10 +109,12 @@ Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 Test equality with `==` and inequality with `=<`, `<`, `!=`, `>`, or `=>`.
 
 
+
 ~~~r
-1/2 == 0.5
+> 1/2 == 0.5
 ~~~
 {:.input}
+
 
 ~~~
 [1] TRUE
@@ -114,15 +124,17 @@ Test equality with `==` and inequality with `=<`, `<`, `!=`, `>`, or `=>`.
 
 ===
 
-## More Math
+## Math functions
 
-Common mathematical functions like `sin`, `log`, and `sqrt`, and constants.
+Common mathematical functions like `sin`, `log`, and `sqrt`, exist along side some universal constants.
+
 
 
 ~~~r
-sin(2 * pi)
+> sin(2 * pi)
 ~~~
 {:.input}
+
 
 ~~~
 [1] -2.449294e-16
@@ -137,10 +149,12 @@ sin(2 * pi)
 Common computer programming functions like 'rep', 'sort', and 'range'
 
 
+
 ~~~r
-rep(2, 5)
+> rep(2, 5)
 ~~~
 {:.input}
+
 
 ~~~
 [1] 2 2 2 2 2
@@ -159,10 +173,12 @@ Sandwiching something with `(` and `)` has two possible meanings.
 Group sub-expressions by parentheses on an as-needed basis.
 
 
+
 ~~~r
-(1 + 2) / 3
+> (1 + 2) / 3
 ~~~
 {:.input}
+
 
 ~~~
 [1] 1
@@ -175,31 +191,18 @@ Group sub-expressions by parentheses on an as-needed basis.
 Call functions by typing their name and comma-separated arguments between parentheses.
 
 
+
 ~~~r
-logb(2, 2)
+> logb(2, 2)
 ~~~
 {:.input}
+
 
 ~~~
 [1] 1
 ~~~
 {:.output}
 
-
-===
-
-## Exercise 1
-
-Use the quadratic formula to find $$x$$ that satisfies the
-equation $$1.5 x^2 + 0.3 x - 2.9 = 0$$.
-
-$$
-\frac{-0.3 \pm \sqrt{0.3^2 - 4 \times 1.5 \times {-2.9}}}{2 \times 1.5}
-$$
-
-
-[View solution](#solution-1)
-{:.notes}
 
 ===
 
@@ -219,10 +222,12 @@ To reference a number or function just type it in as above.
 To referece a string of characters, surround them in quotation marks.
 
 
+
 ~~~r
-'ab.cd'
+> 'ab.cd'
 ~~~
 {:.input}
+
 
 ~~~
 [1] "ab.cd"
@@ -236,10 +241,12 @@ Without quotation marks, the interpreter checks for things named `ab.cd` and
 doesn't find anything:
 
 
+
 ~~~r
-ab.cd
+> ab.cd
 ~~~
 {:.input}
+
 
 ~~~
 Error in eval(expr, envir, enclos): object 'ab.cd' not found
@@ -264,8 +271,9 @@ You can expand the vocabulary known to the R interpreter by creating a new
 any command to the right of `<-` gets the name given on its left.
 
 
+
 ~~~r
-x <- seq(0, 100)
+> x <- seq(0, 100)
 ~~~
 {:.input}
 
@@ -276,10 +284,12 @@ You'll notice that nothing prints to the console, because we assigned the output
 We can print the value of `x` by evaluating it without assignment.
 
 
+
 ~~~r
-x
+> x
 ~~~
 {:.input}
+
 
 ~~~
   [1]   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16
@@ -302,11 +312,10 @@ commands must reference things already in the interpreter's vocabulary.
 Once assigned to a variable, a value becomes known to R and you can refer to it in other commands.
 
 
+
 ~~~r
-plot(x, sin(x * 2 * pi / 100))
+> plot(x, sin(x * 2 * pi / 100))
 ~~~
 {:.input}
-
-![]({{ site.baseurl }}/images/console/unnamed-chunk-14-1.png)
+![ ]({{ site.baseurl }}/images/console/unnamed-chunk-14-1.png)
 {:.captioned}
-

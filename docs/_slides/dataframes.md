@@ -1,7 +1,7 @@
 ---
 ---
 
-## Multi-dimensional data structures
+## Tables, Matrices & Arrays
 
 Data can be stored in several additional data structures depending on its complexity.
 
@@ -34,6 +34,7 @@ It is the data structure most similar to a spreadsheet, with two key differences
 Creating a data frame from scratch can be done by combining vectors with the `data.frame()` function.
 
 
+
 ~~~r
 df <- data.frame(education, counts)
 ~~~
@@ -54,22 +55,15 @@ There are several functions to get to know a data frame:
 ===
 
 
+
 ~~~r
-names(df)
+> names(df)
 ~~~
 {:.input}
+
 
 ~~~
 [1] "education" "counts"   
 ~~~
 {:.output}
 
-
-===
-
-## Exercise 3
-
-Create a data frame with two columns, one called "species" with four strings and another called "abund" with four numbers. Store your data frame as a variable called `data`.
-
-[View solution](#solution-3)
-{:.notes}

@@ -32,6 +32,7 @@ Common one-dimensional, array data structures:
 Vectors are the basic data structure in R. They are a collection of data that are all of the same type. Create a vector by combining elements together using the function `c()`.
 
 
+
 ~~~r
 counts <- c(4, 3, 7, 5, 2)
 ~~~
@@ -43,10 +44,12 @@ counts <- c(4, 3, 7, 5, 2)
 All elements of an vector must be the same type, so when you attempt to combine different types they will be coerced to the most flexible type. 
 
 
+
 ~~~r
-c(1, 2, "c")
+> c(1, 2, "c")
 ~~~
 {:.input}
+
 
 ~~~
 [1] "1" "2" "c"
@@ -65,10 +68,12 @@ Lists are like vectors but their elements can be of any data type or structure.
 Construct lists with `list()` instead of `c()`:
 
 
+
 ~~~r
-list(1, 2, "c")
+> list(1, 2, "c")
 ~~~
 {:.input}
+
 
 ~~~
 [[1]]
@@ -88,10 +93,12 @@ list(1, 2, "c")
 Lists can even include another list! 
 
 
+
 ~~~r
-list(1, list(2, 3))
+> list(1, list(2, 3))
 ~~~
 {:.input}
+
 
 ~~~
 [[1]]
@@ -109,18 +116,6 @@ list(1, list(2, 3))
 
 ===
 
-## Exercise 2
-
-Use the `typeof` function to inspect the data type of `counts`, and do the same
-for another variable to which you assign a list of numbers. Why are they
-different? Use `c` to combine `counts` with the new variable you just created
-and inspect the result with `typeof`. Does `c` always create vectors?
-
-[View solution](#solution-2)
-{:.notes}
-
-===
-
 ## Factors
 
 A factor is a vector that can contain only predefined values, and is used to
@@ -131,6 +126,7 @@ attribute that assigns names to however many discrete categories are specified.
 
 Use `factor()` to create a vector with predefined values, which are often
 characters or "strings".
+
 
 
 ~~~r
@@ -147,10 +143,12 @@ The `str` function notes the labels, but prints the integers assigned in their
 stead.
 
 
+
 ~~~r
-str(education)
+> str(education)
 ~~~
 {:.input}
+
 
 ~~~
  Factor w/ 3 levels "middle","highschool",..: 3 2 3 1 1

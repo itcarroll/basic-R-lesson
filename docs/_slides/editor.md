@@ -18,6 +18,7 @@ you can "source" the entire script.
 Open up "{{ site.handouts[0] }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
 
 
+
 ~~~r
 vals <- seq(1, 100)
 ~~~
@@ -28,6 +29,7 @@ vals <- seq(1, 100)
 
 Our call to the function `seq` could have been much more explicit. We could give
 the arguments by the names that `seq` is expecting.
+
 
 
 ~~~r
@@ -66,10 +68,12 @@ The `seq()` function has an alternative form available when only the `from` and
 `to` arguments are needed.
 
 
+
 ~~~r
-1:100
+> 1:100
 ~~~
 {:.input}
+
 
 ~~~
   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
@@ -96,8 +100,9 @@ How would you get to know these properties and the names of a function's
 arguments?
 
 
+
 ~~~r
-?seq
+> ?seq
 ~~~
 {:.input}
 
@@ -107,8 +112,9 @@ arguments?
 How would you even know what function to call?
 
 
+
 ~~~r
-??sequence
+> ??sequence
 ~~~
 {:.input}
 

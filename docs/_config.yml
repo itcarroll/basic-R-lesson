@@ -3,13 +3,14 @@
 title: "Basic R"
 handouts:
  - worksheet.R
+ - docs/challenge.md
  - data/species.csv
  - data/plots.csv
  - data/animals.csv
  - data/README.md
-tag: v0.3
+tag: v0.4
 lesson: 1
-instructor: Mary Shelley
+instructor: Ian Carroll
 authors:
  - Kelly Hondula
  - Ian Carroll
@@ -21,19 +22,18 @@ slide_sorter:
   - console
   - environment
   - editor
-#  - push
+  - load
   - types
   - dataframes
-#  - load
   - parts
 #  - plot
   - functions
-#  - flow
+  - flow
 #  - stats
 #  - lm
   - conclude
 #  - push
-  - solutions
+  - exercise
 
 #####################################
 # Only modify content above or risk #

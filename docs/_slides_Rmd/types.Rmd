@@ -67,18 +67,6 @@ list(1, list(2, 3))
 
 ===
 
-## Exercise 2
-
-Use the `typeof` function to inspect the data type of `counts`, and do the same
-for another variable to which you assign a list of numbers. Why are they
-different? Use `c` to combine `counts` with the new variable you just created
-and inspect the result with `typeof`. Does `c` always create vectors?
-
-[View solution](#solution-2)
-{:.notes}
-
-===
-
 ## Factors
 
 A factor is a vector that can contain only predefined values, and is used to

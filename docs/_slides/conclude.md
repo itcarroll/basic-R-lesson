@@ -10,12 +10,7 @@ In this introduction to R, we touched on several key parts of scripting for data
 - Data structures
 - Subsetting data
 - Functions
-
-<!--
- - Flow control (keywords `if` and `else`)
- - Plots
- - Functions
--->
+- Flow control
 
 ===
 

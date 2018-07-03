@@ -43,9 +43,9 @@ Most of "learning R" involves getting to know a whole lot of functions, the effe
 
 ===
 
-## Basic math 
+## R as Calculator
 
-A good place to begin learning R functions is with its built-in mathematical functionality.
+A good place to begin learning R is with its built-in mathematical functionality.
 
 ===
 
@@ -69,9 +69,9 @@ Test equality with `==` and inequality with `=<`, `<`, `!=`, `>`, or `=>`.
 
 ===
 
-## More Math
+## Math functions
 
-Common mathematical functions like `sin`, `log`, and `sqrt`, and constants.
+Common mathematical functions like `sin`, `log`, and `sqrt`, exist along side some universal constants.
 
 ```{r}
 sin(2 * pi)
@@ -108,21 +108,6 @@ Call functions by typing their name and comma-separated arguments between parent
 ```{r}
 logb(2, 2)
 ```
-
-===
-
-## Exercise 1
-
-Use the quadratic formula to find $$x$$ that satisfies the
-equation $$1.5 x^2 + 0.3 x - 2.9 = 0$$.
-
-$$
-\frac{-0.3 \pm \sqrt{0.3^2 - 4 \times 1.5 \times {-2.9}}}{2 \times 1.5}
-$$
-
-
-[View solution](#solution-1)
-{:.notes}
 
 ===
 

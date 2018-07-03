@@ -28,6 +28,7 @@ one we need is `function`.
 ===
 
 
+
 ~~~r
 function(...) {
     ...
@@ -49,6 +50,7 @@ We'll make a function to extract the first row of its argument, which we give a
 name to use inside the function:
 
 
+
 ~~~r
 function(z) {
     result <- z[1, ]
@@ -67,6 +69,7 @@ Finally, we need to give the function a name so we can use it like we used `c()`
 and `seq()` above.
 
 
+
 ~~~r
 first <- function(z) {
     result <- z[1, ]
@@ -77,10 +80,12 @@ first <- function(z) {
 
 
 
+
 ~~~r
-first(df)
+> first(df)
 ~~~
 {:.input}
+
 
 ~~~
        ed ct
