@@ -83,7 +83,7 @@ if (...) {
   ...
 }
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:.text-document .no-eval title="{{ site.handouts[0] }}"}
 
 [View solution](#solution-6)
 {:.notes}
@@ -206,36 +206,3 @@ first(m)
 
 [Return](#exercise-6)
 {:.notes}
-
-<!--
-===
-
-### Solution
-
-```{r title="{{ site.handouts[0] }}"}
-animals.hl_model <- lm(log(hindfoot_length) ~ log(weight), data = animals)
-```
-
-```{r}
-coef(animals.hl_model)[2]
-```
-
-
-[Return](#exercise-)
-{:.notes}
-
-===
-
-### Solution
-
-```{r title="{{ site.handouts[0] }}"}
-fit <- lm(hindfoot_length ~ weight * species_id, animals)
-```
-
-```{r}
-summary(fit)
-```
-
-[Return](#exercise-)
-{:.notes}
--->

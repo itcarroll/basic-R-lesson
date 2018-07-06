@@ -21,6 +21,7 @@ if (...) {
 
 The keyword `if` must be followed by a logical test which determines, at runtime, what to do next.
 The R interpreter goes to the first statement if the logical value is `TRUE` and to the second statement if it's `FALSE`.
+{:.notes}
 
 ===
 

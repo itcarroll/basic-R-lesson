@@ -48,7 +48,7 @@ All elements of an vector must be the same type, so when you attempt to combine 
 ~~~r
 > c(1, 2, "c")
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -72,7 +72,7 @@ Construct lists with `list()` instead of `c()`:
 ~~~r
 > list(1, 2, "c")
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -97,7 +97,7 @@ Lists can even include another list!
 ~~~r
 > list(1, list(2, 3))
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -147,7 +147,7 @@ stead.
 ~~~r
 > str(education)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~

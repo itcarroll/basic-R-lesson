@@ -14,7 +14,7 @@ values for some of the optional arguments (e.g. `sep = ","`).
 
 ===
 
-Type a comma after `read.csv(` and then press **tab** to see what arguments that
+Type `read.csv(` into the console and then press **tab** to see what arguments
 this function takes. Hovering over each item in the list will show a description
 of that argument from the help documentation about that function. Specify the
 values to use for an argument using the syntax `name = value`.

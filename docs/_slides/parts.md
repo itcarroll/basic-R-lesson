@@ -14,7 +14,7 @@ Parts of a data structure are always accessible, either by their name or by thei
 ~~~r
 > counts[1]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -28,7 +28,7 @@ Parts of a data structure are always accessible, either by their name or by thei
 ~~~r
 > counts[3]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -50,7 +50,7 @@ Parts of an object may also have a name. The names can be given when you are cre
 ~~~r
 > df['education']
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -79,7 +79,7 @@ names(df) <- c('ed', 'ct')
 ~~~r
 > df['ed']
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -110,7 +110,7 @@ For a multi-dimensional array, separate the dimension along which a part is requ
 ~~~r
 > df[3, 'ed']
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -153,7 +153,7 @@ weekend <- days[c(1, 7)]
 ~~~r
 > weekdays
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -167,7 +167,7 @@ weekend <- days[c(1, 7)]
 ~~~r
 > weekend
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -188,7 +188,7 @@ It's most useful when used interactively with "tab completion" on the columns of
 ~~~r
 > df$ed
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -207,7 +207,7 @@ A logical test applied to a single column produces a vector of `TRUE` and `FALSE
 ~~~r
 > df[df$ed == 'college', ]
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~

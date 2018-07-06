@@ -20,11 +20,12 @@ if (...) {
     ...
 }
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:.text-document .no-eval title="{{ site.handouts[0] }}"}
 
 
 The keyword `if` must be followed by a logical test which determines, at runtime, what to do next.
 The R interpreter goes to the first statement if the logical value is `TRUE` and to the second statement if it's `FALSE`.
+{:.notes}
 
 ===
 
@@ -52,7 +53,7 @@ first <- function(dat) {
 ~~~r
 > first(df)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -67,7 +68,7 @@ first <- function(dat) {
 ~~~r
 > first(counts)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~

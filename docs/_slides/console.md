@@ -14,7 +14,7 @@ Basic math, as you would type it on a calculator, is usually a valid command in 
 ~~~r
 > 1 + 2
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -28,7 +28,7 @@ Basic math, as you would type it on a calculator, is usually a valid command in 
 ~~~r
 > 4^2
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -54,7 +54,7 @@ A command giving a vector of results shows this clearly:
 ~~~r
 > seq(1, 100)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -93,7 +93,7 @@ Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 ~~~r
 > 5/3
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -113,7 +113,7 @@ Test equality with `==` and inequality with `=<`, `<`, `!=`, `>`, or `=>`.
 ~~~r
 > 1/2 == 0.5
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -133,7 +133,7 @@ Common mathematical functions like `sin`, `log`, and `sqrt`, exist along side so
 ~~~r
 > sin(2 * pi)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -153,7 +153,7 @@ Common computer programming functions like 'rep', 'sort', and 'range'
 ~~~r
 > rep(2, 5)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -177,7 +177,7 @@ Group sub-expressions by parentheses on an as-needed basis.
 ~~~r
 > (1 + 2) / 3
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -195,7 +195,7 @@ Call functions by typing their name and comma-separated arguments between parent
 ~~~r
 > logb(2, 2)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -226,7 +226,7 @@ To referece a string of characters, surround them in quotation marks.
 ~~~r
 > 'ab.cd'
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -245,7 +245,7 @@ doesn't find anything:
 ~~~r
 > ab.cd
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -275,7 +275,7 @@ any command to the right of `<-` gets the name given on its left.
 ~~~r
 > x <- seq(0, 100)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ===
@@ -288,7 +288,7 @@ We can print the value of `x` by evaluating it without assignment.
 ~~~r
 > x
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -316,6 +316,6 @@ Once assigned to a variable, a value becomes known to R and you can refer to it 
 ~~~r
 > plot(x, sin(x * 2 * pi / 100))
 ~~~
-{:.input}
+{:.input title="Console"}
 ![ ]({{ site.baseurl }}/images/console/unnamed-chunk-14-1.png)
 {:.captioned}

@@ -35,7 +35,7 @@ function(...) {
     return(...)
 }
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:.text-document .no-eval title="{{ site.handouts[0] }}"}
 
 
 Three components:
@@ -57,11 +57,12 @@ function(z) {
     return(result)
 }
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:.text-document .no-eval title="{{ site.handouts[0] }}"}
 
 
 Note that `z` doesn't exist until we call the function, which merely contains
 the instructions for how any `z` will be handled.
+{:.notes}
 
 ===
 
@@ -84,7 +85,7 @@ first <- function(z) {
 ~~~r
 > first(df)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~

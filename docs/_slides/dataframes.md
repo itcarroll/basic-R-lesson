@@ -59,7 +59,7 @@ There are several functions to get to know a data frame:
 ~~~r
 > names(df)
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~

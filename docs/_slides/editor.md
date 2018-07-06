@@ -72,7 +72,7 @@ The `seq()` function has an alternative form available when only the `from` and
 ~~~r
 > 1:100
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ~~~
@@ -104,7 +104,7 @@ arguments?
 ~~~r
 > ?seq
 ~~~
-{:.input}
+{:.input title="Console"}
 
 
 ===
@@ -116,5 +116,5 @@ How would you even know what function to call?
 ~~~r
 > ??sequence
 ~~~
-{:.input}
+{:.input title="Console"}
 
