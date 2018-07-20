@@ -24,9 +24,9 @@ $$
 
 By default, all character data is read in to a data.frame as factors. Use the
 `read.csv()` argument `stringsAsFactors` to suppress this behavior, then
-subsequently modify the `sex` column in `animals` to make it a factor. Columns
-of a `data.frame` are identified to the R interpreter with the `$` operator,
-e.g. `animals$sex`. We'll see more on this below.
+subsequently modify the `sex` column in `animals` to make it a factor. Remember
+that columns of a `data.frame` are identified to the R interpreter with the `$`
+operator, e.g. `animals$sex`.
 
 [View solution](#solution-2)
 {:.notes}

@@ -1,21 +1,29 @@
 ---
-layout: archive
+layout: default
 style: /css/static.css
 ---
 
-## Bubble Sort
+## Pseudo-code and an R Implementation
 
-The "bubble sort" algorithm is a procedure for sorting. If the input is a collection of random letters, the following "pseudo-code" provides a set of instructions that will lead to sorting the collection alphabetically.
+The "bubble sort" algorithm is a procedure for sorting. If the input is a
+collection of random letters, the following "pseudo-code" provides a set of
+instructions that will lead to sorting the collection alphabetically. To test
+that the steps will succede, pretend to "compute" the procedure for the array of
+letters `['q', 'e', 'd']`.
 
-1. let `A` refer to a random collection of letters
+1. let `A` refer to some collection of letters
 2. let `n` refer to the number of letters in `A`
 3. for `i` referring to any positive integer, let `A[i]` refer to the `i`<sup>th</sup> letter in `A`
 4. let `swapped` refer to 'No'
-5. let `i` refer to 1, then 2, then 3, etc. up to and including `n - 1` in the next step
-6. if `A[i + 1]` comes before `A[i]` in the alphabet, then swap them in the collection `A` and let `swapped` refer to 'Yes'
-7. if `swapped` refers to 'Yes', go back to 4 and resume, otherwise `A` is in alphabetical order
+5. let `i` refer to 0
+6. let `i` refer to the value of `i + 1`
+7. if `A[i + 1]` comes before `A[i]` in the alphabet, then swap them in the collection `A` and let `swapped` refer to 'Yes'
+8. if `i` is less than `n` go back to step 6, but otherwise continue to step 9.
+9. if `swapped` refers to 'Yes', go back to 4, otherwise `A` is in alphabetical order
 
-The following is a script in the R programming language that implements bubble sort, beginning from the assumption that `A` already refers to an array of letters.
+The following is a script in the R programming language
+that implements bubble sort, beginning from the assumption that `A` already
+refers to an array of letters.
 
 ```r
 n <- length(A)
@@ -32,71 +40,41 @@ while (swapped) {
     }
 }
 ```
-{:.input}
+{:.input title="Console"}
 
-#### Questions
+If you understand the pseudo-code, then you know what the R code is
+accomplishing even though you can't read the R language. However, you can
+probably deduce what a lot of it is doing!
 
-* What do you think the combination of characters `<-` means? What about the pattern `{...}`?
+- What do you think the combination of characters `<-` means? What about the pattern `{...}`?
 
-* Which pseudo-code step is implemented by the `if (...) {...}` block? What is the role of `a`?
+- Which pseudo-code step is implemented by the `if (...) {...}` block?
 
-* What word in the code instructs the computer to repeat something for an unspecified number of times? What word causes something to repeat a fixed number of times?
+- What is the role of `a`?
 
-* If you don't trust it works, pretend to "compute" the procedure for the array of letters ['q', 'e', 'd'].
+- What word in the code tells the interpreter to repeat a set of unstructions an unspecified number of times? What word causes a set of instructions to repeat a fixed number of times?
 
-The following script achieves the same thing, but "modularizes" step 6; it seperates out the code for swapping. Identify how the script is different as you read.
+## Pseudo-code Exercise 1
 
-```r
-swap <- function(i, x) {
-    lesser <- x[i + 1]
-    x[i + 1] <- x[i] 
-    x[i] <- lesser
-    return(x)
-}
+Complete the following pseudo-code to sum a given array of integers:
 
-n <- length(A)
-swapped <- TRUE
-while (swapped) {
-    swapped <- FALSE
-    for (i in seq(1, n - 1)) {
-        if (A[i+1] < A[i]) {
-            A <- swap(i, A)
-            swapped <- TRUE
-        }
-    }
-}
-```
-{:.input}
+1. let `A` refer to the array of integers.
+2. let `n` refer to the length of `A`
+3. let `sum` refer to 0  
+...
 
-#### Questions
+## Pseudo-code Exercise 2
 
-* What is the name of the new `function`?
+Complete the following pseudo-code with instructions to test whether a given
+integer is even or odd. Assume you can use a pre-existing capability to round
+any number to its nearest integer, as well as the arithmatic operators `*` and
+`/`.
 
-* What is one advantage or disadvantage to writing this script as two "modules"?
+1. let `i` refer to a given integer
+2. if `i` is less than zero, let `i` refer to `-1 * i`  
+...
 
-## Snippets
-
-Carefully "read" each of the following, unrelated, snippets of R code and answer the questions as you go.
-
-#### Snippet 1
-
-```r
-values <- c(6, 42, 13, 2, 9, -8, 27)
-total <- 0
-for (i in 1:length(values)) {
-    total <- total + values[i]
-}
-```
-{:.input}
-
-#### Questions
-
-* What does this R code achieve in the final value of `total`?
-
-* What do you think the expression `1:length(values)`, used in the `for (...) {...}` block, establishes?  
-
-#### Snippet 2
-
+<!--
 ```r
 test_value <- 98
 is_even <- function(x) {
@@ -115,35 +93,38 @@ if (!evenness(test_value)) {
     warning('Test failed.')
 }
 ```
-{:.input}
+{:.input title="Console"}
+-->
 
-#### Questions
+## Pseudo-code Exercise 3
 
-* What does this R code do?
+Refer back to the bubble-sort algorithm. Step 7 says to "swap" elements of an
+array, but in the implementation that takes 3 lines of code including creation
+of a dummy variable. The implementation would be easier to read (since we, the
+reader, already understand what "swap" means) and "modular" if we replaced those
+lines with a `swap` function defined outside the loops.
 
-* What does `!` mean?
-
-* What kind of input would cause the `is_even` function to print a warning?
-                      
-#### Snippet 3
+Just using what you can infer from the pseudo-code and R code above, what would
+you replace each `...` with below to improve our bubble-sort implementation.
 
 ```r
-text <- 'The computing world has undergone a revolution since the publication of "The C Programming Language" in 1978.'
-word <- 'revolution'
-n <- nchar(word)
-i <- 1
-while (substring(text, i, i + n - 1) != word) {
-    i <- i + 1
-    if (i + n > nchar(text)) {
-        i <- 0
-        break
+swap <- function(j, x) {
+  ...
+  return(x)
+}
+
+n <- length(A)
+swapped <- TRUE
+while (swapped) {
+    swapped <- FALSE
+    for (i in seq(1, n - 1)) {
+        if (A[i+1] < A[i]) {
+            ...
+            swapped <- TRUE
+        }
     }
 }
 ```
-{:.input}
+{:.input title="Console"}
 
-#### Questions
-
-* What does this R code do?
-
-* For some other `text` or `word`, what does it mean if `i` is found to equal 0 after running the code?
+---
