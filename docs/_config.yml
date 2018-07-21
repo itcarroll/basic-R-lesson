@@ -3,7 +3,6 @@
 title: "Basic R"
 handouts:
  - worksheet.R
- - docs/challenge.md
  - data/species.csv
  - data/plots.csv
  - data/animals.csv
