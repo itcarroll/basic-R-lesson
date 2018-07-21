@@ -135,7 +135,7 @@ To referece a string of characters, surround them in quotation marks.
 Without quotation marks, the interpreter checks for things named `ab.cd` and
 doesn't find anything:
 
-```{r}
+```{r error = TRUE}
 ab.cd
 ```
 
