@@ -73,7 +73,7 @@ A command giving a vector of results shows this clearly:
 The interpreter understands more than arithmatic operations.
 That last command told it to use (or "call") the function `seq()`.
 
-Most of "learning R" involves getting to know a whole lot of functions, the effect of each function's  arguments (e.g. the input values 1 and 10), and what each function returns (e.g. the output vector).
+Most of "learning R" involves getting to know a whole lot of functions, the effect of each function's  arguments (e.g. the input values `1` and `100`), and what each function returns (e.g. the output vector).
 {:.notes}
 
 ===
