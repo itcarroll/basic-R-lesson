@@ -1,17 +1,19 @@
-## The Editor
+## Editor
 
 vals <- ...
 
 vals <- seq(...,
             ...)
 
+## Load Data
+
+animals <- ...(file = ...)
+
+animals <- read.csv(file = 'data/animals.csv', ...)
+
 ## Vectors
 
-counts ...
-
-## Exercise 2
-
-...
+counts <- ...
 
 ## Factors
 
@@ -21,11 +23,7 @@ education <- ...(
 
 ## Data Frames
 
-... data.frame(...)
-
-## Exercise 3
-
-...
+... <- data.frame(...)
 
 ## Names
 
@@ -39,13 +37,26 @@ days <- c(
 weekdays <- ...
 ...
 
-## Exercise 4
-
-...
-
 ## Functions
 
 function(...) {
   ...
   return(...)
 }
+
+## Flow Control
+
+first <- function(dat) {
+  ... {
+    result <- dat[1]
+  } ... {
+    result <- dat[1, ]
+  }
+  return(result)
+}
+
+## Linear Models
+
+fit <- ...(weight ~ hindfoot_length, animals)
+
+fit <- lm(..., animals)

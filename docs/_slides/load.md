@@ -1,11 +1,11 @@
 ---
 ---
 
-## Load data into R
+## Load Data
 
-We will use the function `read.csv()` that reads a Comma-Separated-Values file.
-The essential argument for the function to read in data is the path to the file,
-and optional additional arguments that adjust how the file is interpreted.
+We will use the function `read.csv()` to load data from a Comma Separated Value
+file. The essential argument for the function to read in data is the path to the
+file, other optional arguments adjust how the file is read.
 
 Additional file types can be read in using `read.table()`; in fact, `read.csv()`
 is a simple wrapper for the `read.table()` function having set some default
@@ -22,37 +22,67 @@ values to use for an argument using the syntax `name = value`.
 
 
 ~~~r
-> read.csv(file = "data/plots.csv", header = TRUE)
+> read.csv(file = 'data/species.csv', stringsAsFactors = FALSE)
 ~~~
 {:.input title="Console"}
 
 
 ~~~
-   id                 treatment
-1   1         Spectab exclosure
-2   2                   Control
-3   3  Long-term Krat Exclosure
-4   4                   Control
-5   5          Rodent Exclosure
-6   6 Short-term Krat Exclosure
-7   7          Rodent Exclosure
-8   8                   Control
-9   9         Spectab exclosure
-10 10          Rodent Exclosure
-11 11                   Control
-12 12                   Control
-13 13 Short-term Krat Exclosure
-14 14                   Control
-15 15  Long-term Krat Exclosure
-16 16          Rodent Exclosure
-17 17                   Control
-18 18 Short-term Krat Exclosure
-19 19  Long-term Krat Exclosure
-20 20 Short-term Krat Exclosure
-21 21  Long-term Krat Exclosure
-22 22                   Control
-23 23          Rodent Exclosure
-24 24          Rodent Exclosure
+   id            genus         species    taxa
+1  AB       Amphispiza       bilineata    Bird
+2  AH Ammospermophilus         harrisi  Rodent
+3  AS       Ammodramus      savannarum    Bird
+4  BA          Baiomys         taylori  Rodent
+5  CB  Campylorhynchus brunneicapillus    Bird
+6  CM      Calamospiza     melanocorys    Bird
+7  CQ       Callipepla        squamata    Bird
+8  CS         Crotalus      scutalatus Reptile
+9  CT    Cnemidophorus          tigris Reptile
+10 CU    Cnemidophorus       uniparens Reptile
+11 CV         Crotalus         viridis Reptile
+12 DM        Dipodomys        merriami  Rodent
+13 DO        Dipodomys           ordii  Rodent
+14 DS        Dipodomys     spectabilis  Rodent
+15 DX        Dipodomys             sp.  Rodent
+16 EO          Eumeces       obsoletus Reptile
+17 GS         Gambelia           silus Reptile
+18 NL          Neotoma        albigula  Rodent
+19 NX          Neotoma             sp.  Rodent
+20 OL        Onychomys     leucogaster  Rodent
+21 OT        Onychomys        torridus  Rodent
+22 OX        Onychomys             sp.  Rodent
+23 PB      Chaetodipus         baileyi  Rodent
+24 PC           Pipilo       chlorurus    Bird
+25 PE       Peromyscus        eremicus  Rodent
+26 PF      Perognathus          flavus  Rodent
+27 PG        Pooecetes       gramineus    Bird
+28 PH      Perognathus        hispidus  Rodent
+29 PI      Chaetodipus     intermedius  Rodent
+30 PL       Peromyscus        leucopus  Rodent
+31 PM       Peromyscus     maniculatus  Rodent
+32 PP      Chaetodipus    penicillatus  Rodent
+33 PU           Pipilo          fuscus    Bird
+34 PX      Chaetodipus             sp.  Rodent
+35 RF  Reithrodontomys      fulvescens  Rodent
+36 RM  Reithrodontomys       megalotis  Rodent
+37 RO  Reithrodontomys        montanus  Rodent
+38 RX  Reithrodontomys             sp.  Rodent
+39 SA       Sylvilagus       audubonii  Rabbit
+40 SB         Spizella         breweri    Bird
+41 SC       Sceloporus          clarki Reptile
+42 SF         Sigmodon     fulviventer  Rodent
+43 SH         Sigmodon        hispidus  Rodent
+44 SO         Sigmodon    ochrognathus  Rodent
+45 SS     Spermophilus       spilosoma  Rodent
+46 ST     Spermophilus    tereticaudus  Rodent
+47 SU       Sceloporus       undulatus Reptile
+48 SX         Sigmodon             sp.  Rodent
+49 UL           Lizard             sp. Reptile
+50 UP           Pipilo             sp.    Bird
+51 UR           Rodent             sp.  Rodent
+52 US          Sparrow             sp.    Bird
+53 ZL      Zonotrichia      leucophrys    Bird
+54 ZM          Zenaida        macroura    Bird
 ~~~
 {:.output}
 
@@ -60,67 +90,91 @@ values to use for an argument using the syntax `name = value`.
 ===
 
 Question
-: Is the `header` argument necessary?
+: How does `read.csv` determine the field names?
 
 Answer
-: {:.fragment} No. Look at `?read.csv` to see that `TRUE` is the default value for this argument.
+: {:.fragment} The `read.csv` command assumes the first row in the file contains
+column names. Look at `?read.csv` to see the default `header = TRUE` argument.
+What exactly that means is described down in the "Arguments" section.
 
 ===
 
-Use the assignment operator "<-" to store that data in memory and work with it
+Use the assignment operator "<-" to load data into a variable for
+subsequent operations.
 
 
 
 ~~~r
-plots <- read.csv(file = "data/plots.csv")
-animals <- read.csv(file = "data/animals.csv")
+animals <- read.csv(file = 'data/animals.csv')
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
 
-You can specify what indicates missing data in the read.csv function using
-either `na.strings = "NA"` or `na = "NA"`. You can also specify multiple things
-to be interpreted as missing values, such as `na.strings = c("missing", "no
-data", "< 0.05 mg/L", "XX")`.
-{:.notes}
-
 ===
 
-After reading in the "animals.csv" and "plots.csv" files, let's explore what
-types of data are in each column and what kind of structure your data has.
+After reading in the "animals.csv" file, you can explore what types of data are
+in each column with the `str` function, short for "structure".
 
 
 
 ~~~r
-> str(plots)
+> str(animals)
 ~~~
 {:.input title="Console"}
 
 
 ~~~
-'data.frame':	24 obs. of  2 variables:
- $ id       : int  1 2 3 4 5 6 7 8 9 10 ...
- $ treatment: Factor w/ 5 levels "Control","Long-term Krat Exclosure",..: 5 1 2 1 3 4 3 1 5 3 ...
+'data.frame':	35549 obs. of  9 variables:
+ $ id             : int  2 3 4 5 6 7 8 9 10 11 ...
+ $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
+ $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
+ $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
+ $ plot_id        : int  3 2 7 3 1 2 1 1 6 5 ...
+ $ species_id     : Factor w/ 49 levels "","AB","AH","AS",..: 17 13 13 13 24 23 13 13 24 15 ...
+ $ sex            : Factor w/ 3 levels "","F","M": 3 2 3 3 3 2 3 2 2 2 ...
+ $ hindfoot_length: int  33 37 36 35 14 NA 37 34 20 53 ...
+ $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
 ~~~
 {:.output}
 
 
+===
+
+Missing data, as interpreted by the `read.csv` function, is controlled by the
+`na.strings` argument. Override the default value of `'NA'` with the empty
+string, `''`, to properly interpret the "species_id" and "sex" columns.
+
+You can also specify multiple things to be interpreted as missing values, such
+as `na.strings = c("missing", "no data", "< 0.05 mg/L", "XX")`.
+{:.notes}
+
 
 
 ~~~r
-> summary(plots)
+animals <- read.csv(file = 'data/animals.csv', na.strings = '')
+~~~
+{:.text-document title="{{ site.handouts[0] }}"}
+
+
+
+
+~~~r
+> str(animals)
 ~~~
 {:.input title="Console"}
 
 
 ~~~
-       id                            treatment
- Min.   : 1.00   Control                  :8  
- 1st Qu.: 6.75   Long-term Krat Exclosure :4  
- Median :12.50   Rodent Exclosure         :6  
- Mean   :12.50   Short-term Krat Exclosure:4  
- 3rd Qu.:18.25   Spectab exclosure        :2  
- Max.   :24.00                                
+'data.frame':	35549 obs. of  9 variables:
+ $ id             : int  2 3 4 5 6 7 8 9 10 11 ...
+ $ month          : int  7 7 7 7 7 7 7 7 7 7 ...
+ $ day            : int  16 16 16 16 16 16 16 16 16 16 ...
+ $ year           : int  1977 1977 1977 1977 1977 1977 1977 1977 1977 1977 ...
+ $ plot_id        : int  3 2 7 3 1 2 1 1 6 5 ...
+ $ species_id     : Factor w/ 48 levels "AB","AH","AS",..: 16 12 12 12 23 22 12 12 23 14 ...
+ $ sex            : Factor w/ 2 levels "F","M": 2 1 2 2 2 1 2 1 1 1 ...
+ $ hindfoot_length: int  33 37 36 35 14 NA 37 34 20 53 ...
+ $ weight         : int  NA NA NA NA NA NA NA NA NA NA ...
 ~~~
 {:.output}
 

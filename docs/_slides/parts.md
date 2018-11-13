@@ -1,9 +1,10 @@
 ---
 ---
 
-## Parts of an Object
+## Parts and Subsets
 
-Parts of a data structure are always accessible, either by their name or by their position, using square brackets: `[` and `]`.
+Any single part of a data structure is always accessible, either by its name or
+by its position, using double square brackets: `[[` and `]]`.
 
 ===
 
@@ -12,7 +13,7 @@ Parts of a data structure are always accessible, either by their name or by thei
 
 
 ~~~r
-> counts[1]
+> counts[[1]]
 ~~~
 {:.input title="Console"}
 
@@ -26,7 +27,7 @@ Parts of a data structure are always accessible, either by their name or by thei
 
 
 ~~~r
-> counts[3]
+> counts[[3]]
 ~~~
 {:.input title="Console"}
 
@@ -48,18 +49,14 @@ Parts of an object may also have a name. The names can be given when you are cre
 
 
 ~~~r
-> df['education']
+> df[['education']]
 ~~~
 {:.input title="Console"}
 
 
 ~~~
-   education
-1    college
-2 highschool
-3    college
-4     middle
-5     middle
+[1] college    highschool college    middle     middle    
+Levels: middle highschool college
 ~~~
 {:.output}
 
@@ -77,18 +74,14 @@ names(df) <- c('ed', 'ct')
 
 
 ~~~r
-> df['ed']
+> df[['ed']]
 ~~~
 {:.input title="Console"}
 
 
 ~~~
-          ed
-1    college
-2 highschool
-3    college
-4     middle
-5     middle
+[1] college    highschool college    middle     middle    
+Levels: middle highschool college
 ~~~
 {:.output}
 
@@ -99,16 +92,19 @@ Question
 : This use of `<-` with `names(x)` on the left is a little odd. What’s going on?
 
 Answer
-: {:.fragment} We are overwriting an existing variable, but one that is accessed through the output of the function on the left rather than the global environment.
+: {:.fragment} We are overwriting an existing variable, but one that is accessed
+through the output of the function on the left rather than the global
+environment.
 
 ===
 
-For a multi-dimensional array, separate the dimension along which a part is requested with a comma.
+For a multi-dimensional array, separate the dimension along which a part is
+requested with a comma.
 
 
 
 ~~~r
-> df[3, 'ed']
+> df[[3, 'ed']]
 ~~~
 {:.input title="Console"}
 
@@ -125,9 +121,15 @@ It's fine to mix names and indices when selecting parts of an object.
 
 ===
 
-There are multiple ways to access several parts of an object together.
+## Subsets
 
-| Part      | Result                                            |
+Multiple parts of a data structure are similarly accessed using single square
+brackets: `[` and `]`. What goes between the brackets, to specify the positions
+or names of the desired subset, may be of multiple forms.
+
+===
+
+| Parts     | Result                                            |
 |-----------+---------------------------------------------------|
 | positives | elements at given positions                       |
 | negatives | given positions omitted                           |
@@ -178,10 +180,9 @@ weekend <- days[c(1, 7)]
 
 ===
 
-## Subsetting data frames
-
-The `$` sign is an operator that makes for quick access to a single, named part of an object.
-It's most useful when used interactively with "tab completion" on the columns of a data frame.
+The `$` sign is an operator that makes for quick access to a single, named part
+of an object. It's most useful when used interactively with "tab completion" on
+the columns of a data frame.
 
 
 
@@ -200,7 +201,8 @@ Levels: middle highschool college
 
 ===
 
-A logical test applied to a single column produces a vector of `TRUE` and `FALSE` values that's the right length for subsetting the data.
+A logical test applied to a single column produces a vector of `TRUE` and
+`FALSE` values that's the right length for subsetting the data.
 
 
 

@@ -1,7 +1,7 @@
 ---
 ---
 
-## The Console
+## Console
 
 The interpreter accepts commands interactively through the console.
 
@@ -38,7 +38,9 @@ seq(1, 100)
 The interpreter understands more than arithmatic operations.
 That last command told it to use (or "call") the function `seq()`.
 
-Most of "learning R" involves getting to know a whole lot of functions, the effect of each function's  arguments (e.g. the input values `1` and `100`), and what each function returns (e.g. the output vector).
+Most of "learning R" involves getting to know a whole lot of functions, the
+effect of each function's  arguments (e.g. the input values `1` and `100`), and
+what each function returns (e.g. the output vector).
 {:.notes}
 
 ===
@@ -95,7 +97,7 @@ Sandwiching something with `(` and `)` has two possible meanings.
 
 ===
 
-Group sub-expressions by parentheses on an as-needed basis.
+Group sub-expressions by parentheses where needed.
 
 ```{r}
 (1 + 2) / 3
@@ -107,76 +109,4 @@ Call functions by typing their name and comma-separated arguments between parent
 
 ```{r}
 logb(2, 2)
-```
-
-===
-
-## Assignment
-
-When you start a new session, the R interpreter already recognizes many things, including
-
-- any number
-- any string of characters
-- nearly universal operators (e.g. `+` and `/`)
-- operators specific to R (e.g. `$` and `%*%`)
-- functions in "base R"
-
-===
-
-To reference a number or function just type it in as above.
-To referece a string of characters, surround them in quotation marks.
-
-```{r}
-'ab.cd'
-```
-
-===
-
-Without quotation marks, the interpreter checks for things named `ab.cd` and
-doesn't find anything:
-
-```{r error = TRUE}
-ab.cd
-```
-
-===
-
-Question
-: Is it better to use `'` or `"`?
-
-Answer
-: {:.fragment} Neither one is better. You will often encounter stylistic choices
-like this, so if you don't have a personal preference try to mimic existing
-styles.
-
-===
-
-You can expand the vocabulary known to the R interpreter by creating a new
-**variable**. Using the symbol `<-` is referred to as assignment: the output of
-any command to the right of `<-` gets the name given on its left.
-
-```{r}
-x <- seq(0, 100)
-```
-
-===
-
-You'll notice that nothing prints to the console, because we assigned the output to a variable.
-We can print the value of `x` by evaluating it without assignment.
-
-```{r}
-x
-```
-
-Assigning values to new variables (to the left of a `<-`) is the only time you
-can reference something previously unknown to the interpreter. All other
-commands must reference things already in the interpreter's vocabulary.
-{:.notes}
-
-===
-
-Once assigned to a variable, a value becomes known to R and you can refer to it in other commands.
-
-```{r}
-plot(x, sin(x * 2 * pi / 100))
 ```

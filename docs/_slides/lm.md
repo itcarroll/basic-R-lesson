@@ -22,9 +22,19 @@ model
 Specify a formula by naming a response variable left of a "~" and any number of
 predictors to its right.
 
-```{r}
+
+
+~~~r
+> y ~ a
+~~~
+{:.input title="Console"}
+
+
+~~~
 y ~ a
-```
+~~~
+{:.output}
+
 
 ===
 
@@ -52,12 +62,20 @@ model".
 
 ===
 
-```{r, title = '{{ site.handouts[0] }}'}
+
+
+~~~r
 fit <- lm(weight ~ hindfoot_length, animals)
-```
-```{r eval = FALSE}
-summary(fit)
-```
+~~~
+{:.text-document title="{{ site.handouts[0] }}"}
+
+
+
+~~~r
+> summary(fit)
+~~~
+{:.input title="Console"}
+
 
 ===
 
@@ -68,12 +86,20 @@ model, the most important distinction is whether a variable is a factor.
 
 ===
 
-```{r, title = '{{ site.handouts[0] }}'}
+
+
+~~~r
 fit <- lm(weight ~ species_id, animals)
-```
-```{r eval = FALSE}
-summary(fit)
-```
+~~~
+{:.text-document title="{{ site.handouts[0] }}"}
+
+
+
+~~~r
+> summary(fit)
+~~~
+{:.input title="Console"}
+
 
 The difference between 1 and 24 degrees of freedom in the last two models—with
 one predictor each—is due to `species_id` being a factor.

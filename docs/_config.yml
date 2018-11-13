@@ -7,7 +7,7 @@ handouts:
  - data/plots.csv
  - data/animals.csv
  - data/README.md
-tag: v0.4
+tag: v0.5
 lesson: 1
 instructor: Ian Carroll
 authors:
@@ -23,13 +23,12 @@ slide_sorter:
   - editor
   - load
   - types
-  - dataframes
   - parts
 #  - plot
   - functions
   - flow
 #  - stats
-#  - lm
+  - lm
   - conclude
 #  - push
   - exercise

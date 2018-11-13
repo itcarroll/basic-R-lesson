@@ -1,15 +1,18 @@
 ---
 ---
 
-## Flow control
+## Flow Control
 
-The R interpreter's "focus" flows through a script (or any section of code you run) line by line.
-Without additional instruction, every line is processed from the top to bottom.
-"Flow control" is the generic term for causing the interpreter to repeat or skip certain lines, using concepts like "for loops" and "if/else conditionals".
+The R interpreter's "focus" flows through a script (or any section of code you
+run) line by line. Without additional instruction, every line is processed from
+the top to bottom. "Flow control" is the generic term for causing the
+interpreter to repeat or skip certain lines, using concepts like "for loops" and
+"if/else conditionals".
 
 ===
 
-Flow control happens within blocks of code isolated between curly braces `{` and `}`, known as "statements".
+Flow control happens within blocks of code isolated between curly braces `{` and
+`}`, known as "statements".
 
 
 

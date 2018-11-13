@@ -1,21 +1,27 @@
 ---
 ---
 
-## The Editor
+## Editor
 
 The **console** is for evaluating commands you don't intend to keep or reuse.
-It's useful for testing commands and poking around. The **editor** is where you
-compose scripts that will process data, perform analyses, code up
-visualizations, and even write reports.
+It's useful for testing commands and poking around. The **environment**
+represents the state of a current session. The **editor** reads and writes
+files--it is where you head to compose your R scripts.
 
-These work together in RStudio, which has multiple ways to send parts of the
-script you are editing to the console for immediate evaluation. Alternatively
-you can "source" the entire script.
+
+R scripts are simple text files that contain code you intend to run again and
+again; code to process data, perform analyses, produce visualizations, and even
+generate reports. The editor and console work together in the RStudio IDE, which
+gives you multiple ways to send parts of the script you are editing to the
+console for immediate evaluation. Alternatively you can "source" the entire
+script or run it from a shell with `Rscript`.
 {:.notes}
 
 ===
 
-Open up "{{ site.handouts[0] }}" in the editor, and follow along by replacing the `...` placeholders with the code here. Then evalute just this line (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
+Open up "{{ site.handouts[0] }}" in the editor, and follow along by replacing
+the `...` placeholders with the code here. Then evalute just this line
+(Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
 
 
 
