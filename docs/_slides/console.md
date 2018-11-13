@@ -106,7 +106,7 @@ Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 
 ## Logical tests
 
-Test equality with `==` and inequality with `=<`, `<`, `!=`, `>`, or `=>`.
+Test equality with `==` and inequality with `<=`, `<`, `!=`, `>`, or `>=`.
 
 
 
