@@ -98,7 +98,7 @@ environment.
 
 ===
 
-For a multi-dimensional array, separate the dimension along which a part is
+For a multi-dimensional array, separate the dimensions within which a part is
 requested with a comma.
 
 
@@ -118,6 +118,27 @@ Levels: middle highschool college
 
 It's fine to mix names and indices when selecting parts of an object.
 {:.notes}
+
+===
+
+The `$` sign is an additional operator for quick access to a single, named part
+of some objects. It's most useful when used interactively with "tab completion" on
+the columns of a data frame.
+
+
+
+~~~r
+> df$ed
+~~~
+{:.input title="Console"}
+
+
+~~~
+[1] college    highschool college    middle     middle    
+Levels: middle highschool college
+~~~
+{:.output}
+
 
 ===
 
@@ -174,27 +195,6 @@ weekend <- days[c(1, 7)]
 
 ~~~
 [1] "Sunday"   "Saturday"
-~~~
-{:.output}
-
-
-===
-
-The `$` sign is an operator that makes for quick access to a single, named part
-of an object. It's most useful when used interactively with "tab completion" on
-the columns of a data frame.
-
-
-
-~~~r
-> df$ed
-~~~
-{:.input title="Console"}
-
-
-~~~
-[1] college    highschool college    middle     middle    
-Levels: middle highschool college
 ~~~
 {:.output}
 
