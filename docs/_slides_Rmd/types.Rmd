@@ -55,7 +55,7 @@ All elements of an vector must be the same type, so when you attempt to combine
 different types they will be coerced to the most flexible type.
 
 ```{r}
-c(1, 2, "c")
+c(1, 2, 'c')
 ```
 
 ===
@@ -73,8 +73,8 @@ characters or "strings".
 
 ```{r title="{{ site.handouts[0] }}"}
 education <- factor(
-    c("college", "highschool", "college", "middle", "middle"),
-    levels = c("middle", "highschool", "college"))
+    c('college', 'highschool', 'college', 'middle', 'middle'),
+    levels = c('middle', 'highschool', 'college'))
 ```
 
 ===
@@ -98,7 +98,7 @@ or structure.
 Construct lists with `list()` instead of `c()`:
 
 ```{r}
-list(1, 2, "c")
+list(1, 2, 'c')
 ```
 
 ===

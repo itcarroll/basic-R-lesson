@@ -71,7 +71,7 @@ different types they will be coerced to the most flexible type.
 
 
 ~~~r
-> c(1, 2, "c")
+> c(1, 2, 'c')
 ~~~
 {:.input title="Console"}
 
@@ -99,8 +99,8 @@ characters or "strings".
 
 ~~~r
 education <- factor(
-    c("college", "highschool", "college", "middle", "middle"),
-    levels = c("middle", "highschool", "college"))
+    c('college', 'highschool', 'college', 'middle', 'middle'),
+    levels = c('middle', 'highschool', 'college'))
 ~~~
 {:.text-document title="{{ site.handouts[0] }}"}
 
@@ -138,7 +138,7 @@ Construct lists with `list()` instead of `c()`:
 
 
 ~~~r
-> list(1, 2, "c")
+> list(1, 2, 'c')
 ~~~
 {:.input title="Console"}
 

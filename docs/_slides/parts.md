@@ -163,8 +163,8 @@ or names of the desired subset, may be of multiple forms.
 
 ~~~r
 days <- c(
-  "Sunday", "Monday", "Tuesday", "Wednesday",
-  "Thursday", "Friday", "Saturday")
+  'Sunday', 'Monday', 'Tuesday', 'Wednesday',
+  'Thursday', 'Friday', 'Saturday')
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ~~~

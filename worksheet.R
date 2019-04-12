@@ -18,8 +18,8 @@ counts <- ...
 ## Factors
 
 education <- ...(
-  c("college", "highschool", "college", "middle", "middle"),
-  ... = c("middle", "highschool", ...))
+  c('college', 'highschool', 'college', 'middle', 'middle'),
+  ... = c('middle', 'highschool', ...))
 
 ## Data Frames
 
@@ -32,8 +32,8 @@ education <- ...(
 ## Subsetting ranges
 
 days <- c(
-  "Sunday", "Monday", "Tuesday", "Wednesday",
-  "Thursday", "Friday", "Saturday")
+  'Sunday', 'Monday', 'Tuesday', 'Wednesday',
+  'Thursday', 'Friday', 'Saturday')
 weekdays <- ...
 ...
 
