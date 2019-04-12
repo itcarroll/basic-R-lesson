@@ -22,7 +22,9 @@ values to use for an argument using the syntax `name = value`.
 
 
 ~~~r
-> read.csv(file = 'data/species.csv', stringsAsFactors = FALSE)
+> read.csv(
++   file = 'data/species.csv',
++   stringsAsFactors = FALSE)
 ~~~
 {:.input title="Console"}
 
