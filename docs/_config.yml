@@ -1,50 +1,17 @@
-# Site
-
-title: "Basic R"
-handouts:
- - worksheet.R
- - data/species.csv
- - data/plots.csv
- - data/animals.csv
- - data/README.md
-tag: v0.5
-lesson: 1
-instructor: Ian Carroll
-authors:
- - Kelly Hondula
- - Ian Carroll
-
-# Slides
-
-slide_sorter:
-  - intro
-  - console
-  - environment
-  - editor
-  - load
-  - types
-  - parts
-#  - plot
-  - functions
-  - flow
-#  - stats
-  - lm
-  - conclude
-#  - push
-  - exercise
-
-#####################################
-# Only modify content above or risk #
-# merge conflicts with upstream.    #
-#####################################
-
-# Style
-
-styleurl: https://cdn.jsdelivr.net/gh/sesync-ci/lesson-style@v2.0/docs
-reveal: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0
-
-# Jekyll
+# Build
 
 markdown: kramdown
 collections:
-  - slides
+  slides:
+    output: false
+  views:
+    output: true
+    permalink: /:name/
+  archive:
+    output: true
+    permalink: /:year/:month/:day/:title:output_ext
+
+# Asset URLs
+
+imageurl: /assets/images/
+styleurl: /assets/css/
