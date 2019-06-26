@@ -32,7 +32,7 @@ df[['education']]
 
 ===
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 names(df) <- c('ed', 'ct')
 ```
 
@@ -91,7 +91,7 @@ or names of the desired subset, may be of multiple forms.
 
 ===
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 days <- c(
   'Sunday', 'Monday', 'Tuesday', 'Wednesday',
   'Thursday', 'Friday', 'Saturday')

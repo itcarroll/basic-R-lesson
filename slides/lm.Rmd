@@ -52,7 +52,7 @@ model".
 
 ===
 
-```{r, title = '{{ site.handouts[0] }}'}
+```{r, handout = 0}
 fit <- lm(weight ~ hindfoot_length, animals)
 ```
 ```{r eval = FALSE}
@@ -68,7 +68,7 @@ model, the most important distinction is whether a variable is a factor.
 
 ===
 
-```{r, title = '{{ site.handouts[0] }}'}
+```{r, handout = 0}
 fit <- lm(weight ~ species_id, animals)
 ```
 ```{r eval = FALSE}

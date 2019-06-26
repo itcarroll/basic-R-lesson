@@ -19,11 +19,11 @@ script or run it from a shell with `Rscript`.
 
 ===
 
-Open up "{{ site.handouts[0] }}" in the editor, and follow along by replacing
+Open up "{{ site.data.lesson.handouts[0] }}" in the editor, and follow along by replacing
 the `...` placeholders with the code here. Then evalute just this line
 (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 vals <- seq(1, 100)
 ```
 
@@ -32,7 +32,7 @@ vals <- seq(1, 100)
 Our call to the function `seq` could have been much more explicit. We could give
 the arguments by the names that `seq` is expecting.
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 vals <- seq(from = 1,
             to = 100)
 ```

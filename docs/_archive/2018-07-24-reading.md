@@ -1,4 +1,7 @@
 ---
+---
+
+---
 layout: archive
 style: /css/static.css
 ---

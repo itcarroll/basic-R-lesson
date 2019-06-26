@@ -14,7 +14,7 @@ Basic math, as you would type it on a calculator, is usually a valid command in 
 ~~~r
 > 1 + 2
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -28,7 +28,7 @@ Basic math, as you would type it on a calculator, is usually a valid command in 
 ~~~r
 > 4^2
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -54,7 +54,7 @@ A command giving a vector of results shows this clearly:
 ~~~r
 > seq(1, 100)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -95,7 +95,7 @@ Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 ~~~r
 > 5/3
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -115,7 +115,7 @@ Test equality with `==` and inequality with `<=`, `<`, `!=`, `>`, or `>=`.
 ~~~r
 > 1/2 == 0.5
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -135,7 +135,7 @@ Common mathematical functions like `sin`, `log`, and `sqrt`, exist along side so
 ~~~r
 > sin(2 * pi)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -155,7 +155,7 @@ Common computer programming functions like 'rep', 'sort', and 'range'
 ~~~r
 > rep(2, 5)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -179,7 +179,7 @@ Group sub-expressions by parentheses where needed.
 ~~~r
 > (1 + 2) / 3
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -197,7 +197,7 @@ Call functions by typing their name and comma-separated arguments between parent
 ~~~r
 > logb(2, 2)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~

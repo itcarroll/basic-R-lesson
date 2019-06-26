@@ -27,7 +27,7 @@ one we need is `function`.
 
 ===
 
-```{r title="{{ site.handouts[0] }}", eval=FALSE}
+```{r handout = 0, eval=FALSE}
 function(...) {
     ...
     return(...)
@@ -45,7 +45,7 @@ Three components:
 We'll make a function to extract the first row of its argument, which we give a
 name to use inside the function:
 
-```{r title="{{ site.handouts[0] }}", eval=FALSE}
+```{r handout = 0, eval=FALSE}
 function(z) {
     result <- z[1, ]
     return(result)
@@ -61,7 +61,7 @@ the instructions for how any `z` will be handled.
 Finally, we need to give the function a name so we can use it like we used `c()`
 and `seq()` above.
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 first <- function(z) {
     result <- z[1, ]
     return(result)

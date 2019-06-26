@@ -45,7 +45,7 @@ encounter.
 Vectors are an array of values of the same type. Create a vector by combining
 elements of the same type together using the function `c()`.
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 counts <- c(4, 3, 7, 5, 2)
 ```
 
@@ -71,7 +71,7 @@ attribute that assigns names to however many discrete categories are specified.
 Use `factor()` to create a vector with predefined values, which are often
 characters or "strings".
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 education <- factor(
     c('college', 'highschool', 'college', 'middle', 'middle'),
     levels = c('middle', 'highschool', 'college'))
@@ -130,7 +130,7 @@ differences:
 Creating a data frame from scratch can be done by combining vectors with the
 `data.frame()` function.
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 df <- data.frame(education, counts)
 ```
 

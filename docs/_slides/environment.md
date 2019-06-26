@@ -26,7 +26,7 @@ To referece a string of characters, surround them in quotation marks.
 ~~~r
 > 'ab.cd'
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -45,7 +45,7 @@ named `ab.cd` and doesn't find anything:
 ~~~r
 > ab.cd
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -77,7 +77,7 @@ any command to the right of `<-` gets the name given on its left.
 ~~~r
 > x <- seq(0, 100)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ===
@@ -90,7 +90,7 @@ We can print the value of `x` by evaluating it without assignment.
 ~~~r
 > x
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -118,8 +118,8 @@ Once assigned to a variable, a value becomes known to R and you can refer to it 
 ~~~r
 > plot(x, sin(x * 2 * pi / 100))
 ~~~
-{:.input title="Console"}
-![ ]({{ site.baseurl }}/images/environment/unnamed-chunk-5-1.png)
+{:title="Console" .input}
+![ ]({{ "environment/unnamed-chunk-5-1.png" | prepend: site.imageurl | relative_url }})
 {:.captioned}
 
 ===

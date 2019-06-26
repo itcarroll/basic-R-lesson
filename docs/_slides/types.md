@@ -29,7 +29,7 @@ the basic data types. Like all data frames, "animals" is a "list".
 ~~~r
 > is.list(animals)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -60,7 +60,7 @@ elements of the same type together using the function `c()`.
 ~~~r
 counts <- c(4, 3, 7, 5, 2)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
@@ -73,7 +73,7 @@ different types they will be coerced to the most flexible type.
 ~~~r
 > c(1, 2, 'c')
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -102,7 +102,7 @@ education <- factor(
     c('college', 'highschool', 'college', 'middle', 'middle'),
     levels = c('middle', 'highschool', 'college'))
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
@@ -115,7 +115,7 @@ stead.
 ~~~r
 > str(education)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -140,7 +140,7 @@ Construct lists with `list()` instead of `c()`:
 ~~~r
 > list(1, 2, 'c')
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -165,7 +165,7 @@ Lists can include vectors, factors, and even other lists.
 ~~~r
 > list(1, c('a', 'b'))
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -204,7 +204,7 @@ Creating a data frame from scratch can be done by combining vectors with the
 ~~~r
 df <- data.frame(education, counts)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
@@ -225,7 +225,7 @@ There are several functions to get to know a data frame:
 ~~~r
 > names(df)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~

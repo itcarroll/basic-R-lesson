@@ -83,7 +83,7 @@ if (...) {
   ...
 }
 ~~~
-{:.text-document .no-eval title="{{ site.handouts[0] }}"}
+{:.text-document .no-eval handout = 0}
 
 [View solution](#solution-6)
 {:.notes}
@@ -101,7 +101,7 @@ if (...) {
 ~~~r
 > (-0.3 + sqrt(0.3 ^ 2 - 4 * 1.5 * -2.9)) / (2 * 1.5)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -123,7 +123,7 @@ if (...) {
 animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
 animals$sex <- factor(animals$sex)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -131,7 +131,7 @@ animals$sex <- factor(animals$sex)
 ~~~r
 > str(animals)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -161,7 +161,7 @@ animals$sex <- factor(animals$sex)
 ~~~r
 x <- list(3, 4, 5, 7)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -169,7 +169,7 @@ x <- list(3, 4, 5, 7)
 ~~~r
 > typeof(counts)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -182,7 +182,7 @@ x <- list(3, 4, 5, 7)
 ~~~r
 > typeof(x)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -195,7 +195,7 @@ x <- list(3, 4, 5, 7)
 ~~~r
 > typeof(c(counts, x))
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -223,7 +223,7 @@ species <- c('ape', 'bat', 'cat', 'dog')
 abund <- 1:4
 data <- data.frame(species, abund)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -231,7 +231,7 @@ data <- data.frame(species, abund)
 ~~~r
 > str(data)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -255,7 +255,7 @@ data <- data.frame(species, abund)
 sol1 <- days[c(-1, -7)]
 sol2 <- days[seq(2, 7, 2)]
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -263,7 +263,7 @@ sol2 <- days[seq(2, 7, 2)]
 ~~~r
 > sol1
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -277,7 +277,7 @@ sol2 <- days[seq(2, 7, 2)]
 ~~~r
 > sol2
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -307,7 +307,7 @@ first <- function(dat) {
     return(result)
 }
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -316,7 +316,7 @@ first <- function(dat) {
 > m <- matrix(1:9, nrow = 3, ncol = 3)
 > first(m)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~

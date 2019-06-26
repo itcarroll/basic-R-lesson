@@ -23,7 +23,7 @@ if (...) {
     ...
 }
 ~~~
-{:.text-document .no-eval title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .no-eval .text-document}
 
 
 The keyword `if` must be followed by a logical test which determines, at runtime, what to do next.
@@ -46,7 +46,7 @@ first <- function(dat) {
     return(result)
 }
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
@@ -56,7 +56,7 @@ first <- function(dat) {
 ~~~r
 > first(df)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -71,7 +71,7 @@ first <- function(dat) {
 ~~~r
 > first(counts)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~

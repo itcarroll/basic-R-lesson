@@ -26,7 +26,7 @@ values to use for an argument using the syntax `name = value`.
 +   file = 'data/species.csv',
 +   stringsAsFactors = FALSE)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -109,7 +109,7 @@ subsequent operations.
 ~~~r
 animals <- read.csv(file = 'data/animals.csv')
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
@@ -122,7 +122,7 @@ in each column with the `str` function, short for "structure".
 ~~~r
 > str(animals)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -155,7 +155,7 @@ as `na.strings = c("missing", "no data", "< 0.05 mg/L", "XX")`.
 ~~~r
 animals <- read.csv(file = 'data/animals.csv', na.strings = '')
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -163,7 +163,7 @@ animals <- read.csv(file = 'data/animals.csv', na.strings = '')
 ~~~r
 > str(animals)
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~

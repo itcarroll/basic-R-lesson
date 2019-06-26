@@ -19,7 +19,7 @@ script or run it from a shell with `Rscript`.
 
 ===
 
-Open up "{{ site.handouts[0] }}" in the editor, and follow along by replacing
+Open up "{{ site.data.lesson.handouts[0] }}" in the editor, and follow along by replacing
 the `...` placeholders with the code here. Then evalute just this line
 (Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
 
@@ -28,7 +28,7 @@ the `...` placeholders with the code here. Then evalute just this line
 ~~~r
 vals <- seq(1, 100)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
@@ -42,7 +42,7 @@ the arguments by the names that `seq` is expecting.
 vals <- seq(from = 1,
             to = 100)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
@@ -78,7 +78,7 @@ The `seq()` function has an alternative form available when only the `from` and
 ~~~r
 > 1:100
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -110,7 +110,7 @@ arguments?
 ~~~r
 > ?seq
 ~~~
-{:.input title="Console"}
+{:title="Console" .no-eval .input}
 
 
 ===
@@ -122,5 +122,5 @@ How would you even know what function to call?
 ~~~r
 > ??sequence
 ~~~
-{:.input title="Console"}
+{:title="Console" .no-eval .input}
 

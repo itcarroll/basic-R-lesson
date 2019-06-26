@@ -40,7 +40,7 @@ What exactly that means is described down in the "Arguments" section.
 Use the assignment operator "<-" to load data into a variable for
 subsequent operations.
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 animals <- read.csv(file = 'data/animals.csv')
 ``` 
 
@@ -63,7 +63,7 @@ You can also specify multiple things to be interpreted as missing values, such
 as `na.strings = c("missing", "no data", "< 0.05 mg/L", "XX")`.
 {:.notes}
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 animals <- read.csv(file = 'data/animals.csv', na.strings = '')
 ``` 
 

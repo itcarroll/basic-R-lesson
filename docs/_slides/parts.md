@@ -15,7 +15,7 @@ by its position, using double square brackets: `[[` and `]]`.
 ~~~r
 > counts[[1]]
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -29,7 +29,7 @@ by its position, using double square brackets: `[[` and `]]`.
 ~~~r
 > counts[[3]]
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -51,7 +51,7 @@ Parts of an object may also have a name. The names can be given when you are cre
 ~~~r
 > df[['education']]
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -68,7 +68,7 @@ Levels: middle highschool college
 ~~~r
 names(df) <- c('ed', 'ct')
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -76,7 +76,7 @@ names(df) <- c('ed', 'ct')
 ~~~r
 > df[['ed']]
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -106,7 +106,7 @@ requested with a comma.
 ~~~r
 > df[[3, 'ed']]
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -130,7 +130,7 @@ the columns of a data frame.
 ~~~r
 > df$ed
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -168,7 +168,7 @@ days <- c(
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
@@ -176,7 +176,7 @@ weekend <- days[c(1, 7)]
 ~~~r
 > weekdays
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -190,7 +190,7 @@ weekend <- days[c(1, 7)]
 ~~~r
 > weekend
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -209,7 +209,7 @@ A logical test applied to a single column produces a vector of `TRUE` and
 ~~~r
 > df[df$ed == 'college', ]
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~

@@ -83,7 +83,7 @@ if (...) {
   ...
 }
 ~~~
-{:.text-document .no-eval title="{{ site.handouts[0] }}"}
+{:.text-document .no-eval handout = 0}
 
 [View solution](#solution-6)
 {:.notes}
@@ -107,7 +107,7 @@ if (...) {
 
 ### Solution 2
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 animals <- read.csv('data/animals.csv', stringsAsFactors = FALSE, na.strings = '')
 animals$sex <- factor(animals$sex)
 ```
@@ -123,7 +123,7 @@ str(animals)
 
 ### Solution 3
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 x <- list(3, 4, 5, 7)
 ```
 
@@ -149,7 +149,7 @@ vector is a list, because the list is the more flexible data structure.
 
 ### Solution 4
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 species <- c('ape', 'bat', 'cat', 'dog')
 abund <- 1:4
 data <- data.frame(species, abund)
@@ -166,7 +166,7 @@ str(data)
 
 ### Solution 5
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 sol1 <- days[c(-1, -7)]
 sol2 <- days[seq(2, 7, 2)]
 ```
@@ -186,7 +186,7 @@ sol2
 
 ### Solution 6
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 first <- function(dat) {
     if (is.vector(dat)) {
         result <- dat[1]

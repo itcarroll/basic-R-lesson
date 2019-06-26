@@ -14,7 +14,7 @@ interpreter to repeat or skip certain lines, using concepts like "for loops" and
 Flow control happens within blocks of code isolated between curly braces `{` and
 `}`, known as "statements".
 
-```{r eval=FALSE, title="{{ site.handouts[0] }}"}
+```{r eval=FALSE, handout = 0}
 if (...) {
     ...
 } else {
@@ -30,7 +30,7 @@ The R interpreter goes to the first statement if the logical value is `TRUE` and
 
 An if/else conditional would allow the `first` function to avoid the error thrown by calling `first(counts)`.
 
-```{r title="{{ site.handouts[0] }}"}
+```{r handout = 0}
 first <- function(dat) {
     if (is.vector(dat)) {
         result <- dat[1]

@@ -27,7 +27,7 @@ predictors to its right.
 ~~~r
 > y ~ a
 ~~~
-{:.input title="Console"}
+{:title="Console" .input}
 
 
 ~~~
@@ -67,14 +67,14 @@ model".
 ~~~r
 fit <- lm(weight ~ hindfoot_length, animals)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
 ~~~r
 > summary(fit)
 ~~~
-{:.input title="Console"}
+{:title="Console" .no-eval .input}
 
 
 ===
@@ -91,14 +91,14 @@ model, the most important distinction is whether a variable is a factor.
 ~~~r
 fit <- lm(weight ~ species_id, animals)
 ~~~
-{:.text-document title="{{ site.handouts[0] }}"}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 
 ~~~r
 > summary(fit)
 ~~~
-{:.input title="Console"}
+{:title="Console" .no-eval .input}
 
 
 The difference between 1 and 24 degrees of freedom in the last two models—with
