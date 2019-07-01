@@ -119,7 +119,7 @@ Once assigned to a variable, a value becomes known to R and you can refer to it 
 > plot(x, sin(x * 2 * pi / 100))
 ~~~
 {:title="Console" .input}
-![ ]({{ "environment/unnamed-chunk-5-1.png" | prepend: site.imageurl | relative_url }})
+![ ]({% include asset.html path="images/environment/unnamed-chunk-5-1.png" %})
 {:.captioned}
 
 ===
