@@ -3,17 +3,19 @@
 vals <- ...
 
 vals <- seq(...,
-            ...)
+  ...)
 
 ## Load Data
 
-animals <- ...(file = ...)
+storm <- read.csv(...)
 
-animals <- read.csv(file = 'data/animals.csv', ...)
+storm <- read.csv(
+  ...,
+  ...)
 
-## Vectors
+## Lists
 
-counts <- ...
+x <- list('abc', 1:3, sin)
 
 ## Factors
 
@@ -23,6 +25,7 @@ education <- ...(
 
 ## Data Frames
 
+... <- c(32000, 28000, 89000, 0, 0)
 ... <- data.frame(...)
 
 ## Names
@@ -32,8 +35,9 @@ education <- ...(
 ## Subsetting ranges
 
 days <- c(
-  'Sunday', 'Monday', 'Tuesday', 'Wednesday',
-  'Thursday', 'Friday', 'Saturday')
+  'Sunday', 'Monday', 'Tuesday',
+  'Wednesday', 'Thursday', 'Friday',
+  'Saturday')
 weekdays <- ...
 ...
 
@@ -48,15 +52,16 @@ function(...) {
 
 first <- function(dat) {
   ... {
-    result <- dat[1]
+    result <- dat[[1]]
   } ... {
     result <- dat[1, ]
   }
   return(result)
 }
 
-## Linear Models
+## Distributions and Statistics
 
-fit <- ...(weight ~ hindfoot_length, animals)
+...(n = 10)
 
-fit <- lm(..., animals)
+x <- rnorm(n = 100, ... = 15, sd = 7)
+y <- ...(n = 100, ... = 20, prob = .85)

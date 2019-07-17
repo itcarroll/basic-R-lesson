@@ -39,34 +39,26 @@ anything in a list.
 
 ===
 
+Create a list called `x` with a string, a sequence, and a function.
+
 
 
 ~~~r
-> x <- list('abc', 123, sin)
-> str(x)
+x <- list('abc', 1:3, sin)
 ~~~
-{:title="Console" .input}
-
-
-~~~
-List of 3
- $ : chr "abc"
- $ : num 123
- $ :function (x)  
-~~~
-{:.output}
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
 
 ===
 
 Question
 : Compare the structure of `storm` and `x` while thinking about the length of
-each of their elements. Do the elements within list `x` have a lenght? The same
+each of their elements. Do the elements within list `x` have a length? The same
 length?
 
 Answer
-: {:.fragment} The elements of `x` each has a length of 1. For example, the
-command `length('abc')` yields `1`.
+: {:.fragment} The elements of `x` all have lengths, and are not all the same.
+Note that the command `length('abc')` yields `1`.
 
 When you enter a single number or character string in R, you are actually
 creating a one-dimensional data structure of length 1. There are not really
@@ -84,9 +76,9 @@ combining elements of the same type together using the function `c()`.
 
 
 ~~~r
-c(1, 2, 3)
+> c(1, 2, 3)
 ~~~
-{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
+{:title="Console" .input}
 
 
 ~~~
