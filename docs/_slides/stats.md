@@ -11,9 +11,20 @@ probability distributions and calculate probabilities.
 To generate random numbers from a normal distribution, use the function
 `rnorm()`
 
-```{r handout = 0}
+
+
+~~~r
 rnorm(n = 10)
-```
+~~~
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
+
+
+~~~
+ [1] -1.00400735  0.10185066 -1.40475243  0.13281085 -0.08873156
+ [6] -1.26385941 -0.28310987 -0.17249954  0.09213665  1.62238488
+~~~
+{:.output}
+
 
 ===
 
@@ -43,13 +54,15 @@ See *Table 14.1* in **R for Everyone** by Jared Lander for a full table.
 
 R has built in functions for handling many statistical tests. 
 
-```{r, include = FALSE}
-set.seed(2345)
-```
-```{r handout = 0}
+
+
+
+~~~r
 x <- rnorm(n = 100, mean = 15, sd = 7)
 y <- rbinom(n = 100, size = 20, prob = .85)
-```
+~~~
+{:title="{{ site.data.lesson.handouts[0] }}" .text-document}
+
 
 ===
 
@@ -57,14 +70,48 @@ The samples above are drawn from different distributions with different means.
 The  T-Test should easilly distinguish them, although it does not check
 assumptions!
 
-```{r}
-t.test(x, y)
-```
+
+
+~~~r
+> t.test(x, y)
+~~~
+{:title="Console" .input}
+
+
+~~~
+
+	Welch Two Sample t-test
+
+data:  x and y
+t = -3.0895, df = 107.92, p-value = 0.00255
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -3.3562439 -0.7327582
+sample estimates:
+mean of x mean of y 
+  15.2155   17.2600 
+~~~
+{:.output}
+
 
 ===
 
 Shapiro's test of normality provides one routine for verifying assumptions.
 
-```{r}
-shapiro.test(y)
-```
+
+
+~~~r
+> shapiro.test(y)
+~~~
+{:title="Console" .input}
+
+
+~~~
+
+	Shapiro-Wilk normality test
+
+data:  y
+W = 0.94755, p-value = 0.0005739
+~~~
+{:.output}
+

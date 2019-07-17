@@ -86,7 +86,7 @@ A good place to begin learning R is with its built-in mathematical functionality
 
 ===
 
-## Arithmatic operators
+## Arithmatic Operators
 
 Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 
@@ -106,7 +106,7 @@ Try `+`, `-`, `*`, `/`, and `^` (for raising to a power).
 
 ===
 
-## Logical tests
+## Logical Tests
 
 Test equality with `==` and inequality with `<=`, `<`, `!=`, `>`, or `>=`.
 
@@ -126,7 +126,7 @@ Test equality with `==` and inequality with `<=`, `<`, `!=`, `>`, or `>=`.
 
 ===
 
-## Math functions
+## Math Functions
 
 Common mathematical functions like `sin`, `log`, and `sqrt`, exist along side some universal constants.
 
@@ -146,9 +146,10 @@ Common mathematical functions like `sin`, `log`, and `sqrt`, exist along side so
 
 ===
 
-## Programming idoms
+## Generic Functions
 
-Common computer programming functions like 'rep', 'sort', and 'range'
+Functions do more than math! Functions like 'rep', 'sort', and
+'range' are pre-packaged instructions for processing user input.
 
 
 

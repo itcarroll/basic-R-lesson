@@ -18,8 +18,8 @@ With an "empty" environment, the interpreter still recognizes:
 
 ===
 
-To reference a number or function just type it in as above.
-To referece a string of characters, surround them in quotation marks.
+To reference a number or function just type it in as above. To referece a string
+of characters, surround them in quotation marks.
 
 
 
@@ -82,8 +82,9 @@ any command to the right of `<-` gets the name given on its left.
 
 ===
 
-You'll notice that nothing prints to the console, because we assigned the output to a variable.
-We can print the value of `x` by evaluating it without assignment.
+You'll notice that nothing prints to the console, because we assigned the output
+to a variable. We can print the value of `x` by evaluating it without
+assignment.
 
 
 
@@ -111,7 +112,8 @@ commands must reference things already in the interpreter's vocabulary.
 
 ===
 
-Once assigned to a variable, a value becomes known to R and you can refer to it in other commands.
+Once assigned to a variable, a value becomes known to R and you can refer to it
+in other commands.
 
 
 
@@ -126,5 +128,5 @@ Once assigned to a variable, a value becomes known to R and you can refer to it 
 
 The environment is dynamic, but under your control!
 
-- Variables do not persist between sessions (unless loaded from .Rdata)
+- Variables do not persist between sessions (unless loaded from .Rdata 😢)
 - Variables only change their value on re-assignment

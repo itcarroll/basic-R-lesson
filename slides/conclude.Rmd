@@ -6,11 +6,12 @@
 In this introduction to R, we touched on several key parts of scripting for data analysis.
 
 - RStudio panes
-- Variable assignment
-- Data structures
-- Subsetting data
-- Functions
-- Flow control
+- variable assignment
+- data structures
+- subsetting data
+- functions
+- flow control
+- probabilities
 
 ===
 

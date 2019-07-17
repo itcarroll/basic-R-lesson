@@ -1,10 +1,7 @@
 title: "Basic R"
 handouts:
  - worksheet.R
- - data/species.csv
- - data/plots.csv
- - data/animals.csv
- - data/README.md
+ - data/census_pums/sample.csv
 tag: v0.5
 lesson: 1
 instructor: Ian Carroll
@@ -22,8 +19,8 @@ sorter:
 #  - plot
   - functions
   - flow
-#  - stats
-  - lm
+  - stats
+#  - lm
   - conclude
 #  - push
   - exercise

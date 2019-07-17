@@ -14,15 +14,17 @@ values for some of the optional arguments (e.g. `sep = ","`).
 
 ===
 
-Type `read.csv(` into the console and then press **tab** to see what arguments
+Use the assignment operator "<-" to read data into a variable for
+subsequent operations.
+
+Type `read.csv(` into the editor and then press **tab** to see what arguments
 this function takes. Hovering over each item in the list will show a description
 of that argument from the help documentation about that function. Specify the
 values to use for an argument using the syntax `name = value`.
+{:.notes}
 
-```{r}
-read.csv(
-  file = 'data/species.csv',
-  stringsAsFactors = FALSE)
+```{r, handout = 0}
+storm <- read.csv('data/StormEvents.csv')
 ```
 
 ===
@@ -37,36 +39,35 @@ What exactly that means is described down in the "Arguments" section.
 
 ===
 
-Use the assignment operator "<-" to load data into a variable for
-subsequent operations.
+After reading in the "StormEvents.csv" file, you can explore what types of data
+are in each column with the `str` function, short for "structure".
 
-```{r handout = 0}
-animals <- read.csv(file = 'data/animals.csv')
-``` 
+```{r}
+str(storm)
+```
 
 ===
 
-After reading in the "animals.csv" file, you can explore what types of data are
-in each column with the `str` function, short for "structure".
+The data viewer, opened with `View` or the spreadsheet icon a data frame's record
+in the Environment, is useful despite not being a full spreadsheet application.
 
-```{r}
-str(animals)
+```{r, eval = FALSE}
+View(storm)
 ```
 
 ===
 
 Missing data, as interpreted by the `read.csv` function, is controlled by the
-`na.strings` argument. Override the default value of `'NA'` with the empty
-string, `''`, to properly interpret the "species_id" and "sex" columns.
+`na.strings` argument. Override the default value of `'NA'` with a character
+vector.
 
-You can also specify multiple things to be interpreted as missing values, such
+You often need to specify multiple strings to interpret as missing values, such
 as `na.strings = c("missing", "no data", "< 0.05 mg/L", "XX")`.
 {:.notes}
 
 ```{r handout = 0}
-animals <- read.csv(file = 'data/animals.csv', na.strings = '')
+storm <- read.csv(
+  'data/StormEvents.csv',
+  na.strings = c('NA', 'UNKNOWN'))
 ``` 
 
-```{r}
-str(animals)
-```

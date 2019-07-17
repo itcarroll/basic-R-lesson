@@ -10,30 +10,34 @@ by its position, using double square brackets: `[[` and `]]`.
 
 ## Position
 
+The first element:
+
 
 
 ~~~r
-> counts[[1]]
+> income[[1]]
 ~~~
 {:title="Console" .input}
 
 
 ~~~
-[1] 4
+[1] 32000
 ~~~
 {:.output}
 
 
+The third element:
+
 
 
 ~~~r
-> counts[[3]]
+> income[[3]]
 ~~~
 {:title="Console" .input}
 
 
 ~~~
-[1] 7
+[1] 89000
 ~~~
 {:.output}
 
@@ -42,7 +46,8 @@ by its position, using double square brackets: `[[` and `]]`.
 
 ## Names
 
-Parts of an object may also have a name. The names can be given when you are creating a vector or afterwards using the `names()` function.
+Parts of an object may also have a name. The names can be given when you are
+creating a vector or afterwards using the `names()` function.
 
 ===
 
@@ -66,7 +71,7 @@ Levels: middle highschool college
 
 
 ~~~r
-names(df) <- c('ed', 'ct')
+names(df) <- c('ed', 'in')
 ~~~
 {:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
@@ -163,8 +168,9 @@ or names of the desired subset, may be of multiple forms.
 
 ~~~r
 days <- c(
-  'Sunday', 'Monday', 'Tuesday', 'Wednesday',
-  'Thursday', 'Friday', 'Saturday')
+  'Sunday', 'Monday', 'Tuesday',
+  'Wednesday', 'Thursday', 'Friday',
+  'Saturday')
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ~~~
@@ -213,9 +219,9 @@ A logical test applied to a single column produces a vector of `TRUE` and
 
 
 ~~~
-       ed ct
-1 college  4
-3 college  7
+       ed    in
+1 college 32000
+3 college 89000
 ~~~
 {:.output}
 

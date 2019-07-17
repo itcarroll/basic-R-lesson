@@ -52,16 +52,16 @@ name to use inside the function:
 
 
 ~~~r
-function(z) {
-    result <- z[1, ]
+function(a) {
+    result <- a[1, ]
     return(result)
 }
 ~~~
 {:title="{{ site.data.lesson.handouts[0] }}" .no-eval .text-document}
 
 
-Note that `z` doesn't exist until we call the function, which merely contains
-the instructions for how any `z` will be handled.
+Note that `a` doesn't exist until we call the function, which merely contains
+the instructions for how any `a` will be handled.
 {:.notes}
 
 ===
@@ -72,8 +72,8 @@ and `seq()` above.
 
 
 ~~~r
-first <- function(z) {
-    result <- z[1, ]
+first <- function(a) {
+    result <- a[1, ]
     return(result)
 }
 ~~~
@@ -89,8 +89,8 @@ first <- function(z) {
 
 
 ~~~
-       ed ct
-1 college  4
+       ed    in
+1 college 32000
 ~~~
 {:.output}
 
@@ -98,7 +98,7 @@ first <- function(z) {
 ===
 
 Question
-: Can you explain the result of entering `first(counts)` into the console?
+: Can you explain the result of entering `first(income)` into the console?
 
 Answer
 : {:.fragment} The function caused an error, which prompted the interpreter to

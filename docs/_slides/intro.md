@@ -1,13 +1,20 @@
 ---
 ---
 
-## Why learn R?
+## Lesson Objectives
 
-- Originally designed for interactive statistical analysis
-- General purpose scripting for your whole pipeline
-- Bleeding-edge packages expand on "base R"
-- Vast community ~~within statistics and ecology~~
-- Free and open source for reproducible research
+- Meet the R "Console", "Editor", and "Environment" within RStudio
+- Understand that R "packages" extend it to the "bleeding-edge"
+- Join a vast user community ~~within statistics and ecology~~
+- Learn what "free software" does for reproducible research
+
+===
+
+## Specific Achievements
+
+- Use R interactively for data exploration
+- Create an R script for non-interactive data crunching
+- Perform general purpose programming operations
 
 ===
 

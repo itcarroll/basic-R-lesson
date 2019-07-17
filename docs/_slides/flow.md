@@ -3,11 +3,13 @@
 
 ## Flow Control
 
+A generic term for causing the interpreter to repeat or skip certain lines,
+using concepts like "for loops" and conditionals.
+
 The R interpreter's "focus" flows through a script (or any section of code you
 run) line by line. Without additional instruction, every line is processed from
-the top to bottom. "Flow control" is the generic term for causing the
-interpreter to repeat or skip certain lines, using concepts like "for loops" and
-"if/else conditionals".
+the top to bottom. Flow control refers mostly to the two main ways of directing
+the interpreter's focus, via loops and conditions.
 
 ===
 
@@ -26,20 +28,22 @@ if (...) {
 {:title="{{ site.data.lesson.handouts[0] }}" .no-eval .text-document}
 
 
-The keyword `if` must be followed by a logical test which determines, at runtime, what to do next.
-The R interpreter goes to the first statement if the logical value is `TRUE` and to the second statement if it's `FALSE`.
+The keyword `if` must be followed by a logical test which determines, at
+runtime, what to do next. The R interpreter goes to the first statement if the
+logical value is `TRUE` and to the second statement if it's `FALSE`.
 {:.notes}
 
 ===
 
-An if/else conditional would allow the `first` function to avoid the error thrown by calling `first(counts)`.
+An if/else conditional would allow the `first` function to avoid the error
+thrown by calling `first(counts)`.
 
 
 
 ~~~r
 first <- function(dat) {
     if (is.vector(dat)) {
-        result <- dat[1]
+        result <- dat[[1]]
     } else {
         result <- dat[1, ]
     }
@@ -60,8 +64,8 @@ first <- function(dat) {
 
 
 ~~~
-       ed ct
-1 college  4
+       ed    in
+1 college 32000
 ~~~
 {:.output}
 
@@ -69,13 +73,13 @@ first <- function(dat) {
 
 
 ~~~r
-> first(counts)
+> first(income)
 ~~~
 {:title="Console" .input}
 
 
 ~~~
-[1] 4
+[1] 32000
 ~~~
 {:.output}
 

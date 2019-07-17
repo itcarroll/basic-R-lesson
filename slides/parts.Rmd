@@ -10,19 +10,24 @@ by its position, using double square brackets: `[[` and `]]`.
 
 ## Position
 
-```{r}
-counts[[1]]
-```
+The first element:
 
 ```{r}
-counts[[3]]
+income[[1]]
+```
+
+The third element:
+
+```{r}
+income[[3]]
 ```
 
 ===
 
 ## Names
 
-Parts of an object may also have a name. The names can be given when you are creating a vector or afterwards using the `names()` function.
+Parts of an object may also have a name. The names can be given when you are
+creating a vector or afterwards using the `names()` function.
 
 ===
 
@@ -32,8 +37,8 @@ df[['education']]
 
 ===
 
-```{r handout = 0}
-names(df) <- c('ed', 'ct')
+```{r, handout = 0}
+names(df) <- c('ed', 'in')
 ```
 
 ```{r}
@@ -93,8 +98,9 @@ or names of the desired subset, may be of multiple forms.
 
 ```{r handout = 0}
 days <- c(
-  'Sunday', 'Monday', 'Tuesday', 'Wednesday',
-  'Thursday', 'Friday', 'Saturday')
+  'Sunday', 'Monday', 'Tuesday',
+  'Wednesday', 'Thursday', 'Friday',
+  'Saturday')
 weekdays <- days[2:6]
 weekend <- days[c(1, 7)]
 ```

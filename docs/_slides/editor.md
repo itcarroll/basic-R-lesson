@@ -8,7 +8,6 @@ It's useful for testing commands and poking around. The **environment**
 represents the state of a current session. The **editor** reads and writes
 files--it is where you head to compose your R scripts.
 
-
 R scripts are simple text files that contain code you intend to run again and
 again; code to process data, perform analyses, produce visualizations, and even
 generate reports. The editor and console work together in the RStudio IDE, which
@@ -19,9 +18,9 @@ script or run it from a shell with `Rscript`.
 
 ===
 
-Open up "{{ site.data.lesson.handouts[0] }}" in the editor, and follow along by replacing
-the `...` placeholders with the code here. Then evalute just this line
-(Ctrl+Enter on Windows, ⌘+Enter on Mac OS).
+Open up "{{ site.data.lesson.handouts[0] }}" in the editor, and follow along by
+replacing the `...` placeholders with the code here. Then evalute just this line
+(Ctrl+Enter on Windows, ⌘+Enter on macOS)
 
 
 
@@ -40,7 +39,7 @@ the arguments by the names that `seq` is expecting.
 
 ~~~r
 vals <- seq(from = 1,
-            to = 100)
+  to = 100)
 ~~~
 {:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
