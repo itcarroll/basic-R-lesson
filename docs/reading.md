@@ -8,7 +8,7 @@ style: /css/static.css
 The "bubble sort" algorithm is a procedure for sorting. If the input is a
 collection of random letters, the following "pseudo-code" provides a set of
 instructions that will lead to sorting the collection alphabetically. To test
-that the steps will succede, pretend to "compute" the procedure for the array of
+that the steps will succeed, pretend to "compute" the procedure for the array of
 letters `['q', 'e', 'd']`.
 
 1. let `A` refer to some collection of letters
