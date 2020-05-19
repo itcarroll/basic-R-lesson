@@ -85,7 +85,7 @@ if (...) {
 ~~~r
 storm <- read.csv(
   'data/StormEvents.csv',
-  stringsAsFactors = TRUE)
+  stringsAsFactors = FALSE)
 storm$STATE <- factor(storm$STATE)
 ~~~
 {:title="Solution" .text-document}

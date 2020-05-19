@@ -3,72 +3,64 @@ layout: default
 style: /css/static.css
 ---
 
-## Pseudo-code and an R Implementation
+## Block programming and R implementation
 
-The "bubble sort" algorithm is a procedure for sorting. If the input is a
-collection of random letters, the following "pseudo-code" provides a set of
-instructions that will lead to sorting the collection alphabetically. To test
-that the steps will succeed, pretend to "compute" the procedure for the array of
-letters `['q', 'e', 'd']`.
+Block programming is a method of learning the principles of coding via a visual 
+interface.  Learners drag and drop blocks of instructions into the order they
+want them to be executed.  This allows the learner to build logical thinking, 
+create conditional statements, and learn debugging, all without having to
+learn a programming language.  It is a jumping off point for learning a 
+scripting language such as R.  
 
-1. let `A` refer to some collection of letters
-2. let `n` refer to the number of letters in `A`
-3. for `i` referring to any positive integer, let `A[i]` refer to the `i`<sup>th</sup> letter in `A`
-4. let `swapped` refer to 'No'
-5. let `i` refer to 0
-6. let `i` refer to the value of `i + 1`
-7. if `A[i + 1]` comes before `A[i]` in the alphabet, then swap them in the collection `A` and let `swapped` refer to 'Yes'
-8. if `i` is less than `n` go back to step 6, but otherwise continue to step 9.
-9. if `swapped` refers to 'Yes', go back to 4, otherwise `A` is in alphabetical order
+For example, the following instructions can be put together into a code chunk:
+
+1. let `my variable` refer to a real integer
+2. let `if` condition test less than 10
+3. if `my variable` statisfies the `if` condition, add two to `my variable`
+4. print `my variable`
+5. if `my variable` does not satisfy the `if` condition, set `my variable` to 100 
+6. print `my variable`
 
 The following is a script in the R programming language
-that implements bubble sort, beginning from the assumption that `A` already
-refers to an array of letters.
+that implements the instructions above.
 
 ```r
-n <- length(A)
-swapped <- TRUE
-while (swapped) {
-    swapped <- FALSE
-    for (i in seq(1, n - 1)) {
-        if (A[i+1] < A[i]) {
-            a <- A[i+1]
-            A[i+1] <- A[i]
-            A[i] <- a
-            swapped <- TRUE
-        }
-    }
+my_variable <- sample(1:20, 1)
+
+if(my_variable < 10){
+my_variable <- my_variable + 2
+print(my_variable)
+}else{
+my_variable <- 100
+print(my_variable)
 }
+
+
 ```
 {:.input title="Console"}
 
-If you understand the pseudo-code, then you know what the R code is
+If you understand the instructions above, then you know what the R code is
 accomplishing even though you can't read the R language. However, you can
 probably deduce what a lot of it is doing!
 
 - What do you think the combination of characters `<-` means? What about the pattern `{...}`?
 
-- Which pseudo-code step is implemented by the `if (...) {...}` block?
+- Which step is implemented by the `if (...) {...}` block?
 
-- What is the role of `a`?
+- What is the role of `my_variable`?
 
-- What word in the code tells the interpreter to repeat a set of unstructions an unspecified number of times? What word causes a set of instructions to repeat a fixed number of times?
+## Block programming Exercise 1
 
-## Pseudo-code Exercise 1
+Go to the block programming platform [Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted) 
+and use the instructions above to assemble a code chunk.  See if you can create another program that 
+does another task.
 
-Complete the following pseudo-code to sum a given array of integers:
+## Block programming Exercise 2
 
-1. let `A` refer to the array of integers.
-2. let `n` refer to the length of `A`
-3. let `sum` refer to 0  
-...
-
-## Pseudo-code Exercise 2
-
-Complete the following pseudo-code with instructions to test whether a given
+Complete the following instructions to test whether a given
 integer is even or odd. Assume you can use a pre-existing capability to round
 any number to its nearest integer, as well as the arithmatic operators `*` and
-`/`.
+`/`.  
 
 1. let `i` refer to a given integer
 2. if `i` is less than zero, let `i` refer to `-1 * i`  
@@ -95,7 +87,7 @@ if (!evenness(test_value)) {
 ```
 {:.input title="Console"}
 -->
-
+<!--
 ## Pseudo-code Exercise 3
 
 Refer back to the bubble-sort algorithm. Step 7 says to "swap" elements of an
@@ -125,6 +117,6 @@ while (swapped) {
     }
 }
 ```
-{:.input title="Console"}
+{:.input title="Console"} -->
 
 ---
