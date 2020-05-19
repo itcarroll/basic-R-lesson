@@ -5,6 +5,13 @@ style: /css/static.css
 
 ## Block programming and R implementation
 
+<!-- Q comment:
+Here I wouldn't start with explaining what block programming is. That seems more like just a teaching tool to help people
+learn what programming is, how to pass instructions to a computer and make it do what you want. I would start with the 
+learning objective of the lesson: what is programming and why it's important. Then you can say we are going to use block
+programming to help learn about that.
+-->
+
 Block programming is a method of learning the principles of coding via a visual 
 interface.  Learners drag and drop blocks of instructions into the order they
 want them to be executed.  This allows the learner to build logical thinking, 
@@ -14,9 +21,9 @@ scripting language such as R.
 
 For example, the following instructions can be put together into a code chunk:
 
-1. let `my variable` refer to a real integer
-2. let `if` condition test less than 10
-3. if `my variable` statisfies the `if` condition, add two to `my variable`
+1. let `my variable` refer to a real integer between 1 and 20
+2. let `if` condition test whether `my_variable` is less than 10
+3. if `my variable` satisfies the `if` condition, add two to `my variable`
 4. print `my variable`
 5. if `my variable` does not satisfy the `if` condition, set `my variable` to 100 
 6. print `my variable`
@@ -27,12 +34,12 @@ that implements the instructions above.
 ```r
 my_variable <- sample(1:20, 1)
 
-if(my_variable < 10){
-my_variable <- my_variable + 2
-print(my_variable)
-}else{
-my_variable <- 100
-print(my_variable)
+if (my_variable < 10) {
+  my_variable <- my_variable + 2
+  print(my_variable)
+} else {
+  my_variable <- 100
+  print(my_variable)
 }
 
 
@@ -52,14 +59,15 @@ probably deduce what a lot of it is doing!
 ## Block programming Exercise 1
 
 Go to the block programming platform [Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted) 
-and use the instructions above to assemble a code chunk.  See if you can create another program that 
-does another task.
+and use the instructions above to assemble a code chunk.  
+
+See if you can create another program that does another task. <!-- Q comment: Can we be specific about what we want them to do? -->
 
 ## Block programming Exercise 2
 
 Complete the following instructions to test whether a given
 integer is even or odd. Assume you can use a pre-existing capability to round
-any number to its nearest integer, as well as the arithmatic operators `*` and
+any number to its nearest integer, as well as the arithmetic operators `*` and
 `/`.  
 
 1. let `i` refer to a given integer
@@ -87,6 +95,23 @@ if (!evenness(test_value)) {
 ```
 {:.input title="Console"}
 -->
+
+
+
+
+<!-- Q comment: It would be nice to include another example for an exercise here, to demonstrate another programming basic. 
+
+Can we do a basic for loop example?
+
+Instead of something complicated like a sorting algorithm, can we have them do something easy like calculating the square roots
+of numbers 1-20 and if the result is an integer, print it? That would demonstrate both for loop and include another example of
+an if statement.
+
+-->
+
+
+
+
 <!--
 ## Pseudo-code Exercise 3
 
