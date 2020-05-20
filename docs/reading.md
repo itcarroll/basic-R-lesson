@@ -40,8 +40,8 @@ For example, the following instructions can be put together into a code chunk:
 5. if `my variable` does not satisfy the `if` condition, set `my variable` to 100 
 6. print `my variable`
 
-The following is a script in the R programming language
-that implements the instructions above.
+The following is a script in the R programming language that implements
+the instructions above.
 
 ```r
 my_variable <- sample(1:20, 1)
@@ -123,9 +123,8 @@ an if statement.
 
 ## Block programming Exercise 3
 
+One common task in programming is to do a series of steps many times.  This is often called a loop in coding.  
 In the [Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted) platform, create a program that
 calculates the square root of each number from 1-20, and if the result is an integer, print the square root.  
-
-
 
 ---
