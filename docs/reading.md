@@ -3,6 +3,13 @@ layout: default
 style: /css/static.css
 ---
 
+## Objectives
+
+- Think computationally
+- Use logic
+- Solve problems
+- Instruct computer to do something
+
 ## Block programming and R implementation
 
 <!-- Q comment:
@@ -12,11 +19,16 @@ learning objective of the lesson: what is programming and why it's important. Th
 programming to help learn about that.
 -->
 
+Learning programming and coding might seem daunting, but it really boils down
+to being able to define specific steps needed to solve a problem or accomplish a
+task.  This involves using logical thinking and problem solving, including 
+sequencing and conditional logic, to assemble a step-by-step solution.  We'll 
+use block programming to explore this.
+
 Block programming is a method of learning the principles of coding via a visual 
 interface.  Learners drag and drop blocks of instructions into the order they
-want them to be executed.  This allows the learner to build logical thinking, 
-create conditional statements, and learn debugging, all without having to
-learn a programming language.  It is a jumping off point for learning a 
+want them to be executed, all without having to learn a programming language.  
+It will get you familiar with thinking computationally before learning a 
 scripting language such as R.  
 
 For example, the following instructions can be put together into a code chunk:
@@ -59,9 +71,9 @@ probably deduce what a lot of it is doing!
 ## Block programming Exercise 1
 
 Go to the block programming platform [Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted) 
-and use the instructions above to assemble a code chunk.  
+and use the instructions above to assemble a program that prints a number.  
 
-See if you can create another program that does another task. <!-- Q comment: Can we be specific about what we want them to do? -->
+For fun, see if you can create a program that makes the cat walk across the screen! <!-- Q comment: Can we be specific about what we want them to do? -->
 
 ## Block programming Exercise 2
 
@@ -109,39 +121,11 @@ an if statement.
 
 -->
 
+## Block programming Exercise 3
+
+In the [Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted) platform, create a program that
+calculates the square root of each number from 1-20, and if the result is an integer, print the square root.  
 
 
-
-<!--
-## Pseudo-code Exercise 3
-
-Refer back to the bubble-sort algorithm. Step 7 says to "swap" elements of an
-array, but in the implementation that takes 3 lines of code including creation
-of a dummy variable. The implementation would be easier to read (since we, the
-reader, already understand what "swap" means) and "modular" if we replaced those
-lines with a `swap` function defined outside the loops.
-
-Just using what you can infer from the pseudo-code and R code above, what would
-you replace each `...` with below to improve our bubble-sort implementation.
-
-```r
-swap <- function(j, x) {
-  ...
-  return(x)
-}
-
-n <- length(A)
-swapped <- TRUE
-while (swapped) {
-    swapped <- FALSE
-    for (i in seq(1, n - 1)) {
-        if (A[i+1] < A[i]) {
-            ...
-            swapped <- TRUE
-        }
-    }
-}
-```
-{:.input title="Console"} -->
 
 ---
