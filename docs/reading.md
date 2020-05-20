@@ -3,7 +3,7 @@ layout: default
 style: /css/static.css
 ---
 
-## Objectives
+## Introduction Objectives
 
 - Think computationally
 - Use logic
@@ -11,13 +11,6 @@ style: /css/static.css
 - Instruct computer to do something
 
 ## Block programming and R implementation
-
-<!-- Q comment:
-Here I wouldn't start with explaining what block programming is. That seems more like just a teaching tool to help people
-learn what programming is, how to pass instructions to a computer and make it do what you want. I would start with the 
-learning objective of the lesson: what is programming and why it's important. Then you can say we are going to use block
-programming to help learn about that.
--->
 
 Learning programming and coding might seem daunting, but it really boils down
 to being able to define specific steps needed to solve a problem or accomplish a
@@ -31,7 +24,7 @@ want them to be executed, all without having to learn a programming language.
 It will get you familiar with thinking computationally before learning a 
 scripting language such as R.  
 
-For example, the following instructions can be put together into a code chunk:
+For example, the following instructions can be put together into a program:
 
 1. let `my variable` refer to a real integer between 1 and 20
 2. let `if` condition test whether `my_variable` is less than 10
@@ -73,7 +66,7 @@ probably deduce what a lot of it is doing!
 Go to the block programming platform [Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted) 
 and use the instructions above to assemble a program that prints a number.  
 
-For fun, see if you can create a program that makes the cat walk across the screen! <!-- Q comment: Can we be specific about what we want them to do? -->
+For fun, see if you can create a program that makes the cat walk across the screen! 
 
 ## Block programming Exercise 2
 
@@ -108,23 +101,21 @@ if (!evenness(test_value)) {
 {:.input title="Console"}
 -->
 
-
-
-
-<!-- Q comment: It would be nice to include another example for an exercise here, to demonstrate another programming basic. 
-
-Can we do a basic for loop example?
-
-Instead of something complicated like a sorting algorithm, can we have them do something easy like calculating the square roots
-of numbers 1-20 and if the result is an integer, print it? That would demonstrate both for loop and include another example of
-an if statement.
-
--->
-
 ## Block programming Exercise 3
 
-One common task in programming is to do a series of steps many times.  This is often called a loop in coding.  
+One common task in programming is to do a series of steps many times, which is called a loop in coding.  
 In the [Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted) platform, create a program that
 calculates the square root of each number from 1-20, and if the result is an integer, print the square root.  
+
+<!--
+```r
+x <- c(1:20)
+for (i in x){
+r <- sqrt(i)
+if(round(r, digits = 0) == r) print(r)  
+}
+```
+{:.input title="Console"}
+-->
 
 ---
