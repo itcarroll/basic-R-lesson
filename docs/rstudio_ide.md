@@ -19,9 +19,9 @@ We will be using this platform to teach R, so we provide some introductory mater
 
 [![]({% include asset.html path="images/rstudio-video-static.jpg" %}){: width="75%"}](https://fast.wistia.net/embed/iframe/520zbd3tij?videoFoam=true) 
 
-### [RStudio IDE Cheatsheet](./images/rstudio-ide.pdf)
+### [RStudio IDE Cheatsheet](./assets/images/rstudio-ide.pdf)
 
-[![]({% include asset.html path="images/rstudio-ide.png" %}){: width="75%"}](asset/images/rstudio-ide.pdf) 
+[![]({% include asset.html path="images/rstudio-ide.png" %}){: width="75%"}](assets/images/rstudio-ide.pdf) 
 
 ---
 
