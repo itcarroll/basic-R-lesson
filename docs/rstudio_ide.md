@@ -15,13 +15,13 @@ R is a programming language that was created by Ross Ihaka and Robert Gentleman 
 RStudio is a Integrated Development Environment (IDE) for coding in the R language. 
 We will be using this platform to teach R, so we provide some introductory materials below. 
 
-### [RStudio IDE Overview](https://fast.wistia.net/embed/iframe/520zbd3tij?videoFoam=true){target="_blank"}
+### [RStudio IDE Overview](https://fast.wistia.net/embed/iframe/520zbd3tij?videoFoam=true)
 
-![]({% include asset.html path="images/rstudio-video-static.jpg" %}){: width="75%"} 
+[![]({% include asset.html path="images/rstudio-video-static.jpg" %}){: width="75%"}](https://fast.wistia.net/embed/iframe/520zbd3tij?videoFoam=true) 
 
-### [RStudio IDE Cheatsheet]("images/rstudio-ide.pdf"){target="_blank"}
+### [RStudio IDE Cheatsheet](./images/rstudio-ide.pdf)
 
-![]({% include asset.html path="images/rstudio-ide.png" %}){: width="75%"} 
+[![]({% include asset.html path="images/rstudio-ide.png" %}){: width="75%"}](asset/images/rstudio-ide.pdf) 
 
 ---
 
