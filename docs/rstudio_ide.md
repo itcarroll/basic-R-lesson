@@ -13,7 +13,8 @@ style: /css/static.css
 
 
 [RStudio](https://rstudio.com/) is a Integrated Development Environment (IDE) for coding in the R language. 
-We will be using this platform to teach R, so we provide some introductory materials below. 
+This course will use this platform to teach R, so we provide some introductory materials below. 
+Please note: SESYNC provides a cloud platform capable of supporting the software needs for the course, so there is **no computational software for you to install in advance**. However, you are welcome to install any and or all of this software—it is all free and open source—on your own machines.  The list of software is available in the [syllabus](https://cyberhelp.sesync.org/syllabi/2020/07/21/summer-institute.html).  
 
 ### [RStudio IDE Overview](https://fast.wistia.net/embed/iframe/520zbd3tij?videoFoam=true)
 
