@@ -4,10 +4,11 @@ handouts:
  - data/StormEvents.csv
 tag: v0.6
 lesson: 1
-instructor: Ian Carroll
+instructor: Rachael Blake
 authors:
  - Kelly Hondula
  - Ian Carroll
+ - Rachael Blake
 sorter:
   - intro
   - console
