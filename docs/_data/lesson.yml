@@ -2,7 +2,7 @@ title: "Basic R"
 handouts:
  - worksheet.R
  - data/StormEvents.csv
-tag: v0.6
+tag: v0.7
 lesson: 1
 instructor: Rachael Blake
 authors:
