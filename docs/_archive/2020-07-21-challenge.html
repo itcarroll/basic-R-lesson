@@ -1,0 +1,214 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic R</title>
+<meta name="description" content="Start learning R in RStudio.">
+<link rel="canonical"
+      href="https://SESYNC-ci.github.io/basic-R-lesson/challenge.html">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/default.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/syntax.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets//css/static.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      rel="stylesheet"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous">
+
+    
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <h2 id="lesson-exercises">Lesson Exercises</h2>
+
+<p>Complete the exercises from today’s two lessons:</p>
+
+<ol>
+  <li><a href="/basic-R-lesson/course/#/slides/exercise">Base R Exercises</a></li>
+  <li><a href="/graphics-with-ggplot2-lesson/course/#/slides/exercise">Visualizing Tabular Data Exercises</a></li>
+</ol>
+
+<h2 id="challenge-exercises">Challenge Exercises</h2>
+
+<p>Work through as many of the following challenge exercises as you can in the
+remaining time. Take a few minutes to ponder each challenge on your own,
+but feel free to engage with fellow participants and instructors for
+guidance or ideas.</p>
+
+<h3 id="challenge-1">Challenge 1</h3>
+
+<p>Fix each of the following common data frame subsetting errors. The <code class="language-plaintext highlighter-rouge">person</code> data
+frame was read in during the lesson on <a href="https://cyberhelp.sesync.org/graphics-with-ggplot2-lesson/course/#/slides/layer">Visualizing Tabular Data</a>.</p>
+
+<ul>
+  <li>Fix <code class="language-plaintext highlighter-rouge">person[person$AGEP = 21, ]</code> so it returns all rows where <code class="language-plaintext highlighter-rouge">AGEP</code> equals 21.</li>
+  <li>Fix <code class="language-plaintext highlighter-rouge">person[-1:4, ]</code> so it returns all but the first four rows.</li>
+  <li>Fix <code class="language-plaintext highlighter-rouge">person[person$WAGP &lt;= 20,000]</code> so it returns all rows where <code class="language-plaintext highlighter-rouge">WAGP</code> is less than or equal to 20,000.</li>
+  <li>Fix <code class="language-plaintext highlighter-rouge">person[person$AGEP == 18 | 21, ]</code> so it returns all rows where <code class="language-plaintext highlighter-rouge">AGEP</code> equals 18 or 21.</li>
+</ul>
+
+<h3 id="challenge-2">Challenge 2</h3>
+
+<p>Were you to ever interview for a “data scientist” postition, you may be asked to
+complete this common challenge (possibly using multiple approaches). Write a
+“for loop” in the R language that calculates the Fibonnacci sequence up through
+it’s 12th entry. Start your script with the line <code class="language-plaintext highlighter-rouge">fib &lt;- c(1, 1)</code>, and recall
+that <code class="language-plaintext highlighter-rouge">c</code> combines vectors.</p>
+
+<h3 id="challenge-3">Challenge 3</h3>
+
+<p>Create a data frame from scratch that will have three columns and 40 rows as
+follows. In a column named “id”, put a repeating sequence from 1 to 10. For a
+column named “group”, create a factor from an alternating seqence of 10 <code class="language-plaintext highlighter-rouge">a</code>s
+followed by 10 <code class="language-plaintext highlighter-rouge">b</code>s (hint: <code class="language-plaintext highlighter-rouge">?seq</code>). In a colume named “var” put 40 random
+samples from a uniform distribution (hint: <code class="language-plaintext highlighter-rouge">?runif</code>) in order from smallest to
+largest (hint: <code class="language-plaintext highlighter-rouge">?sort</code>). Plot the data with a smooth line showing the
+relationship between the increasing <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">var</code> with different colors for
+each group.</p>
+
+<h3 id="challenge-4">Challenge 4</h3>
+
+<p>Try that Fibonnacci challenge again, but use an approach called “recursion”.
+That is, write a function that calls itself (i.e. a recursion) to calculate any
+Fibonacci number. Just because this is an “advanced” approach doesn’t mean it’s
+a good one: don’t try it for any number over your age!</p>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="solution-1">Solution 1</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">person[person$AGEP == 21, ]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">person[-(1:4), ]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">person[person$WAGP &lt;= 20000, ]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">person[person$AGEP == 18 | person$AGEP == 21, ]</code></li>
+</ul>
+
+<h3 id="solution-2">Solution 2</h3>
+
+<div class="language-r text-document no-eval highlighter-rouge" title="exercise.R"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">3</span><span class="o">:</span><span class="m">12</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="solution-3">Solution 3</h3>
+
+<div class="language-r text-document no-eval highlighter-rouge" title="exercise.R"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="w">
+  </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w">
+  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">),</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">),</span><span class="w">
+  </span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sort</span><span class="p">(</span><span class="n">runif</span><span class="p">(</span><span class="m">40</span><span class="p">)))</span><span class="w">
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prob</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">group</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'lm'</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+
+<h3 id="solution-4">Solution 4</h3>
+
+<div class="language-r text-document no-eval highlighter-rouge" title="exercise.R"><div class="highlight"><pre class="highlight"><code><span class="n">fibn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="n">fib</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w">
+ </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="n">fib</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fibn</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fibn</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+ </span><span class="nf">return</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">fibn</span><span class="p">(</span><span class="m">12</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note that this recursive solution is dangerously inefficient, but could be
+greatly improved with <a href="https://en.wikipedia.org/wiki/Memoization">memoization</a>.</p>
+
+
+        <hr>
+
+<p>If you need to catch-up before a section of code will work, just squish it's
+🍅 to copy code above it into your clipboard. Then paste into your interpreter's
+console, run, and you'll be ready to start in on that section. Code copied by
+both 🍅 and 📋 will also appear below, where you can edit first, and then copy,
+paste, and run again.</p>
+
+<div class="output">
+  <pre id="ketchup" contenteditable="true"><code># Nothing here yet!</code></pre>
+</div>
+
+<script>
+$(document).ready(function(){
+  
+  // Add code help icons to code blocks
+  $('.input, .text-document').append('<ul class="code-help">');
+  $('.code-help')
+    .append('<li class="clipboard">📋</li>');
+  $('.text-document:not(.no-eval) .code-help')
+    .append('<li class="ketchup">🍅</li>');
+
+  // Bind copy actions to mouse clicks on icons
+  var $ketchup = $('#ketchup');
+  var rng = document.createRange();
+  var sel = window.getSelection();
+  $('.ketchup').click(function(){
+    var $prev = $(this)
+      .parents('.text-document')
+      .prevAll('.text-document:has(.ketchup)');
+    $ketchup.find('code').text($prev.find('pre').text());
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.text-document .clipboard').click(function(){
+    var pre = $(this).parents('.text-document').find('pre').text();
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.input .clipboard').click(function(){
+    var pre = $(this).parents('.input').find('pre').text();
+    pre = pre.replace(/(^|\n)[>+] /g, '$1');
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+});
+</script>
+      </div>
+    </div>
+    <script>
+$(document).ready(function(){
+  // Add links to R and Python package repositories
+  $('a.rlib').map(function(){
+    this.href = 'https://cran.r-project.org/package=' + this.innerText;
+  });
+  $('a.pylib').map(function(){
+    this.href = 'https://pypi.python.org/pypi/' + this.innerText;
+  });
+});
+</script>
+
+    <footer>
+      <p>
+        <a href="https://github.com/SESYNC-ci/basic-R-lesson/issues" target="_blank">
+          <i class="fas fa-exclamation-circle" aria-hidden="true"></i> report an issue
+        </a>
+      </p>
+      <p>Site maintained by
+        <a href="https://github.com/SESYNC-ci">SESYNC-ci</a>
+      </p>
+    </footer>
+  </body>
+</html>
