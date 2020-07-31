@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic R</title>
+<meta name="description" content="Start learning R in RStudio.">
+<link rel="canonical"
+      href="https://SESYNC-ci.github.io/basic-R-lesson/reading.html">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/default.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/syntax.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets//css/static.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      rel="stylesheet"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous">
+
+    
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <h2 id="introduction-objectives">Introduction Objectives</h2>
+
+<ul>
+  <li>Think computationally</li>
+  <li>Use logic</li>
+  <li>Solve problems</li>
+  <li>Instruct computer to do something</li>
+</ul>
+
+<h2 id="block-programming-and-r-implementation">Block programming and R implementation</h2>
+
+<p>Learning programming and coding might seem daunting, but it really boils down
+to being able to define specific steps needed to solve a problem or accomplish a
+task.  This involves using logical thinking and problem solving, including 
+sequencing and conditional logic, to assemble a step-by-step solution.  We’ll 
+use block programming to explore this.</p>
+
+<p>Block programming is a method of learning the principles of coding via a visual 
+interface.  Learners drag and drop blocks of instructions into the order they
+want them to be executed, all without having to learn a programming language.<br />
+It will get you familiar with thinking computationally before learning a 
+scripting language such as R.</p>
+
+<p>For example, the following instructions can be put together into a program:</p>
+
+<ol>
+  <li>let <code class="language-plaintext highlighter-rouge">my variable</code> refer to a real integer between 1 and 20</li>
+  <li>let <code class="language-plaintext highlighter-rouge">if</code> condition test whether <code class="language-plaintext highlighter-rouge">my_variable</code> is less than 10</li>
+  <li>if <code class="language-plaintext highlighter-rouge">my variable</code> satisfies the <code class="language-plaintext highlighter-rouge">if</code> condition, add two to <code class="language-plaintext highlighter-rouge">my variable</code></li>
+  <li>print <code class="language-plaintext highlighter-rouge">my variable</code></li>
+  <li>if <code class="language-plaintext highlighter-rouge">my variable</code> does not satisfy the <code class="language-plaintext highlighter-rouge">if</code> condition, set <code class="language-plaintext highlighter-rouge">my variable</code> to 100</li>
+  <li>print <code class="language-plaintext highlighter-rouge">my variable</code></li>
+</ol>
+
+<p>The following is a script in the R programming language that implements
+the instructions above.</p>
+
+<div class="language-r input highlighter-rouge" title="Console"><div class="highlight"><pre class="highlight"><code><span class="n">my_variable</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">my_variable</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">my_variable</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">my_variable</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">my_variable</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">100</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre></div></div>
+
+<p>If you understand the instructions above, then you know what the R code is
+accomplishing even though you can’t read the R language. However, you can
+probably deduce what a lot of it is doing!</p>
+
+<ul>
+  <li>
+    <p>What do you think the combination of characters <code class="language-plaintext highlighter-rouge">&lt;-</code> means? What about the pattern <code class="language-plaintext highlighter-rouge">{...}</code>?</p>
+  </li>
+  <li>
+    <p>Which step is implemented by the <code class="language-plaintext highlighter-rouge">if (...) {...}</code> block?</p>
+  </li>
+  <li>
+    <p>What is the role of <code class="language-plaintext highlighter-rouge">my_variable</code>?</p>
+  </li>
+</ul>
+
+<h2 id="block-programming-exercise-1">Block programming Exercise 1</h2>
+
+<p>Go to the block programming platform <a href="https://scratch.mit.edu/projects/editor/?tutorial=getStarted">Scratch</a> 
+and use the instructions above to assemble a program that prints a number.</p>
+
+<p>For fun, see if you can create a program that makes the cat walk across the screen!</p>
+
+<h2 id="block-programming-exercise-2">Block programming Exercise 2</h2>
+
+<p>Complete the following instructions to test whether a given
+integer is even or odd. Assume you can use a pre-existing capability to round
+any number to its nearest integer, as well as the arithmetic operators <code class="language-plaintext highlighter-rouge">*</code> and
+<code class="language-plaintext highlighter-rouge">/</code>.</p>
+
+<ol>
+  <li>let <code class="language-plaintext highlighter-rouge">i</code> refer to a given integer</li>
+  <li>if <code class="language-plaintext highlighter-rouge">i</code> is less than zero, let <code class="language-plaintext highlighter-rouge">i</code> refer to <code class="language-plaintext highlighter-rouge">-1 * i</code><br />
+…</li>
+</ol>
+
+<!--
+```r
+test_value <- 98
+is_even <- function(x) {
+    output <- FALSE
+    if (x != round(x)) {
+        warning('Please input an integer.')
+    } else {
+        y <- round(x / 2)
+        if (x == y * 2) {
+            output <- TRUE
+        }
+    }
+    return(output)
+}
+if (!evenness(test_value)) {
+    warning('Test failed.')
+}
+```
+{:.input title="Console"}
+-->
+
+<h2 id="block-programming-exercise-3">Block programming Exercise 3</h2>
+
+<p>One common task in programming is to do a series of steps many times, which is called a loop in coding.<br />
+In the <a href="https://scratch.mit.edu/projects/editor/?tutorial=getStarted">Scratch</a> platform, create a program that
+calculates the square root of each number from 1-20, and if the result is an integer, print the square root.</p>
+
+<!--
+```r
+x <- c(1:20)
+for (i in x){
+r <- sqrt(i)
+if(round(r, digits = 0) == r) print(r)  
+}
+```
+{:.input title="Console"}
+-->
+
+<hr />
+
+        <hr>
+
+<p>If you need to catch-up before a section of code will work, just squish it's
+🍅 to copy code above it into your clipboard. Then paste into your interpreter's
+console, run, and you'll be ready to start in on that section. Code copied by
+both 🍅 and 📋 will also appear below, where you can edit first, and then copy,
+paste, and run again.</p>
+
+<div class="output">
+  <pre id="ketchup" contenteditable="true"><code># Nothing here yet!</code></pre>
+</div>
+
+<script>
+$(document).ready(function(){
+  
+  // Add code help icons to code blocks
+  $('.input, .text-document').append('<ul class="code-help">');
+  $('.code-help')
+    .append('<li class="clipboard">📋</li>');
+  $('.text-document:not(.no-eval) .code-help')
+    .append('<li class="ketchup">🍅</li>');
+
+  // Bind copy actions to mouse clicks on icons
+  var $ketchup = $('#ketchup');
+  var rng = document.createRange();
+  var sel = window.getSelection();
+  $('.ketchup').click(function(){
+    var $prev = $(this)
+      .parents('.text-document')
+      .prevAll('.text-document:has(.ketchup)');
+    $ketchup.find('code').text($prev.find('pre').text());
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.text-document .clipboard').click(function(){
+    var pre = $(this).parents('.text-document').find('pre').text();
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.input .clipboard').click(function(){
+    var pre = $(this).parents('.input').find('pre').text();
+    pre = pre.replace(/(^|\n)[>+] /g, '$1');
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+});
+</script>
+      </div>
+    </div>
+    <script>
+$(document).ready(function(){
+  // Add links to R and Python package repositories
+  $('a.rlib').map(function(){
+    this.href = 'https://cran.r-project.org/package=' + this.innerText;
+  });
+  $('a.pylib').map(function(){
+    this.href = 'https://pypi.python.org/pypi/' + this.innerText;
+  });
+});
+</script>
+
+    <footer>
+      <p>
+        <a href="https://github.com/SESYNC-ci/basic-R-lesson/issues" target="_blank">
+          <i class="fas fa-exclamation-circle" aria-hidden="true"></i> report an issue
+        </a>
+      </p>
+      <p>Site maintained by
+        <a href="https://github.com/SESYNC-ci">SESYNC-ci</a>
+      </p>
+    </footer>
+  </body>
+</html>
