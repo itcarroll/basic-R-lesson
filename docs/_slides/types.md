@@ -3,32 +3,15 @@
 
 ## Data Structures
 
-A data frame is a compound object, built up from (eventually) a few basic data
-types, but there are intermediate objects to understand. Like all data frames,
-`storm` is actually a "list".
-
-
-
-~~~r
-> typeof(storm)
-~~~
-{:title="Console" .input}
-
-
-~~~
-[1] "list"
-~~~
-{:.output}
-
+The `str()` function just showed us that our data is made up of one-dimensional data structures (columns). 
 
 ===
 
-The "list" is one of three one-dimensional data structurs you will regularly
+There are two one-dimensional data structures you will regularly
 encounter.
 
 - Lists
 - Vectors
-- Factors
 
 ===
 
@@ -51,6 +34,24 @@ x <- list('abc', 1:3, sin)
 
 ===
 
+All data frames are actually lists, so our data frame `storm` is actually a list.  We'll get into more details later, but you can check this out with the function `typeof()`.   
+
+
+
+~~~r
+> typeof(storm)
+~~~
+{:title="Console" .input}
+
+
+~~~
+[1] "list"
+~~~
+{:.output}
+
+
+===
+
 Question
 : Compare the structure of `storm` and `x` while thinking about the length of
 each of their elements. Do the elements within list `x` have a length? The same
@@ -63,15 +64,21 @@ Note that the command `length('abc')` yields `1`.
 When you enter a single number or character string in R, you are actually
 creating a one-dimensional data structure of length 1. There are not really
 0-dimensional "scalars" in R. The kind of one-dimensional structure created in
-this was is called a "vector".
+this is called a "vector".
 {:.notes}
 
 ===
 
 ## Vectors
 
-Vectors are an array of values of the same data type. Create a vector by
-combining elements of the same type together using the function `c()`.
+Vectors are one-dimensional but unlike lists, values must be of the same data type (e.g. integer, character, logical). 
+
+===
+
+Create a vector by combining elements of the same type together using the concatenate function `c()`.  
+
+Type `?c()` in the console to learn more about this really common and useful function. 
+{:.notes}
 
 
 
@@ -89,7 +96,7 @@ combining elements of the same type together using the function `c()`.
 
 ===
 
-All elements of an vector must be the same type, so when you attempt to combine
+All elements of a vector must be the same type, so when you attempt to combine
 different types they will be coerced to the most flexible type.
 
 
@@ -113,53 +120,33 @@ element. To understand the difference, we need to recognize data types.
 
 ## Data Types
 
-A data frame has now been recognized as a list, and the `str` command gives an
-indication that each field has a data type. The final key property is its
-dimension.
+Here is a summary of the data types you frequently encounter in R.
 
-
-
-~~~r
-> dim(storm)
-~~~
-{:title="Console" .input}
-
-
-~~~
-[1] 100  42
-~~~
-{:.output}
-
-
-A data frame is essentially a list of vectors, with an important constraint. The
-vectors must all be of the same length, giving a rectangular data structure.
-{:.notes}
-
-===
-
-Here is a summary of the data types you frequently encounter in data frames.
-
-| Type      | Example           |
-|-----------+-------------------|
-| double    | 3.1, 4, Inf, NaN  |
-| integer   | 4L, length(...)   |
-| character | 'a', '4', '👏'    |
-| logical   | TRUE, FALSE       |
+| Type      | Example                  |
+|-----------+--------------------------|
+| double    | 3.1, 4, Inf, NaN         |
+| integer   | 4L, length(...)          |
+| character | 'a', '4', '👏'           |
+| logical   | TRUE, FALSE              |
+| factor    | "category1", "category2" |
 
 Both the double and integer data types are considered numeric, and while
 the `str` function tells you that a double is "num", the `typeof` function
-will properly identify either numeric type. Missing data created with `NA`
-actually have a variant for each data type. So you can put `NA` in any vector
-without breaking the fule that the elements of a vector have the same data type.
+will properly identify either numeric type. 
+{:.notes}
+
+Missing data created with `NA` actually have a variant for each data type. So you can put
+`NA` in any vector without breaking the rule that the elements of a vector have the same
+data type.
 {:.notes}
 
 ===
 
 ## Factors
 
-A factor is a vector that can contain only predefined values, and is used to
-store categorical data. Factors are like integer vectors, but posess a `levels`
-attribute that assigns names to each level, or possible value in the vector.
+Data of type factor is stored in a vector that can only contain predefined values of
+categorical data.  Factors are similar to character vectors, but possess a `levels`
+attribute that assigns names to each level, or distinct value, in the vector.
 
 ===
 
@@ -178,8 +165,7 @@ education <- factor(
 
 ===
 
-The `str` function notes the labels, but prints the integers assigned in their
-stead.
+The `str` function identifies this vector as being of data type "factor" and notes the labels for each level, but prints the integers assigned to the levels instead of the labels.  
 
 
 
@@ -195,16 +181,36 @@ stead.
 {:.output}
 
 
+Factors can sometimes be tricky to work with in R.  While factors can be useful for plotting data by categories, they can often get in the way of other calculations and analyses.  It is good to know how to convert between data types with the functions `as.character()`, `as.integer()`, `as.factor()`, `as.numeric()`.  
+{:.notes}
+
 ===
 
 ## Data Frames
 
-One last property makes data frames stand out from lists: a data frame is a
-list of *equal-length* vectors having *unique names*.
+We mentioned above that a data frame is actually a list of vectors, but with a few
+important constraints. The _vectors_ must all be of the _same length_, giving a
+rectangular data structure.  Vectors must also each have a _unique name_ (column name).
+
+Use the `dim()` function to check the dimensions of our `storm` data frame.
+
+
+
+~~~r
+> dim(storm)
+~~~
+{:title="Console" .input}
+
+
+~~~
+[1] 100  42
+~~~
+{:.output}
+
 
 ===
 
-The "columns" visible in the data viewer are accessed by the `names` function.
+The column names are accessed by the `names()` function.
 
 
 
@@ -235,17 +241,9 @@ The "columns" visible in the data viewer are accessed by the `names` function.
 
 ===
 
-In summary, a data frame is the data structure most similar to a spreadsheet,
-with a few key differences:
-
-- The columns are **equal-length** vectors.
-- As vectors, a column cannot hold values of the wrong type.
-- Each column has a unique name.
-
-===
-
 Creating a data frame from scratch can be done by combining vectors with the
-`data.frame()` function.
+`data.frame()` function.  We created the `education` vector above.  Now create a
+vector named `income`, and put the two vectors together to make a data frame.
 
 
 
@@ -258,6 +256,15 @@ df <- data.frame(education, income)
 
 ===
 
+In summary, a data frame is the data structure most similar to a spreadsheet,
+with a few key differences:
+
+- The columns must be **equal-length** vectors.
+- As vectors, a column must hold values of the **same type**.
+- Each column must have a **unique name**.
+
+===
+
 Remember to use these functions when getting to know a data frame:
 
 | `dim()`            | dimensions              |
@@ -265,19 +272,32 @@ Remember to use these functions when getting to know a data frame:
 | `names()`          | (column) names          |
 | `str()`            | structure               |
 | `summary()`        | summary info            |
-| `head()`           | shows beginning rows    |
+| `head()`           | shows first few rows    |
+| `tail()`           | shows last few rows     |
 
 ===
 
 ## Matrices
 
-One way to understand the need for another data structure, the matrix, is that a
-matrix differs from a data frame in terms of the underlying data type.
+The matrix is a two-dimensional data structure, and differs from a data frame in terms
+of the underlying data type.  A matrix must be composed of elements of the _same data type_.  You can check to see if you have a matrix by using the `class()` function.
 
 ===
 
+When should you use a matrix vs. a data frame? 
+
+If your columns of data have different data types (e.g. integer, character, factor), you need to use a data frame.  
+
+If the analysis or functions you are using expect one structure or the other, you should use the expected data structure
+
+===
+
+Data structure quick reference:
+
+|    Data    |  Data Type  |   Data Type    |
 | Dimensions | Homogeneous | Heterogeneous  |
 |------------+-------------+----------------|
 | 1-D        | `c()`       | `list()`       |
 | 2-D        | `matrix()`  | `data.frame()` |
 | n-D        | `array()`   |                |
+
