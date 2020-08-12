@@ -140,26 +140,19 @@ Factors can sometimes be tricky to work with in R.  While factors can be useful 
 
 ## Data Frames
 
-A data frame has now been recognized as a list, and the `str` command gives an
-indication that each field has a data type. The final key property is its
-dimension.
+We mentioned above that a data frame is actually a list of vectors, but with a few
+important constraints. The _vectors_ must all be of the _same length_, giving a
+rectangular data structure.  Vectors must also each have a _unique name_ (column name).
+
+Use the `dim()` function to check the dimensions of our `storm` data frame.
 
 ```{r}
 dim(storm)
 ```
 
-A data frame is essentially a list of vectors, with an important constraint. The
-vectors must all be of the same length, giving a rectangular data structure.
-{:.notes}
-
 ===
 
-One last property makes data frames stand out from lists: a data frame is a
-list of *equal-length* vectors having *unique names*.
-
-===
-
-The "columns" visible in the data viewer are accessed by the `names` function.
+The column names are accessed by the `names()` function.
 
 ```{r}
 names(storm)
@@ -167,22 +160,23 @@ names(storm)
 
 ===
 
-In summary, a data frame is the data structure most similar to a spreadsheet,
-with a few key differences:
-
-- The columns are **equal-length** vectors.
-- As vectors, a column cannot hold values of the wrong type.
-- Each column has a unique name.
-
-===
-
 Creating a data frame from scratch can be done by combining vectors with the
-`data.frame()` function.
+`data.frame()` function.  We created the `education` vector above.  Now create a
+vector named `income`, and put the two vectors together to make a data frame.
 
 ```{r, handout = 0}
 income <- c(32000, 28000, 89000, 0, 0)
 df <- data.frame(education, income)
 ```
+
+===
+
+In summary, a data frame is the data structure most similar to a spreadsheet,
+with a few key differences:
+
+- The columns must be **equal-length** vectors.
+- As vectors, a column must hold values of the **same type**.
+- Each column must have a **unique name**.
 
 ===
 
@@ -193,19 +187,32 @@ Remember to use these functions when getting to know a data frame:
 | `names()`          | (column) names          |
 | `str()`            | structure               |
 | `summary()`        | summary info            |
-| `head()`           | shows beginning rows    |
+| `head()`           | shows first few rows    |
+| `tail()`           | shows last few rows     |
 
 ===
 
 ## Matrices
 
-One way to understand the need for another data structure, the matrix, is that a
-matrix differs from a data frame in terms of the underlying data type.
+The matrix is a two-dimensional data structure, and differs from a data frame in terms
+of the underlying data type.  A matrix must be composed of elements of the _same data type_.  You can check to see if you have a matrix by using the `class()` function.
 
 ===
 
+When should you use a matrix vs. a data frame? 
+
+If your columns of data have different data types (e.g. integer, character, factor), you need to use a data frame.  
+
+If the analysis or functions you are using expect one structure or the other, you should use the expected data structure
+
+===
+
+Data structure quick reference:
+
+|    Data    |  Data Type  |   Data Type    |
 | Dimensions | Homogeneous | Heterogeneous  |
 |------------+-------------+----------------|
 | 1-D        | `c()`       | `list()`       |
 | 2-D        | `matrix()`  | `data.frame()` |
 | n-D        | `array()`   |                |
+
