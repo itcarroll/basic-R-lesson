@@ -180,7 +180,7 @@ with a few key differences:
 
 ===
 
-Remember to use these functions when getting to know a data frame:
+### Remember to use these functions when getting to know a data frame:
 
 | `dim()`            | dimensions              |
 | `nrow()`, `ncol()` | number of rows, columns |
@@ -207,10 +207,9 @@ If the analysis or functions you are using expect one structure or the other, yo
 
 ===
 
-Data structure quick reference:
+### Data structure quick reference:
 
-|    Data    |  Data Type  |   Data Type    |
-| Dimensions | Homogeneous | Heterogeneous  |
+| Data Dimensions | Data Type: <br>Homogeneous | Data Type: <br>Heterogeneous  |
 |------------+-------------+----------------|
 | 1-D        | `c()`       | `list()`       |
 | 2-D        | `matrix()`  | `data.frame()` |
