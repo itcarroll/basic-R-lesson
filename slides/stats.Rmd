@@ -54,7 +54,7 @@ y <- rbinom(n = 100, size = 20, prob = .85)
 ===
 
 The samples above are drawn from different distributions with different means.
-The  T-Test should easilly distinguish them, although it does not check
+The  T-Test should easily distinguish them, although it does not check
 assumptions!
 
 ```{r}

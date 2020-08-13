@@ -43,7 +43,7 @@ Three components of a function:
 - __body__: the code inside the function
 - __return value__: controls what output the function gives
 
-```{r handout = 0, eval=FALSE}
+```{r eval=FALSE}
 function(arguments) {
     body
     return(return_value)

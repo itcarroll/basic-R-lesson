@@ -38,7 +38,7 @@ df[['education']]
 ===
 
 ```{r, handout = 0}
-names(df) <- c('ed', 'in')
+names(df) <- c('ed', 'inc')
 ```
 
 ```{r}

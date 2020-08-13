@@ -13,9 +13,17 @@ storm <- read.csv(
   ...,
   ...)
 
+## Data Structures
+
 ## Lists
 
 x <- list('abc', 1:3, sin)
+
+## Vectors
+
+c(...)
+
+## Data Types
 
 ## Factors
 
@@ -28,27 +36,38 @@ education <- ...(
 ... <- c(32000, 28000, 89000, 0, 0)
 ... <- data.frame(...)
 
+## Parts and Subsets
+
 ## Names
 
 ...(df) <- c(...)
 
-## Subsetting ranges
+## Subsetting 
 
 days <- c(
   'Sunday', 'Monday', 'Tuesday',
   'Wednesday', 'Thursday', 'Friday',
   'Saturday')
+
 weekdays <- ...
-...
+
+... <- ...
 
 ## Functions
 
-function(...) {
-  ...
-  return(...)
-}
+... <- function(...) {
+       ...
+       return(...)
+       }
 
 ## Flow Control
+
+if (...) {
+  ...
+} else {
+  ...
+}
+
 
 first <- function(dat) {
   ... {
@@ -65,3 +84,6 @@ first <- function(dat) {
 
 x <- rnorm(n = 100, ... = 15, sd = 7)
 y <- ...(n = 100, ... = 20, prob = .85)
+
+
+
