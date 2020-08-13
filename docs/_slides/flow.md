@@ -28,14 +28,47 @@ if (...) {
 {:title="{{ site.data.lesson.handouts[0] }}" .no-eval .text-document}
 
 
+===
+
 The keyword `if` must be followed by a logical test which determines, at
 runtime, what to do next. The R interpreter goes to the first statement if the
 logical value is `TRUE` and to the second statement if it's `FALSE`.
 {:.notes}
 
+
+
+~~~r
+> if (logical_test) {
++     statement_1
++ } else {
++     statement_2
++ }
+~~~
+{:title="Console" .no-eval .input}
+
+
 ===
 
-An if/else conditional would allow the `first` function to avoid the error
+Let's try building a simple if/else statement.  
+
+This tests whether the first element in the `ed` column of our data frame `df` contains the word "college".  If it does, it prints the first element of the `inc` column.  Otherwise, it prints "no college education".  
+{:.notes}
+
+
+
+~~~r
+if (df$ed[1] == "college") {
+    print(df$inc[1])
+} else {
+    print("no college education")
+}
+~~~
+{:title="{{ site.data.lesson.handouts[0] }}" .no-eval .text-document}
+
+
+===
+
+An if/else conditional would allow the `first()` function we wrote previously to avoid the error
 thrown by calling `first(counts)`.
 
 
@@ -64,7 +97,7 @@ first <- function(dat) {
 
 
 ~~~
-       ed    in
+       ed   inc
 1 college 32000
 ~~~
 {:.output}

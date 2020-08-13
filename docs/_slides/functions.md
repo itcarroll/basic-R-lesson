@@ -50,12 +50,12 @@ Three components of a function:
 
 
 ~~~r
-function(arguments) {
-    body
-    return(return_value)
-}
+> function(arguments) {
++     body
++     return(return_value)
++ }
 ~~~
-{:title="{{ site.data.lesson.handouts[0] }}" .no-eval .text-document}
+{:title="Console" .no-eval .input}
 
 
 ===

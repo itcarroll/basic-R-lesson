@@ -71,7 +71,7 @@ Levels: middle highschool college
 
 
 ~~~r
-names(df) <- c('ed', 'in')
+names(df) <- c('ed', 'inc')
 ~~~
 {:title="{{ site.data.lesson.handouts[0] }}" .text-document}
 
