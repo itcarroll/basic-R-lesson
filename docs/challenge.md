@@ -19,13 +19,13 @@ guidance or ideas.
 
 ### Challenge 1
 
-Fix each of the following common data frame subsetting errors. The `person` data
+Fix each of the following common data frame subsetting errors. The `pums` data
 frame was read in during the lesson on [Visualizing Tabular Data].
 
-- Fix `person[person$AGEP = 21, ]` so it returns all rows where `AGEP` equals 21.
-- Fix `person[-1:4, ]` so it returns all but the first four rows.
-- Fix `person[person$WAGP <= 20,000]` so it returns all rows where `WAGP` is less than or equal to 20,000.
-- Fix `person[person$AGEP == 18 | 21, ]` so it returns all rows where `AGEP` equals 18 or 21.
+- Fix `pums[pums$AGEP = 21, ]` so it returns all rows where `AGEP` equals 21.
+- Fix `pums[-1:4, ]` so it returns all but the first four rows.
+- Fix `pums[pums$WAGP <= 20,000]` so it returns all rows where `WAGP` is less than or equal to 20,000.
+- Fix `pums[pums$AGEP == 18 | 21, ]` so it returns all rows where `AGEP` equals 18 or 21.
 
 ### Challenge 2
 
@@ -57,10 +57,10 @@ a good one: don't try it for any number over your age!
 
 ### Solution 1
 
-- `person[person$AGEP == 21, ]`
-- `person[-(1:4), ]`
-- `person[person$WAGP <= 20000, ]`
-- `person[person$AGEP == 18 | person$AGEP == 21, ]`
+- `pums[pums$AGEP == 21, ]`
+- `pums[-(1:4), ]`
+- `pums[pums$WAGP <= 20000, ]`
+- `pums[pums$AGEP == 18 | pums$AGEP == 21, ]`
 
 ### Solution 2
 
