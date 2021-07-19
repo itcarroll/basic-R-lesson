@@ -12,6 +12,10 @@ permalink: /index.html
 {:style="text-transform: none;"}
 {% endif %}
 
+{% if site.data.lesson.warning %}
+> *Note*: This lesson is in [{{site.data.lesson.lifecycle}}](https://github.com/SESYNC-ci/sesync-ci.github.io/blob/master/lesson/lesson-lifecycle.md) status! It may have issues that have not been addressed.
+{% endif %}
+
 {% if site.data.lesson.handouts %}
 > Handouts for this lesson need to be saved on your computer.
 > [Download]({{ site.github.releases_url}}/download/{{ site.data.lesson.tag }}/handouts.zip)
@@ -28,7 +32,7 @@ permalink: /index.html
 <a name="{{ id }}"></a>
 {% assign vslides = hslide.content | split: "<p>===</p>" %}
 {% for vslide in vslides %}
-{{ vslide }}
+<section>{{ vslide }}</section>
 {% endfor %}
 [Top of Section](#{{ id }})
 {:.ToS}

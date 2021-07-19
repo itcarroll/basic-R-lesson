@@ -5,6 +5,9 @@ handouts:
 tag: v0.8
 lesson: 1
 instructor: Rachael Blake
+lifecycle: stable
+badgecolor: green
+warning: false
 authors:
  - Kelly Hondula
  - Ian Carroll
