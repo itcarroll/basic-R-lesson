@@ -1,0 +1,143 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic R</title>
+<meta name="description" content="Start learning R in RStudio.">
+<link rel="canonical"
+      href="https://SESYNC-ci.github.io/basic-R-lesson/rstudio_ide.html">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/default.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/syntax.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets//css/static.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      rel="stylesheet"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous">
+
+    
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <h2 id="introduction-to-r-and-the-rstudio-ide">Introduction to R and the RStudio IDE</h2>
+
+<p><a href="https://www.r-project.org/about.html">R</a> is a programming language that was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand in 1995.  R is popular for reasons including</p>
+
+<ul>
+  <li>it is open source and freely available</li>
+  <li>it is widely used, both inside and outside of academia</li>
+  <li>it is powerful and runs on all platforms</li>
+</ul>
+
+<p><a href="https://rstudio.com/">RStudio</a> is a Integrated Development Environment (IDE) for coding in the R language. 
+This course will use this platform to teach R, so we provide some introductory materials below.</p>
+
+<p>Please note that SESYNC provides a cloud platform capable of supporting the software needs for the course, so there is <strong>no computational software for you to install in advance</strong>. However, you are welcome to install any and or all of this software—it is all free and open source—on your own machines.  The list of software is available near the bottom of the <a href="https://cyberhelp.sesync.org/syllabi/2020/07/21/summer-institute.html">syllabus</a>.</p>
+
+<h3 id="rstudio-ide-overview"><a href="https://fast.wistia.net/embed/iframe/520zbd3tij?videoFoam=true">RStudio IDE Overview</a></h3>
+
+<p><a href="https://fast.wistia.net/embed/iframe/520zbd3tij?videoFoam=true"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/basic-R-lesson@v0.8/docs/assets/images/rstudio-video-static.jpg" alt="" width="75%" /></a></p>
+
+<h3 id="rstudio-ide-cheatsheet"><a href="/assets/images/rstudio-ide.pdf">RStudio IDE Cheatsheet</a></h3>
+
+<p><a href="assets/images/rstudio-ide.pdf"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/basic-R-lesson@v0.8/docs/assets/images/rstudio-ide.png" alt="" width="75%" /></a></p>
+
+<hr />
+
+
+        <hr>
+
+<p>If you need to catch-up before a section of code will work, just squish it's
+🍅 to copy code above it into your clipboard. Then paste into your interpreter's
+console, run, and you'll be ready to start in on that section. Code copied by
+both 🍅 and 📋 will also appear below, where you can edit first, and then copy,
+paste, and run again.</p>
+
+<div class="output">
+  <pre id="ketchup" contenteditable="true"><code># Nothing here yet!</code></pre>
+</div>
+
+<script>
+$(document).ready(function(){
+  
+  // Add code help icons to code blocks
+  $('.input, .text-document').append('<ul class="code-help">');
+  $('.code-help')
+    .append('<li class="clipboard">📋</li>');
+  $('.text-document:not(.no-eval) .code-help')
+    .append('<li class="ketchup">🍅</li>');
+
+  // Bind copy actions to mouse clicks on icons
+  var $ketchup = $('#ketchup');
+  var rng = document.createRange();
+  var sel = window.getSelection();
+  $('.ketchup').click(function(){
+    var $prev = $(this)
+      .parents('.text-document')
+      .prevAll('.text-document:has(.ketchup)');
+    $ketchup.find('code').text($prev.find('pre').text());
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.text-document .clipboard').click(function(){
+    var pre = $(this).parents('.text-document').find('pre').text();
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.input .clipboard').click(function(){
+    var pre = $(this).parents('.input').find('pre').text();
+    pre = pre.replace(/(^|\n)[>+] /g, '$1');
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+});
+</script>
+      </div>
+    </div>
+    <script>
+$(document).ready(function(){
+  // Add links to R and Python package repositories
+  $('a.rlib').map(function(){
+    this.href = 'https://cran.r-project.org/package=' + this.innerText;
+  });
+  $('a.pylib').map(function(){
+    this.href = 'https://pypi.python.org/pypi/' + this.innerText;
+  });
+});
+</script>
+
+    <footer>
+      <p>
+        <a href="https://github.com/SESYNC-ci/sesync-ci.github.io/blob/master/lesson/lesson-lifecycle.md" target="_blank">
+          <img src="https://img.shields.io/badge/lifecycle-stable-green.svg" alt="Lifecycle status"> 
+        </a>
+      </p>
+      <p>
+        <a href="https://github.com/SESYNC-ci/basic-R-lesson/issues" target="_blank">
+          <i class="fas fa-exclamation-circle" aria-hidden="true"></i> report an issue
+        </a>
+      </p>
+      <p>Site maintained by
+        <a href="https://github.com/SESYNC-ci">SESYNC-ci</a>
+      </p>
+    </footer>
+  </body>
+</html>
