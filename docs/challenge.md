@@ -31,7 +31,7 @@ frame was read in during the lesson on [Visualizing Tabular Data].
 
 Were you to ever interview for a "data scientist" postition, you may be asked to
 complete this common challenge (possibly using multiple approaches). Write a
-"for loop" in the R language that calculates the Fibonnacci sequence up through
+"for loop" in the R language that calculates the Fibonacci sequence up through
 it's 12th entry. Start your script with the line `fib <- c(1, 1)`, and recall
 that `c` combines vectors.
 
@@ -48,7 +48,7 @@ each group.
 
 ### Challenge 4
 
-Try that Fibonnacci challenge again, but use an approach called "recursion".
+Try that Fibonacci challenge again, but use an approach called "recursion".
 That is, write a function that calls itself (i.e. a recursion) to calculate any
 Fibonacci number. Just because this is an "advanced" approach doesn't mean it's
 a good one: don't try it for any number over your age!
@@ -104,5 +104,5 @@ fibn(12)
 Note that this recursive solution is dangerously inefficient, but could be
 greatly improved with [memoization].
 
-[Visualizing Tabular Data]: https://cyberhelp.sesync.org/graphics-with-ggplot2-lesson/course/#/slides/layer
+[Visualizing Tabular Data]: {{ site.gh-pages }}/graphics-with-ggplot2-lesson/course/#/slides/layer
 [memoization]: https://en.wikipedia.org/wiki/Memoization
